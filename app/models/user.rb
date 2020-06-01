@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def is_password?(password)
-    bcrypt_password = BCrpyt::Password.new(self.password_digest)
+    bcrypt_password = BCrypt::Password.new(self.password_digest)
     bcrypt_password.is_password?(password)
   end
 

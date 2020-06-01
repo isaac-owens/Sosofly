@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
   before_action :ensure_logged_in, only: [:show, :edit]
 
   def create
@@ -14,9 +15,13 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: params[:id])
+    render json: @user
   end
 
   def index
+    @users = User.all
+    render json: @users
   end
 
   def edit
