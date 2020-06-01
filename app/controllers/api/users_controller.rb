@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   skip_before_action :verify_authenticity_token
-  before_action :ensure_logged_in, only: [:show, :edit]
+  before_action :ensure_logged_in, only: [:show, :index, :edit]
 
   def create
     @user = User.new(user_params)
