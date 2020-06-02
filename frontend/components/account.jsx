@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 class Account extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.currentUser;
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.receiveCurrentUser(this.props.currentUser);
-  // }
+  componentDidMount() {
+    this.props.receiveCurrentUser(this.props.currentUser);
+  }
 
   handleClick() {
     this.props.logout();

@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import Account from './account';
-import  { logout } from '../actions/session_actions';
+import  { logout, receiveCurrentUser } from '../actions/session_actions';
 
 const mSTP = state => {
   return {
-    currentUser: window.currentUser
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
 const mDTP = dispatch => {
   return {
+    receiveCurrentUser: user => receiveCurrentUser(user),
     logout: () => dispatch(logout())
   };
 };
