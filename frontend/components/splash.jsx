@@ -13,19 +13,38 @@ class Splash extends React.Component {
   }
 
   render() {
+    let splashHeader = "splash-header-nav";
+    let splashHeaderLogo = "splash-header-logo";
+    let splashFooter = "splash-footer-nav";
+    let splashMain = "splash-main-content";
+    let authLinks = "auth-links";
+
     return (
       <>
-        <nav>
-          <span>--- Header Nav ---</span>
-          <h1>(Sosofly Logo Link)</h1>
-          <Link to="/signup">Signup</Link>
-          <Link to="/login">Login</Link>
-        </nav>
-        <p>--- Splash Component Here--- </p>
+        <header className={splashHeader}>
+          <h1 className={splashHeaderLogo}>
+            <Link to="/">(Sosofly Logo Link)</Link>
+          </h1>
+          <div className={authLinks}>
+            <Link to="/signup">Signup</Link>
+            <Link to="/login">Login</Link>
+          </div>
+        </header>
+        <main className={splashMain}>
+          <div>
+            <h1>Listening is everything</h1>
+            <p>Millions of songs and podcasts. No credit card needed.</p>
+            <Link to="/signup">GET SPOTIFY FREE</Link>
+          </div>
+          <h1>SPLASH IMAGE</h1>
+        </main>
         <footer>
-          <span>--- Footer Nav ---</span>
-          <h2>(Sosofly Logo Link)</h2>
-          <p>--- Webplayer Link Here ---</p>
+          <nav className={splashFooter}>
+            <h2>
+              <Link to="/">(Sosofly Logo Link)</Link>
+            </h2>
+            <p>--- Webplayer Link Here ---</p>
+          </nav>
         </footer>
       </>
     );
