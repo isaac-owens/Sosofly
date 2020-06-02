@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
     debugger
     this.props.processForm(this.state)
     .then(() => {
-      return this.props.history.push("/");
+      return this.props.history.push("/account");
     });
   }
 
