@@ -20,21 +20,23 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     debugger
-    this.props.processForm(this.state).then(() => {
-      return this.props.history.push("/");
-    });
+    this.props.processForm(this.state);
+    // .then(() => {
+    //   return this.props.history.push("/");
+    // });
   }
 
   render() {
     return (
       <>
-        {this.props.formType === "login" ? <h1>Login</h1> : <h1>Signup</h1>}
+        {/* {this.props.formType === "login" ? <h1>Login</h1> : <h1>Signup</h1>}
         <ul>
           {this.props.errors.map((error, idx) => {
             return <li key={idx}>{error}</li>;
           })}
-        </ul>
+        </ul> */}
 
+        <Link to="/">--- Logo Home Link ---</Link>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="username">
             Username:
@@ -54,11 +56,18 @@ class SessionForm extends React.Component {
               value={this.state.password}
             />
           </label>
-          <button>Submit!</button>
+          {this.props.formType === "login" ? (
+              <button>LOG IN</button>
+              ) : (
+                <button>SIGN UP</button>
+          )}
         </form>
 
         {this.props.formType === "login" ? (
-          <Link to="/signup">Signup</Link>
+          <>
+            <p>Don't have an account?</p>
+            <Link to="/signup">SIGN UP FOR SPOTIFY</Link>
+          </>
         ) : (
           <Link to="/login">Login</Link>
         )}
