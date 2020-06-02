@@ -1,0 +1,81 @@
+.splash-header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+  }
+  
+  .splash-main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #2E46B9;
+    height: 1223px;
+    color: #1ED760;
+    width: 100%;
+  }
+
+  .splash-main-content h1 {
+    font-size: 50px;
+  }
+
+  .splash-main-content a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1ED760;
+    padding: 10px;
+    border-radius: 25px;
+    color: #2E46B9;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: .2em;
+    width: 175px;
+  }
+
+  .splash-main-content a:hover {
+    background-color: white;
+    height: 400
+  }
+
+  .splash-main-message {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    flex-flow: row wrap;
+    height: 300px;
+    width: 400px;
+  }
+
+  .splash-image {
+    width: 200px;
+  }
+  
+  .splash-footer-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    height: 200px;
+ }
+
+ .auth-links {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 144px;
+ }
+
+ .auth-links a {
+   font-size: 10px;
+   letter-spacing: .1em;
+ }
+
+ .splash-footer-nav p {
+   color: white;
+ }

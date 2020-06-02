@@ -6,6 +6,8 @@ import configureStore from './store/store';
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
+
+  // bootstrap current user to window
   if (window.currentUser) {
     const { currentUser } = window;
     const { id } = currentUser;
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     store = configureStore(preloadedState);
 
+    // clear currentUser from window to avoid confusion with state currentUser
     delete window.currentUser;
   } else {
     store = configureStore();

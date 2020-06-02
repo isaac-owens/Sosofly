@@ -29,8 +29,10 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let sessionForm = "session-form";
+
     return (
-      <>
+      <div>
         <ul>
           {this.props.errors.map((error, idx) => {
             return <li key={idx}>{error}</li>;
@@ -39,126 +41,145 @@ class SessionForm extends React.Component {
 
         <Link to="/">--- Logo Home Link ---</Link>
         {this.props.formType === "login" ? (
-          <div>
+          <>
             <form onSubmit={this.handleSubmit}>
-              <label htmlFor="username">
-                Username:
-                <input
-                  type="text"
-                  id="username"
-                  onChange={this.update("username")}
-                  value={this.state.username}
-                />
-              </label>
-              <label htmlFor="password">
-                Password:
-                <input
-                  type="password"
-                  id="password"
-                  onChange={this.update("password")}
-                  value={this.state.password}
-                />
-              </label>
-            <button>LOG IN</button>
-            </form>
-            <p>Don't have an account?</p>
-            <Link to="/signup">SIGN UP FOR SPOTIFY</Link>
-          </div>
-        ) : (
-          <div>
-            <form onSubmit={this.handleSubmit}>
-              <label htmlFor="email">What's your email?
-                <input
-                  type="text"
-                  id="email"
-                  onChange={this.update("email")}
-                  value={this.state.email}
-                />
-              </label>
-              <label htmlFor="confirmEmail">Confirm your email 
-                <input
-                  type="text"
-                  id="confirmEmail"
-                  onChange={this.update("confirmEmail")}
-                  value={this.state.confirmEmail}
-                />
-              </label>
-              <label htmlFor="password">Create a password 
-                <input
-                  type="password"
-                  id="password"
-                  onChange={this.update("password")}
-                  value={this.state.password}
-                />
-                <label htmlFor="username">What should we call you? 
+              <h1>(Spotify Logo Link)</h1>
+              <hr/>
+              <ul className={sessionForm}>
+                <li>
                   <input
                     type="text"
                     id="username"
                     onChange={this.update("username")}
                     value={this.state.username}
                   />
-                </label>
-                <p>This appears on your profile.</p>
-              </label>
-              <label htmlFor="birthdate">What's your date of birth?
-                <input
-                  type="date"
-                  id="birthdate"
-                  onChange={this.update("birthdate")}
-                  value={this.state.birthdate}
-                />
-              </label>
-              <p>What's your gender?</p>
-              <label htmlFor="male">Male
-                <input
-                  type="radio"
-                  id="male"
-                  onChange={this.update("gender")}
-                  value="male"
-                />
-              </label>
-              <label htmlFor="female">Female
-                <input
-                  type="radio"
-                  id="female"
-                  onChange={this.update("gender")}
-                  value="female"
-                />
-              </label>
-              <label htmlFor="non-binary">Non-Binary
-                <input
-                  type="radio"
-                  id="non-binary"
-                  onChange={this.update("gender")}
-                  value="non-binary"
-                />
-              </label>
-            <button>SIGN UP</button>
+                </li>
+                <li>
+                  <input
+                    type="password"
+                    id="password"
+                    onChange={this.update("password")}
+                    value={this.state.password}
+                  />
+                </li>
+                <li>
+                    <button>LOG IN</button>
+                </li>
+                <li>
+                  <hr/>
+                  <p>Don't have an account?</p>
+                </li>
+                <li>
+                  <Link to="/signup">SIGN UP FOR SPOTIFY</Link>
+                </li>
+              </ul>
             </form>
-            <p>Have an account? <Link to="/login">Log in.</Link></p>
+          </>
+        ) : (
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              <ul className={sessionForm}>
+                <li>
+                  <label htmlFor="email">
+                    What's your email?
+                    <input
+                      type="text"
+                      id="email"
+                      onChange={this.update("email")}
+                      value={this.state.email}
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label htmlFor="confirmEmail">
+                    Confirm your email
+                    <input
+                      type="text"
+                      id="confirmEmail"
+                      onChange={this.update("confirmEmail")}
+                      value={this.state.confirmEmail}
+                    />
+                    </label>
+                  </li>
+                  <li>
+                  <label htmlFor="password">
+                    Create a password
+                    <input
+                      type="password"
+                      id="password"
+                      onChange={this.update("password")}
+                      value={this.state.password}
+                    />
+                    </label>
+                  </li>
+                  <li>
+                    <label htmlFor="username">
+                      What should we call you?
+                      <input
+                        type="text"
+                        id="username"
+                        onChange={this.update("username")}
+                        value={this.state.username}
+                      />
+                    </label>
+                    <p>This appears on your profile.</p>
+                  </li>
+                  <li>
+                    <label htmlFor="birthdate">
+                      What's your date of birth?
+                      <input
+                        type="date"
+                        id="birthdate"
+                        onChange={this.update("birthdate")}
+                        value={this.state.birthdate}
+                      />
+                    </label>
+                  </li>
+                  <li>
+                    <p>What's your gender?</p>
+                    <label htmlFor="male">
+                      Male
+                      <input
+                        type="radio"
+                        id="male"
+                        onChange={this.update("gender")}
+                        value="male"
+                      />
+                    </label>
+                    <label htmlFor="female">
+                      Female
+                      <input
+                        type="radio"
+                        id="female"
+                        onChange={this.update("gender")}
+                        value="female"
+                        />
+                    </label>
+                    <label htmlFor="non-binary">
+                      Non-Binary
+                      <input
+                        type="radio"
+                        id="non-binary"
+                        onChange={this.update("gender")}
+                        value="non-binary"
+                        />
+                    </label>
+                  </li>
+                  <li>
+                    <button>SIGN UP</button>
+                  </li>
+                  <li>
+                    <p>
+                      Have an account? <Link to="/login">Log in.</Link>
+                    </p>
+                  </li>
+                </ul>
+              </form>
           </div>
         )}
-      </>
+      </div>
     );
   }
 }
-
-
-
-
-          {/* {this.props.formType === "login" ? (
-            ) : (
-              <button>SIGN UP</button>
-              )}
-        </form>
-
-        {this.props.formType === "login" ? (
-          <>
-<Link to="/login">Login</Link>
-          </>
-        ) : (
-        )}
-      </> */}
-
 
 export default SessionForm;

@@ -17,7 +17,9 @@ class Splash extends React.Component {
     let splashHeaderLogo = "splash-header-logo";
     let splashFooter = "splash-footer-nav";
     let splashMain = "splash-main-content";
+    let splashMainMessage = "splash-main-message";
     let authLinks = "auth-links";
+    let splashImage = "splash-image";
 
     return (
       <>
@@ -27,16 +29,18 @@ class Splash extends React.Component {
           </h1>
           <div className={authLinks}>
             <Link to="/signup">Signup</Link>
-            <Link to="/login">Login</Link>
+            <Link to="/login">Log In</Link>
           </div>
         </header>
         <main className={splashMain}>
-          <div>
+          <div className={splashMainMessage}>
             <h1>Listening is everything</h1>
             <p>Millions of songs and podcasts. No credit card needed.</p>
             <Link to="/signup">GET SPOTIFY FREE</Link>
           </div>
+          <div className={splashImage}>
           <h1>SPLASH IMAGE</h1>
+          </div>
         </main>
         <footer>
           <nav className={splashFooter}>
