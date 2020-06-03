@@ -3,55 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .signup-form {
+  // background-color: cadetblue;
   display: flex;
   flex-direction: column;
+  // justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   list-style: none;
   height: 500px;
 }
 
-.signup-form header {
+form header {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 30px;
 }
 
-.signup-form header h1 {
+form header h1 {
   text-align: center;
   color: black;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.signup-form header a {
-  text-align: center;
-  color: black;
-  border: none;
-}
-
-.signup-form header span {
+form header span {
   font-size: 20px;
-  letter-spacing: .01em;
-}
-
-.signup-form ul {
-  margin-top: 10px;
-}
-
-.signup-form li {
-  margin-bottom: 30px;
+  font-weight: 900;
 }
 
 .signup-form li div {
   display: inline-block;
 }
 
-
-
 .signup-form li p {
-  text-align: left;
+  text-align: center;
 }
 
 .signup-form > li > hr {
@@ -59,11 +44,9 @@
 }
 
 .signup-form input {
-  border-radius: 5px;
   border: .5px solid black;
-  height: 40px;
+  height: 25px;
   width: 350px;
-  padding-left: 5px;
 }
 
 .signup-form button {
@@ -76,49 +59,18 @@
     font-size: 12px;
     text-align: center;
     letter-spacing: .2em;
-    width: 350px;
-  }
-  
-  .signup-form button:hover {
-    background-color: #1ED760;
+    width: 100px;
 }
 
 .signup-form a {
-  color: #1db954  ;
+  color: black;
   text-decoration: underline;
 }
 
 .signup-form li label input {
   display: block;
-  margin-top: 6px;
 }
 
 .signup-form li:third-child {
   display: inline;
 }
-
-.gender-box {
-  display: flex;
-  flex-direction: row;
-  margin-top: 12px;   
-}
-
-.gender-box-radio {
-  width: 120px;
-}
-
-.gender-box-radio input {
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-}
-
-.gender-box-radio label {
-  font-size: 12px;
-}
-
-.error-message {
-  color: red;
-  font-size: 12px;
-}
-
