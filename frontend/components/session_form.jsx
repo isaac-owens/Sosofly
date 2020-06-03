@@ -158,6 +158,7 @@ class SessionForm extends React.Component {
                     <input
                       type="radio"
                       id="male"
+                      selected
                       onChange={this.update("gender")}
                       value="male"
                     />
