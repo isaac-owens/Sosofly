@@ -1,11 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-      this.state = this.props.user;
-      this.handleSubmit = this.handleSubmit.bind(this);
+    {
+      this.props.formType === "login"
+        ? (this.state = this.props.user)
+        : (this.state = this.props.user);
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateGender = this.updateGender.bind(this);
+    this.renderError = this.renderError.bind(this);
   }
 
   update(field) {
@@ -14,10 +22,15 @@ class SessionForm extends React.Component {
     };
   }
 
+  updateGender() {
+    return (e) => {
+      this.setState({ gender: e.target.value });
+    };
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state)
-    .then(() => {
+    this.props.processForm(this.state).then(() => {
       return this.props.history.push("/account");
     });
   }
@@ -26,26 +39,49 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
+  renderError(field) {
+    const errors = this.props.errors;
+    let index = errors.findIndex((error) => error.includes(field));
+    return errors[index];
+  }
+
   render() {
     let loginForm = "login-form";
     let signupForm = "signup-form";
+    let genderBox = "gender-box";
+    let genderBoxRadio = "gender-box-radio";
+    let loginErrors = "login-errors";
+    let logoLink = "logo-link";
+    let loginLink = "login-link";
+    let errorMessage = "error-message";
+
+    let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
 
     return (
       <div>
-        <ul>
-          {this.props.errors.map((error, idx) => {
-            return <li key={idx}>{error}</li>;
-          })}
-        </ul>
-
         <Link to="/">--- Logo Home Link ---</Link>
         {this.props.formType === "login" ? (
           <>
-            <form onSubmit={this.handleSubmit}>
-              <h1>
-                <Link to="/">Spotify Logo Link</Link>
-              </h1>
+            <form onSubmit={this.handleSubmit} className={loginForm}>
+              <div className={logoLink}>
+                <h1>
+                  <Link to="/" className={logoLink}>
+                    {sosoflyLogo} Sosofly
+                  </Link>
+                </h1>
+              </div>
               <hr />
+              <div className={loginErrors}>
+                <ul>
+                  {this.props.errors.map((error, idx) => {
+                    return (
+                      <li key={idx}>
+                        <span>{error}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
               <ul className={loginForm}>
                 <li>
                   <input
@@ -54,6 +90,13 @@ class SessionForm extends React.Component {
                     onChange={this.update("username")}
                     value={this.state.username}
                   />
+                  {this.state.username === "" ? (
+                    <span className={errorMessage}>
+                      Please enter your username
+                    </span>
+                  ) : (
+                    ""
+                  )}
                 </li>
                 <li>
                   <input
@@ -62,6 +105,13 @@ class SessionForm extends React.Component {
                     onChange={this.update("password")}
                     value={this.state.password}
                   />
+                  {this.state.password === "" ? (
+                    <span className={errorMessage}>
+                      Please enter your password.
+                    </span>
+                  ) : (
+                    ""
+                  )}
                 </li>
                 <li>
                   <button>LOG IN</button>
@@ -71,19 +121,34 @@ class SessionForm extends React.Component {
                   <p>Don't have an account?</p>
                 </li>
                 <li>
-                  <Link to="/signup">SIGN UP FOR SPOTIFY</Link>
+                  <Link to="/signup" className={loginLink}>
+                    SIGN UP FOR SOSOFLY
+                  </Link>
                 </li>
               </ul>
             </form>
           </>
         ) : (
           <div>
-            <form onSubmit={this.handleSubmit}>
-              <header>
-              <h1>
-                <Link to="/">Spotify Logo Link</Link>
-              </h1>
-              <span>Sign up for free to start listening.</span>
+            {/* <div className={loginErrors}>
+              <ul>
+                {this.props.errors.map((error, idx) => {
+                  return (
+                    <li key={idx}>
+                      <span>{error}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div> */}
+            <form onSubmit={this.handleSubmit} className={signupForm}>
+              <header className={logoLink}>
+                <h1>
+                  <Link to="/" className={logoLink}>
+                    {sosoflyLogo} Sosofly
+                  </Link>
+                </h1>
+                <span>Sign up for free to start listening.</span>
               </header>
               <ul className={signupForm}>
                 <li>
@@ -97,6 +162,9 @@ class SessionForm extends React.Component {
                       value={this.state.email}
                     />
                   </label>
+                  <span className={errorMessage}>
+                    {this.renderError("Email")}
+                  </span>
                 </li>
                 <li>
                   <label htmlFor="confirmEmail">
@@ -109,6 +177,13 @@ class SessionForm extends React.Component {
                       value={this.state.confirmEmail}
                     />
                   </label>
+                  {this.state.confirmEmail !== this.state.email ? (
+                    <span className={errorMessage}>
+                      This email does not match
+                    </span>
+                  ) : (
+                    ""
+                  )}
                 </li>
                 <li>
                   <label htmlFor="password">
@@ -121,6 +196,9 @@ class SessionForm extends React.Component {
                       value={this.state.password}
                     />
                   </label>
+                  <span className={errorMessage}>
+                    {this.renderError("Password")}
+                  </span>
                 </li>
                 <li>
                   <label htmlFor="username">
@@ -134,6 +212,9 @@ class SessionForm extends React.Component {
                     />
                   </label>
                   <p>This appears on your profile.</p>
+                  <span className={errorMessage}>
+                    {this.renderError("Username")}
+                  </span>
                 </li>
                 <li>
                   <label htmlFor="birthdate">
@@ -145,37 +226,47 @@ class SessionForm extends React.Component {
                       value={this.state.birthdate}
                     />
                   </label>
+                  <span className={errorMessage}>
+                    {this.renderError("Birthdate")}
+                  </span>
                 </li>
                 <li>
                   <p>What's your gender?</p>
-                  <label htmlFor="male">
-                    Male
-                    <input
-                      type="radio"
-                      id="male"
-                      selected
-                      onChange={this.update("gender")}
-                      value="male"
-                    />
-                  </label>
-                  <label htmlFor="female">
-                    Female
-                    <input
-                      type="radio"
-                      id="female"
-                      onChange={this.update("gender")}
-                      value="female"
-                    />
-                  </label>
-                  <label htmlFor="non-binary">
-                    Non-Binary
-                    <input
-                      type="radio"
-                      id="non-binary"
-                      onChange={this.update("gender")}
-                      value="non-binary"
-                    />
-                  </label>
+                  <div className={genderBox}>
+                    <div className={genderBoxRadio}>
+                      <input
+                        type="radio"
+                        id="male"
+                        checked={this.state.gender === "male"}
+                        onChange={this.updateGender()}
+                        value="male"
+                      />
+                      <label htmlFor="male">Male</label>
+                    </div>
+                    <div className={genderBoxRadio}>
+                      <input
+                        type="radio"
+                        id="female"
+                        checked={this.state.gender === "female"}
+                        onChange={this.updateGender()}
+                        value="female"
+                      />
+                      <label htmlFor="female">Female</label>
+                    </div>
+                    <div className={genderBoxRadio}>
+                      <input
+                        type="radio"
+                        id="non-binary"
+                        checked={this.state.gender === "non-binary"}
+                        onChange={this.updateGender()}
+                        value="non-binary"
+                      />
+                      <label htmlFor="non-binary">Non-Binary</label>
+                    </div>
+                  </div>
+                  <span className={errorMessage}>
+                    {this.renderError("Gender")}
+                  </span>
                 </li>
                 <li>
                   <button>SIGN UP</button>
