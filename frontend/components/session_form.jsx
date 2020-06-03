@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
 
   updateGender() {
     return e => {
-      debugger
+      
       this.setState({ gender: e.target.value });
     }
   }
@@ -46,7 +46,6 @@ class SessionForm extends React.Component {
   renderError(field) {
     const errors = this.props.errors
     let index = errors.findIndex(error => error.includes(field));
-    debugger
     return errors[index];
   }
 
