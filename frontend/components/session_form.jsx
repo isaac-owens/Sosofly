@@ -4,13 +4,8 @@ import { Link } from "react-router-dom";
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    { this.props.formType === "login" ? (
-      this.state = this.props.user
-    ) : (
-       this.state = this.props.user
-    )
-  }
-    this.handleSubmit = this.handleSubmit.bind(this);
+      this.state = this.props.user;
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
