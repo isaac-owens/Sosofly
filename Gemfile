@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'jquery-rails'
+gem 'bcrypt'
 
 ruby '2.5.1'
 
@@ -54,7 +55,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'bcrypt'
   gem 'figaro'
 end
 
