@@ -46,7 +46,7 @@ class Splash extends React.Component {
             <Link to="/signup">GET SOSOFLY FREE</Link>
           </div>
           <div className={splashImage}>
-          <h1>SPLASH IMAGE</h1>
+            <img src="assets/hero.png" alt="woman wearing headphones looking to the sky"/>
           </div>
         </main>
         <footer>

@@ -1,21 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCompactDisc } from '@fortawesome/free-solid-svg-icons';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    { this.props.formType === "login" ? (
-      this.state = this.props.user
-    ) : (
-       this.state = this.props.user
-    )
-  }
+    {
+      this.props.formType === "login"
+        ? (this.state = this.props.user)
+        : (this.state = this.props.user);
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateGender = this.updateGender.bind(this);
-    this.renderError =this.renderError.bind(this);
+    this.renderError = this.renderError.bind(this);
   }
 
   update(field) {
@@ -25,16 +23,14 @@ class SessionForm extends React.Component {
   }
 
   updateGender() {
-    return e => {
-      
+    return (e) => {
       this.setState({ gender: e.target.value });
-    }
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state)
-    .then(() => {
+    this.props.processForm(this.state).then(() => {
       return this.props.history.push("/account");
     });
   }
@@ -44,8 +40,8 @@ class SessionForm extends React.Component {
   }
 
   renderError(field) {
-    const errors = this.props.errors
-    let index = errors.findIndex(error => error.includes(field));
+    const errors = this.props.errors;
+    let index = errors.findIndex((error) => error.includes(field));
     return errors[index];
   }
 
@@ -59,7 +55,8 @@ class SessionForm extends React.Component {
     let loginLink = "login-link";
     let errorMessage = "error-message";
 
-    let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size='2x'/>
+    let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
+
     
     return (
       <div>
@@ -128,17 +125,6 @@ class SessionForm extends React.Component {
           </>
         ) : (
           <div>
-            {/* <div className={loginErrors}>
-              <ul>
-                {this.props.errors.map((error, idx) => {
-                  return (
-                    <li key={idx}>
-                      <span>{error}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div> */}
             <form onSubmit={this.handleSubmit} className={signupForm}>
               <header className={logoLink}>
                 <h1>
@@ -160,7 +146,9 @@ class SessionForm extends React.Component {
                       value={this.state.email}
                     />
                   </label>
-                  <span className={errorMessage}>{this.renderError("Email")}</span>
+                  <span className={errorMessage}>
+                    {this.renderError("Email")}
+                  </span>
                 </li>
                 <li>
                   <label htmlFor="confirmEmail">
@@ -190,7 +178,9 @@ class SessionForm extends React.Component {
                       value={this.state.password}
                     />
                   </label>
-                  <span className={errorMessage}>{this.renderError("Password")}</span>
+                  <span className={errorMessage}>
+                    {this.renderError("Password")}
+                  </span>
                 </li>
                 <li>
                   <label htmlFor="username">
@@ -204,7 +194,9 @@ class SessionForm extends React.Component {
                     />
                   </label>
                   <p>This appears on your profile.</p>
-                  <span className={errorMessage}>{this.renderError("Username")}</span>
+                  <span className={errorMessage}>
+                    {this.renderError("Username")}
+                  </span>
                 </li>
                 <li>
                   <label htmlFor="birthdate">
@@ -216,7 +208,9 @@ class SessionForm extends React.Component {
                       value={this.state.birthdate}
                     />
                   </label>
-                  <span className={errorMessage}>{this.renderError("Birthdate")}</span>
+                  <span className={errorMessage}>
+                    {this.renderError("Birthdate")}
+                  </span>
                 </li>
                 <li>
                   <p>What's your gender?</p>
@@ -252,7 +246,9 @@ class SessionForm extends React.Component {
                       <label htmlFor="non-binary">Non-Binary</label>
                     </div>
                   </div>
-                  <span className={errorMessage}>{this.renderError("Gender")}</span>
+                  <span className={errorMessage}>
+                    {this.renderError("Gender")}
+                  </span>
                 </li>
                 <li>
                   <button>SIGN UP</button>
