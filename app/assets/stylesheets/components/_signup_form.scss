@@ -1,0 +1,77 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signup-form {
+  // background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  height: 500px;
+}
+
+form header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+form header h1 {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+
+form header span {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.signup-form li div {
+  display: inline-block;
+}
+
+
+.signup-form > li > hr {
+  width: 350px;
+}
+
+.signup-form li p {
+  text-align: center;
+}
+
+.signup-form input {
+  border: .5px solid black;
+  height: 25px;
+  width: 350px;
+}
+
+.signup-form button {
+    display: flex;
+    justify-content: center;
+    background-color: #1db954;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: .2em;
+    width: 100px;
+}
+
+.signup-form a {
+  color: black;
+  text-decoration: underline;
+}
+
+.signup-form li label input {
+  display: block;
+}
+
+.signup-form li:third-child {
+  display: inline;
+}

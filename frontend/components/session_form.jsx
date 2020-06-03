@@ -29,7 +29,8 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let sessionForm = "session-form";
+    let loginForm = "login-form";
+    let signupForm = "signup-form";
 
     return (
       <div>
@@ -43,9 +44,11 @@ class SessionForm extends React.Component {
         {this.props.formType === "login" ? (
           <>
             <form onSubmit={this.handleSubmit}>
-              <h1>(Spotify Logo Link)</h1>
-              <hr/>
-              <ul className={sessionForm}>
+              <h1>
+                <Link to="/">Spotify Logo Link</Link>
+              </h1>
+              <hr />
+              <ul className={loginForm}>
                 <li>
                   <input
                     type="text"
@@ -63,10 +66,10 @@ class SessionForm extends React.Component {
                   />
                 </li>
                 <li>
-                    <button>LOG IN</button>
+                  <button>LOG IN</button>
                 </li>
                 <li>
-                  <hr/>
+                  <hr />
                   <p>Don't have an account?</p>
                 </li>
                 <li>
@@ -78,13 +81,20 @@ class SessionForm extends React.Component {
         ) : (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <ul className={sessionForm}>
+              <header>
+              <h1>
+                <Link to="/">Spotify Logo Link</Link>
+              </h1>
+              <span>Sign up for free to start listening.</span>
+              </header>
+              <ul className={signupForm}>
                 <li>
                   <label htmlFor="email">
                     What's your email?
                     <input
                       type="text"
                       id="email"
+                      placeholder="Enter your email."
                       onChange={this.update("email")}
                       value={this.state.email}
                     />
@@ -96,85 +106,88 @@ class SessionForm extends React.Component {
                     <input
                       type="text"
                       id="confirmEmail"
+                      placeholder="Enter your email again."
                       onChange={this.update("confirmEmail")}
                       value={this.state.confirmEmail}
                     />
-                    </label>
-                  </li>
-                  <li>
+                  </label>
+                </li>
+                <li>
                   <label htmlFor="password">
                     Create a password
                     <input
                       type="password"
                       id="password"
+                      placeholder="Create a password."
                       onChange={this.update("password")}
                       value={this.state.password}
                     />
-                    </label>
-                  </li>
-                  <li>
-                    <label htmlFor="username">
-                      What should we call you?
-                      <input
-                        type="text"
-                        id="username"
-                        onChange={this.update("username")}
-                        value={this.state.username}
-                      />
-                    </label>
-                    <p>This appears on your profile.</p>
-                  </li>
-                  <li>
-                    <label htmlFor="birthdate">
-                      What's your date of birth?
-                      <input
-                        type="date"
-                        id="birthdate"
-                        onChange={this.update("birthdate")}
-                        value={this.state.birthdate}
-                      />
-                    </label>
-                  </li>
-                  <li>
-                    <p>What's your gender?</p>
-                    <label htmlFor="male">
-                      Male
-                      <input
-                        type="radio"
-                        id="male"
-                        onChange={this.update("gender")}
-                        value="male"
-                      />
-                    </label>
-                    <label htmlFor="female">
-                      Female
-                      <input
-                        type="radio"
-                        id="female"
-                        onChange={this.update("gender")}
-                        value="female"
-                        />
-                    </label>
-                    <label htmlFor="non-binary">
-                      Non-Binary
-                      <input
-                        type="radio"
-                        id="non-binary"
-                        onChange={this.update("gender")}
-                        value="non-binary"
-                        />
-                    </label>
-                  </li>
-                  <li>
-                    <button>SIGN UP</button>
-                  </li>
-                  <li>
-                    <p>
-                      Have an account? <Link to="/login">Log in.</Link>
-                    </p>
-                  </li>
-                </ul>
-              </form>
+                  </label>
+                </li>
+                <li>
+                  <label htmlFor="username">
+                    What should we call you?
+                    <input
+                      type="text"
+                      id="username"
+                      placeholder="Enter a profile name."
+                      onChange={this.update("username")}
+                      value={this.state.username}
+                    />
+                  </label>
+                  <p>This appears on your profile.</p>
+                </li>
+                <li>
+                  <label htmlFor="birthdate">
+                    What's your date of birth?
+                    <input
+                      type="date"
+                      id="birthdate"
+                      onChange={this.update("birthdate")}
+                      value={this.state.birthdate}
+                    />
+                  </label>
+                </li>
+                <li>
+                  <p>What's your gender?</p>
+                  <label htmlFor="male">
+                    Male
+                    <input
+                      type="radio"
+                      id="male"
+                      onChange={this.update("gender")}
+                      value="male"
+                    />
+                  </label>
+                  <label htmlFor="female">
+                    Female
+                    <input
+                      type="radio"
+                      id="female"
+                      onChange={this.update("gender")}
+                      value="female"
+                    />
+                  </label>
+                  <label htmlFor="non-binary">
+                    Non-Binary
+                    <input
+                      type="radio"
+                      id="non-binary"
+                      onChange={this.update("gender")}
+                      value="non-binary"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <button>SIGN UP</button>
+                </li>
+                <li>
+                  <p>
+                    Have an account? <Link to="/login">Log in.</Link>
+                  </p>
+                </li>
+              </ul>
+            </form>
           </div>
         )}
       </div>

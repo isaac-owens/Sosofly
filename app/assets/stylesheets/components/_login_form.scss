@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.session-form {
+.login-form {
   // background-color: cadetblue;
   display: flex;
   flex-direction: column;
@@ -13,26 +13,32 @@
   height: 500px;
 }
 
-form h1 {
+form h1 a {
   text-align: center;
+  color: black;
 }
 
-.session-form > li > hr {
+.login-form li div {
+  display: inline-block;
+}
+
+
+.login-form > li > hr {
   width: 350px;
 }
 
-.session-form li p {
+.login-form li p {
   text-align: center;
   margin-top: 30px;
 }
 
-.session-form input {
+.login-form input {
   border: .5px solid black;
   height: 25px;
   width: 350px;
 }
 
-.session-form button {
+.login-form button {
     display: flex;
     justify-content: center;
     background-color: #1db954;
@@ -45,7 +51,7 @@ form h1 {
     width: 100px;
 }
 
-.session-form a {
+.login-form a {
   color: #616467;
   border: 1px solid #616467;
   border-radius: 25px;
@@ -57,6 +63,6 @@ form h1 {
   letter-spacing: .2em;
 }
 
-.session-form li:third-child {
+.login-form li:third-child {
   display: inline;
 }
