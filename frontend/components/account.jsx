@@ -7,9 +7,9 @@ class Account extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    this.props.receiveCurrentUser(this.props.currentUser);
-  }
+  // componentDidMount() {
+  //   this.props.receiveCurrentUser(this.props.currentUser);
+  // }
 
   handleClick() {
     this.props.logout();

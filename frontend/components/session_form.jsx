@@ -21,11 +21,14 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     this.props.processForm(this.state)
     .then(() => {
       return this.props.history.push("/account");
     });
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   render() {

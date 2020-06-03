@@ -7,7 +7,6 @@ import * as APIUtil from '../util/session_api_utils';
 
 //regular action creators
 export const receiveCurrentUser = (currentUser) => { 
-  debugger
     return {
         type: RECEIVE_CURRENT_USER,
         currentUser,
@@ -21,6 +20,7 @@ export const logoutCurrentUser = () => {
 }
 
 export const receiveErrors = (errors) => {
+  
     return {
         type: RECEIVE_ERRORS,
         errors: errors.responseJSON,
@@ -37,7 +37,6 @@ export const clearErrors = () => {
 
 //thunk action creator
 export const login = (user) => dispatch=> {
-  debugger
     return APIUtil.login(user)
     .then(currentUser => dispatch(receiveCurrentUser(currentUser)), 
           errors => dispatch(receiveErrors(errors)));

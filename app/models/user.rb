@@ -13,7 +13,7 @@
 #  gender          :string           not null
 #
 class User < ApplicationRecord
-  validates :username, :email, :session_token, presence: true
+  validates :username, :email, :gender, :birthdate, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
