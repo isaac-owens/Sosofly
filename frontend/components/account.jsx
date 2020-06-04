@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 class Account extends React.Component {
   constructor(props) {
@@ -15,22 +17,31 @@ class Account extends React.Component {
   }
 
   render() {
+    let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
+    let userIcon = <FontAwesomeIcon icon={faUserCircle} size="3x" />;
+    let arrowDown = <FontAwesomeIcon icon={faAngleDown} size ="1x" />;
+    
     let accountHeader = "account-header";
     let accountHeaderNav = "account-header-nav";
     let splashHeaderLogo = "splash-header-logo";
     let accountHeaderLogoLink = "account-header-logo-link";
-
     let accountHeaderNavLinks = "account-header-nav-links";
+    
+    let accountUserDropdown = "account-user-dropdown";
+    let arrowLink = "arrowLink";
+    
+    let accountWelcome = "account-welcome";
+    let welcomeMessage = "welcome-message";
+    
     let accountMain = "account-main"
     let accountMainContent = "account-main-content";
     let profileTable = "profile-table";
+    
     let accountSidebar = "account-sidebar";
+    
     let accountInfo = "account-info";
-    let accountWelcome = "account-welcome";
-    let welcomeMessage = "welcome-message";
-    let accountFooter = "account-footer-nav";
-
     let accountInfoSection = "account-info-section";
+
     let accountPlanSection = "account-plan-section";
     let accountPlanHeaderCard = "account-plan-header-card";
     let accountPlanHeader = "account-plan-header";
@@ -39,8 +50,8 @@ class Account extends React.Component {
     let paymentInfo = "payment-info";
     let cardInfo = "card-info";
     let editProfileLink = "edit-profile-link";
-
-    let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
+    
+    let accountFooter = "account-footer-nav";
 
     return (
       <>
@@ -57,20 +68,23 @@ class Account extends React.Component {
               </h1>
               <div className={accountHeaderNavLinks}>
                 <p>--- Webplayer Link ---</p>
-                <p>--- User Dropdown ---</p>
+                <div className={accountUserDropdown}>
+                  <div>{userIcon}</div>
+                  <div>Profile</div>
+                  <div>
+                    {arrowDown}
+                  </div>
+                </div>
               </div>
             </nav>
           </header>
         </div>
 
         <div className={accountMain}>
-
           <div className={accountWelcome}>
             <div className={welcomeMessage}>
-              <h1>
-                Welcome {this.props.currentUser.username}
-              </h1>
-              <p>All music.  No hassle.</p>
+              <h1>Welcome {this.props.currentUser.username}</h1>
+              <p>All music. No hassle.</p>
             </div>
           </div>
 
@@ -114,7 +128,7 @@ class Account extends React.Component {
                         <span>Email</span>
                       </td>
                       <td>
-                        <p>isaac.owens832@gmail.com</p>
+                        <p>{this.props.currentUser.email}</p>
                       </td>
                     </tr>
                     <tr>
@@ -122,7 +136,7 @@ class Account extends React.Component {
                         <span>Date of birth</span>
                       </td>
                       <td>
-                        <p>10/05/1988</p>
+                        <p>{this.props.currentUser.birthdate}</p>
                       </td>
                     </tr>
                     <tr>
@@ -135,9 +149,7 @@ class Account extends React.Component {
                     </tr>
                   </tbody>
                 </table>
-                <div className={editProfileLink}>
-                  --- Edit Profile Link ---
-                </div>
+                <div className={editProfileLink}>--- Edit Profile Link ---</div>
               </section>
 
               <section className={accountPlanSection}>
@@ -150,23 +162,21 @@ class Account extends React.Component {
                 </div>
                 <div className={accountPlanBodyCard}>
                   <div className={planDescription}>
-                    <p>Enjoy Sosofly free. No ads, no emails, just the flyest music at no cost.</p>
+                    <p>
+                      Enjoy Sosofly free. No ads, no emails, just the flyest
+                      music at no cost.
+                    </p>
                   </div>
                   <div className={paymentInfo}>
                     <h3>Payment</h3>
                     <div>Your next bill is never.</div>
                     <div className={cardInfo}>
-                      <div>
-                        Your card info here
-                      </div>
-                      <div>
-                        Expires: never
-                      </div>
+                      <div>Your card info here</div>
+                      <div>Expires: never</div>
                     </div>
                   </div>
                 </div>
               </section>
-
             </article>
           </main>
         </div>

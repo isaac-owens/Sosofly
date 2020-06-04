@@ -29,6 +29,20 @@
     justify-content: space-between;
     width: 275px;
   }
+
+.account-user-dropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 900px;
+}
+
+.account-user-dropdown:hover {
+  color: #1ED760;
+}
+
+
  
 .account-header-nav-links a {
   font-size: 5px;
