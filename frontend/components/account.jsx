@@ -27,6 +27,7 @@ class Account extends React.Component {
     let accountSidebar = "account-sidebar";
     let accountInfo = "account-info";
     let accountWelcome = "account-welcome";
+    let welcomeMessage = "welcome-message";
     let accountFooter = "account-footer-nav";
 
     let accountInfoSection = "account-info-section";
@@ -65,7 +66,12 @@ class Account extends React.Component {
         <div className={accountMain}>
 
           <div className={accountWelcome}>
-            <h1>Welcome {this.props.currentUser.username}</h1>
+            <div className={welcomeMessage}>
+              <h1>
+                Welcome {this.props.currentUser.username}
+              </h1>
+              <p>All music.  No hassle.</p>
+            </div>
           </div>
 
           <main className={accountMainContent}>
