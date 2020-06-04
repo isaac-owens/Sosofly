@@ -1,19 +1,15 @@
-.account-header-nav {
-  color: white;
+.account-main {
+  height: 900px;
 }
 
 .account-footer-nav {
-  color: white;
-}
-
-.splash-footer-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: black;
-    height: 200px;
+    height: 100px;
  }
 
- .splash-footer-nav p {
+ .account-footer-nav p {
    color: white;
  }

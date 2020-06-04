@@ -15,12 +15,12 @@ class Account extends React.Component {
   }
 
   render() {
-    let splashHeader = "splash-header-nav";
+    let accountHeader = "account-header-nav";
     let splashHeaderLogo = "splash-header-logo";
     let splashHeaderLogoLink = "splash-header-logo-link";
-    let splashFooter = "splash-footer-nav";
-    let accountHeaderNav = "account-header-nav";
-    let accountFooterNav = "account-footer-nav";
+    let accountNavLinks = "account-nav-links";
+    let accountMain = "account-main"
+    let accountFooter = "account-footer-nav";
 
 
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
@@ -28,32 +28,32 @@ class Account extends React.Component {
     return (
       <>
         <div>
-          <header className={splashHeader}>
+          <header className={accountHeader}>
             <h1 className={splashHeaderLogo}>
               <Link to="/" className={splashHeaderLogoLink}>
                 {sosoflyLogo} Sosofly
               </Link>
             </h1>
-            <div className={accountHeaderNav}>
+            <div className={accountNavLinks}>
               <p>--- Webplayer Link ---</p>
               <p>--- User Dropdown ---</p>
             </div>
-            </header>
-          </div>
-          <div>
-            <h1>--- Main Content Here ---</h1>
-          </div>
-          <footer className={accountFooterNav}>
-            <nav className={splashFooter}>
-              <h2>
-                <Link to="/" className={splashHeaderLogoLink}>
-                  {sosoflyLogo} Sosofly
-                </Link>
-              </h2>
-              <p>--- Webplayer Link Here ---</p>
-            </nav>
-          </footer>
-        </>
+          </header>
+        </div>
+        <div className={accountMain}>
+          <h1>--- Main Content Here ---</h1>
+        </div>
+        <footer>
+          <nav className={accountFooter}>
+            <h2>
+              <Link to="/" className={splashHeaderLogoLink}>
+                {sosoflyLogo} Sosofly
+              </Link>
+            </h2>
+            <p>--- Webplayer Link Here ---</p>
+          </nav>
+        </footer>
+      </>
     ); 
   };
 };
