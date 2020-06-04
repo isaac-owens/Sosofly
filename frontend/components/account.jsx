@@ -20,6 +20,7 @@ class Account extends React.Component {
     let splashHeaderLogoLink = "splash-header-logo-link";
     let accountNavLinks = "account-nav-links";
     let accountMain = "account-main"
+    let accountMainContent = "account-main-content";
     let accountFooter = "account-footer-nav";
 
 
@@ -41,7 +42,9 @@ class Account extends React.Component {
           </header>
         </div>
         <div className={accountMain}>
-          <h1>--- Main Content Here ---</h1>
+          <main className={accountMainContent}>
+            <h1>Welcome {this.props.currentUser.username}</h1>
+          </main>
         </div>
         <footer>
           <nav className={accountFooter}>

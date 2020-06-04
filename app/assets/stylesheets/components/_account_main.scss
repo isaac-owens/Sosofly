@@ -1,15 +1,12 @@
 .account-main {
+  display: flex;
   height: 900px;
+  background-color: #1E2A3A;
+  justify-content: center;
 }
 
-.account-footer-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: black;
-    height: 100px;
- }
-
- .account-footer-nav p {
-   color: white;
- }
+.account-main-content {
+  background-color: #A0C3D2;
+  height: 445px;
+  width: 84%;
+}
