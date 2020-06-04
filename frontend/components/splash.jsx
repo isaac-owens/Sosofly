@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 
-
 class Splash extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +31,9 @@ class Splash extends React.Component {
       <>
         <header className={splashHeader}>
           <h1 className={splashHeaderLogo}>
-            <Link to="/" className={splashHeaderLogoLink}>{sosoflyLogo} Sosofly</Link>
+            <Link to="/" className={splashHeaderLogoLink}>
+              {sosoflyLogo} Sosofly
+            </Link>
           </h1>
           <div className={authLinks}>
             <Link to="/signup">Signup</Link>
@@ -46,13 +47,18 @@ class Splash extends React.Component {
             <Link to="/signup">GET SOSOFLY FREE</Link>
           </div>
           <div className={splashImage}>
-            <img src="assets/hero.png" alt="woman wearing headphones looking to the sky"/>
+            <img
+              src="assets/hero.png"
+              alt="woman wearing headphones looking to the sky"
+            />
           </div>
         </main>
         <footer>
           <nav className={splashFooter}>
             <h2>
-              <Link to="/" className={splashHeaderLogoLink}>{sosoflyLogo} Sosofly</Link>
+              <Link to="/" className={splashHeaderLogoLink}>
+                {sosoflyLogo} Sosofly
+              </Link>
             </h2>
             <p>--- Webplayer Link Here ---</p>
           </nav>

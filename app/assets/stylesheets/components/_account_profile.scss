@@ -1,0 +1,56 @@
+.account-info-section td {
+  width: 391px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.account-info {
+  display: block;
+  background-color: white;
+  height: auto;
+  width: 879px;
+  box-sizing: border-box;
+  padding: 48px;
+}
+
+.account-info h1 {
+  font-size: 48px;
+  letter-spacing: .001em;
+  padding-bottom: 32.16px;
+}
+
+.account-info-section {
+  height: 301px;
+  margin-bottom: 72px;
+}
+
+.account-info-section h3 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.profile-table {
+  height: 177px;
+  color: #A9A9A9;
+  font-size: 16px;
+  border-collapse: collapse;
+}
+
+.profile-table tr {
+  border-bottom: 1px solid #A9A9A9;
+}
+
+.profile-table td {
+  padding: 10px;
+}
+
+.profile-table p {
+  margin-left: 200px;
+}
+
+.edit-profile-link {
+  height: 52px;
+}

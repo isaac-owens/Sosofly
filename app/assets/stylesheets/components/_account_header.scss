@@ -1,0 +1,50 @@
+.account-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+  height: 80px;
+  color: white;
+}
+
+.account-header-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 1174px;
+}
+
+.account-header-logo-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 140px;
+}
+
+.account-header-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 275px;
+  }
+
+.account-user-dropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 900px;
+}
+
+.account-user-dropdown:hover {
+  color: #1ED760;
+}
+
+
+ 
+.account-header-nav-links a {
+  font-size: 5px;
+  letter-spacing: .1em;
+}
