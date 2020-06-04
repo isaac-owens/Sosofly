@@ -29,6 +29,7 @@ class Account extends React.Component {
     let accountWelcome = "account-welcome";
     let accountFooter = "account-footer-nav";
 
+    let accountInfoSection = "account-info-section";
     let accountPlanSection = "account-plan-section";
     let accountPlanHeaderCard = "account-plan-header-card";
     let accountPlanHeader = "account-plan-header";
@@ -36,6 +37,7 @@ class Account extends React.Component {
     let planDescription = "plan-description";
     let paymentInfo = "payment-info";
     let cardInfo = "card-info";
+    let editProfileLink = "edit-profile-link";
 
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
 
@@ -59,10 +61,13 @@ class Account extends React.Component {
             </nav>
           </header>
         </div>
+
         <div className={accountMain}>
+
           <div className={accountWelcome}>
             <h1>Welcome {this.props.currentUser.username}</h1>
           </div>
+
           <main className={accountMainContent}>
             <aside className={accountSidebar}>
               <a href="#">
@@ -90,9 +95,11 @@ class Account extends React.Component {
                 <h1>--- Link ---</h1>
               </a>
             </aside>
+
             <article className={accountInfo}>
               <h1> Account Overview </h1>
-              <section>
+
+              <section className={accountInfoSection}>
                 <h3>Profile</h3>
                 <table className={profileTable}>
                   <tbody>
@@ -122,8 +129,11 @@ class Account extends React.Component {
                     </tr>
                   </tbody>
                 </table>
-              <p>--- Edit Profile Link ---</p>
+                <div className={editProfileLink}>
+                  --- Edit Profile Link ---
+                </div>
               </section>
+
               <section className={accountPlanSection}>
                 <h3>Your plan</h3>
                 <div className={accountPlanHeaderCard}>
@@ -150,6 +160,7 @@ class Account extends React.Component {
                   </div>
                 </div>
               </section>
+
             </article>
           </main>
         </div>

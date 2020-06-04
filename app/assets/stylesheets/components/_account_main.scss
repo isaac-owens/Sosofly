@@ -56,32 +56,76 @@
   background-color: white;
   height: auto;
   width: 879px;
+  box-sizing: border-box;
+  padding: 48px;
 }
 
-.account-info section {
-  padding: 20px;
+  .account-info h1 {
+    font-size: 48px;
+    letter-spacing: .001em;
+    padding-bottom: 32.16px;
+  }
+
+.account-info-section {
+  height: 301px;
+  margin-bottom: 72px;
 }
 
-.account-info section h3 {
-  font-size: 15px;
+.account-info-section h3 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
-.account-info section h1 {
-  font-size: 30px;
-  letter-spacing: .001em;
+.account-info-section table {
+  height: 177px;
+  font-size: 16px;
 }
+
+.account-info-section td {
+  width: 391px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.edit-profile-link {
+  height: 52px;
+}
+
 
 .account-plan-section {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  height: 540px;
+  margin-bottom: 72px;
   background-color:  red;
-  padding-left: 48px;
-  padding-right: 48px;
+  border: 1px solid #D9DADC;
+  border-radius: 5px;
+}
+
+.account-plan-section h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 24px;
 }
 
 .account-plan-header-card {
-  background-color: orange;
-  height: 228px;
+  display: flex;
+  align-items: center;
+  background-color: #A0C3D2;
+  height: 230px;
+}
+
+.account-plan-header {
+  width: 530.88px;
+}
+.account-plan-header > span {
+  padding: 24px;
+  font-size: 48px;
+  width: 352.64px;
 }
 
 .account-plan-body-card {
