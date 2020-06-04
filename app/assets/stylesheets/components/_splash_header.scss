@@ -9,6 +9,18 @@
     height: 70px;
   }
   
+  .auth-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 144px;
+  }
+ 
+  .auth-links a {
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+  
   .splash-main-content {
     display: flex;
     flex-direction: row;
@@ -37,6 +49,7 @@
     letter-spacing: .2em;
     width: 175px;
   }
+  
 
   .splash-main-content a:hover {
     background-color: white;
@@ -55,27 +68,3 @@
   .splash-image {
     width: 200px;
   }
-  
-  .splash-footer-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: black;
-    height: 200px;
- }
-
- .auth-links {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   width: 144px;
- }
-
- .auth-links a {
-   font-size: 10px;
-   letter-spacing: .1em;
- }
-
- .splash-footer-nav p {
-   color: white;
- }
