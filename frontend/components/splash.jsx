@@ -27,7 +27,8 @@ class Splash extends React.Component {
     let authLinks = "auth-links";
     let splashImage = "splash-image";
 
-    let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
+    let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
+    let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
 
     return (
       <>
@@ -35,7 +36,7 @@ class Splash extends React.Component {
           <div className={splashHeaderNav}>
             <h1>
               <Link to="/">
-                {sosoflyLogo} Sosofly
+                {sosoflyHeaderLogo} Sosofly
               </Link>
             </h1>
             <div className={authLinks}>
@@ -47,9 +48,11 @@ class Splash extends React.Component {
 
         <main className={splashMain}>
           <div className={splashMainMessage}>
-            <h1>Listening is everything</h1>
-            <p>Millions of songs and podcasts. No credit card needed.</p>
-            <Link to="/signup">GET SPOTIFY FREE</Link>
+            <section>
+              <h1>Listening is everything</h1>
+              <p>Millions of songs and podcasts. No credit card needed.</p>
+              <Link to="/signup">GET SPOTIFY FREE</Link>
+            </section>
           </div>
           <div className={splashImage}>
             <img
@@ -59,11 +62,11 @@ class Splash extends React.Component {
           </div>
         </main>
 
-        <footer classNam={splashFooter}>
+        <footer className={splashFooter}>
           <nav className={splashFooterNav}>
             <h2>
               <Link to="/">
-                {sosoflyLogo} Sosofly
+                {sosoflyFooterLogo} Sosofly
               </Link>
             </h2>
             <p>--- Webplayer Link Here ---</p>
