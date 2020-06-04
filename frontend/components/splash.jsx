@@ -16,30 +16,35 @@ class Splash extends React.Component {
   }
 
   render() {
-    let splashHeader = "splash-header-nav";
-    let splashHeaderLogo = "splash-header-logo";
-    let splashFooter = "splash-footer-nav";
+    let splashHeader = "splash-header";
+    let splashHeaderNav = "splash-header-nav";
+
+    let splashFooter = "splash-footer"
+    let splashFooterNav = "splash-footer-nav";
+
     let splashMain = "splash-main-content";
     let splashMainMessage = "splash-main-message";
     let authLinks = "auth-links";
     let splashImage = "splash-image";
 
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
-    let splashHeaderLogoLink = "splash-header-logo-link";
 
     return (
       <>
         <header className={splashHeader}>
-          <h1 className={splashHeaderLogo}>
-            <Link to="/" className={splashHeaderLogoLink}>
-              {sosoflyLogo} Sosofly
-            </Link>
-          </h1>
-          <div className={authLinks}>
-            <Link to="/signup">Signup</Link>
-            <Link to="/login">Log In</Link>
+          <div className={splashHeaderNav}>
+            <h1>
+              <Link to="/">
+                {sosoflyLogo} Sosofly
+              </Link>
+            </h1>
+            <div className={authLinks}>
+              <Link to="/signup">Signup</Link>
+              <Link to="/login">Log In</Link>
+            </div>
           </div>
         </header>
+
         <main className={splashMain}>
           <div className={splashMainMessage}>
             <h1>Listening is everything</h1>
@@ -53,10 +58,11 @@ class Splash extends React.Component {
             />
           </div>
         </main>
-        <footer>
-          <nav className={splashFooter}>
+
+        <footer classNam={splashFooter}>
+          <nav className={splashFooterNav}>
             <h2>
-              <Link to="/" className={splashHeaderLogoLink}>
+              <Link to="/">
                 {sosoflyLogo} Sosofly
               </Link>
             </h2>

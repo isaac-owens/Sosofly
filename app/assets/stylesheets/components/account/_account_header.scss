@@ -39,6 +39,11 @@
   width: 900px;
 }
 
+.account-user-dropdown:hover {
+  color: #1ED760;
+  cursor: pointer;
+}
+
 .account-user-dropdown-menu {
   width: 160px;
   height: 82px;
@@ -53,10 +58,6 @@
   display: none;
 }
 
-.account-user-dropdown:hover {
-  color: #1ED760;
-  cursor: pointer;
-}
 
 
  

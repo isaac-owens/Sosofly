@@ -11,13 +11,26 @@ import AccountDropdown from './account_dropdown';
 class Account extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showHide: "dropdownHidden"
+    }
     this.handleClick = this.handleClick.bind(this);
+    this.toggleShowHide = this.toggleShowHide.bind(this);
   }
-
+  
   handleClick() {
     this.props.logout();
   }
-
+  
+  toggleShowHide() { 
+    this.setState({
+      showHide:
+      this.state.showHide === "dropdown-hidden"
+      ? "account-user-dropdown-menu"
+      : "dropdown-hidden",
+    });
+  }
+  
   render() {
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
     let userIcon = <FontAwesomeIcon icon={faUserCircle} size="3x" />;
@@ -30,8 +43,6 @@ class Account extends React.Component {
     let accountHeaderNavLinks = "account-header-nav-links";
     
     let accountUserDropdown = "account-user-dropdown";
-    let arrowLink = "arrowLink";
-    let dropdownHidden = "dropdown-hidden";
     let accountWelcome = "account-welcome";
     let welcomeMessage = "welcome-message";
     
@@ -72,7 +83,7 @@ class Account extends React.Component {
 
                 <p>--- Webplayer Link ---</p>
 
-                <div className={accountUserDropdown}>
+                <div className={accountUserDropdown} onClick={this.toggleShowHide}>
                   <div>{userIcon}</div>
                   <div>Profile</div>
                   <div>
@@ -83,7 +94,7 @@ class Account extends React.Component {
               </div>
             </nav>
           </header>
-              <AccountDropdown />
+          <AccountDropdown className={this.state.showHide} />
         </div>
 
         <div className={accountMain}>
