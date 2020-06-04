@@ -29,6 +29,13 @@ class Account extends React.Component {
     let accountWelcome = "account-welcome";
     let accountFooter = "account-footer-nav";
 
+    let accountPlanSection = "account-plan-section";
+    let accountPlanHeaderCard = "account-plan-header-card";
+    let accountPlanHeader = "account-plan-header";
+    let accountPlanBodyCard = "account-plan-body-card";
+    let planDescription = "plan-description";
+    let paymentInfo = "payment-info";
+    let cardInfo = "card-info";
 
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
 
@@ -117,22 +124,22 @@ class Account extends React.Component {
                 </table>
               <p>--- Edit Profile Link ---</p>
               </section>
-              <section>
+              <section className={accountPlanSection}>
                 <h3>Your plan</h3>
-                <div className={accountPlanCardHeader}>
+                <div className={accountPlanHeaderCard}>
                   <div className={accountPlanHeader}>
                     <span>Sosofly Free</span>
                   </div>
                   <div></div>
                 </div>
-                <div className={accountPlanCardBody}>
-                  <div>
+                <div className={accountPlanBodyCard}>
+                  <div className={planDescription}>
                     <p>Enjoy Sosofly free. No ads, no emails, just the flyest music at no cost.</p>
                   </div>
-                  <div>
+                  <div className={paymentInfo}>
                     <h3>Payment</h3>
                     <div>Your next bill is never.</div>
-                    <div>
+                    <div className={cardInfo}>
                       <div>
                         Your card info here
                       </div>

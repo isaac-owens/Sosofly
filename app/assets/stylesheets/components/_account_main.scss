@@ -70,3 +70,40 @@
   font-size: 30px;
   letter-spacing: .001em;
 }
+
+.account-plan-section {
+  display: flex;
+  flex-direction: column;
+  background-color:  red;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.account-plan-header-card {
+  background-color: orange;
+  height: 228px;
+}
+
+.account-plan-body-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: yellow;
+  height: 185px;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.plan-description {
+  width: 341.75px;
+}
+
+.payment-info {
+  background-color: cornsilk;
+  width: 341.75px;
+}
+
+.payment-info > h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
