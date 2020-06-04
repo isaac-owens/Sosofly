@@ -6,6 +6,8 @@ import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
+import AccountDropdown from './account_dropdown';
+
 class Account extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ class Account extends React.Component {
     
     let accountUserDropdown = "account-user-dropdown";
     let arrowLink = "arrowLink";
-    
+    let dropdownHidden = "dropdown-hidden";
     let accountWelcome = "account-welcome";
     let welcomeMessage = "welcome-message";
     
@@ -67,7 +69,9 @@ class Account extends React.Component {
                 </Link>
               </h1>
               <div className={accountHeaderNavLinks}>
+
                 <p>--- Webplayer Link ---</p>
+
                 <div className={accountUserDropdown}>
                   <div>{userIcon}</div>
                   <div>Profile</div>
@@ -75,9 +79,11 @@ class Account extends React.Component {
                     {arrowDown}
                   </div>
                 </div>
+              
               </div>
             </nav>
           </header>
+              <AccountDropdown />
         </div>
 
         <div className={accountMain}>

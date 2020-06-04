@@ -35,7 +35,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  position: relative;
   width: 900px;
+}
+
+.account-user-dropdown-menu {
+  width: 160px;
+  height: 82px;
+  background-color: white;
+  position: absolute;
+  padding: 10px 0;
+  border-radius: 5px;
+  left: 1116px;
+}
+
+.dropdown-hidden {
+  display: none;
 }
 
 .account-user-dropdown:hover {
