@@ -18,10 +18,12 @@ class Splash extends React.Component {
   render() {
     let splashHeader = "splash-header";
     let splashHeaderNav = "splash-header-nav";
-    let headerLink = "headerLink"
+    let headerLogoLink = "header-logo-link";
+    let headerLink = "header-link"
 
     let splashFooter = "splash-footer"
     let splashFooterNav = "splash-footer-nav";
+    let footerLink = "footer-link";
 
     let splashMain = "splash-main";
     let splashMainContent = "splash-main-content";
@@ -40,7 +42,7 @@ class Splash extends React.Component {
         <header className={splashHeader}>
           <div className={splashHeaderNav}>
             <h1>
-              <Link to="/" className={headerLink}>
+              <Link to="/" className={headerLogoLink}>
                 {sosoflyHeaderLogo} Sosofly
               </Link>
             </h1>
@@ -62,7 +64,7 @@ class Splash extends React.Component {
                 Listening is everything
               </h1>
               <p className={splashMainSectionSubheader}>
-                Millions of songs and podcasts. No credit card needed.
+                Millions of songs. No credit card needed.
               </p>
 
               <Link to="/signup" className={splashMainSignupButton}>
@@ -82,7 +84,7 @@ class Splash extends React.Component {
         <footer className={splashFooter}>
           <nav className={splashFooterNav}>
             <h2>
-              <Link to="/">{sosoflyFooterLogo} Sosofly</Link>
+              <Link to="/" className={footerLink}>{sosoflyFooterLogo} Sosofly</Link>
             </h2>
             <p>--- Webplayer Link Here ---</p>
           </nav>

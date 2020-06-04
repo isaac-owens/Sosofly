@@ -15,11 +15,12 @@
   width: 1174px;
 }
 
-.account-header-logo-link {
+.account-logo-link {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: white;
   width: 140px;
 }
 
@@ -58,10 +59,7 @@
   display: none;
 }
 
-
-
- 
 .account-header-nav-links {
-  font-size: 5px;
+  font-size: 16px;
   letter-spacing: .1em;
 }

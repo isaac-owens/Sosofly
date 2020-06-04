@@ -38,8 +38,7 @@ class Account extends React.Component {
     
     let accountHeader = "account-header";
     let accountHeaderNav = "account-header-nav";
-    let splashHeaderLogo = "splash-header-logo";
-    let accountHeaderLogoLink = "account-header-logo-link";
+    let accountLogoLink = "account-logo-link";
     let accountHeaderNavLinks = "account-header-nav-links";
     
     let accountUserDropdown = "account-user-dropdown";
@@ -51,6 +50,7 @@ class Account extends React.Component {
     let profileTable = "profile-table";
     
     let accountSidebar = "account-sidebar";
+    let sidebarLink = "sidebar-link";
     
     let accountInfo = "account-info";
     let accountInfoSection = "account-info-section";
@@ -71,9 +71,9 @@ class Account extends React.Component {
         <div>
           <header className={accountHeader}>
             <nav className={accountHeaderNav}>
-              <h1 className={splashHeaderLogo}>
+              <h1>
                 <Link to="/">
-                  <div className={accountHeaderLogoLink}>
+                  <div className={accountLogoLink}>
                     <span>{sosoflyLogo}</span>
                     <span>Sosofly</span>
                   </div>
@@ -107,28 +107,25 @@ class Account extends React.Component {
 
           <main className={accountMainContent}>
             <aside className={accountSidebar}>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
-                <h1>--- Link ---</h1>
-              </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
             </aside>
@@ -201,7 +198,7 @@ class Account extends React.Component {
           <nav className={accountFooter}>
             <h2>
               <Link to="/">
-                <div className={accountHeaderLogoLink}>
+                <div className={accountLogoLink}>
                   <span>{sosoflyLogo}</span>
                   <span>Sosofly</span>
                 </div>
