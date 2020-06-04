@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+
 class Account extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
-
-  // componentDidMount() {
-  //   this.props.receiveCurrentUser(this.props.currentUser);
-  // }
 
   handleClick() {
     this.props.logout();
@@ -17,12 +16,20 @@ class Account extends React.Component {
 
   render() {
     return (
-      <>
-      <h1>Hello {this.props.currentUser.username}!</h1>
-      <Link to="/">Home</Link>
-      <button onClick={this.handleClick}>LOG OUT</button>
-      </>
-    ) 
+      <div>
+        <header className={splashHeader}>
+          <h1 className={splashHeaderLogo}>
+            <Link to="/" className={splashHeaderLogoLink}>
+              {sosoflyLogo} Sosofly
+            </Link>
+          </h1>
+          <div>
+            <p>--- Webplayer Link ---</p>
+            <p>--- User Dropdown ---</p>
+          </div>
+          </header>
+        </div>
+    ); 
   };
 };
 
