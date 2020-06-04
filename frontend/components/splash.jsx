@@ -18,12 +18,17 @@ class Splash extends React.Component {
   render() {
     let splashHeader = "splash-header";
     let splashHeaderNav = "splash-header-nav";
+    let headerLink = "headerLink"
 
     let splashFooter = "splash-footer"
     let splashFooterNav = "splash-footer-nav";
 
-    let splashMain = "splash-main-content";
-    let splashMainMessage = "splash-main-message";
+    let splashMain = "splash-main";
+    let splashMainContent = "splash-main-content";
+    let splashMainSection = "splash-main-section";
+    let splashMainSectionHeader = "splash-main-section-header";
+    let splashMainSectionSubheader = "splash-main-section-subheader"
+    let splashMainSignupButton = "splash-main-signup-button";
     let authLinks = "auth-links";
     let splashImage = "splash-image";
 
@@ -35,25 +40,37 @@ class Splash extends React.Component {
         <header className={splashHeader}>
           <div className={splashHeaderNav}>
             <h1>
-              <Link to="/">
+              <Link to="/" className={headerLink}>
                 {sosoflyHeaderLogo} Sosofly
               </Link>
             </h1>
             <div className={authLinks}>
-              <Link to="/signup">Signup</Link>
-              <Link to="/login">Log In</Link>
+              <Link to="/signup" className={headerLink}>
+                Signup
+              </Link>
+              <Link to="/login" className={headerLink}>
+                Log In
+              </Link>
             </div>
           </div>
         </header>
 
         <main className={splashMain}>
-          <div className={splashMainMessage}>
-            <section>
-              <h1>Listening is everything</h1>
-              <p>Millions of songs and podcasts. No credit card needed.</p>
-              <Link to="/signup">GET SPOTIFY FREE</Link>
+          <div className={splashMainContent}>
+            <section className={splashMainSection}>
+              <h1 className={splashMainSectionHeader}>
+                Listening is everything
+              </h1>
+              <p className={splashMainSectionSubheader}>
+                Millions of songs and podcasts. No credit card needed.
+              </p>
+
+              <Link to="/signup" className={splashMainSignupButton}>
+                GET SOSOFLY FREE
+              </Link>
             </section>
           </div>
+
           <div className={splashImage}>
             <img
               src="assets/hero.png"
@@ -65,9 +82,7 @@ class Splash extends React.Component {
         <footer className={splashFooter}>
           <nav className={splashFooterNav}>
             <h2>
-              <Link to="/">
-                {sosoflyFooterLogo} Sosofly
-              </Link>
+              <Link to="/">{sosoflyFooterLogo} Sosofly</Link>
             </h2>
             <p>--- Webplayer Link Here ---</p>
           </nav>
