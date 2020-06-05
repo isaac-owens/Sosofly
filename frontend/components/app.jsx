@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className={body}>
       <Route exact path="/" component={Splash} />
-      <ProtectedRoute path="/account" component={AccountContainer} />
+      <ProtectedRoute path="/account/overview" component={AccountContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
     </div>

@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state).then(() => {
-      return this.props.history.push("/account");
+      return this.props.history.push("/account/overview");
     });
   }
 
