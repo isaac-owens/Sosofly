@@ -24,6 +24,7 @@ class Splash extends React.Component {
     let splashFooter = "splash-footer";
     let splashFooterNav = "splash-footer-nav";
     let footerLink = "footer-link";
+    let footerWebplayerLink = "footer-webplayer-link";
 
     let splashMain = "splash-main";  
     let splashMainContent = "splash-main-content";
@@ -89,7 +90,7 @@ class Splash extends React.Component {
                 {sosoflyFooterLogo} Sosofly
               </Link>
             </h2>
-            <Link to="#" className={footerLink}>
+            <Link to="#" className={footerWebplayerLink}>
               Webplayer
             </Link>
           </nav>
