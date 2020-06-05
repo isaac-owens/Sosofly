@@ -73,8 +73,6 @@ class Splash extends React.Component {
               </Link>
             </section>
           </div>
-
-          {/* <div className={splashImage}> */}
             <img
               className={splashImage}
               src={window.heroURL}

@@ -43,8 +43,13 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    let logoLink = "logo-link";
+    let signupLogoLink = "signup-logo-link";
 
+    let signupFormMain = "signup-form-main";
+    let signupFormHeader = "signup-form-header";
+    let signupFormHeaderMessage = "signup-form-header-message";
+
+    let SignupFormGithubButton = "signup-form-github-button";
     let signupForm = "signup-form";
     let genderBox = "gender-box";
     let genderBoxRadio = "gender-box-radio";
@@ -55,15 +60,18 @@ class SignupForm extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className={signupForm}>
-          <header className={logoLink}>
-            <h1>
-              <Link to="/" className={logoLink}>
+        <form onSubmit={this.handleSubmit} className={signupFormMain}>
+          <header className={signupFormHeader}>
+            <div>
+              <Link to="/" className={signupLogoLink}>
                 {sosoflyLogo} Sosofly
-                  </Link>
-            </h1>
-            <span>Sign up for free to start listening.</span>
+              </Link>
+            </div>
+            <h2 className={signupFormHeaderMessage}>Sign up to start listening.</h2>
           </header>
+          <div>
+            <button className={SignupFormGithubButton}>GITHUB</button>
+          </div>
           <ul className={signupForm}>
             <li>
               <label htmlFor="email">
