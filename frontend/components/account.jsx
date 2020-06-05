@@ -66,7 +66,7 @@ class Account extends React.Component {
     let cardInfo = "card-info";
     let editProfileLink = "edit-profile-link";
     
-    let accountFooter = "account-footer-nav";
+    let accountFooterNav = "account-footer-nav";
     let accountFooterNavLinks = "account-footer-nav-links";
 
     return (
@@ -198,8 +198,8 @@ class Account extends React.Component {
             </article>
           </main>
         </div>
-        <footer>
-          <nav className={accountFooter}>
+        <footer className={accountFooterNav}>
+          <nav>
             <div className={accountFooterNavLinks}>
               <h2>
                 <Link to="/">

@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   background-color: #2E46B9;
-  height: 878px;
+  height: 1220px;
 }
 
 .splash-main-content {
@@ -11,17 +11,19 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin-left: 110px;
+    padding: 0 15px;
     color: #1ED760;
     height: 360px;
     width: 1170px;
+    margin: 0 110px;
+    // margin: 530px 110px 0 110px;
   }
-
-.splash-main-section {
-  display: flex;
-  flex-direction: column;
-  box-sizing: content-box;
-  width: 566px;
+  
+  .splash-main-section {
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    width: 566px;
 }
 
   .splash-main-section-header {
