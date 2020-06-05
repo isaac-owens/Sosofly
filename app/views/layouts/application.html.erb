@@ -14,6 +14,9 @@
         window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>;
       </script>
     <% end %>
+    <script type="text/javascript">
+      window.heroURL = "<%= image_url('hero.png') %>";
+    </script>
   </head>
 
   <body>
