@@ -61,6 +61,7 @@ class Splash extends React.Component {
           <div className={splashMainContent}>
             <section className={splashMainSection}>
               <h1 className={splashMainSectionHeader}>
+                This is a merge test.
                 Listening is everything
               </h1>
               <p className={splashMainSectionSubheader}>
