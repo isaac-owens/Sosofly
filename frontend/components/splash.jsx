@@ -73,20 +73,25 @@ class Splash extends React.Component {
             </section>
           </div>
 
-          <div className={splashImage}>
+          {/* <div className={splashImage}> */}
             <img
+              className={splashImage}
               src={window.heroURL}
               alt="woman wearing headphones looking to the sky"
             />
-          </div>
+          {/* </div> */}
         </main>
 
         <footer className={splashFooter}>
           <nav className={splashFooterNav}>
             <h2>
-              <Link to="/" className={footerLink}>{sosoflyFooterLogo} Sosofly</Link>
-            </h2> 
-            <Link to="#" className={footerLink}>Webplayer</Link>
+              <Link to="/" className={footerLink}>
+                {sosoflyFooterLogo} Sosofly
+              </Link>
+            </h2>
+            <Link to="#" className={footerLink}>
+              Webplayer
+            </Link>
           </nav>
         </footer>
       </>
