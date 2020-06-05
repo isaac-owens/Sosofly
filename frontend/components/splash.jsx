@@ -25,8 +25,7 @@ class Splash extends React.Component {
     let splashFooterNav = "splash-footer-nav";
     let footerLink = "footer-link";
 
-    let splashMain = "splash-main";
-    let splashMainMessage = "splash-main-message";
+    let splashMain = "splash-main";  
     let splashMainContent = "splash-main-content";
     let splashMainSection = "splash-main-section";
     let splashMainSectionHeader = "splash-main-section-header";
@@ -59,11 +58,6 @@ class Splash extends React.Component {
         </header>
 
         <main className={splashMain}>
-          <div className={splashMainMessage}>
-            <h1>Listening is everything</h1>
-            <p>Millions of songs and podcasts. No credit card needed.</p>
-            <Link to="/signup">GET SOSOFLY FREE</Link>
-            </div>
           <div className={splashMainContent}>
             <section className={splashMainSection}>
               <h1 className={splashMainSectionHeader}>
