@@ -1,36 +1,74 @@
+.signup-form-main {
+  max-width: 450px;
+  margin: 0px auto;
+  padding:  0 0 130px;
+}
+
+.signup-form-header {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40px 0 32px;
+  align-items: center;
+}
+
+.signup-form-github-button {
+    min-width: 450px;
+    cursor: default;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-align: center;
+    touch-action: manipulation;
+    transition-duration: 33ms;
+    transition-property: 
+      background-color,
+      border-color,
+      color,
+      box-shadow,
+      filter,
+      transform;
+    user-select: none;
+    vertical-align: middle;
+    transform: translate3d(0px, 0px, 0px);
+    background-color: #3A5897;
+    color: white;
+    border-radius: 500px;
+    padding: 17px 48px;
+}
+
+.signup-form-github-button:hover {
+    transform: scale(1.04);
+    background-color: #6B82B1;
+}
+
+.signup-logo-link {
+  display: flex;
+  align-items: center;
+  color: black;
+  box-sizing: border-box;
+  font-size: 30px;
+}
+
+.signup-form-header-message {
+  margin-top: 40px;
+  text-align: center;
+  line-height: 36px;
+  letter-spacing: -0.04em;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
 .signup-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   list-style: none;
-  height: 500px;
 }
 
-.signup-form header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
 
-.signup-form header h1 {
-  text-align: center;
-  color: black;
-  margin-bottom: 30px;
-}
-
-.signup-form header {
-  text-align: center;
-  color: black;
-  border: none;
-}
-
-.signup-form header span {
-  font-size: 20px;
-  letter-spacing: .01em;
-}
 
 .signup-form ul {
   margin-top: 10px;
@@ -44,11 +82,9 @@
   display: inline-block;
 }
 
-
-
-// .signup-form li p {
-//   text-align: left;
-// }
+.signup-form li p {
+  text-align: left;
+}
 
 .signup-form > li > hr {
   width: 350px;
