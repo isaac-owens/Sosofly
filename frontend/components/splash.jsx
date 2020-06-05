@@ -80,7 +80,7 @@ class Splash extends React.Component {
 
           <div className={splashImage}>
             <img
-              src="assets/hero.png"
+              src={window.heroURL}
               alt="woman wearing headphones looking to the sky"
             />
           </div>
