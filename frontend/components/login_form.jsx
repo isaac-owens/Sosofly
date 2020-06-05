@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
     let errorMessage = "error-message";
     
     let loginFormInputs = "login-form-inputs";
-    let inputField = "input-field";
+    let dataInputField = "data-input-field";
     let loginButtonField = "login-button-field";
     let loginButton = "login-button";
     let loginLinkField = "login-link-field";
@@ -55,25 +55,20 @@ class LoginForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} className={loginForm}>
-  
         <header className={loginFormHeader}>
           <Link to="/" className={logoLink}>
             {sosoflyLogo} Sosofly
-                    </Link>
+          </Link>
         </header>
         <hr />
 
-
         <main className={loginFormBody}>
-
           {this.props.errors.length === 0 ? (
-            <></> 
+            <></>
           ) : (
             <div className={loginErrorsContainer}>
               <p className={loginErrors}>
-                <span>
-                  {this.props.errors[0]}
-                </span>
+                <span>{this.props.errors[0]}</span>
               </p>
             </div>
           )}
@@ -85,16 +80,18 @@ class LoginForm extends React.Component {
                 onChange={this.update("username")}
                 value={this.state.username}
                 placeholder="Username"
-                style={this.state.username === "" ? { borderColor: "red" } : { borderColor: "#919496"}}
-                className={inputField}
+                style={
+                  this.state.username === ""
+                    ? { borderColor: "red" }
+                    : { borderColor: "#919496" }
+                }
+                className={dataInputField}
               />
               {this.state.username === "" ? (
-                <span className={errorMessage}>
-                  Please enter your username
-                </span>
+                <span className={errorMessage}>Please enter your username</span>
               ) : (
-                  ""
-                )}
+                ""
+              )}
             </li>
             <li>
               <input
@@ -103,22 +100,26 @@ class LoginForm extends React.Component {
                 onChange={this.update("password")}
                 value={this.state.password}
                 placeholder="Password"
-                style={this.state.password === "" ? { borderColor: "red" } : { borderColor: "#919496"}}
-                className={inputField}
+                style={
+                  this.state.password === ""
+                    ? { borderColor: "red" }
+                    : { borderColor: "#919496" }
+                }
+                className={dataInputField}
               />
               {this.state.password === "" ? (
                 <span className={errorMessage}>
                   Please enter your password.
                 </span>
               ) : (
-                  ""
-                )}
+                ""
+              )}
             </li>
             <li className={loginButtonField}>
               <button className={loginButton}>LOG IN</button>
             </li>
             <li className={linkCaptionField}>
-            <hr className={lineDividor}/>
+              <hr className={lineDividor} />
               <p className={linkCaption}>Don't have an account?</p>
             </li>
             <li className={loginLinkField}>
@@ -129,7 +130,7 @@ class LoginForm extends React.Component {
           </ul>
         </main>
       </form>
-    )
+    );
   }
 }
 

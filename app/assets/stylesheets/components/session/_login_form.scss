@@ -66,9 +66,11 @@
   justify-content: space-evenly;
   height: 611px;
   width: 450px;
+  // color: #C1C3C6;
 }
 
-.input-field {
+.data-input-field {
+  color: #D7D8D9;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -104,10 +106,12 @@
   font-size: 16px;
   text-align: center;
   letter-spacing: .2em;
+  transition: background-color .5s;
 }
 
 .login-button:hover {
   background-color: #1ED760;
+  cursor: pointer;
 }
 
 .login-link-field {
@@ -118,13 +122,14 @@
 
 .login-link {
   color: #616467;
-  border: 1px solid #616467;
+  border: 2px solid #616467;
   border-radius: 25px;
   width: 450px;
   padding: 16px 14px 18px;
   text-align: center;
   font-size: 14px;
   letter-spacing: .2em;
+  transition: background-color .5s;
 }
 
 .login-link:hover {
