@@ -15,36 +15,55 @@
   width: 1174px;
 }
 
-.account-header-logo-link {
+.account-logo-link {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: white;
   width: 140px;
 }
 
 .account-header-nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 275px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 275px;
+}
+
+.webplayer-link {
+  color: white;
+}
 
 .account-user-dropdown {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  position: relative;
   width: 900px;
 }
 
 .account-user-dropdown:hover {
   color: #1ED760;
+  cursor: pointer;
 }
 
+.account-user-dropdown-menu {
+  width: 160px;
+  height: 82px;
+  background-color: white;
+  position: absolute;
+  padding: 10px 0;
+  border-radius: 5px;
+  left: 1116px;
+}
 
- 
-.account-header-nav-links a {
-  font-size: 5px;
+.dropdown-hidden {
+  display: none;
+}
+
+.account-header-nav-links {
+  font-size: 16px;
   letter-spacing: .1em;
 }

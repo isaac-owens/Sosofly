@@ -1,0 +1,146 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  box-sizing: border-box;
+  height: 695px;
+
+}
+
+.login-form-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 25px 0 10px;
+  margin-bottom: 30px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: black;
+  border: none;
+  width: 234px;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.login-errors-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  height: 74px;
+  padding: 0, 15px;
+}
+
+.login-errors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E22034;
+  color: white;
+  width: 450px;
+  padding: 14px 14px 12px;
+  margin: 6px 0 24px;
+  font-size: 12px;
+}
+
+.login-form-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 611px;
+  width: 450px;
+}
+
+.input-field {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 40px;
+  margin-bottom: 40px;
+  list-style: none;
+  padding: 6px 12px;
+  border: .5px solid black;
+  font-size: 20px;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.error-message {
+  margin-top: 40px;
+}
+
+.login-button-field {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+  
+.login-button {
+  color: white;
+  background-color: #1db954;
+  padding: 16px 14px 18px;
+  border-radius: 25px;
+  width: 450px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: .2em;
+}
+
+.login-button:hover {
+  background-color: #1ED760;
+}
+
+.login-link-field {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.login-link {
+  color: #616467;
+  border: 1px solid #616467;
+  border-radius: 25px;
+  width: 450px;
+  padding: 16px 14px 18px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: .2em;
+}
+
+.login-link:hover {
+  color: white;
+  background-color: #616467;
+}
+
+.line-dividor {
+  width: 450px;
+}
+
+.link-caption-field {
+  margin-top: 80px;
+}
+
+.link-caption {
+  text-align: center;
+  margin-top: 30px;
+}

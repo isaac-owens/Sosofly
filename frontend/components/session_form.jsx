@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+import LoginForm from "./login_form";
+import SignupForm from "./signup_form";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -27,6 +29,12 @@ class SessionForm extends React.Component {
       this.setState({ gender: e.target.value });
     };
   }
+  
+  renderError(field) {
+    const errors = this.props.errors;
+    let index = errors.findIndex((error) => error.includes(field));
+    return errors[index];
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -39,13 +47,9 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
-  renderError(field) {
-    const errors = this.props.errors;
-    let index = errors.findIndex((error) => error.includes(field));
-    return errors[index];
-  }
 
   render() {
+<<<<<<< HEAD
     let loginForm = "login-form";
     let signupForm = "signup-form";
     let genderBox = "gender-box";
@@ -264,6 +268,11 @@ class SessionForm extends React.Component {
         )}
       </div>
     );
+=======
+    return (
+        this.props.formType === "login" ? <LoginForm /> : <SignupForm />
+    )
+>>>>>>> auth
   }
 }
 

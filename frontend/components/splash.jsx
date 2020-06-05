@@ -16,36 +16,68 @@ class Splash extends React.Component {
   }
 
   render() {
-    let splashHeader = "splash-header-nav";
-    let splashHeaderLogo = "splash-header-logo";
-    let splashFooter = "splash-footer-nav";
-    let splashMain = "splash-main-content";
-    let splashMainMessage = "splash-main-message";
+    let splashHeader = "splash-header";
+    let splashHeaderNav = "splash-header-nav";
+    let headerLogoLink = "header-logo-link";
+    let headerLink = "header-link"
+
+    let splashFooter = "splash-footer";
+    let splashFooterNav = "splash-footer-nav";
+    let footerLink = "footer-link";
+
+    let splashMain = "splash-main";
+    let splashMainContent = "splash-main-content";
+    let splashMainSection = "splash-main-section";
+    let splashMainSectionHeader = "splash-main-section-header";
+    let splashMainSectionSubheader = "splash-main-section-subheader"
+    let splashMainSignupButton = "splash-main-signup-button";
     let authLinks = "auth-links";
     let splashImage = "splash-image";
 
-    let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
-    let splashHeaderLogoLink = "splash-header-logo-link";
+    let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
+    let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
 
     return (
       <>
         <header className={splashHeader}>
-          <h1 className={splashHeaderLogo}>
-            <Link to="/" className={splashHeaderLogoLink}>
-              {sosoflyLogo} Sosofly
-            </Link>
-          </h1>
-          <div className={authLinks}>
-            <Link to="/signup">Signup</Link>
-            <Link to="/login">Log In</Link>
+          <div className={splashHeaderNav}>
+            <h1>
+              <Link to="/" className={headerLogoLink}>
+                {sosoflyHeaderLogo} Sosofly
+              </Link>
+            </h1>
+            <div className={authLinks}>
+              <Link to="/signup" className={headerLink}>
+                Signup
+              </Link>
+              <Link to="/login" className={headerLink}>
+                Log In
+              </Link>
+            </div>
           </div>
         </header>
+
         <main className={splashMain}>
           <div className={splashMainMessage}>
             <h1>Listening is everything</h1>
             <p>Millions of songs and podcasts. No credit card needed.</p>
             <Link to="/signup">GET SOSOFLY FREE</Link>
+            </div>
+          <div className={splashMainContent}>
+            <section className={splashMainSection}>
+              <h1 className={splashMainSectionHeader}>
+                Listening is everything
+              </h1>
+              <p className={splashMainSectionSubheader}>
+                Millions of songs. No credit card needed.
+              </p>
+
+              <Link to="/signup" className={splashMainSignupButton}>
+                GET SOSOFLY FREE
+              </Link>
+            </section>
           </div>
+
           <div className={splashImage}>
             <img
               src="assets/hero.png"
@@ -53,14 +85,13 @@ class Splash extends React.Component {
             />
           </div>
         </main>
-        <footer>
-          <nav className={splashFooter}>
+
+        <footer className={splashFooter}>
+          <nav className={splashFooterNav}>
             <h2>
-              <Link to="/" className={splashHeaderLogoLink}>
-                {sosoflyLogo} Sosofly
-              </Link>
-            </h2>
-            <p>--- Webplayer Link Here ---</p>
+              <Link to="/" className={footerLink}>{sosoflyFooterLogo} Sosofly</Link>
+            </h2> 
+            <Link to="#" className={footerLink}>Webplayer</Link>
           </nav>
         </footer>
       </>

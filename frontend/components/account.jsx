@@ -6,16 +6,31 @@ import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
+import AccountDropdown from './account_dropdown';
+
 class Account extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showHide: "dropdownHidden"
+    }
     this.handleClick = this.handleClick.bind(this);
+    this.toggleShowHide = this.toggleShowHide.bind(this);
   }
-
+  
   handleClick() {
     this.props.logout();
   }
-
+  
+  toggleShowHide() { 
+    this.setState({
+      showHide:
+      this.state.showHide === "dropdown-hidden"
+      ? "account-user-dropdown-menu"
+      : "dropdown-hidden",
+    });
+  }
+  
   render() {
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
     let userIcon = <FontAwesomeIcon icon={faUserCircle} size="3x" />;
@@ -23,21 +38,21 @@ class Account extends React.Component {
     
     let accountHeader = "account-header";
     let accountHeaderNav = "account-header-nav";
-    let splashHeaderLogo = "splash-header-logo";
-    let accountHeaderLogoLink = "account-header-logo-link";
+    let accountLogoLink = "account-logo-link";
     let accountHeaderNavLinks = "account-header-nav-links";
-    
+    let webplayerLink = "webplayer-link";
+
     let accountUserDropdown = "account-user-dropdown";
-    let arrowLink = "arrowLink";
-    
     let accountWelcome = "account-welcome";
     let welcomeMessage = "welcome-message";
     
     let accountMain = "account-main"
     let accountMainContent = "account-main-content";
     let profileTable = "profile-table";
+    let data = "data";
     
     let accountSidebar = "account-sidebar";
+    let sidebarLink = "sidebar-link";
     
     let accountInfo = "account-info";
     let accountInfoSection = "account-info-section";
@@ -51,33 +66,39 @@ class Account extends React.Component {
     let cardInfo = "card-info";
     let editProfileLink = "edit-profile-link";
     
-    let accountFooter = "account-footer-nav";
+    let accountFooterNav = "account-footer-nav";
+    let accountFooterNavLinks = "account-footer-nav-links";
 
     return (
       <>
         <div>
           <header className={accountHeader}>
             <nav className={accountHeaderNav}>
-              <h1 className={splashHeaderLogo}>
+              <h1>
                 <Link to="/">
-                  <div className={accountHeaderLogoLink}>
+                  <div className={accountLogoLink}>
                     <span>{sosoflyLogo}</span>
                     <span>Sosofly</span>
                   </div>
                 </Link>
               </h1>
               <div className={accountHeaderNavLinks}>
-                <p>--- Webplayer Link ---</p>
-                <div className={accountUserDropdown}>
+                <div>
+                  <Link to="#" className={webplayerLink}>Webplayer</Link>
+                </div>
+
+                <div className={accountUserDropdown} onClick={this.toggleShowHide}>
                   <div>{userIcon}</div>
                   <div>Profile</div>
                   <div>
                     {arrowDown}
                   </div>
                 </div>
+              
               </div>
             </nav>
           </header>
+          <AccountDropdown handleClick={this.handleClick} className={this.state.showHide} />
         </div>
 
         <div className={accountMain}>
@@ -90,28 +111,25 @@ class Account extends React.Component {
 
           <main className={accountMainContent}>
             <aside className={accountSidebar}>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
-              <a href="#">
-                <h1>--- Link ---</h1>
-              </a>
-              <a href="#">
+              <a href="#" className={sidebarLink}>
                 <h1>--- Link ---</h1>
               </a>
             </aside>
@@ -128,7 +146,7 @@ class Account extends React.Component {
                         <span>Email</span>
                       </td>
                       <td>
-                        <p>{this.props.currentUser.email}</p>
+                        <p className={data}>{this.props.currentUser.email}</p>
                       </td>
                     </tr>
                     <tr>
@@ -136,7 +154,7 @@ class Account extends React.Component {
                         <span>Date of birth</span>
                       </td>
                       <td>
-                        <p>{this.props.currentUser.birthdate}</p>
+                        <p className={data}>{this.props.currentUser.birthdate}</p>
                       </td>
                     </tr>
                     <tr>
@@ -144,7 +162,7 @@ class Account extends React.Component {
                         <span>Country</span>
                       </td>
                       <td>
-                        <p>US</p>
+                        <p className={data}>US</p>
                       </td>
                     </tr>
                   </tbody>
@@ -180,17 +198,21 @@ class Account extends React.Component {
             </article>
           </main>
         </div>
-        <footer>
-          <nav className={accountFooter}>
-            <h2>
-              <Link to="/">
-                <div className={accountHeaderLogoLink}>
-                  <span>{sosoflyLogo}</span>
-                  <span>Sosofly</span>
-                </div>
-              </Link>
-            </h2>
-            <p>--- Webplayer Link Here ---</p>
+        <footer className={accountFooterNav}>
+          <nav>
+            <div className={accountFooterNavLinks}>
+              <h2>
+                <Link to="/">
+                  <div className={accountLogoLink}>
+                    <span>{sosoflyLogo}</span>
+                    <span>Sosofly</span>
+                  </div>
+                </Link>
+              </h2>
+              <div>
+                <Link to="#" className={webplayerLink}>Webplayer</Link>
+              </div>
+            </div>
           </nav>
         </footer>
       </>
