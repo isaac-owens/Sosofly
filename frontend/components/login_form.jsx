@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
     let loginErrorsContainer ="login-errors-container";
     let loginErrors = "login-errors";
     
-    let errorMessage = "error-message";
+    let loginErrorMessage = "login-error-message";
     
     let loginFormInputs = "login-form-inputs";
     let dataInputField = "data-input-field";
@@ -88,7 +88,11 @@ class LoginForm extends React.Component {
                 className={dataInputField}
               />
               {this.state.username === "" ? (
-                <span className={errorMessage}>Please enter your username</span>
+                <div>
+                  <label className={loginErrorMessage}>
+                    Please enter your Sosofly username
+                  </label>
+                </div>
               ) : (
                 ""
               )}
@@ -108,9 +112,11 @@ class LoginForm extends React.Component {
                 className={dataInputField}
               />
               {this.state.password === "" ? (
-                <span className={errorMessage}>
-                  Please enter your password.
-                </span>
+                <div>
+                  <label className={loginErrorMessage}>
+                    Please enter your password.
+                  </label>
+                </div>
               ) : (
                 ""
               )}
