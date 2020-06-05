@@ -94,7 +94,7 @@ class Account extends React.Component {
               </div>
             </nav>
           </header>
-          <AccountDropdown className={this.state.showHide} />
+          <AccountDropdown handleClick={this.handleClick} className={this.state.showHide} />
         </div>
 
         <div className={accountMain}>

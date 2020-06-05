@@ -11,7 +11,7 @@ class AccountDropdown extends React.Component  {
     let accountUserDropdownMenu = "account-user-dropdown-menu";
     
     return(
-      <div className={accountUserDropdownMenu}>
+      <div onClick={this.props.handleClick} className={accountUserDropdownMenu}>
         Logout
       </div>
     );

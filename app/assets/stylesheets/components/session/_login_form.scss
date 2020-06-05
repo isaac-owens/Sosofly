@@ -5,10 +5,57 @@
 .login-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-body {
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
-  height: 500px;
+  background-origin: border-box;
+  height: 695px;
+}
+
+.login-form-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 25px 0 10px;
+  margin-bottom: 30px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: black;
+  border: none;
+  width: 234px;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.login-errors-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  padding: 0, 15px;
+}
+
+.login-errors {
+  background: #E22034;
+  color: white;
+  width: 450px;
+  padding: 14px, 14px, 12px;
+  margin: 6px, 0, 24px;
+  font-size: 12px;
+  text-align: center;
+  box-sizing: border-box;
+  height: fit-content;
 }
 
 .login-form li {
@@ -20,23 +67,6 @@
   margin-top: 4px ;
   font-size: 14px;
 }
-
-.login-errors {
-  background: #E22034;
-  color: white;
-  width: 200px;
-  font-size: 10px;
-  text-align: center;
-  box-sizing: border-box;
-  height: fit-content;
-}
-
-.logo-link {
-  text-align: center;
-  color: black;
-  border: none;
-}
-
 .login-form li div {
   display: inline-block;
 }
@@ -46,10 +76,6 @@
   width: 350px;
 }
 
-.login-form li p {
-  text-align: center;
-  margin-top: 30px;
-}
 
 .login-form input {
   border: .5px solid black;
@@ -93,4 +119,9 @@
 
 .login-form li:third-child {
   display: inline;
+}
+
+.link-caption {
+  text-align: center;
+  margin-top: 30px;
 }
