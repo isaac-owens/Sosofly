@@ -21,7 +21,7 @@ class Splash extends React.Component {
     let headerLogoLink = "header-logo-link";
     let headerLink = "header-link"
 
-    let splashFooter = "splash-footer"
+    let splashFooter = "splash-footer";
     let splashFooterNav = "splash-footer-nav";
     let footerLink = "footer-link";
 
@@ -58,6 +58,11 @@ class Splash extends React.Component {
         </header>
 
         <main className={splashMain}>
+          <div className={splashMainMessage}>
+            <h1>Listening is everything</h1>
+            <p>Millions of songs and podcasts. No credit card needed.</p>
+            <Link to="/signup">GET SOSOFLY FREE</Link>
+            </div>
           <div className={splashMainContent}>
             <section className={splashMainSection}>
               <h1 className={splashMainSectionHeader}>
@@ -75,7 +80,7 @@ class Splash extends React.Component {
 
           <div className={splashImage}>
             <img
-              src="assets/hero.png"
+              src={window.heroURL}
               alt="woman wearing headphones looking to the sky"
             />
           </div>
