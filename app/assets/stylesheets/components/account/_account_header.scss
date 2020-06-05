@@ -25,11 +25,15 @@
 }
 
 .account-header-nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 275px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 275px;
+}
+
+.webplayer-link {
+  color: white;
+}
 
 .account-user-dropdown {
   display: flex;

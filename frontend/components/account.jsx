@@ -40,7 +40,8 @@ class Account extends React.Component {
     let accountHeaderNav = "account-header-nav";
     let accountLogoLink = "account-logo-link";
     let accountHeaderNavLinks = "account-header-nav-links";
-    
+    let webplayerLink = "webplayer-link";
+
     let accountUserDropdown = "account-user-dropdown";
     let accountWelcome = "account-welcome";
     let welcomeMessage = "welcome-message";
@@ -66,6 +67,7 @@ class Account extends React.Component {
     let editProfileLink = "edit-profile-link";
     
     let accountFooter = "account-footer-nav";
+    let accountFooterNavLinks = "account-footer-nav-links";
 
     return (
       <>
@@ -81,8 +83,9 @@ class Account extends React.Component {
                 </Link>
               </h1>
               <div className={accountHeaderNavLinks}>
-
-                <p>--- Webplayer Link ---</p>
+                <div>
+                  <Link to="#" className={webplayerLink}>Webplayer</Link>
+                </div>
 
                 <div className={accountUserDropdown} onClick={this.toggleShowHide}>
                   <div>{userIcon}</div>
@@ -197,15 +200,19 @@ class Account extends React.Component {
         </div>
         <footer>
           <nav className={accountFooter}>
-            <h2>
-              <Link to="/">
-                <div className={accountLogoLink}>
-                  <span>{sosoflyLogo}</span>
-                  <span>Sosofly</span>
-                </div>
-              </Link>
-            </h2>
-            <p>--- Webplayer Link Here ---</p>
+            <div className={accountFooterNavLinks}>
+              <h2>
+                <Link to="/">
+                  <div className={accountLogoLink}>
+                    <span>{sosoflyLogo}</span>
+                    <span>Sosofly</span>
+                  </div>
+                </Link>
+              </h2>
+              <div>
+                <Link to="#" className={webplayerLink}>Webplayer</Link>
+              </div>
+            </div>
           </nav>
         </footer>
       </>
