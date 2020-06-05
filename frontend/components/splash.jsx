@@ -85,8 +85,8 @@ class Splash extends React.Component {
           <nav className={splashFooterNav}>
             <h2>
               <Link to="/" className={footerLink}>{sosoflyFooterLogo} Sosofly</Link>
-            </h2>
-            <p>--- Webplayer Link Here ---</p>
+            </h2> 
+            <Link to="#" className={footerLink}>Webplayer</Link>
           </nav>
         </footer>
       </>

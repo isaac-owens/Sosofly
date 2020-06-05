@@ -48,6 +48,7 @@ class Account extends React.Component {
     let accountMain = "account-main"
     let accountMainContent = "account-main-content";
     let profileTable = "profile-table";
+    let data = "data";
     
     let accountSidebar = "account-sidebar";
     let sidebarLink = "sidebar-link";
@@ -142,7 +143,7 @@ class Account extends React.Component {
                         <span>Email</span>
                       </td>
                       <td>
-                        <p>{this.props.currentUser.email}</p>
+                        <p className={data}>{this.props.currentUser.email}</p>
                       </td>
                     </tr>
                     <tr>
@@ -150,7 +151,7 @@ class Account extends React.Component {
                         <span>Date of birth</span>
                       </td>
                       <td>
-                        <p>{this.props.currentUser.birthdate}</p>
+                        <p className={data}>{this.props.currentUser.birthdate}</p>
                       </td>
                     </tr>
                     <tr>
@@ -158,7 +159,7 @@ class Account extends React.Component {
                         <span>Country</span>
                       </td>
                       <td>
-                        <p>US</p>
+                        <p className={data}>US</p>
                       </td>
                     </tr>
                   </tbody>

@@ -36,10 +36,19 @@ class LoginForm extends React.Component {
     let loginFormHeader = "login-form-header";
     let loginErrorsContainer ="login-errors-container";
     let loginErrors = "login-errors";
+    
+    let errorMessage = "error-message";
+    
+    let loginFormInputs = "login-form-inputs";
+    let inputField = "input-field";
+    let loginButtonField = "login-button-field";
+    let loginButton = "login-button";
+    let loginLinkField = "login-link-field";
     let loginLink = "login-link";
+    let lineDividor = "line-dividor";
+    let linkCaptionField = "link-caption-field";
     let linkCaption = "link-caption";
 
-    let errorMessage = "error-message";
 
 
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
@@ -56,20 +65,28 @@ class LoginForm extends React.Component {
 
 
         <main className={loginFormBody}>
-          <div className={loginErrorsContainer}>
-            <p className={loginErrors}>
-              <span>
-                {this.props.errors[0]}
-              </span>
-            </p>
-          </div>
-          <ul>
+
+          {this.props.errors.length === 0 ? (
+            <></> 
+          ) : (
+            <div className={loginErrorsContainer}>
+              <p className={loginErrors}>
+                <span>
+                  {this.props.errors[0]}
+                </span>
+              </p>
+            </div>
+          )}
+          <ul className={loginFormInputs}>
             <li>
               <input
                 type="text"
                 id="username"
                 onChange={this.update("username")}
                 value={this.state.username}
+                placeholder="Username"
+                style={this.state.username === "" ? { borderColor: "red" } : { borderColor: "#919496"}}
+                className={inputField}
               />
               {this.state.username === "" ? (
                 <span className={errorMessage}>
@@ -85,6 +102,9 @@ class LoginForm extends React.Component {
                 id="password"
                 onChange={this.update("password")}
                 value={this.state.password}
+                placeholder="Password"
+                style={this.state.password === "" ? { borderColor: "red" } : { borderColor: "#919496"}}
+                className={inputField}
               />
               {this.state.password === "" ? (
                 <span className={errorMessage}>
@@ -94,14 +114,14 @@ class LoginForm extends React.Component {
                   ""
                 )}
             </li>
-            <li>
-              <button>LOG IN</button>
+            <li className={loginButtonField}>
+              <button className={loginButton}>LOG IN</button>
             </li>
-            <li>
-              <hr />
+            <li className={linkCaptionField}>
+            <hr className={lineDividor}/>
               <p className={linkCaption}>Don't have an account?</p>
             </li>
-            <li>
+            <li className={loginLinkField}>
               <Link to="/signup" className={loginLink}>
                 SIGN UP FOR SOSOFLY
               </Link>
