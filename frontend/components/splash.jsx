@@ -26,6 +26,7 @@ class Splash extends React.Component {
     let footerLink = "footer-link";
 
     let splashMain = "splash-main";
+    let spashMainMessage = "splash-main-message";
     let splashMainContent = "splash-main-content";
     let splashMainSection = "splash-main-section";
     let splashMainSectionHeader = "splash-main-section-header";
