@@ -12,7 +12,6 @@
 #
 class Playlist < ApplicationRecord
   validates :creator_id, :title, presence: true
-  validates :genre_id, :description, allow_nil: true
 
   belongs_to :user
   has_many_attached :tracks
