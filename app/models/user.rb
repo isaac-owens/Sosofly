@@ -19,7 +19,9 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :playlists
+  has_many :playlists,
+    foreign_key: :creator_id,
+    class_name: :Playlist
   
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)

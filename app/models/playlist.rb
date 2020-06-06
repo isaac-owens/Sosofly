@@ -13,7 +13,10 @@
 class Playlist < ApplicationRecord
   validates :creator_id, :title, presence: true
 
-  belongs_to :user
+  belongs_to :user,
+    foreign_key: :creator_id,
+    class_name: :User
+
   has_many_attached :tracks
 
   def playlist_params
