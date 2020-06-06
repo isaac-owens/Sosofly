@@ -12,35 +12,66 @@
   align-items: center;
 }
 
+.signup-form-github-button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 22px;
+}
+
 .signup-form-github-button {
-    min-width: 450px;
-    cursor: default;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    line-height: 1;
-    text-align: center;
-    touch-action: manipulation;
-    transition-duration: 33ms;
-    transition-property: 
-      background-color,
-      border-color,
-      color,
-      box-shadow,
-      filter,
-      transform;
-    user-select: none;
-    vertical-align: middle;
-    transform: translate3d(0px, 0px, 0px);
-    background-color: #3A5897;
-    color: white;
-    border-radius: 500px;
-    padding: 17px 48px;
+  width: 354px;
+  cursor: default;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-align: center;
+  touch-action: manipulation;
+  transition-duration: 33ms;
+  transition-property: 
+    background-color,
+    border-color,
+    color,
+    box-shadow,
+    filter,
+    transform;
+  user-select: none;
+  vertical-align: middle;
+  transform: translate3d(0px, 0px, 0px);
+  background-color: #3A5897;
+  color: white;
+  border-radius: 500px;
+  padding: 17px 48px;
+  margin: 0 auto;
 }
 
 .signup-form-github-button:hover {
     transform: scale(1.04);
     background-color: #6B82B1;
+}
+
+.form-divider {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.form-divider-line {
+  width: 160px;
+}
+
+.signup-form {
+  box-sizing: border-box;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+
+.signup-form-title {
+  text-align: center;
+  font-size: 18px;
 }
 
 .signup-logo-link {
@@ -61,12 +92,6 @@
   letter-spacing: .01em;
 }
 
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style: none;
-}
 
 
 
