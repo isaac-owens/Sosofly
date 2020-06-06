@@ -13,6 +13,11 @@ class Track < ApplicationRecord
 
   has_one_attached :track
 
+  has_many :added_tracks
+
+  has_many :playlists, 
+    through: :added_tracks
+
   def track_params
     params.require(:track).permit(:title, :aws_url)
   end
