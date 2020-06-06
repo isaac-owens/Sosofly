@@ -15,6 +15,7 @@ class Track < ApplicationRecord
 
   has_many :added_tracks
 
+
   has_many :playlists, 
     through: :added_tracks
 

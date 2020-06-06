@@ -21,8 +21,4 @@ class Playlist < ApplicationRecord
   
   has_many :tracks, 
     through: :added_tracks
-
-  def playlist_params
-    params.require(:playlist).permit(:title, :creator_id, tracks: [])
-  end
 end
