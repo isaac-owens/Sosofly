@@ -49,8 +49,14 @@ class SignupForm extends React.Component {
     let signupFormHeader = "signup-form-header";
     let signupFormHeaderMessage = "signup-form-header-message";
 
-    let SignupFormGithubButton = "signup-form-github-button";
+    let signupFormGithubButtonContainter = "signup-form-github-button-container";
+    let signupFormGithubButton = "signup-form-github-button";
+    let formDivider = "form-divider";
+    let formDividerLine = "form-divider-line";
+
     let signupForm = "signup-form";
+    let signupFormTitle = "signup-form-title";
+
     let genderBox = "gender-box";
     let genderBoxRadio = "gender-box-radio";
     let signupLoginLink = "signup-login-link";
@@ -60,23 +66,32 @@ class SignupForm extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className={signupFormMain}>
+        <div onSubmit={this.handleSubmit} className={signupFormMain}>
           <header className={signupFormHeader}>
             <div>
               <Link to="/" className={signupLogoLink}>
                 {sosoflyLogo} Sosofly
               </Link>
             </div>
-            <h2 className={signupFormHeaderMessage}>Sign up to start listening.</h2>
+            <h2 className={signupFormHeaderMessage}>
+              Sign up to start listening.
+            </h2>
           </header>
-          <div>
-            <button className={SignupFormGithubButton}>GITHUB</button>
+          <div className={signupFormGithubButtonContainter}>
+            <button className={signupFormGithubButton}>GITHUB</button>
           </div>
-          <ul className={signupForm}>
+          <span class={formDivider}>
+            <hr className={formDividerLine} />
+            or
+            <hr className={formDividerLine} />
+          </span>
+          <form className={signupForm}>
+            <h2 class={signupFormTitle}>Sign up with your email address</h2>
+            <ul>
             <li>
               <label htmlFor="email">
                 What's your email?
-                    <input
+                <input
                   type="text"
                   id="email"
                   placeholder="Enter your email."
@@ -84,14 +99,12 @@ class SignupForm extends React.Component {
                   value={this.state.email}
                 />
               </label>
-              <span className={errorMessage}>
-                {this.renderError("Email")}
-              </span>
+              <span className={errorMessage}>{this.renderError("Email")}</span>
             </li>
             <li>
               <label htmlFor="confirmEmail">
                 Confirm your email
-                    <input
+                <input
                   type="text"
                   id="confirmEmail"
                   placeholder="Enter your email again."
@@ -100,17 +113,15 @@ class SignupForm extends React.Component {
                 />
               </label>
               {this.state.confirmEmail !== this.state.email ? (
-                <span className={errorMessage}>
-                  This email does not match
-                </span>
+                <span className={errorMessage}>This email does not match</span>
               ) : (
-                  ""
-                )}
+                ""
+              )}
             </li>
             <li>
               <label htmlFor="password">
                 Create a password
-                    <input
+                <input
                   type="password"
                   id="password"
                   placeholder="Create a password."
@@ -125,7 +136,7 @@ class SignupForm extends React.Component {
             <li>
               <label htmlFor="username">
                 What should we call you?
-                    <input
+                <input
                   type="text"
                   id="username"
                   placeholder="Enter a profile name."
@@ -141,7 +152,7 @@ class SignupForm extends React.Component {
             <li>
               <label htmlFor="birthdate">
                 What's your date of birth?
-                    <input
+                <input
                   type="date"
                   id="birthdate"
                   onChange={this.update("birthdate")}
@@ -186,22 +197,24 @@ class SignupForm extends React.Component {
                   <label htmlFor="non-binary">Non-Binary</label>
                 </div>
               </div>
-              <span className={errorMessage}>
-                {this.renderError("Gender")}
-              </span>
+              <span className={errorMessage}>{this.renderError("Gender")}</span>
             </li>
             <li>
               <button>SIGN UP</button>
             </li>
             <li>
               <p>
-                Have an account? <Link to="/login" className={signupLoginLink}>Log in.</Link>
+                Have an account?{" "}
+                <Link to="/login" className={signupLoginLink}>
+                  Log in.
+                </Link>
               </p>
             </li>
-          </ul>
-        </form>
+            </ul>
+          </form>
+        </div>
       </div>
-    )
+    );
   }
 }
 
