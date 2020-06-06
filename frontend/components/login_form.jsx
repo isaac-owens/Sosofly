@@ -32,21 +32,30 @@ class LoginForm extends React.Component {
     let logoLink = "logo-link";
 
     let loginForm = "login-form";
-    let loginFormBody = "login-form-body";
     let loginFormHeader = "login-form-header";
+    let loginFormContent = "login-form-content";
+
+    let loginFormTitleContainer = "login-form-title-container";
+    let loginFormTitle = "login-form-title";
+
+    let loginFormGithubButtonContainter = "login-form-github-button-container";
+    let loginFormGithubButton = "login-form-github-button";
+
+    let formDivider = "form-divider";
+    let formDividerLine = "form-divider-line";
+
     let loginErrorsContainer ="login-errors-container";
     let loginErrors = "login-errors";
     
     let loginErrorMessage = "login-error-message";
     
-    let loginFormInputs = "login-form-inputs";
     let dataInputField = "data-input-field";
-    let loginButtonField = "login-button-field";
+    let loginButtonContainer = "login-button-container";
     let loginButton = "login-button";
-    let loginLinkField = "login-link-field";
-    let loginLink = "login-link";
+
+    let loginFormFooter = "login-form-footer";
+    let loginSignupButton = "login-signup-button";
     let lineDividor = "line-dividor";
-    let linkCaptionField = "link-caption-field";
     let linkCaption = "link-caption";
 
 
@@ -54,15 +63,28 @@ class LoginForm extends React.Component {
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
 
     return (
-      <form onSubmit={this.handleSubmit} className={loginForm}>
+      <div className={loginForm}>
         <header className={loginFormHeader}>
           <Link to="/" className={logoLink}>
             {sosoflyLogo} Sosofly
           </Link>
         </header>
-        <hr />
 
-        <main className={loginFormBody}>
+        <div className={loginFormContent}>
+          <div className={loginFormTitleContainer}>
+            <span className={loginFormTitle}>
+              To continue, log in to Sosofly.
+            </span>
+          </div>
+          <div className={loginFormGithubButtonContainter}>
+            <button className={loginFormGithubButton}>GITHUB</button>
+          </div>
+          <span className={formDivider}>
+            <hr className={formDividerLine} />
+            OR
+            <hr className={formDividerLine} />
+          </span>
+
           {this.props.errors.length === 0 ? (
             <></>
           ) : (
@@ -72,21 +94,22 @@ class LoginForm extends React.Component {
               </p>
             </div>
           )}
-          <ul className={loginFormInputs}>
-            <li>
-              <input
-                type="text"
-                id="username"
-                onChange={this.update("username")}
-                value={this.state.username}
-                placeholder="Username"
-                style={
-                  this.state.username === ""
-                    ? { borderColor: "red" }
-                    : { borderColor: "#919496" }
-                }
-                className={dataInputField}
-              />
+
+          <form onSubmit={this.handleSubmit} className={loginForm}>
+                <input
+                  type="text"
+                  id="username"
+                  onChange={this.update("username")}
+                  value={this.state.username}
+                  placeholder="Username"
+                  style={
+                    this.state.username === ""
+                      ? { borderColor: "red" }
+                      : { borderColor: "#919496" }
+                  }
+                  className={dataInputField}
+                />
+
               {this.state.username === "" ? (
                 <div>
                   <label className={loginErrorMessage}>
@@ -96,8 +119,7 @@ class LoginForm extends React.Component {
               ) : (
                 ""
               )}
-            </li>
-            <li>
+
               <input
                 type="password"
                 id="password"
@@ -111,6 +133,7 @@ class LoginForm extends React.Component {
                 }
                 className={dataInputField}
               />
+
               {this.state.password === "" ? (
                 <div>
                   <label className={loginErrorMessage}>
@@ -120,22 +143,21 @@ class LoginForm extends React.Component {
               ) : (
                 ""
               )}
-            </li>
-            <li className={loginButtonField}>
+
+            <div className={loginButtonContainer}>
               <button className={loginButton}>LOG IN</button>
-            </li>
-            <li className={linkCaptionField}>
-              <hr className={lineDividor} />
-              <p className={linkCaption}>Don't have an account?</p>
-            </li>
-            <li className={loginLinkField}>
-              <Link to="/signup" className={loginLink}>
-                SIGN UP FOR SOSOFLY
-              </Link>
-            </li>
-          </ul>
-        </main>
-      </form>
+            </div>
+          </form>
+
+          <div className={loginFormFooter}>
+            <hr className={lineDividor} />
+            <p className={linkCaption}>Don't have an account?</p>
+            <Link to="/signup" className={loginSignupButton}>
+              SIGN UP FOR SOSOFLY
+            </Link>
+          </div>
+        </div>
+      </div>
     );
   }
 }
