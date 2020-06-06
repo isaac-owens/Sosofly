@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_200733) do
+ActiveRecord::Schema.define(version: 2020_06_06_160601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 2020_06_05_200733) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "added_tracks", force: :cascade do |t|
+    t.integer "playlist_id", null: false
+    t.integer "track_id", null: false
+  end
+
   create_table "playlists", force: :cascade do |t|
     t.integer "creator_id", null: false
     t.integer "genre_id"
@@ -47,6 +52,13 @@ ActiveRecord::Schema.define(version: 2020_06_05_200733) do
     t.index ["genre_id"], name: "index_playlists_on_genre_id"
   end
 
+  create_table "tracks", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "aws_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
@@ -56,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_06_05_200733) do
     t.datetime "updated_at", null: false
     t.date "birthdate", null: false
     t.string "gender", null: false
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
