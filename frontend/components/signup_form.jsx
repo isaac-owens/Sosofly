@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,7 @@ class SignupForm extends React.Component {
   componentDidMount() {
     this.props.clearErrors();
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state).then(() => {
@@ -49,8 +49,15 @@ class SignupForm extends React.Component {
     let signupFormHeader = "signup-form-header";
     let signupFormHeaderMessage = "signup-form-header-message";
 
-    let SignupFormGithubButton = "signup-form-github-button";
+    let signupFormGithubButtonContainter =
+      "signup-form-github-button-container";
+    let signupFormGithubButton = "signup-form-github-button";
+    let formDivider = "form-divider";
+    let formDividerLine = "form-divider-line";
+
     let signupForm = "signup-form";
+    let signupFormTitle = "signup-form-title";
+
     let genderBox = "gender-box";
     let genderBoxRadio = "gender-box-radio";
     let signupLoginLink = "signup-login-link";
@@ -60,148 +67,161 @@ class SignupForm extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className={signupFormMain}>
+        <div onSubmit={this.handleSubmit} className={signupFormMain}>
           <header className={signupFormHeader}>
             <div>
               <Link to="/" className={signupLogoLink}>
                 {sosoflyLogo} Sosofly
               </Link>
             </div>
-            <h2 className={signupFormHeaderMessage}>Sign up to start listening.</h2>
+            <h2 className={signupFormHeaderMessage}>
+              Sign up to start listening.
+            </h2>
           </header>
-          <div>
-            <button className={SignupFormGithubButton}>GITHUB</button>
+          <div className={signupFormGithubButtonContainter}>
+            <button className={signupFormGithubButton}>GITHUB</button>
           </div>
-          <ul className={signupForm}>
-            <li>
-              <label htmlFor="email">
-                What's your email?
-                    <input
-                  type="text"
-                  id="email"
-                  placeholder="Enter your email."
-                  onChange={this.update("email")}
-                  value={this.state.email}
-                />
-              </label>
-              <span className={errorMessage}>
-                {this.renderError("Email")}
-              </span>
-            </li>
-            <li>
-              <label htmlFor="confirmEmail">
-                Confirm your email
-                    <input
-                  type="text"
-                  id="confirmEmail"
-                  placeholder="Enter your email again."
-                  onChange={this.update("confirmEmail")}
-                  value={this.state.confirmEmail}
-                />
-              </label>
-              {this.state.confirmEmail !== this.state.email ? (
+          <span class={formDivider}>
+            <hr className={formDividerLine} />
+            or
+            <hr className={formDividerLine} />
+          </span>
+          <form className={signupForm}>
+            <h2 class={signupFormTitle}>Sign up with your email address</h2>
+            <ul>
+              <li>
+                <label htmlFor="email">
+                  What's your email?
+                  <input
+                    type="text"
+                    id="email"
+                    placeholder="Enter your email."
+                    onChange={this.update("email")}
+                    value={this.state.email}
+                  />
+                </label>
                 <span className={errorMessage}>
-                  This email does not match
+                  {this.renderError("Email")}
                 </span>
-              ) : (
+              </li>
+              <li>
+                <label htmlFor="confirmEmail">
+                  Confirm your email
+                  <input
+                    type="text"
+                    id="confirmEmail"
+                    placeholder="Enter your email again."
+                    onChange={this.update("confirmEmail")}
+                    value={this.state.confirmEmail}
+                  />
+                </label>
+                {this.state.confirmEmail !== this.state.email ? (
+                  <span className={errorMessage}>
+                    This email does not match
+                  </span>
+                ) : (
                   ""
                 )}
-            </li>
-            <li>
-              <label htmlFor="password">
-                Create a password
-                    <input
-                  type="password"
-                  id="password"
-                  placeholder="Create a password."
-                  onChange={this.update("password")}
-                  value={this.state.password}
-                />
-              </label>
-              <span className={errorMessage}>
-                {this.renderError("Password")}
-              </span>
-            </li>
-            <li>
-              <label htmlFor="username">
-                What should we call you?
-                    <input
-                  type="text"
-                  id="username"
-                  placeholder="Enter a profile name."
-                  onChange={this.update("username")}
-                  value={this.state.username}
-                />
-              </label>
-              <p>This appears on your profile.</p>
-              <span className={errorMessage}>
-                {this.renderError("Username")}
-              </span>
-            </li>
-            <li>
-              <label htmlFor="birthdate">
-                What's your date of birth?
-                    <input
-                  type="date"
-                  id="birthdate"
-                  onChange={this.update("birthdate")}
-                  value={this.state.birthdate}
-                />
-              </label>
-              <span className={errorMessage}>
-                {this.renderError("Birthdate")}
-              </span>
-            </li>
-            <li>
-              <p>What's your gender?</p>
-              <div className={genderBox}>
-                <div className={genderBoxRadio}>
+              </li>
+              <li>
+                <label htmlFor="password">
+                  Create a password
                   <input
-                    type="radio"
-                    id="male"
-                    checked={this.state.gender === "male"}
-                    onChange={this.updateGender()}
-                    value="male"
+                    type="password"
+                    id="password"
+                    placeholder="Create a password."
+                    onChange={this.update("password")}
+                    value={this.state.password}
                   />
-                  <label htmlFor="male">Male</label>
-                </div>
-                <div className={genderBoxRadio}>
+                </label>
+                <span className={errorMessage}>
+                  {this.renderError("Password")}
+                </span>
+              </li>
+              <li>
+                <label htmlFor="username">
+                  What should we call you?
                   <input
-                    type="radio"
-                    id="female"
-                    checked={this.state.gender === "female"}
-                    onChange={this.updateGender()}
-                    value="female"
+                    type="text"
+                    id="username"
+                    placeholder="Enter a profile name."
+                    onChange={this.update("username")}
+                    value={this.state.username}
                   />
-                  <label htmlFor="female">Female</label>
-                </div>
-                <div className={genderBoxRadio}>
+                </label>
+                <p>This appears on your profile.</p>
+                <span className={errorMessage}>
+                  {this.renderError("Username")}
+                </span>
+              </li>
+              <li>
+                <label htmlFor="birthdate">
+                  What's your date of birth?
                   <input
-                    type="radio"
-                    id="non-binary"
-                    checked={this.state.gender === "non-binary"}
-                    onChange={this.updateGender()}
-                    value="non-binary"
+                    type="date"
+                    id="birthdate"
+                    onChange={this.update("birthdate")}
+                    value={this.state.birthdate}
                   />
-                  <label htmlFor="non-binary">Non-Binary</label>
+                </label>
+                <span className={errorMessage}>
+                  {this.renderError("Birthdate")}
+                </span>
+              </li>
+              <li>
+                <p>What's your gender?</p>
+                <div className={genderBox}>
+                  <div className={genderBoxRadio}>
+                    <input
+                      type="radio"
+                      id="male"
+                      checked={this.state.gender === "male"}
+                      onChange={this.updateGender()}
+                      value="male"
+                    />
+                    <label htmlFor="male">Male</label>
+                  </div>
+                  <div className={genderBoxRadio}>
+                    <input
+                      type="radio"
+                      id="female"
+                      checked={this.state.gender === "female"}
+                      onChange={this.updateGender()}
+                      value="female"
+                    />
+                    <label htmlFor="female">Female</label>
+                  </div>
+                  <div className={genderBoxRadio}>
+                    <input
+                      type="radio"
+                      id="non-binary"
+                      checked={this.state.gender === "non-binary"}
+                      onChange={this.updateGender()}
+                      value="non-binary"
+                    />
+                    <label htmlFor="non-binary">Non-Binary</label>
+                  </div>
                 </div>
-              </div>
-              <span className={errorMessage}>
-                {this.renderError("Gender")}
-              </span>
-            </li>
-            <li>
-              <button>SIGN UP</button>
-            </li>
-            <li>
-              <p>
-                Have an account? <Link to="/login" className={signupLoginLink}>Log in.</Link>
-              </p>
-            </li>
-          </ul>
-        </form>
+                <span className={errorMessage}>
+                  {this.renderError("Gender")}
+                </span>
+              </li>
+              <li>
+                <button>SIGN UP</button>
+              </li>
+              <li>
+                <p>
+                  Have an account?{" "}
+                  <Link to="/login" className={signupLoginLink}>
+                    Log in.
+                  </Link>
+                </p>
+              </li>
+            </ul>
+          </form>
+        </div>
       </div>
-    )
+    );
   }
 }
 
