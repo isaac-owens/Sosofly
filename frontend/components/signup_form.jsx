@@ -57,10 +57,22 @@ class SignupForm extends React.Component {
     let signupForm = "signup-form";
     let signupFormTitle = "signup-form-title";
 
-    let genderBox = "gender-box";
+    let signupFormInputField = "signup-form-input-field";
+    let signupFormLabelContainer = "signup-form-label-container";
+    let signupFormLabel = "signup-form-label";
+    let signupFormInput = "signup-form-input";
+    let signupFormHelpText = "signup-form-help-text";
+
+    let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
-    let signupLoginLink = "signup-login-link";
+    let genderBoxRadioLabel = "gender-box-radio-label";
     let errorMessage = "error-message";
+    
+    let signupFormFooter = "signup-form-footer";
+    let signupButtonContainer = "signup-button-container";
+    let signupButton = "signup-button";
+    let signupLoginLink = "signup-login-link";
+    let signupLoginLinkMessage = "signup-login-link-message";
 
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
 
@@ -87,136 +99,147 @@ class SignupForm extends React.Component {
           </span>
           <form className={signupForm}>
             <h2 class={signupFormTitle}>Sign up with your email address</h2>
-            <ul>
-              <li>
-                <label htmlFor="email">
+            <div className={signupFormInputField}>
+              <div className={signupFormLabelContainer}>
+                <label htmlFor="email" className={signupFormLabel}>
                   What's your email?
-                  <input
-                    type="text"
-                    id="email"
-                    placeholder="Enter your email."
-                    onChange={this.update("email")}
-                    value={this.state.email}
-                  />
                 </label>
-                <span className={errorMessage}>
-                  {this.renderError("Email")}
-                </span>
-              </li>
-              <li>
-                <label htmlFor="confirmEmail">
+              </div>
+              <input
+                type="text"
+                id="email"
+                placeholder="Enter your email."
+                onChange={this.update("email")}
+                value={this.state.email}
+                className={signupFormInput}
+              />
+              <span className={errorMessage}>{this.renderError("Email")}</span>
+            </div>
+            <div className={signupFormInputField}>
+              <div className={signupFormLabelContainer}>
+                <label htmlFor="confirmEmail" className={signupFormLabel}>
                   Confirm your email
+                </label>
+              </div>
                   <input
                     type="text"
                     id="confirmEmail"
                     placeholder="Enter your email again."
                     onChange={this.update("confirmEmail")}
                     value={this.state.confirmEmail}
+                    className={signupFormInput}
                   />
-                </label>
-                {this.state.confirmEmail !== this.state.email ? (
-                  <span className={errorMessage}>
-                    This email does not match
-                  </span>
-                ) : (
-                  ""
-                )}
-              </li>
-              <li>
-                <label htmlFor="password">
+              {this.state.confirmEmail !== this.state.email ? (
+                <span className={errorMessage}>This email does not match</span>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className={signupFormInputField}>
+              <div className={signupFormLabelContainer}>
+                <label htmlFor="password" className={signupFormLabel}>
                   Create a password
+                </label>
+              </div>
                   <input
                     type="password"
                     id="password"
                     placeholder="Create a password."
                     onChange={this.update("password")}
                     value={this.state.password}
+                    className={signupFormInput}
                   />
-                </label>
-                <span className={errorMessage}>
-                  {this.renderError("Password")}
-                </span>
-              </li>
-              <li>
-                <label htmlFor="username">
+              <span className={errorMessage}>
+                {this.renderError("Password")}
+              </span>
+            </div>
+            <div className={signupFormInputField}>
+              <div className={signupFormLabelContainer}>
+                <label htmlFor="username" className={signupFormLabel}>
                   What should we call you?
+                </label>
+              </div>
                   <input
                     type="text"
                     id="username"
                     placeholder="Enter a profile name."
                     onChange={this.update("username")}
                     value={this.state.username}
+                    className={signupFormInput}
                   />
-                </label>
-                <p>This appears on your profile.</p>
-                <span className={errorMessage}>
-                  {this.renderError("Username")}
-                </span>
-              </li>
-              <li>
-                <label htmlFor="birthdate">
+              <div class={signupFormHelpText}>This appears on your profile.</div>
+              <span className={errorMessage}>
+                {this.renderError("Username")}
+              </span>
+            </div>
+            <div className={signupFormInputField}>
+              <div className={signupFormLabelContainer}>
+                <label htmlFor="birthdate" className={signupFormLabel}>
                   What's your date of birth?
+                </label>
+              </div>
                   <input
                     type="date"
                     id="birthdate"
                     onChange={this.update("birthdate")}
                     value={this.state.birthdate}
+                    className={signupFormInput}
                   />
+              <span className={errorMessage}>
+                {this.renderError("Birthdate")}
+              </span>
+            </div>
+            <div className={signupFormInputField}>
+              <div className={signupFormLabelContainer}>
+                <label className={signupFormLabel}>What's your gender?</label>
+              </div>
+              <div className={signupFormGenderSelect}>
+                <label className={genderBoxRadio}>
+                  <input
+                    type="radio"
+                    id="male"
+                    checked={this.state.gender === "male"}
+                    onChange={this.updateGender()}
+                    value="male"
+                  />
+                  <span class={genderBoxRadioLabel}>Male</span>
                 </label>
-                <span className={errorMessage}>
-                  {this.renderError("Birthdate")}
-                </span>
-              </li>
-              <li>
-                <p>What's your gender?</p>
-                <div className={genderBox}>
-                  <div className={genderBoxRadio}>
-                    <input
-                      type="radio"
-                      id="male"
-                      checked={this.state.gender === "male"}
-                      onChange={this.updateGender()}
-                      value="male"
-                    />
-                    <label htmlFor="male">Male</label>
-                  </div>
-                  <div className={genderBoxRadio}>
-                    <input
-                      type="radio"
-                      id="female"
-                      checked={this.state.gender === "female"}
-                      onChange={this.updateGender()}
-                      value="female"
-                    />
-                    <label htmlFor="female">Female</label>
-                  </div>
-                  <div className={genderBoxRadio}>
-                    <input
-                      type="radio"
-                      id="non-binary"
-                      checked={this.state.gender === "non-binary"}
-                      onChange={this.updateGender()}
-                      value="non-binary"
-                    />
-                    <label htmlFor="non-binary">Non-Binary</label>
-                  </div>
-                </div>
-                <span className={errorMessage}>
-                  {this.renderError("Gender")}
-                </span>
-              </li>
-              <li>
-                <button>SIGN UP</button>
-              </li>
-              <li>
-                <p>
-                  Have an account?{" "}
+                <label className={genderBoxRadio}>
+                  <input
+                    type="radio"
+                    id="female"
+                    checked={this.state.gender === "female"}
+                    onChange={this.updateGender()}
+                    value="female"
+                  />
+                  <span class={genderBoxRadioLabel}>Female</span>
+                </label>
+                <label className={genderBoxRadio}>
+                  <input
+                    type="radio"
+                    id="non-binary"
+                    checked={this.state.gender === "non-binary"}
+                    onChange={this.updateGender()}
+                    value="non-binary"
+                  />
+                  <span class={genderBoxRadioLabel}>Non-binary</span>
+                </label>
+              </div>
+              <span className={errorMessage}>{this.renderError("Gender")}</span>
+            </div>
+            <div className={signupFormFooter}>
+              <p className={signupLoginLinkMessage}>
+                <span>
+                  Have an account?
                   <Link to="/login" className={signupLoginLink}>
-                    Log in.
-                  </Link>
-                </p>
-              </li>
-            </ul>
+                    Log in
+                  </Link>.
+                </span>
+              </p>
+              <div className={signupButtonContainer}>
+                <button className={signupButton}>SIGN UP</button>
+              </div>
+            </div>
           </form>
         </div>
       </div>
