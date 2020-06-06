@@ -92,7 +92,7 @@ class SignupForm extends React.Component {
           <div className={signupFormGithubButtonContainter}>
             <button className={signupFormGithubButton}>GITHUB</button>
           </div>
-          <span class={formDivider}>
+          <span className={formDivider}>
             <hr className={formDividerLine} />
             or
             <hr className={formDividerLine} />
