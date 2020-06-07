@@ -15,13 +15,12 @@
   z-index: 3;
   position: relative;
   width: 100%;
-  opacity: .5;
-  // box-sizing: border-box;
+  max-width: calc(100vw - 232px);
 }
 
 .webplayer-top-bar-outer-transition {
   background-color: #121212;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 0;
   left: 0;
@@ -31,7 +30,6 @@
   overflow: hidden;
   transition: background-color .25s;
   pointer-events: none;
-  background-color: red;
   opacity: .6;
 }
 

@@ -1,6 +1,7 @@
 .webplayer-top-container {
-  height: 730px;
-  width: 1476px;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
   position: relative;
   display: grid;
   grid-template-rows: 1fr auto;
@@ -9,4 +10,5 @@
   "nav main main"
   "play play play";
   box-sizing: border-box;
+  color: #b3b3b3;
 }
