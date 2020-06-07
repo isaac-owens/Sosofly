@@ -17,11 +17,14 @@
   cursor: default;
 }
 
-.webplayer-nav-bar-logo-link-container {
+.webplayer-nav-bar-logolink-container {
+  height: 63px;
+  width: 232px;
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 8px;
 }
 
 .webplayer-nav-bar-logolink {
@@ -32,6 +35,7 @@
   position: relative;
   color: white;
   text-decoration: none;
+  font-size: 30px;
 }
 
 .webplayer-nav-bar-nav-links {
@@ -44,7 +48,7 @@
 
 .nav-bar-link {
   color: white;
-  background-color: #282828;
+  // background-color: #282828;
   border-radius: 4px;
   padding: 0 16px;
   display: flex;

@@ -7,6 +7,8 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -45,7 +47,7 @@ class Webplayer extends React.Component {
     let navBarHomeIcon = "nav-bar-home-icon";
     let navBarHomeActiveIcon = "nav-bar-home-active-icon";
     let navBarLinkTitle = "nav-bar-link-title";
-    
+
     let webplayerMain = "webplayer-main";
     let webplayerMainContainer = "webplayer-main-container";
     let webplayerScrollNode = "webplayer-scroll-node";
@@ -75,7 +77,9 @@ class Webplayer extends React.Component {
     let chevronLeft = <FontAwesomeIcon icon={faChevronLeft} size="2x" />;
     let chevronRight = <FontAwesomeIcon icon={faChevronRight} size="2x" />;
     let userIcon = <FontAwesomeIcon icon={faUser} size="2x" />;
-    let homeIcon = <FontAwesomeIcon icon={faHome} size="2x" />;
+    let homeIcon = <FontAwesomeIcon icon={faHome} size="1x" />;
+    let searchIcon = <FontAwesomeIcon icon={faSearch} size="1x" />;
+    let libraryIcon = <FontAwesomeIcon icon={faAlignJustify} size="1x" />;
 
     return (
       <div className={main}>
@@ -120,24 +124,22 @@ class Webplayer extends React.Component {
                   <li className={navBarNavLinkItem}>
                     <Link to="#" className={navBarLink}>
                       <div className={navBarHomeIcon}></div>
-                      <div className={navBarHomeActiveIcon}>
-                        {homeIcon}
-                      </div>
+                      <div className={navBarHomeActiveIcon}>{homeIcon}</div>
                       <span className={navBarLinkTitle}>Home</span>
                     </Link>
                   </li>
                   <li className={navBarNavLinkItem}>
                     <Link to="#" className={navBarLink}>
                       <div className={navBarHomeIcon}></div>
-                      <div className={navBarHomeActiveIcon}></div>
-                      <span></span>
+                      <div className={navBarHomeActiveIcon}>{searchIcon}</div>
+                      <span className={navBarLinkTitle}>Search</span>
                     </Link>
                   </li>
                   <li className={navBarNavLinkItem}>
                     <Link to="#" className={navBarLink}>
                       <div className={navBarHomeIcon}></div>
-                      <div className={navBarHomeActiveIcon}></div>
-                      <span></span>
+                      <div className={navBarHomeActiveIcon}>{libraryIcon}</div>
+                      <span className={navBarLinkTitle}>Library</span>
                     </Link>
                   </li>
                 </ul>
