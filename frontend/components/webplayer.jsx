@@ -22,7 +22,8 @@ class Webplayer extends React.Component {
 
     let webplayerPlayBar = "webplayer-play-bar"
     let webplayerPlayBarFooter = "webplayer-play-bar-footer";
-
+    let webplayerPlayBarContentContainer = "webplayer-play-bar-content-container";
+    
     return (
       <div className={webplayerTopContainer}>
         <div className={webplayerTopBar}>
@@ -50,7 +51,7 @@ class Webplayer extends React.Component {
         </div>
         <div className={webplayerPlayBar}>
           <footer className={webplayerPlayBarFooter}>
-
+            <div className={webplayerPlayBarContentContainer}></div>
           </footer>
         </div>
       </div>
