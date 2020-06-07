@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 class Webplayer extends React.Component {
   constructor(props){
     super(props);
@@ -14,7 +18,9 @@ class Webplayer extends React.Component {
     let webplayerTopBarOuterTransition = "webplayer-top-bar-outer-transition";
     let webplayerTopBarInnerTransition = "webplayer-top-bar-inner-transition";
     let webplayerTopBarHeaderNavLinks = "webplayer-top-bar-header-nav-links";
-
+    let webplayerTopBarHeaderNavButton = "webplayer-top-bar-header-nav-button";
+    let webplayerTopBarUserDropdown = "webplayer-top-bar-user-dropdown";
+    let webplayerTopBarUserButton = "webplayer-top-bar-user-button";
     let webplayerNavBar = "webplayer-nav-bar";
     let webplayerNavBarContentContainer = "webplayer-nav-bar-content-container";
     let webplayerNavBarLogolinkContainer = "webplayer-nav-bar-logolink-container";
@@ -43,6 +49,9 @@ class Webplayer extends React.Component {
     let GenreHeaderLink = "genre-header-link";
     let GenreIndexLink = "genre-index-link";
 
+    let chevronLeft = <FontAwesomeIcon icon={faChevronLeft} size="2x" />;
+    let chevronRight = <FontAwesomeIcon icon={faChevronRight} size="2x" />;
+
     return (
       <div className={webplayerTopContainer}>
         <div className={webplayerTopBar}>
@@ -51,8 +60,25 @@ class Webplayer extends React.Component {
               <div className={webplayerTopBarInnerTransition}></div>
             </div>
             <div className={webplayerTopBarHeaderNavLinks}>
-              <button>back icon here</button>
-              <button>forward icon here</button>
+              <button className={webplayerTopBarHeaderNavButton}>
+                {chevronLeft}
+              </button>
+              <button className={webplayerTopBarHeaderNavButton}>
+                {chevronRight}
+              </button>
+              <div className={webplayerTopBarUserDropdown}>
+                <button className={webplayerTopBarUserButton}>
+                  <figure>
+                    <div>
+                      icon
+                    </div>
+                  </figure>
+                  <span>username</span>
+                  <span>
+                    icon
+                  </span>
+                </button>
+              </div>
             </div>
           </header>
         </div>
@@ -83,7 +109,9 @@ class Webplayer extends React.Component {
                       {/* extra divs with formatting */}
                       <div className={PlaylistCollectionGrid}>
                         <h2 className={PlaylistCollectionHeader}>
-                          <Link to="#" className={GenreHeaderLink}>genre title</Link>
+                          <Link to="#" className={GenreHeaderLink}>
+                            genre title
+                          </Link>
                         </h2>
                       </div>
                       <Link to="#" className={GenreIndexLink}>
