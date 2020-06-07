@@ -1,0 +1,8 @@
+.webplayer-top-bar {
+  grid-area: main;
+  height: 60px;
+  z-index: 2;
+  pointer-events: none; 
+  background-color: red;
+  // ^ instructs pointer to go 'through' the element to whatever is 'underneath'
+}

@@ -23,10 +23,16 @@ class Webplayer extends React.Component {
     let webplayerPlayBar = "webplayer-play-bar"
     let webplayerPlayBarFooter = "webplayer-play-bar-footer";
     let webplayerPlayBarContentContainer = "webplayer-play-bar-content-container";
+
+    let webplayerMain = "webplayer-main";
     let webplayerMainContainer = "webplayer-main-container";
     let webplayerScrollNode = "webplayer-scroll-node";
     let webplayerScrollNodeChildSpacer = "webplayer-scroll-node-child-spacer";
     let webplayerScrollNodeChild = "webplayer-scroll-node-child";
+
+    let webplayerPlaybarLeft = "webplayer-play-bar-left"
+    let webplayerPlaybarRight = "webplayer-play-bar-right";
+    let webplayerPlaybarCenter = "webplayer-play-bar-center";
 
     let webplayerClassNames = ["webplayer-main-grid", "content-spacing"];
     webplayerClassNames = webplayerClassNames.join(' ');
@@ -53,7 +59,7 @@ class Webplayer extends React.Component {
         <div className={webplayerNavBar}>
           <nav className={webplayerNavBarContentContainer}>
             <div className={webplayerNavBarLogolinkContainer}>
-              <Link className={webplayerNavBarLogolink}></Link>
+              <Link to="#" className={webplayerNavBarLogolink}></Link>
             </div>
           </nav>
         </div>
@@ -77,10 +83,10 @@ class Webplayer extends React.Component {
                       {/* extra divs with formatting */}
                       <div className={PlaylistCollectionGrid}>
                         <h2 className={PlaylistCollectionHeader}>
-                          <Link className={GenreHeaderLink}>genre title</Link>
+                          <Link to="#" className={GenreHeaderLink}>genre title</Link>
                         </h2>
                       </div>
-                      <Link className={GenreIndexLink}>
+                      <Link to="#" className={GenreIndexLink}>
                         <span>See all</span>
                       </Link>
                     </section>

@@ -1,0 +1,9 @@
+.webplayer-nav-bar {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  grid-area: nav;
+  background-color: orange;
+  width: 232px;
+  z-index: 3;
+}
