@@ -148,3 +148,32 @@
   border: none;
   height: 1px;
 }
+
+.rootlist-scroll-node {
+  overflow-y: auto;
+  list-style: none;
+  transform: translateZ(0);
+  padding: 4px 0;
+}
+
+.react-wrapper {
+  display: inline;
+}
+
+.rootlist-item {
+  position: relative;
+  height: 32px;
+}
+
+.text-wrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  height: 32px;
+}
+
+.playlist-title {
+  font-size: 14px;
+  letter-spacing: .015em;
+}

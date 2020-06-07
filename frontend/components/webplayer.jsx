@@ -58,7 +58,13 @@ class Webplayer extends React.Component {
     let createPlaylistButtonTitle = "create-playlist-button-title";
     let createPlaylistIcon = "create-playlist-icon";
     let RootlistDivider = "rootlist-divider";
+    let RootlistScrollNode = "rootlist-scroll-node";
     
+    let reactWrapper = "react-wrapper";
+    let RootlistItem = "root=list=item";
+    let textWrapper = "text-wrapper";
+    let playlistTitle = "playlist-title";
+
     let webplayerPlayBar = "webplayer-play-bar"
     let webplayerPlayBarFooter = "webplayer-play-bar-footer";
     let webplayerPlayBarContentContainer = "webplayer-play-bar-content-container";
@@ -181,6 +187,54 @@ class Webplayer extends React.Component {
                         </button>
                       </div>
                       <hr className={RootlistDivider}/>
+                      <ul className={RootlistScrollNode}>
+                        {/* React generated playlist lists */}
+                        <div className={reactWrapper}>
+                          <li className={RootlistItem}>
+                            <div className={textWrapper}>
+                              <span className={playlistTitle}>
+                                Playlist title here
+                              </span>
+                            </div>
+                          </li>
+                        </div>
+                        <div className={reactWrapper}>
+                          <li className={RootlistItem}>
+                            <div className={textWrapper}>
+                              <span className={playlistTitle}>
+                                Playlist title here
+                              </span>
+                            </div>
+                          </li>
+                        </div>
+                        <div className={reactWrapper}>
+                          <li className={RootlistItem}>
+                            <div className={textWrapper}>
+                              <span className={playlistTitle}>
+                                Playlist title here
+                              </span>
+                            </div>
+                          </li>
+                        </div>
+                        <div className={reactWrapper}>
+                          <li className={RootlistItem}>
+                            <div className={textWrapper}>
+                              <span className={playlistTitle}>
+                                Playlist title here
+                              </span>
+                            </div>
+                          </li>
+                        </div>
+                        <div className={reactWrapper}>
+                          <li className={RootlistItem}>
+                            <div className={textWrapper}>
+                              <span className={playlistTitle}>
+                                Playlist title here
+                              </span>
+                            </div>
+                          </li>
+                        </div>
+                      </ul>
                     </div>
                   </div>
                 </div>
