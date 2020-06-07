@@ -9,6 +9,8 @@ import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
+import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -38,15 +40,28 @@ class Webplayer extends React.Component {
     let webplayerNavBarContentContainer = "webplayer-nav-bar-content-container";
     let webplayerNavBarLogolinkContainer = "webplayer-nav-bar-logolink-container";
     let webplayerNavBarLogolink = "webplayer-nav-bar-logolink";
+
     let webplayerNavBarNavLinks = "webplayer-nav-bar-nav-links";
-    let webplayerPlayBar = "webplayer-play-bar"
-    let webplayerPlayBarFooter = "webplayer-play-bar-footer";
-    let webplayerPlayBarContentContainer = "webplayer-play-bar-content-container";
     let navBarNavLinkItem = "nav-bar-nav-link-item";
     let navBarLink = "nav-bar-link";
     let navBarHomeIcon = "nav-bar-home-icon";
     let navBarHomeActiveIcon = "nav-bar-home-active-icon";
     let navBarLinkTitle = "nav-bar-link-title";
+
+    let webplayerNavBarRootlist = "webplayer-nav-bar-rootlist";
+    let RootlistHeader = "rootlist-header";
+    let webplayerNavBarRootlistContent = "webplayer-nav-bar-rootlist-content";
+    let webplayerNavBarRootlistPlaylists = "webplayer-nav-bar-rootlist-playlists";
+
+    let createPlaylistButtonContainer = "create-playlist-button-container";
+    let createPlaylistButton = "create-playlist-button";
+    let createPlaylistButtonTitle = "create-playlist-button-title";
+    let createPlaylistIcon = "create-playlist-icon";
+    let RootlistDivider = "rootlist-divider";
+    
+    let webplayerPlayBar = "webplayer-play-bar"
+    let webplayerPlayBarFooter = "webplayer-play-bar-footer";
+    let webplayerPlayBarContentContainer = "webplayer-play-bar-content-container";
 
     let webplayerMain = "webplayer-main";
     let webplayerMainContainer = "webplayer-main-container";
@@ -80,10 +95,12 @@ class Webplayer extends React.Component {
     let homeIcon = <FontAwesomeIcon icon={faHome} size="1x" />;
     let searchIcon = <FontAwesomeIcon icon={faSearch} size="1x" />;
     let libraryIcon = <FontAwesomeIcon icon={faAlignJustify} size="1x" />;
+    let createIcon = <FontAwesomeIcon icon={faPlusSquare} size="3x" />;
+    let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
 
     return (
       <div className={main}>
-        <div classname={Root}>
+        <div className={Root}>
           <div></div>
           <div className={webplayerTopContainer}>
             <div className={webplayerTopBar}>
@@ -143,6 +160,30 @@ class Webplayer extends React.Component {
                     </Link>
                   </li>
                 </ul>
+                <div className={webplayerNavBarRootlist}>
+                  <div className={webplayerNavBarRootlistContent}>
+                    <div className={webplayerNavBarRootlistPlaylists}>
+                      <h2 className={RootlistHeader}>Playlists</h2>
+                      <div className={createPlaylistButtonContainer}>
+                        <button className={createPlaylistButton}>
+                          <div className={createPlaylistIcon}>
+                            {createIcon}
+                          </div>
+                          <span className={createPlaylistButtonTitle}>Create Playlist</span>
+                        </button>
+                      </div>
+                      <div className={createPlaylistButtonContainer}>
+                        <button className={createPlaylistButton}>
+                          <div className={createPlaylistIcon}>
+                            {likedSongsIcon}
+                          </div>
+                          <span className={createPlaylistButtonTitle}>Liked Songs</span>
+                        </button>
+                      </div>
+                      <hr className={RootlistDivider}/>
+                    </div>
+                  </div>
+                </div>
               </nav>
             </div>
             <div className={webplayerPlayBar}>
