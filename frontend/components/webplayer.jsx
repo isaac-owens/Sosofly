@@ -25,6 +25,9 @@ class Webplayer extends React.Component {
     let webplayerTopBarIconBoxContainer = "webplayer-top-bar-icon-box-container";
     let webplayerTopBarIconCircleContainer = "webplayer-top-bar-icon-circle-container";
     let webplayerTopBarUsername = "webplayer-top-bar-username";
+    let webplayerTopBarIcon = "webplayer-top-bar-icon";
+
+
     let webplayerNavBar = "webplayer-nav-bar";
     let webplayerNavBarContentContainer = "webplayer-nav-bar-content-container";
     let webplayerNavBarLogolinkContainer = "webplayer-nav-bar-logolink-container";
@@ -77,7 +80,7 @@ class Webplayer extends React.Component {
                   <div className={webplayerTopBarIconCircleContainer}>{userIcon}</div>
                 </figure>
                 <span className={webplayerTopBarUsername}>username</span>
-                <span>i</span>
+                <span className={webplayerTopBarIcon}>icon</span>
               </button>
             </div>
           </header>
