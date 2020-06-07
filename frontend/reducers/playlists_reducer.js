@@ -1,5 +1,5 @@
-import RECEIVE_PLAYLIST from '../actions/playlist_actions';
-import RECEIVE_PLAYLISTS from "../actions/playlist_actions";
+import { RECEIVE_PLAYLIST } from '../actions/playlist_actions';
+import { RECEIVE_PLAYLISTS } from "../actions/playlist_actions";
 
 const playlistsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -7,10 +7,9 @@ const playlistsReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_PLAYLIST:
-      return {
-        [action.playlist.id]: action.playlist
-      };
+      return { [action.playlist.id]: action.playlist };
     case RECEIVE_PLAYLISTS:
+      debugger
       return action.playlists;
     default:
      return oldState;

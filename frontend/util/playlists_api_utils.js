@@ -2,7 +2,6 @@ export const fetchUserPlaylists = (userId) => {
   return $.ajax({
     method: 'GET',
     url: `api/users/${userId}/playlists`,
-    data: { playlists }
   })
 }
 

@@ -1,5 +1,5 @@
-export const RECEIEVE_PLAYLISTS = "RECEIVE_PLAYLISTS"
-export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST"
+export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
+export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 
 import * as APIUtils from '../util/playlists_api_utils';
 
@@ -8,7 +8,7 @@ import * as APIUtils from '../util/playlists_api_utils';
 
 export const receivePlaylists = (playlists) => {
   return {
-    type: RECEIEVE_PLAYLISTS,
+    type: RECEIVE_PLAYLISTS,
     playlists
   };
 };
