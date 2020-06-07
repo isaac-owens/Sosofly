@@ -3,6 +3,16 @@ class Api::PlaylistsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :ensure_logged_in, only: [:index, :new, :create, :edit, :update, :destroy]
 
+  def index
+    @playlists = User.find_by(id: params[:user_id]).playlists
+    
+    if @playlists 
+      render json: @playlists
+    else
+      render json: {}, status: 404
+    end
+  end
+
   def create 
     @playlist = Playlist.new(playlist_params)
 
@@ -16,18 +26,9 @@ class Api::PlaylistsController < ApplicationController
   def show
     @playlist = Playlist.find_by(id: params[:id])
 
-    render json: @playlist
+    render json: @playlist.tracks
   end
 
-  def index
-    @playlists = User.find_by(id: params[:user_id]).playlists
-    
-    if @playlists 
-      render json: @playlsists
-    else
-      render json: {}, status: 404
-    end
-  end
 
   def playlist_params
     params.require(:playlist).permit(:creator_id, :title, :genre_id, :description)
