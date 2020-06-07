@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -21,6 +22,9 @@ class Webplayer extends React.Component {
     let webplayerTopBarHeaderNavButton = "webplayer-top-bar-header-nav-button";
     let webplayerTopBarUserDropdown = "webplayer-top-bar-user-dropdown";
     let webplayerTopBarUserButton = "webplayer-top-bar-user-button";
+    let webplayerTopBarIconBoxContainer = "webplayer-top-bar-icon-box-container";
+    let webplayerTopBarIconCircleContainer = "webplayer-top-bar-icon-circle-container";
+    let webplayerTopBarUsername = "webplayer-top-bar-username";
     let webplayerNavBar = "webplayer-nav-bar";
     let webplayerNavBarContentContainer = "webplayer-nav-bar-content-container";
     let webplayerNavBarLogolinkContainer = "webplayer-nav-bar-logolink-container";
@@ -51,7 +55,7 @@ class Webplayer extends React.Component {
 
     let chevronLeft = <FontAwesomeIcon icon={faChevronLeft} size="2x" />;
     let chevronRight = <FontAwesomeIcon icon={faChevronRight} size="2x" />;
-
+    let userIcon = <FontAwesomeIcon icon={faUser} size="2x" />;
     return (
       <div className={webplayerTopContainer}>
         <div className={webplayerTopBar}>
@@ -66,19 +70,15 @@ class Webplayer extends React.Component {
               <button className={webplayerTopBarHeaderNavButton}>
                 {chevronRight}
               </button>
-              <div className={webplayerTopBarUserDropdown}>
-                <button className={webplayerTopBarUserButton}>
-                  <figure>
-                    <div>
-                      icon
-                    </div>
-                  </figure>
-                  <span>username</span>
-                  <span>
-                    icon
-                  </span>
-                </button>
-              </div>
+            </div>
+            <div className={webplayerTopBarUserDropdown}>
+              <button className={webplayerTopBarUserButton}>
+                <figure className={webplayerTopBarIconBoxContainer}>
+                  <div className={webplayerTopBarIconCircleContainer}>{userIcon}</div>
+                </figure>
+                <span className={webplayerTopBarUsername}>username</span>
+                <span>i</span>
+              </button>
             </div>
           </header>
         </div>
