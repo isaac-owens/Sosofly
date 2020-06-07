@@ -5,7 +5,10 @@ import configureStore from './store/store';
 import { 
   fetchUserPlaylists,
   createPlaylist,
-  deletePlaylist } from './actions/playlist_actions'
+  deletePlaylist,
+  fetchPlaylist,
+  addTrack,
+  removeTrack } from './actions/playlist_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -35,8 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
   //TEST
     window.getState = store.getState;
     window.fetchUserPlaylists = fetchUserPlaylists; 
+    window.fetchPlaylist = fetchPlaylist;
     window.createPlaylist = createPlaylist;
     window.deletePlaylist = deletePlaylist;
+    window.addTrack = addTrack;
+    window.removeTrack = removeTrack;
     window.store = store;
   //TEST
   ReactDOM.render(<Root store={store} />, root)

@@ -2,6 +2,8 @@ export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const ADD_PLAYLIST = "ADD_PLAYLIST";
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
+export const ADD_TRACK = "ADD_TRACK";
+export const REMOVE_TRACK = "REMOVE_TRACK";
 
 import { receiveErrors } from './session_actions';
 
@@ -19,7 +21,7 @@ export const receivePlaylists = (playlists) => {
 
 export const receivePlaylist = (playlist) => {
   return {
-    type: RECEIEVE_PLAYLIST,
+    type: RECEIVE_PLAYLIST,
     playlist
   };
 };
@@ -35,6 +37,22 @@ export const removePlaylist = (playlist) => {
   return {
     type: REMOVE_PLAYLIST,
     playlist
+  }
+}
+
+export const addTrackToPlaylist = (playlist, track) => {
+  return {
+    type: ADD_TRACK,
+    playlist, 
+    track
+  }
+}
+
+export const removeTrackFromPlaylist = (playlist, track) => {
+  return {
+    type: REMOVE_TRACK,
+    playlist, 
+    track
   }
 }
 
@@ -59,6 +77,16 @@ export const createPlaylist = (userId, playlist) => dispatch => {
 export const deletePlaylist = (userId, playlistId) => dispatch => {
   return APIUtils.deletePlaylist(userId, playlistId)
   .then(playlist => dispatch(removePlaylist(playlist)));
+}
+
+export const addTrack = (playlistId, track) => dispatch => {
+  return APIUtils.fetchPlaylist(playlistId)
+  .then(playlist => dispatch(addTrackToPlaylist(playlist, track)));
+}
+
+export const removeTrack = (playlistId, track) => dispatch => {
+  return APIUtils.fetchPlaylist(playlistId)
+  .then(playlist => dispatch(removeTrackFromPlaylist(playlist, track)));
 }
 
 

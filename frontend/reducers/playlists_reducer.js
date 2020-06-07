@@ -2,7 +2,9 @@ import {
   RECEIVE_PLAYLIST, 
   RECEIVE_PLAYLISTS,
   ADD_PLAYLIST,
-  REMOVE_PLAYLIST } from '../actions/playlist_actions';
+  REMOVE_PLAYLIST,
+  ADD_TRACK,
+  REMOVE_TRACK } from '../actions/playlist_actions';
 
 
 const playlistsReducer = (oldState = {}, action) => {
@@ -20,6 +22,14 @@ const playlistsReducer = (oldState = {}, action) => {
       return newState;
     case REMOVE_PLAYLIST:
       delete newState[action.playlist.id];
+      return newState;
+    case ADD_TRACK:
+      newState[action.playlist.id].tracks.push(action.track);
+      return newState;
+    case REMOVE_TRACK:
+      const playlist = newState[action.playlist.id];
+      const index = playlist.tracks.indexOf(action.track);
+      playlist.tracks.splice(index, 1);
       return newState;
     default:
      return oldState;
