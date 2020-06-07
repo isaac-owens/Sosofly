@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -7,11 +8,20 @@ class Webplayer extends React.Component {
 
   render() {
     let webplayerTopContainer = "webplayer-top-container";
+
     let webplayerTopBar = "webplayer-top-bar";
     let webplayerTopBarHeader = "webplayer-top-bar-header";
     let webplayerTopBarOuterTransition = "webplayer-top-bar-outer-transition";
     let webplayerTopBarInnerTransition = "webplayer-top-bar-inner-transition";
     let webplayerTopBarHeaderNavLinks = "webplayer-top-bar-header-nav-links";
+
+    let webplayerNavBar = "webplayer-nav-bar";
+    let webplayerNavBarContentContainer = "webplayer-nav-bar-content-container";
+    let webplayerNavBarLogolinkContainer = "webplayer-nav-bar-logolink-container";
+    let webplayerNavBarLogolink = "webplayer-nav-bar-logolink";
+
+    let webplayerPlayBar = "webplayer-play-bar"
+    let webplayerPlayBarFooter = "webplayer-play-bar-footer";
 
     return (
       <div className={webplayerTopContainer}>
@@ -30,8 +40,19 @@ class Webplayer extends React.Component {
             </div>
           </header>
         </div>
-        <div></div>
-        <div></div>
+        <div className={webplayerNavBar}>
+          <nav className={webplayerNavBarContentContainer}>
+            <div className={webplayerNavBarLogolinkContainer}>
+              <Link className={webplayerNavBarLogolink}>
+              </Link>
+            </div>
+          </nav>
+        </div>
+        <div className={webplayerPlayBar}>
+          <footer className={webplayerPlayBarFooter}>
+
+          </footer>
+        </div>
       </div>
     )
   };
