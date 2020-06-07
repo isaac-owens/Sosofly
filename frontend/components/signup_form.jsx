@@ -98,7 +98,7 @@ class SignupForm extends React.Component {
             <hr className={formDividerLine} />
           </span>
           <form className={signupForm}>
-            <h2 class={signupFormTitle}>Sign up with your email address</h2>
+            <h2 className={signupFormTitle}>Sign up with your email address</h2>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
                 <label htmlFor="email" className={signupFormLabel}>
@@ -167,7 +167,7 @@ class SignupForm extends React.Component {
                     value={this.state.username}
                     className={signupFormInput}
                   />
-              <div class={signupFormHelpText}>This appears on your profile.</div>
+              <div className={signupFormHelpText}>This appears on your profile.</div>
               <span className={errorMessage}>
                 {this.renderError("Username")}
               </span>
@@ -202,7 +202,7 @@ class SignupForm extends React.Component {
                     onChange={this.updateGender()}
                     value="male"
                   />
-                  <span class={genderBoxRadioLabel}>Male</span>
+                  <span className={genderBoxRadioLabel}>Male</span>
                 </label>
                 <label className={genderBoxRadio}>
                   <input
@@ -212,7 +212,7 @@ class SignupForm extends React.Component {
                     onChange={this.updateGender()}
                     value="female"
                   />
-                  <span class={genderBoxRadioLabel}>Female</span>
+                  <span className={genderBoxRadioLabel}>Female</span>
                 </label>
                 <label className={genderBoxRadio}>
                   <input
@@ -222,7 +222,7 @@ class SignupForm extends React.Component {
                     onChange={this.updateGender()}
                     value="non-binary"
                   />
-                  <span class={genderBoxRadioLabel}>Non-binary</span>
+                  <span className={genderBoxRadioLabel}>Non-binary</span>
                 </label>
               </div>
               <span className={errorMessage}>{this.renderError("Gender")}</span>
