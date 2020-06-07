@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -34,11 +36,16 @@ class Webplayer extends React.Component {
     let webplayerNavBarContentContainer = "webplayer-nav-bar-content-container";
     let webplayerNavBarLogolinkContainer = "webplayer-nav-bar-logolink-container";
     let webplayerNavBarLogolink = "webplayer-nav-bar-logolink";
-
+    let webplayerNavBarNavLinks = "webplayer-nav-bar-nav-links";
     let webplayerPlayBar = "webplayer-play-bar"
     let webplayerPlayBarFooter = "webplayer-play-bar-footer";
     let webplayerPlayBarContentContainer = "webplayer-play-bar-content-container";
-
+    let navBarNavLinkItem = "nav-bar-nav-link-item";
+    let navBarLink = "nav-bar-link";
+    let navBarHomeIcon = "nav-bar-home-icon";
+    let navBarHomeActiveIcon = "nav-bar-home-active-icon";
+    let navBarLinkTitle = "nav-bar-link-title";
+    
     let webplayerMain = "webplayer-main";
     let webplayerMainContainer = "webplayer-main-container";
     let webplayerScrollNode = "webplayer-scroll-node";
@@ -64,9 +71,12 @@ class Webplayer extends React.Component {
     let GenreHeaderLink = "genre-header-link";
     let GenreIndexLink = "genre-index-link";
 
+    let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
     let chevronLeft = <FontAwesomeIcon icon={faChevronLeft} size="2x" />;
     let chevronRight = <FontAwesomeIcon icon={faChevronRight} size="2x" />;
     let userIcon = <FontAwesomeIcon icon={faUser} size="2x" />;
+    let homeIcon = <FontAwesomeIcon icon={faHome} size="2x" />;
+
     return (
       <div className={main}>
         <div classname={Root}>
@@ -88,7 +98,9 @@ class Webplayer extends React.Component {
                 <div className={webplayerTopBarUserDropdown}>
                   <button className={webplayerTopBarUserButton}>
                     <figure className={webplayerTopBarIconBoxContainer}>
-                      <div className={webplayerTopBarIconCircleContainer}>{userIcon}</div>
+                      <div className={webplayerTopBarIconCircleContainer}>
+                        {userIcon}
+                      </div>
                     </figure>
                     <span className={webplayerTopBarUsername}>username</span>
                     <span className={webplayerTopBarIcon}>icon</span>
@@ -100,8 +112,35 @@ class Webplayer extends React.Component {
             <div className={webplayerNavBar}>
               <nav className={webplayerNavBarContentContainer}>
                 <div className={webplayerNavBarLogolinkContainer}>
-                  <Link to="#" className={webplayerNavBarLogolink}></Link>
+                  <Link to="#" className={webplayerNavBarLogolink}>
+                    {sosoflyHeaderLogo} Sosofly
+                  </Link>
                 </div>
+                <ul className={webplayerNavBarNavLinks}>
+                  <li className={navBarNavLinkItem}>
+                    <Link to="#" className={navBarLink}>
+                      <div className={navBarHomeIcon}></div>
+                      <div className={navBarHomeActiveIcon}>
+                        {homeIcon}
+                      </div>
+                      <span className={navBarLinkTitle}>Home</span>
+                    </Link>
+                  </li>
+                  <li className={navBarNavLinkItem}>
+                    <Link to="#" className={navBarLink}>
+                      <div className={navBarHomeIcon}></div>
+                      <div className={navBarHomeActiveIcon}></div>
+                      <span></span>
+                    </Link>
+                  </li>
+                  <li className={navBarNavLinkItem}>
+                    <Link to="#" className={navBarLink}>
+                      <div className={navBarHomeIcon}></div>
+                      <div className={navBarHomeActiveIcon}></div>
+                      <span></span>
+                    </Link>
+                  </li>
+                </ul>
               </nav>
             </div>
             <div className={webplayerPlayBar}>

@@ -2,8 +2,81 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  height: 1000px;
   grid-area: nav;
-  background-color: orange;
+  background-color: #010101;
   width: 232px;
   z-index: 3;
 }
+
+.webplayer-nav-bar-content-container {
+  padding-top: 24px;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  cursor: default;
+}
+
+.webplayer-nav-bar-logo-link-container {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.webplayer-nav-bar-logolink {
+  padding-left: 24px;
+  border: 0;
+  margin-bottom: 18px;
+  flex: 1;
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+.webplayer-nav-bar-nav-links {
+  list-style: none;
+}
+
+.nav-bar-nav-link-item {
+  padding: 0 8px;
+}
+
+.nav-bar-link {
+  color: white;
+  background-color: #282828;
+  border-radius: 4px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  transition-property: color;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+
+.nav-bar-home-icon {
+  margin-right: 16px;
+  display: none;
+  height: 24px;
+  width: 24px;
+}
+
+.nav-bar-home-active-icon {
+  margin-right: 16px;
+  display: block;
+  height: 24px;
+  width: 24px;
+}
+
+.nav-bar-nav-link-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: normal;
+}
+
+
