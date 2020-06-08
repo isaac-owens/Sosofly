@@ -96,7 +96,6 @@ class SignupForm extends React.Component {
       </span>
       );
   }
-
   toggleClass() {
     return (e) => {
       e.currentTarget.className="hidden";
