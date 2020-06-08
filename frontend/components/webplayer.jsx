@@ -18,6 +18,7 @@ class Webplayer extends React.Component {
   }
 
   render() {
+    let body = "body";
     let main = "main";
     let Root = "Root";
     let webplayerTopContainer = "webplayer-top-container";
@@ -67,7 +68,7 @@ class Webplayer extends React.Component {
 
     let webplayerPlayBar = "webplayer-play-bar"
     let webplayerPlayBarFooter = "webplayer-play-bar-footer";
-    let webplayerPlayBarContentContainer = "webplayer-play-bar-content-container";
+    let webplayerPlayBarContent = "webplayer-play-bar-content";
 
     let webplayerMain = "webplayer-main";
     let webplayerMainContainer = "webplayer-main-container";
@@ -76,6 +77,7 @@ class Webplayer extends React.Component {
     let webplayerScrollNodeChild = "webplayer-scroll-node-child";
 
     let webplayerPlaybarLeft = "webplayer-play-bar-left"
+    let nowPlaying = "now-playing";
     let webplayerPlaybarRight = "webplayer-play-bar-right";
     let webplayerPlaybarCenter = "webplayer-play-bar-center";
 
@@ -105,6 +107,7 @@ class Webplayer extends React.Component {
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
 
     return (
+      <div className={body}>
       <div className={main}>
         <div className={Root}>
           <div></div>
@@ -162,7 +165,7 @@ class Webplayer extends React.Component {
                     <Link to="#" className={navBarLink}>
                       <div className={navBarHomeIcon}></div>
                       <div className={navBarHomeActiveIcon}>{libraryIcon}</div>
-                      <span className={navBarLinkTitle}>Library</span>
+                      <span className={navBarLinkTitle}>Your Library</span>
                     </Link>
                   </li>
                 </ul>
@@ -242,8 +245,10 @@ class Webplayer extends React.Component {
             </div>
             <div className={webplayerPlayBar}>
               <footer className={webplayerPlayBarFooter}>
-                <div className={webplayerPlayBarContentContainer}>
-                  <div className={webplayerPlaybarLeft}></div>
+                <div className={webplayerPlayBarContent}>
+                  <div className={webplayerPlaybarLeft}>
+                    <div className={nowPlaying}></div>
+                  </div>
                   <div className={webplayerPlaybarCenter}></div>
                   <div className={webplayerPlaybarRight}></div>
                 </div>
@@ -310,6 +315,60 @@ class Webplayer extends React.Component {
                             </div>
                           </div>
                         </section>
+                        <section className={playlistCollection}>
+                          <div className={playlistClassNames}>
+                            <div className={playlistCollectionHeaderGrid}>
+                              <div className={playlistCollectionHeaderFlex}>
+                                <div className={playlistCollectionHeaderWidth}>
+                                  <h2 className={playlistCollectionHeader}>
+                                    <Link to="#" className={GenreHeaderLink}>
+                                      Genre Title
+                                    </Link>
+                                  </h2>
+                                </div>
+                                <Link to="#" className={GenreIndexLink}>
+                                  <span>See all</span>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <section className={playlistCollection}>
+                          <div className={playlistClassNames}>
+                            <div className={playlistCollectionHeaderGrid}>
+                              <div className={playlistCollectionHeaderFlex}>
+                                <div className={playlistCollectionHeaderWidth}>
+                                  <h2 className={playlistCollectionHeader}>
+                                    <Link to="#" className={GenreHeaderLink}>
+                                      Genre Title
+                                    </Link>
+                                  </h2>
+                                </div>
+                                <Link to="#" className={GenreIndexLink}>
+                                  <span>See all</span>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <section className={playlistCollection}>
+                          <div className={playlistClassNames}>
+                            <div className={playlistCollectionHeaderGrid}>
+                              <div className={playlistCollectionHeaderFlex}>
+                                <div className={playlistCollectionHeaderWidth}>
+                                  <h2 className={playlistCollectionHeader}>
+                                    <Link to="#" className={GenreHeaderLink}>
+                                      Genre Title
+                                    </Link>
+                                  </h2>
+                                </div>
+                                <Link to="#" className={GenreIndexLink}>
+                                  <span>See all</span>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
                       </div>
                     </div>
                   </div>
@@ -318,6 +377,7 @@ class Webplayer extends React.Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   };

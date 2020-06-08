@@ -1,6 +1,18 @@
-.main {
-  grid-area: main;
+.body {
+  min-width: 768px;
+  min-height: 600px;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
   width: 100%;
+  height: 100%;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  isolation: isolate;
   position: relative;
 }
 
@@ -20,11 +32,13 @@
   flex-direction: column;
   min-height: 0;
   background-color: #121212;
+  margin-top: 60px;
 }
 
 .webplayer-main-container {
   flex: 1;
   min-height: 0;
+  height: 100%;
 }
 
 .webplayer-scroll-node {
@@ -42,6 +56,7 @@
 .webplayer-scroll-node-child {
   isolation: isolate;
   padding-bottom: 32px;
+  height: 100%;
 }
 
 .webplayer-main-grid {

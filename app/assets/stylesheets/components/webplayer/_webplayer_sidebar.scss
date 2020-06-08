@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-  height: 1000px;
   grid-area: nav;
   background-color: #010101;
   width: 232px;
@@ -14,6 +13,7 @@
   flex-direction: column;
   flex: 1;
   min-height: 0;
+  height: 100%;
   cursor: default;
 }
 
@@ -150,6 +150,7 @@
 }
 
 .rootlist-scroll-node {
+  height: 100%;
   overflow-y: auto;
   list-style: none;
   transform: translateZ(0);
