@@ -11,6 +11,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -99,275 +100,359 @@ class Webplayer extends React.Component {
     let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
     let chevronLeft = <FontAwesomeIcon icon={faChevronLeft} size="2x" />;
     let chevronRight = <FontAwesomeIcon icon={faChevronRight} size="2x" />;
-    let userIcon = <FontAwesomeIcon icon={faUser} size="2x" />;
+    let userIcon = <FontAwesomeIcon icon={faUser} size="1x" />;
     let homeIcon = <FontAwesomeIcon icon={faHome} size="1x" />;
     let searchIcon = <FontAwesomeIcon icon={faSearch} size="1x" />;
     let libraryIcon = <FontAwesomeIcon icon={faAlignJustify} size="1x" />;
     let createIcon = <FontAwesomeIcon icon={faPlusSquare} size="3x" />;
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
-
+    let triangleDown = <FontAwesomeIcon icon={faCaretDown} size="1x" />;
     return (
       <div className={webplayerBody}>
-      <div className={main}>
-        <div className={Root}>
-          <div></div>
-          <div className={webplayerTopContainer}>
-            <div className={webplayerTopBar}>
-              <header className={webplayerTopBarHeader}>
-                <div className={webplayerTopBarOuterTransition}>
-                  <div className={webplayerTopBarInnerTransition}></div>
-                </div>
-                <div className={webplayerTopBarHeaderNavLinks}>
-                  <button className={webplayerTopBarHeaderNavButton}>
-                    {chevronLeft}
-                  </button>
-                  <button className={webplayerTopBarHeaderNavButton}>
-                    {chevronRight}
-                  </button>
-                </div>
-                <div className={webplayerTopBarUserDropdown}>
-                  <button className={webplayerTopBarUserButton}>
-                    <figure className={webplayerTopBarIconBoxContainer}>
-                      <div className={webplayerTopBarIconCircleContainer}>
-                        {userIcon}
-                      </div>
-                    </figure>
-                    <span className={webplayerTopBarUsername}>username</span>
-                    <span className={webplayerTopBarIcon}>icon</span>
-                  </button>
-                </div>
-              </header>
-              <div></div>
-            </div>
-            <div className={webplayerNavBar}>
-              <nav className={webplayerNavBarContentContainer}>
-                <div className={webplayerNavBarLogolinkContainer}>
-                  <Link to="/account/overview" className={webplayerNavBarLogolink}>
-                    {sosoflyHeaderLogo} Sosofly
-                  </Link>
-                </div>
-                <ul className={webplayerNavBarNavLinks}>
-                  <li className={navBarNavLinkItem}>
-                    <Link to="/account/overview" className={navBarLink}>
-                      <div className={navBarHomeIcon}></div>
-                      <div className={navBarHomeActiveIcon}>{homeIcon}</div>
-                      <span className={navBarLinkTitle}>Home</span>
+        <div className={main}>
+          <div className={Root}>
+            <div></div>
+            <div className={webplayerTopContainer}>
+              <div className={webplayerTopBar}>
+                <header className={webplayerTopBarHeader}>
+                  <div className={webplayerTopBarOuterTransition}>
+                    <div className={webplayerTopBarInnerTransition}></div>
+                  </div>
+                  <div className={webplayerTopBarHeaderNavLinks}>
+                    <button className={webplayerTopBarHeaderNavButton}>
+                      {chevronLeft}
+                    </button>
+                    <button className={webplayerTopBarHeaderNavButton}>
+                      {chevronRight}
+                    </button>
+                  </div>
+                  <div className={webplayerTopBarUserDropdown}>
+                    <button className={webplayerTopBarUserButton}>
+                      <figure className={webplayerTopBarIconBoxContainer}>
+                        <div className={webplayerTopBarIconCircleContainer}>
+                          {userIcon}
+                        </div>
+                      </figure>
+                      <span className={webplayerTopBarUsername}>
+                        {this.props.currentUser.username}
+                      </span>
+                      <span className={webplayerTopBarIcon}>
+                        {triangleDown}
+                      </span>
+                    </button>
+                  </div>
+                </header>
+                <div></div>
+              </div>
+              <div className={webplayerNavBar}>
+                <nav className={webplayerNavBarContentContainer}>
+                  <div className={webplayerNavBarLogolinkContainer}>
+                    <Link
+                      to="/account/overview"
+                      className={webplayerNavBarLogolink}
+                    >
+                      {sosoflyHeaderLogo} Sosofly
                     </Link>
-                  </li>
-                  <li className={navBarNavLinkItem}>
-                    <Link to="#" className={navBarLink}>
-                      <div className={navBarHomeIcon}></div>
-                      <div className={navBarHomeActiveIcon}>{searchIcon}</div>
-                      <span className={navBarLinkTitle}>Search</span>
-                    </Link>
-                  </li>
-                  <li className={navBarNavLinkItem}>
-                    <Link to="#" className={navBarLink}>
-                      <div className={navBarHomeIcon}></div>
-                      <div className={navBarHomeActiveIcon}>{libraryIcon}</div>
-                      <span className={navBarLinkTitle}>Your Library</span>
-                    </Link>
-                  </li>
-                </ul>
-                <div className={webplayerNavBarRootlist}>
-                  <div className={webplayerNavBarRootlistContent}>
-                    <div className={webplayerNavBarRootlistPlaylists}>
-                      <h2 className={RootlistHeader}>Playlists</h2>
-                      <div className={createPlaylistButtonContainer}>
-                        <button className={createPlaylistButton}>
-                          <div className={createPlaylistIcon}>
-                            {createIcon}
+                  </div>
+                  <ul className={webplayerNavBarNavLinks}>
+                    <li className={navBarNavLinkItem}>
+                      <Link to="/webplayer" className={navBarLink}>
+                        <div className={navBarHomeIcon}></div>
+                        <div className={navBarHomeActiveIcon}>{homeIcon}</div>
+                        <span className={navBarLinkTitle}>Home</span>
+                      </Link>
+                    </li>
+                    <li className={navBarNavLinkItem}>
+                      <Link to="#" className={navBarLink}>
+                        <div className={navBarHomeIcon}></div>
+                        <div className={navBarHomeActiveIcon}>{searchIcon}</div>
+                        <span className={navBarLinkTitle}>Search</span>
+                      </Link>
+                    </li>
+                    <li className={navBarNavLinkItem}>
+                      <Link to="#" className={navBarLink}>
+                        <div className={navBarHomeIcon}></div>
+                        <div className={navBarHomeActiveIcon}>
+                          {libraryIcon}
+                        </div>
+                        <span className={navBarLinkTitle}>Your Library</span>
+                      </Link>
+                    </li>
+                  </ul>
+                  <div className={webplayerNavBarRootlist}>
+                    <div className={webplayerNavBarRootlistContent}>
+                      <div className={webplayerNavBarRootlistPlaylists}>
+                        <h2 className={RootlistHeader}>Playlists</h2>
+                        <div className={createPlaylistButtonContainer}>
+                          <button className={createPlaylistButton}>
+                            <div className={createPlaylistIcon}>
+                              {createIcon}
+                            </div>
+                            <span className={createPlaylistButtonTitle}>
+                              Create Playlist
+                            </span>
+                          </button>
+                        </div>
+                        <div className={createPlaylistButtonContainer}>
+                          <button className={createPlaylistButton}>
+                            <div className={createPlaylistIcon}>
+                              {likedSongsIcon}
+                            </div>
+                            <span className={createPlaylistButtonTitle}>
+                              Liked Songs
+                            </span>
+                          </button>
+                        </div>
+                        <hr className={RootlistDivider} />
+                        <ul className={RootlistScrollNode}>
+                          {/* React generated playlist lists */}
+                          <div className={reactWrapper}>
+                            <li className={RootlistItem}>
+                              <div className={textWrapper}>
+                                <span className={playlistTitle}>
+                                  Playlist title here
+                                </span>
+                              </div>
+                            </li>
                           </div>
-                          <span className={createPlaylistButtonTitle}>Create Playlist</span>
-                        </button>
-                      </div>
-                      <div className={createPlaylistButtonContainer}>
-                        <button className={createPlaylistButton}>
-                          <div className={createPlaylistIcon}>
-                            {likedSongsIcon}
+                          <div className={reactWrapper}>
+                            <li className={RootlistItem}>
+                              <div className={textWrapper}>
+                                <span className={playlistTitle}>
+                                  Playlist title here
+                                </span>
+                              </div>
+                            </li>
                           </div>
-                          <span className={createPlaylistButtonTitle}>Liked Songs</span>
-                        </button>
+                          <div className={reactWrapper}>
+                            <li className={RootlistItem}>
+                              <div className={textWrapper}>
+                                <span className={playlistTitle}>
+                                  Playlist title here
+                                </span>
+                              </div>
+                            </li>
+                          </div>
+                          <div className={reactWrapper}>
+                            <li className={RootlistItem}>
+                              <div className={textWrapper}>
+                                <span className={playlistTitle}>
+                                  Playlist title here
+                                </span>
+                              </div>
+                            </li>
+                          </div>
+                          <div className={reactWrapper}>
+                            <li className={RootlistItem}>
+                              <div className={textWrapper}>
+                                <span className={playlistTitle}>
+                                  Playlist title here
+                                </span>
+                              </div>
+                            </li>
+                          </div>
+                        </ul>
                       </div>
-                      <hr className={RootlistDivider}/>
-                      <ul className={RootlistScrollNode}>
-                        {/* React generated playlist lists */}
-                        <div className={reactWrapper}>
-                          <li className={RootlistItem}>
-                            <div className={textWrapper}>
-                              <span className={playlistTitle}>
-                                Playlist title here
-                              </span>
-                            </div>
-                          </li>
-                        </div>
-                        <div className={reactWrapper}>
-                          <li className={RootlistItem}>
-                            <div className={textWrapper}>
-                              <span className={playlistTitle}>
-                                Playlist title here
-                              </span>
-                            </div>
-                          </li>
-                        </div>
-                        <div className={reactWrapper}>
-                          <li className={RootlistItem}>
-                            <div className={textWrapper}>
-                              <span className={playlistTitle}>
-                                Playlist title here
-                              </span>
-                            </div>
-                          </li>
-                        </div>
-                        <div className={reactWrapper}>
-                          <li className={RootlistItem}>
-                            <div className={textWrapper}>
-                              <span className={playlistTitle}>
-                                Playlist title here
-                              </span>
-                            </div>
-                          </li>
-                        </div>
-                        <div className={reactWrapper}>
-                          <li className={RootlistItem}>
-                            <div className={textWrapper}>
-                              <span className={playlistTitle}>
-                                Playlist title here
-                              </span>
-                            </div>
-                          </li>
-                        </div>
-                      </ul>
                     </div>
                   </div>
-                </div>
-              </nav>
-            </div>
-            <div className={webplayerPlayBar}>
-              <footer className={webplayerPlayBarFooter}>
-                <div className={webplayerPlayBarContent}>
-                  <div className={webplayerPlaybarLeft}>
-                    <div className={nowPlaying}></div>
+                </nav>
+              </div>
+              <div className={webplayerPlayBar}>
+                <footer className={webplayerPlayBarFooter}>
+                  <div className={webplayerPlayBarContent}>
+                    <div className={webplayerPlaybarLeft}>
+                      <div className={nowPlaying}></div>
+                    </div>
+                    <div className={webplayerPlaybarCenter}></div>
+                    <div className={webplayerPlaybarRight}></div>
                   </div>
-                  <div className={webplayerPlaybarCenter}></div>
-                  <div className={webplayerPlaybarRight}></div>
-                </div>
-              </footer>
-            </div>
-            <div className={webplayerMain}>
-              <div className={webplayerMainContainer}>
-                <div className={webplayerScrollNode}>
-                  <div className={webplayerScrollNodeChildSpacer}>
-                    <div className={webplayerScrollNodeChild}>
-                      <div className={webplayerClassNames}>
-                        {/* <PlaylistCollection /> */}
-                        <section className={playlistCollection}>
-                          <div className={playlistClassNames}>
-                            <div className={playlistCollectionHeaderGrid}>
-                              <div className={playlistCollectionHeaderFlex}>
-                                <div className={playlistCollectionHeaderWidth}>
-                                  <h2 className={playlistCollectionHeader}>
-                                    <Link to="#" className={GenreHeaderLink}>
-                                      Genre Title
-                                    </Link>
-                                  </h2>
+                </footer>
+              </div>
+              <div className={webplayerMain}>
+                <div className={webplayerMainContainer}>
+                  <div className={webplayerScrollNode}>
+                    <div className={webplayerScrollNodeChildSpacer}>
+                      <div className={webplayerScrollNodeChild}>
+                        <section>
+                          <section>
+                            <div className={webplayerClassNames}>
+                              {/* <PlaylistCollection /> */}
+                              <section className={playlistCollection}>
+                                <div className={playlistClassNames}>
+                                  <div className={playlistCollectionHeaderGrid}>
+                                    <div
+                                      className={playlistCollectionHeaderFlex}
+                                    >
+                                      <div
+                                        className={
+                                          playlistCollectionHeaderWidth
+                                        }
+                                      >
+                                        <h2
+                                          className={playlistCollectionHeader}
+                                        >
+                                          <Link
+                                            to="#"
+                                            className={GenreHeaderLink}
+                                          >
+                                            Genre Title
+                                          </Link>
+                                        </h2>
+                                      </div>
+                                      <Link to="#" className={GenreIndexLink}>
+                                        <span>See all</span>
+                                      </Link>
+                                    </div>
+                                  </div>
                                 </div>
-                                <Link to="#" className={GenreIndexLink}>
-                                  <span>See all</span>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                        <section className={playlistCollection}>
-                          <div className={playlistClassNames}>
-                            <div className={playlistCollectionHeaderGrid}>
-                              <div className={playlistCollectionHeaderFlex}>
-                                <div className={playlistCollectionHeaderWidth}>
-                                  <h2 className={playlistCollectionHeader}>
-                                    <Link to="#" className={GenreHeaderLink}>
-                                      Genre Title
-                                    </Link>
-                                  </h2>
+                              </section>
+                              <section className={playlistCollection}>
+                                <div className={playlistClassNames}>
+                                  <div className={playlistCollectionHeaderGrid}>
+                                    <div
+                                      className={playlistCollectionHeaderFlex}
+                                    >
+                                      <div
+                                        className={
+                                          playlistCollectionHeaderWidth
+                                        }
+                                      >
+                                        <h2
+                                          className={playlistCollectionHeader}
+                                        >
+                                          <Link
+                                            to="#"
+                                            className={GenreHeaderLink}
+                                          >
+                                            Genre Title
+                                          </Link>
+                                        </h2>
+                                      </div>
+                                      <Link to="#" className={GenreIndexLink}>
+                                        <span>See all</span>
+                                      </Link>
+                                    </div>
+                                  </div>
                                 </div>
-                                <Link to="#" className={GenreIndexLink}>
-                                  <span>See all</span>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                        <section className={playlistCollection}>
-                          <div className={playlistClassNames}>
-                            <div className={playlistCollectionHeaderGrid}>
-                              <div className={playlistCollectionHeaderFlex}>
-                                <div className={playlistCollectionHeaderWidth}>
-                                  <h2 className={playlistCollectionHeader}>
-                                    <Link to="#" className={GenreHeaderLink}>
-                                      Genre Title
-                                    </Link>
-                                  </h2>
+                              </section>
+                              <section className={playlistCollection}>
+                                <div className={playlistClassNames}>
+                                  <div className={playlistCollectionHeaderGrid}>
+                                    <div
+                                      className={playlistCollectionHeaderFlex}
+                                    >
+                                      <div
+                                        className={
+                                          playlistCollectionHeaderWidth
+                                        }
+                                      >
+                                        <h2
+                                          className={playlistCollectionHeader}
+                                        >
+                                          <Link
+                                            to="#"
+                                            className={GenreHeaderLink}
+                                          >
+                                            Genre Title
+                                          </Link>
+                                        </h2>
+                                      </div>
+                                      <Link to="#" className={GenreIndexLink}>
+                                        <span>See all</span>
+                                      </Link>
+                                    </div>
+                                  </div>
                                 </div>
-                                <Link to="#" className={GenreIndexLink}>
-                                  <span>See all</span>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                        <section className={playlistCollection}>
-                          <div className={playlistClassNames}>
-                            <div className={playlistCollectionHeaderGrid}>
-                              <div className={playlistCollectionHeaderFlex}>
-                                <div className={playlistCollectionHeaderWidth}>
-                                  <h2 className={playlistCollectionHeader}>
-                                    <Link to="#" className={GenreHeaderLink}>
-                                      Genre Title
-                                    </Link>
-                                  </h2>
+                              </section>
+                              <section className={playlistCollection}>
+                                <div className={playlistClassNames}>
+                                  <div className={playlistCollectionHeaderGrid}>
+                                    <div
+                                      className={playlistCollectionHeaderFlex}
+                                    >
+                                      <div
+                                        className={
+                                          playlistCollectionHeaderWidth
+                                        }
+                                      >
+                                        <h2
+                                          className={playlistCollectionHeader}
+                                        >
+                                          <Link
+                                            to="#"
+                                            className={GenreHeaderLink}
+                                          >
+                                            Genre Title
+                                          </Link>
+                                        </h2>
+                                      </div>
+                                      <Link to="#" className={GenreIndexLink}>
+                                        <span>See all</span>
+                                      </Link>
+                                    </div>
+                                  </div>
                                 </div>
-                                <Link to="#" className={GenreIndexLink}>
-                                  <span>See all</span>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                        <section className={playlistCollection}>
-                          <div className={playlistClassNames}>
-                            <div className={playlistCollectionHeaderGrid}>
-                              <div className={playlistCollectionHeaderFlex}>
-                                <div className={playlistCollectionHeaderWidth}>
-                                  <h2 className={playlistCollectionHeader}>
-                                    <Link to="#" className={GenreHeaderLink}>
-                                      Genre Title
-                                    </Link>
-                                  </h2>
+                              </section>
+                              <section className={playlistCollection}>
+                                <div className={playlistClassNames}>
+                                  <div className={playlistCollectionHeaderGrid}>
+                                    <div
+                                      className={playlistCollectionHeaderFlex}
+                                    >
+                                      <div
+                                        className={
+                                          playlistCollectionHeaderWidth
+                                        }
+                                      >
+                                        <h2
+                                          className={playlistCollectionHeader}
+                                        >
+                                          <Link
+                                            to="#"
+                                            className={GenreHeaderLink}
+                                          >
+                                            Genre Title
+                                          </Link>
+                                        </h2>
+                                      </div>
+                                      <Link to="#" className={GenreIndexLink}>
+                                        <span>See all</span>
+                                      </Link>
+                                    </div>
+                                  </div>
                                 </div>
-                                <Link to="#" className={GenreIndexLink}>
-                                  <span>See all</span>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                        <section className={playlistCollection}>
-                          <div className={playlistClassNames}>
-                            <div className={playlistCollectionHeaderGrid}>
-                              <div className={playlistCollectionHeaderFlex}>
-                                <div className={playlistCollectionHeaderWidth}>
-                                  <h2 className={playlistCollectionHeader}>
-                                    <Link to="#" className={GenreHeaderLink}>
-                                      Genre Title
-                                    </Link>
-                                  </h2>
+                              </section>
+                              <section className={playlistCollection}>
+                                <div className={playlistClassNames}>
+                                  <div className={playlistCollectionHeaderGrid}>
+                                    <div
+                                      className={playlistCollectionHeaderFlex}
+                                    >
+                                      <div
+                                        className={
+                                          playlistCollectionHeaderWidth
+                                        }
+                                      >
+                                        <h2
+                                          className={playlistCollectionHeader}
+                                        >
+                                          <Link
+                                            to="#"
+                                            className={GenreHeaderLink}
+                                          >
+                                            Genre Title
+                                          </Link>
+                                        </h2>
+                                      </div>
+                                      <Link to="#" className={GenreIndexLink}>
+                                        <span>See all</span>
+                                      </Link>
+                                    </div>
+                                  </div>
                                 </div>
-                                <Link to="#" className={GenreIndexLink}>
-                                  <span>See all</span>
-                                </Link>
-                              </div>
+                              </section>
                             </div>
-                          </div>
+                          </section>
                         </section>
                       </div>
                     </div>
@@ -377,7 +462,6 @@ class Webplayer extends React.Component {
             </div>
           </div>
         </div>
-      </div>
       </div>
     );
   };
