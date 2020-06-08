@@ -1,10 +1,39 @@
-.splash-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #2E46B9;
-  height: 1220px;
+.splash-main-wrapper {
+  background-color: #2D46B9;
 }
+
+.splash-main-hero {
+  padding-top: 224px;
+  padding-bottom: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.splash-image {
+  position: absolute;
+  width: 70%;
+  right: 0;
+  top: 50%;
+  max-width: 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-radius: 50%;
+  min-width: 170px;
+  margin: 0 auto;
+
+  left: 50%;
+  bottom: 10%;
+}
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // background-color: #2E46B9;
+  // height: 1220px;
+
 
 .splash-main-content {
     display: flex;
@@ -36,21 +65,7 @@
     margin-top: 40px;
   }
 
-  .splash-image {
-    min-width: 1200px;
-    min-height: 973px;
-    // max-height: 975px;
-    max-width: 100%;
-    position: absolute;
-    width: 70%;
-    right: 0;
-    left: 50%;
-    bottom: 10%;
-    border-radius: 50%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    z-index: 0;
-  }
+
 
   .splash-main-signup-button {
     box-sizing: border-box;

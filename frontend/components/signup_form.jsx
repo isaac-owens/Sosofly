@@ -42,25 +42,28 @@ class SignupForm extends React.Component {
 
   updateMonth() {
     return (e) => {
+      e.stopPropagation()
       let target = e.target.value;
       this.setState((state) => (
-        { birthdate: state.birthdate += target}
+        { birthdate: target}
       ));
     };
   }
   updateDay() {
     return (e) => {
+      e.stopPropagation();
       let target = e.target.value;
       this.setState((state) => (
-        { birthdate: state.birthdate += target}
+        { birthdate: target}
       ));
     };
   }
   updateYear() {
     return (e) => {
+      e.stopPropagation()
       let target = e.target.value;
       this.setState((state) => (
-        { birthdate: state.birthdate += target}
+        { birthdate: target}
       ));
     };
   }
@@ -267,7 +270,7 @@ class SignupForm extends React.Component {
                     required
                     className={signupFormInput}
                     onChange={this.updateDay()}
-                    value={this.state.birthdate}
+                    // value={this.state.birthdate}
                     />
                 </div>
                 <div className={yearWrapper}>
@@ -286,7 +289,7 @@ class SignupForm extends React.Component {
                       required
                       className={signupFormInput}
                       onChange={this.updateYear()}
-                      value={this.state.birthdate}
+                      // value={this.state.birthdate}
                     />
                   </div>
                 </div>

@@ -16,8 +16,11 @@ class Splash extends React.Component {
   }
 
   render() {
+    let splashMainWrapper = "splash-main-wrapper";
+
     let splashHeader = "splash-header";
     let splashHeaderNav = "splash-header-nav";
+    let headerLogoLinkWrapper = "header-logo-link-wrapper";
     let headerLogoLink = "header-logo-link";
     let headerLink = "header-link"
 
@@ -26,27 +29,29 @@ class Splash extends React.Component {
     let footerLink = "footer-link";
     let footerWebplayerLink = "footer-webplayer-link";
 
-    let splashMain = "splash-main";  
+    let splashMainHero = "splash-main-hero";  
     let splashMainContent = "splash-main-content";
     let splashMainSection = "splash-main-section";
     let splashMainSectionHeader = "splash-main-section-header";
     let splashMainSectionSubheader = "splash-main-section-subheader"
     let splashMainSignupButton = "splash-main-signup-button";
     let authLinks = "auth-links";
+
     let splashImage = "splash-image";
 
     let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
     let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
 
     return (
-      <>
+    <>
+      <div className={splashMainWrapper}>
         <header className={splashHeader}>
           <div className={splashHeaderNav}>
-            <h1>
+            <div className={headerLogoLinkWrapper}>
               <Link to="/" className={headerLogoLink}>
                 {sosoflyHeaderLogo} Sosofly
               </Link>
-            </h1>
+            </div>
             <div className={authLinks}>
               <Link to="/signup" className={headerLink}>
                 Signup
@@ -57,8 +62,14 @@ class Splash extends React.Component {
             </div>
           </div>
         </header>
-
-        <main className={splashMain}>
+        <main className={splashMainHero}>
+          <div>
+            <img
+              className={splashImage}
+              src={window.heroURL}
+              alt="woman wearing headphones looking to the sky"
+            />
+          </div>
           <div className={splashMainContent}>
             <section className={splashMainSection}>
               <h1 className={splashMainSectionHeader}>
@@ -73,26 +84,21 @@ class Splash extends React.Component {
               </Link>
             </section>
           </div>
-            <img
-              className={splashImage}
-              src={window.heroURL}
-              alt="woman wearing headphones looking to the sky"
-            />
           {/* </div> */}
         </main>
-
-        <footer className={splashFooter}>
-          <nav className={splashFooterNav}>
-            <h2>
-              <Link to="/" className={footerLink}>
-                {sosoflyFooterLogo} Sosofly
-              </Link>
-            </h2>
-            <Link to="#" className={footerWebplayerLink}>
-              Webplayer
+      </div>
+      <footer className={splashFooter}>
+        <nav className={splashFooterNav}>
+          <h2>
+            <Link to="/" className={footerLink}>
+              {sosoflyFooterLogo} Sosofly
             </Link>
-          </nav>
-        </footer>
+          </h2>
+          <Link to="#" className={footerWebplayerLink}>
+            Webplayer
+          </Link>
+        </nav>
+      </footer>
       </>
     );
   }
