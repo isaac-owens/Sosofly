@@ -54,11 +54,32 @@ class SignupForm extends React.Component {
     };
   }
 
-
+  updateMonth() {
+    return (e) => {
+      e.stopPropagation();
+      let target = e.target.value;
+      this.setState((state) => ({ birthdate: target }));
+    };
+  }
+  updateDay() {
+    return (e) => {
+      e.stopPropagation();
+      let target = e.target.value;
+      this.setState((state) => ({ birthdate: target }));
+    };
+  }
+  updateYear() {
+    return (e) => {
+      e.stopPropagation();
+      let target = e.target.value;
+      this.setState((state) => ({ birthdate: target }));
+    };
+  }
+  
   renderError(field) {
     debugger
     const errors = this.props.errors;
-    let errorMessage = "error-message";
+    let errorMessage = "error-message"
     let index = errors.findIndex((error) => error.includes(field));
     let error;
     let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
@@ -115,7 +136,6 @@ class SignupForm extends React.Component {
     let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
     let genderBoxRadioLabel = "gender-box-radio-label";
-
     let signupFormFooter = "signup-form-footer";
     let signupButtonContainer = "signup-button-container";
     let signupButton = "signup-button";
