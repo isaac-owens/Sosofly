@@ -43,34 +43,29 @@ class SignupForm extends React.Component {
 
   updateMonth() {
     return (e) => {
-      e.stopPropagation()
+      e.stopPropagation();
       let target = e.target.value;
-      this.setState((state) => (
-        { birthdate: target}
-      ));
+      this.setState((state) => ({ birthdate: target }));
     };
   }
   updateDay() {
     return (e) => {
       e.stopPropagation();
       let target = e.target.value;
-      this.setState((state) => (
-        { birthdate: target}
-      ));
+      this.setState((state) => ({ birthdate: target }));
     };
   }
   updateYear() {
     return (e) => {
-      e.stopPropagation()
+      e.stopPropagation();
       let target = e.target.value;
-      this.setState((state) => (
-        { birthdate: target}
-      ));
+      this.setState((state) => ({ birthdate: target }));
     };
   }
   
   renderError(field) {
     const errors = this.props.errors;
+<<<<<<< HEAD
     let errorMessage = "error-message"
     let index = errors.findIndex((error) => error.includes(field));
     let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
@@ -84,6 +79,18 @@ class SignupForm extends React.Component {
       (
         ""
       )
+=======
+    let errorMessage = "error-message";
+    let index = errors.findIndex((error) => error.includes(field));
+    let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
+
+    return errors.length > 0 ? (
+      <span className={errorMessage}>
+        {exclamation} {errors[index]}
+      </span>
+    ) : (
+      ""
+>>>>>>> auth
     );
   }
 
@@ -94,7 +101,8 @@ class SignupForm extends React.Component {
     let signupFormHeader = "signup-form-header";
     let signupFormHeaderMessage = "signup-form-header-message";
 
-    let signupFormGithubButtonContainter = "signup-form-github-button-container";
+    let signupFormGithubButtonContainter =
+      "signup-form-github-button-container";
     let signupFormGithubButton = "signup-form-github-button";
     let formDivider = "form-divider";
     let formDividerLine = "form-divider-line";
@@ -110,8 +118,8 @@ class SignupForm extends React.Component {
 
     let signupFormDateSelect = "signup-form-date-select";
     let signupFormMonthSelect = "signup-form-month-select";
-    let monthWrapper = "month-wrapper"
-    let selectContainer = "select-container"
+    let monthWrapper = "month-wrapper";
+    let selectContainer = "select-container";
     let dayWrapper = "day-wrapper";
     let yearWrapper = "year-wrapper";
     let selectArrow = "select-arrow";
@@ -119,7 +127,11 @@ class SignupForm extends React.Component {
     let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
     let genderBoxRadioLabel = "gender-box-radio-label";
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> auth
     let signupFormFooter = "signup-form-footer";
     let signupButtonContainer = "signup-button-container";
     let signupButton = "signup-button";
@@ -128,7 +140,6 @@ class SignupForm extends React.Component {
 
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
     let arrowDown = <FontAwesomeIcon icon={faChevronDown} size="1x" />;
-
 
     return (
       <div>
