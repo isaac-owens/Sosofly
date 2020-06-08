@@ -337,6 +337,9 @@ class SignupForm extends React.Component {
               <span className={errorMessage}>{this.renderError("Gender")}</span>
             </div>
             <div className={signupFormFooter}>
+              <div className={signupButtonContainer}>
+                <button className={signupButton}>SIGN UP</button>
+              </div>
               <p className={signupLoginLinkMessage}>
                 <span>
                   Have an account?
@@ -346,9 +349,6 @@ class SignupForm extends React.Component {
                   .
                 </span>
               </p>
-              <div className={signupButtonContainer}>
-                <button className={signupButton}>SIGN UP</button>
-              </div>
             </div>
           </form>
         </div>
