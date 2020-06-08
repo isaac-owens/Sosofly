@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -67,11 +68,23 @@ class SignupForm extends React.Component {
       ));
     };
   }
-
+  
   renderError(field) {
     const errors = this.props.errors;
+    let errorMessage = "error-message"
     let index = errors.findIndex((error) => error.includes(field));
-    return errors[index];
+    let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
+
+    return (
+      errors.length > 0 ? (
+        <span className={errorMessage}>
+          {exclamation} {errors[index]}
+        </span>
+      ) :
+      (
+        ""
+      )
+    );
   }
 
   render() {
@@ -106,7 +119,6 @@ class SignupForm extends React.Component {
     let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
     let genderBoxRadioLabel = "gender-box-radio-label";
-    let errorMessage = "error-message";
     
     let signupFormFooter = "signup-form-footer";
     let signupButtonContainer = "signup-button-container";
@@ -155,7 +167,7 @@ class SignupForm extends React.Component {
                 value={this.state.email}
                 className={signupFormInput}
               />
-              <span className={errorMessage}>{this.renderError("Email")}</span>
+              {this.renderError("Email")}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -191,9 +203,7 @@ class SignupForm extends React.Component {
                 value={this.state.password}
                 className={signupFormInput}
               />
-              <span className={errorMessage}>
-                {this.renderError("Password")}
-              </span>
+              {this.renderError("Password")}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -212,9 +222,7 @@ class SignupForm extends React.Component {
               <div className={signupFormHelpText}>
                 This appears on your profile.
               </div>
-              <span className={errorMessage}>
-                {this.renderError("Username")}
-              </span>
+              {this.renderError("Username")}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -271,7 +279,7 @@ class SignupForm extends React.Component {
                     className={signupFormInput}
                     onChange={this.updateDay()}
                     // value={this.state.birthdate}
-                    />
+                  />
                 </div>
                 <div className={yearWrapper}>
                   <div className={signupFormLabelContainer}>
@@ -294,9 +302,7 @@ class SignupForm extends React.Component {
                   </div>
                 </div>
               </div>
-              <span className={errorMessage}>
-                {this.renderError("Birthdate")}
-              </span>
+              {this.renderError("Birthdate")}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -334,7 +340,7 @@ class SignupForm extends React.Component {
                   <span className={genderBoxRadioLabel}>Non-binary</span>
                 </label>
               </div>
-              <span className={errorMessage}>{this.renderError("Gender")}</span>
+              {this.renderError("Gender")}
             </div>
             <div className={signupFormFooter}>
               <div className={signupButtonContainer}>
