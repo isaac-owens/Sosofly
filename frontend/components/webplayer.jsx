@@ -142,13 +142,13 @@ class Webplayer extends React.Component {
             <div className={webplayerNavBar}>
               <nav className={webplayerNavBarContentContainer}>
                 <div className={webplayerNavBarLogolinkContainer}>
-                  <Link to="#" className={webplayerNavBarLogolink}>
+                  <Link to="/account/overview" className={webplayerNavBarLogolink}>
                     {sosoflyHeaderLogo} Sosofly
                   </Link>
                 </div>
                 <ul className={webplayerNavBarNavLinks}>
                   <li className={navBarNavLinkItem}>
-                    <Link to="#" className={navBarLink}>
+                    <Link to="/account/overview" className={navBarLink}>
                       <div className={navBarHomeIcon}></div>
                       <div className={navBarHomeActiveIcon}>{homeIcon}</div>
                       <span className={navBarLinkTitle}>Home</span>
