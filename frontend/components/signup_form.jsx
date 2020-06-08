@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+import { faCompactDisc, faThList } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,9 +12,6 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateGender = this.updateGender.bind(this);
-    this.updateMonth = this.updateMonth.bind(this);
-    this.updateDay = this.updateDay.bind(this);
-    this.updateYear = this.updateYear.bind(this);
     this.renderError = this.renderError.bind(this);
   }
 
@@ -24,7 +21,23 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state).then(() => {
+    const date = `${this.state.year}-${this.state.month}-${this.state.day}`
+    debugger
+    const user = {
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password,
+      birthdate: date,
+      gender: this.state.gender
+    }
+    // if (this.state.email !== this.state.confirmEmail) {
+    //   debugger
+    //   console.log("Does not match!")
+    //   this.renderError("Email");
+    //   return;
+    // }
+
+    this.props.processForm(user).then(() => {
       return this.props.history.push("/account/overview");
     });
   }
@@ -41,41 +54,32 @@ class SignupForm extends React.Component {
     };
   }
 
-  updateMonth() {
-    return (e) => {
-      e.stopPropagation();
-      let target = e.target.value;
-      this.setState((state) => ({ birthdate: target }));
-    };
-  }
-  updateDay() {
-    return (e) => {
-      e.stopPropagation();
-      let target = e.target.value;
-      this.setState((state) => ({ birthdate: target }));
-    };
-  }
-  updateYear() {
-    return (e) => {
-      e.stopPropagation();
-      let target = e.target.value;
-      this.setState((state) => ({ birthdate: target }));
-    };
-  }
 
   renderError(field) {
+    debugger
     const errors = this.props.errors;
     let errorMessage = "error-message";
     let index = errors.findIndex((error) => error.includes(field));
+    let error;
     let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
+    debugger
+    if (field === "match") {
+      error = "This email does not match"
+    } else if (errors.length > 0) {
+      error = errors[index];
+    } 
 
-    return errors.length > 0 ? (
+    return (
       <span className={errorMessage}>
-        {exclamation} {errors[index]}
+        {exclamation} {error}
       </span>
-    ) : (
-      ""
-    );
+      );
+  }
+
+  toggleClass() {
+    return (e) => {
+      e.currentTarget.className="hidden";
+    }
   }
 
   render() {
@@ -85,8 +89,7 @@ class SignupForm extends React.Component {
     let signupFormHeader = "signup-form-header";
     let signupFormHeaderMessage = "signup-form-header-message";
 
-    let signupFormGithubButtonContainter =
-      "signup-form-github-button-container";
+    let signupFormGithubButtonContainter = "signup-form-github-button-container";
     let signupFormGithubButton = "signup-form-github-button";
     let formDivider = "form-divider";
     let formDividerLine = "form-divider-line";
@@ -99,6 +102,7 @@ class SignupForm extends React.Component {
     let signupFormLabel = "signup-form-label";
     let signupFormInput = "signup-form-input";
     let signupFormHelpText = "signup-form-help-text";
+    let errorMessage = "error-message";
 
     let signupFormDateSelect = "signup-form-date-select";
     let signupFormMonthSelect = "signup-form-month-select";
@@ -162,23 +166,18 @@ class SignupForm extends React.Component {
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
-                <label htmlFor="confirmEmail" className={signupFormLabel}>
+                <label className={signupFormLabel}>
                   Confirm your email
                 </label>
               </div>
               <input
                 type="text"
-                id="confirmEmail"
                 placeholder="Enter your email again."
                 onChange={this.update("confirmEmail")}
                 value={this.state.confirmEmail}
                 className={signupFormInput}
+                onBlur={this.toggleClass}
               />
-              {this.state.confirmEmail !== this.state.email ? (
-                <span className={errorMessage}>This email does not match</span>
-              ) : (
-                ""
-              )}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -232,7 +231,7 @@ class SignupForm extends React.Component {
                     <select
                       name="month"
                       id="month"
-                      onChange={this.updateMonth()}
+                      onChange={this.update("month")}
                       className={signupFormMonthSelect}
                     >
                       <option disabled defaultValue="selected" value="">
@@ -268,8 +267,8 @@ class SignupForm extends React.Component {
                     pattern="((0?[1-9])|([12][0-9])|(3[01]))"
                     required
                     className={signupFormInput}
-                    onChange={this.updateDay()}
-                    // value={this.state.birthdate}
+                    onChange={this.update("day")}
+                    value={this.state.day}
                   />
                 </div>
                 <div className={yearWrapper}>
@@ -287,8 +286,8 @@ class SignupForm extends React.Component {
                       placeholder="YYYY"
                       required
                       className={signupFormInput}
-                      onChange={this.updateYear()}
-                      // value={this.state.birthdate}
+                      onChange={this.update("year")}
+                      value={this.state.year}
                     />
                   </div>
                 </div>
