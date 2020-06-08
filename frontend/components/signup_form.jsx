@@ -11,6 +11,9 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateGender = this.updateGender.bind(this);
+    this.updateMonth = this.updateMonth.bind(this);
+    this.updateDay = this.updateDay.bind(this);
+    this.updateYear = this.updateYear.bind(this);
     this.renderError = this.renderError.bind(this);
   }
 
@@ -34,6 +37,31 @@ class SignupForm extends React.Component {
   updateGender() {
     return (e) => {
       this.setState({ gender: e.target.value });
+    };
+  }
+
+  updateMonth() {
+    return (e) => {
+      let target = e.target.value;
+      this.setState((state) => (
+        { birthdate: state.birthdate += target}
+      ));
+    };
+  }
+  updateDay() {
+    return (e) => {
+      let target = e.target.value;
+      this.setState((state) => (
+        { birthdate: state.birthdate += target}
+      ));
+    };
+  }
+  updateYear() {
+    return (e) => {
+      let target = e.target.value;
+      this.setState((state) => (
+        { birthdate: state.birthdate += target}
+      ));
     };
   }
 
@@ -71,7 +99,7 @@ class SignupForm extends React.Component {
     let dayWrapper = "day-wrapper";
     let yearWrapper = "year-wrapper";
     let selectArrow = "select-arrow";
-    
+
     let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
     let genderBoxRadioLabel = "gender-box-radio-label";
@@ -202,6 +230,7 @@ class SignupForm extends React.Component {
                     <select
                       name="month"
                       id="month"
+                      onChange={this.updateMonth()}
                       className={signupFormMonthSelect}
                     >
                       <option disabled defaultValue="selected" value="">
@@ -237,7 +266,9 @@ class SignupForm extends React.Component {
                     pattern="((0?[1-9])|([12][0-9])|(3[01]))"
                     required
                     className={signupFormInput}
-                  />
+                    onChange={this.updateDay()}
+                    value={this.state.birthdate}
+                    />
                 </div>
                 <div className={yearWrapper}>
                   <div className={signupFormLabelContainer}>
@@ -248,20 +279,21 @@ class SignupForm extends React.Component {
                   <div className={selectContainer}>
                     <input
                       type="text"
-                      placeholder="DD"
                       inputMode="numeric"
-                      maxLength="2"
+                      maxLength="4"
                       pattern="(19[0-9]{2})|(200)[0-7]"
                       placeholder="YYYY"
                       required
                       className={signupFormInput}
+                      onChange={this.updateYear()}
+                      value={this.state.birthdate}
                     />
                   </div>
                 </div>
-                <span className={errorMessage}>
-                  {this.renderError("Birthdate")}
-                </span>
               </div>
+              <span className={errorMessage}>
+                {this.renderError("Birthdate")}
+              </span>
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
