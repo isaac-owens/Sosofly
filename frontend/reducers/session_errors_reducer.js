@@ -1,7 +1,7 @@
 import {
   RECEIVE_ERRORS,
   RECEIVE_CURRENT_USER,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
 } from "../actions/session_actions";
 
 const _nullErrors = [];
