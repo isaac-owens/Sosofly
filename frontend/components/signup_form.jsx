@@ -22,7 +22,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const date = `${this.state.year}-${this.state.month}-${this.state.day}`
-    debugger
+    // debugger
     const user = {
       email: this.state.email,
       username: this.state.username,
@@ -31,7 +31,7 @@ class SignupForm extends React.Component {
       gender: this.state.gender
     }
     // if (this.state.email !== this.state.confirmEmail) {
-    //   debugger
+    //   // debugger
     //   console.log("Does not match!")
     //   this.renderError("Email");
     //   return;
@@ -77,53 +77,40 @@ class SignupForm extends React.Component {
   }
   
   renderError(field) {
-    debugger
+    // debugger
     const errors = this.props.errors;
-    let errorMessage = "error-message"
-    let index = errors.findIndex((error) => error.includes(field));
-    let error;
-    let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
-    debugger
-    if (field === "match") {
-      error = "This email does not match"
-    } else if (errors.length > 0) {
-      error = errors[index];
-    } 
-
-    return (
-      <span className={errorMessage}>
-        {exclamation} {error}
-      </span>
-      );
+    return errors.some(error => error.includes(field))
   }
+  
+  
   toggleClass() {
     return (e) => {
       e.currentTarget.className="hidden";
     }
   }
-
+  
   render() {
     let signupLogoLink = "signup-logo-link";
-
+    
     let signupFormMain = "signup-form-main";
     let signupFormHeader = "signup-form-header";
     let signupFormHeaderMessage = "signup-form-header-message";
-
+    
     let signupFormGithubButtonContainter = "signup-form-github-button-container";
     let signupFormGithubButton = "signup-form-github-button";
     let formDivider = "form-divider";
     let formDividerLine = "form-divider-line";
-
+    
     let signupForm = "signup-form";
     let signupFormTitle = "signup-form-title";
-
+    
     let signupFormInputField = "signup-form-input-field";
     let signupFormLabelContainer = "signup-form-label-container";
     let signupFormLabel = "signup-form-label";
     let signupFormInput = "signup-form-input";
     let signupFormHelpText = "signup-form-help-text";
     let errorMessage = "error-message";
-
+    
     let signupFormDateSelect = "signup-form-date-select";
     let signupFormMonthSelect = "signup-form-month-select";
     let monthWrapper = "month-wrapper";
@@ -131,7 +118,7 @@ class SignupForm extends React.Component {
     let dayWrapper = "day-wrapper";
     let yearWrapper = "year-wrapper";
     let selectArrow = "select-arrow";
-
+    
     let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
     let genderBoxRadioLabel = "gender-box-radio-label";
@@ -140,10 +127,11 @@ class SignupForm extends React.Component {
     let signupButton = "signup-button";
     let signupLoginLink = "signup-login-link";
     let signupLoginLinkMessage = "signup-login-link-message";
-
+    
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
     let arrowDown = <FontAwesomeIcon icon={faChevronDown} size="1x" />;
-
+    let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
+    
     return (
       <div>
         <div onSubmit={this.handleSubmit} className={signupFormMain}>
@@ -181,13 +169,17 @@ class SignupForm extends React.Component {
                 value={this.state.email}
                 className={signupFormInput}
               />
-              {this.renderError("Email")}
+              {this.renderError("Email") ? (
+                <div className={errorMessage}>
+                  {exclamation} Email cannot be blank
+                </div>
+              ) : (
+                ""
+              )}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
-                <label className={signupFormLabel}>
-                  Confirm your email
-                </label>
+                <label className={signupFormLabel}>Confirm your email</label>
               </div>
               <input
                 type="text"
@@ -195,8 +187,8 @@ class SignupForm extends React.Component {
                 onChange={this.update("confirmEmail")}
                 value={this.state.confirmEmail}
                 className={signupFormInput}
-                onBlur={this.toggleClass}
               />
+              {/* {this.renderEmailError} */}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -212,7 +204,13 @@ class SignupForm extends React.Component {
                 value={this.state.password}
                 className={signupFormInput}
               />
-              {this.renderError("Password")}
+              {this.renderError("Password") ? (
+                <div className={errorMessage}>
+                  {exclamation} Password min 6 characters
+                </div>
+              ) : (
+                ""
+              )}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -231,7 +229,13 @@ class SignupForm extends React.Component {
               <div className={signupFormHelpText}>
                 This appears on your profile.
               </div>
-              {this.renderError("Username")}
+              {this.renderError("Username") ? (
+                <div className={errorMessage}>
+                  {exclamation} Username cannot be blank
+                </div>
+              ) : (
+                ""
+              )}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -311,7 +315,11 @@ class SignupForm extends React.Component {
                   </div>
                 </div>
               </div>
-              {this.renderError("Birthdate")}
+              {this.renderError("Birthdate") ? 
+                <div className={errorMessage}>
+                  {exclamation} Birthdate cannot be blank
+                </div> : 
+                ""}
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
@@ -349,7 +357,11 @@ class SignupForm extends React.Component {
                   <span className={genderBoxRadioLabel}>Non-binary</span>
                 </label>
               </div>
-              {this.renderError("Gender")}
+              {this.renderError("Gender") ? 
+                <div className={errorMessage}>
+                  {exclamation} Gender cannot be blank
+                </div> : 
+                ""}
             </div>
             <div className={signupFormFooter}>
               <div className={signupButtonContainer}>
