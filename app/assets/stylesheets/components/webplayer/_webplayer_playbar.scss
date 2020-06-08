@@ -28,3 +28,75 @@
   width: 30%;
   min-width: 180px;
 }
+
+.now-playing {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  transform: translateX(0);
+  transition: 
+    transform .25s
+    cubic-bezier(.3, 0, 0, 1);
+}
+
+.now-playing-cover {
+  position: relative;
+  isolation: isolate;
+}
+
+.now-playing-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.now-playing-song-title {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+  color: white;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.now-playing-like-button-wrapper {
+  position: relative;
+}
+
+.like-button {
+  background-color: transparent;
+  border: none;
+  color: #b3b3b3;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+}
+
+.webplayer-play-bar-center {
+  width: 40%;
+  max-width: 722px;
+}
+
+.player-controls-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-controls-buttons {
+  margin-bottom: 12px;
+  width: 244px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+
+}

@@ -12,6 +12,7 @@ import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -78,9 +79,20 @@ class Webplayer extends React.Component {
     let webplayerScrollNodeChild = "webplayer-scroll-node-child";
 
     let webplayerPlaybarLeft = "webplayer-play-bar-left"
+
     let nowPlaying = "now-playing";
+    let nowPlayingCover = "now-playing-cover";
+    let nowPlayingInfo = "now-playing-info";
+    let nowPlayingSongTitle = "now-plahying-song-title";
+    let nowPlayingLikeButtonWrapper = "now-playing-like-button-wrapper"
+    let likeButton = "like-button";
+
     let webplayerPlaybarRight = "webplayer-play-bar-right";
+
     let webplayerPlaybarCenter = "webplayer-play-bar-center";
+    let playerControlsContainer = "player-controls-container";
+    let playerControlsButtons = "player-controls-buttons";
+
 
     let webplayerClassNames = ["webplayer-main-grid", "content-spacing"];
     webplayerClassNames = webplayerClassNames.join(' ');
@@ -107,6 +119,8 @@ class Webplayer extends React.Component {
     let createIcon = <FontAwesomeIcon icon={faPlusSquare} size="3x" />;
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
     let triangleDown = <FontAwesomeIcon icon={faCaretDown} size="1x" />;
+    let heart = <FontAwesomeIcon icon={faHeart} size="2x" />;
+    
     return (
       <div className={webplayerBody}>
         <div className={main}>
@@ -261,9 +275,25 @@ class Webplayer extends React.Component {
                 <footer className={webplayerPlayBarFooter}>
                   <div className={webplayerPlayBarContent}>
                     <div className={webplayerPlaybarLeft}>
-                      <div className={nowPlaying}></div>
+                      <div className={nowPlaying}>
+                        <div className={nowPlayingCover}>
+                          <Link to="#">cover art</Link>
+                        </div>
+                        <div className={nowPlayingInfo}>
+                          <div className={nowPlayingSongTitle}>
+                            <span>Song Title</span>
+                          </div>
+                        </div>
+                        <div className={nowPlayingLikeButtonWrapper}>
+                          <button className={likeButton}>{heart}</button>
+                        </div>
+                      </div>
                     </div>
-                    <div className={webplayerPlaybarCenter}></div>
+                    <div className={webplayerPlaybarCenter}>
+                      <div className={playerControlsContainer}>
+                        <div className={playerControlsButtons}></div>
+                      </div>
+                    </div>
                     <div className={webplayerPlaybarRight}></div>
                   </div>
                 </footer>
