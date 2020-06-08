@@ -9,10 +9,14 @@ const mapStateToProps = (state) => {
       email: '', 
       confirmEmail: '',
       password: '',
+      confirmEmail: '',
       username: '',
       birthdate: '',
+      month: '',
+      day: '',
+      year: '',
       gender: '',
-     },
+    },
     errors: state.errors.session,
     formType: "signup",
   };
@@ -21,7 +25,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     processForm: (user) => dispatch(signup(user)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
   }
 };
 
