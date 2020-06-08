@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -10,6 +11,9 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateGender = this.updateGender.bind(this);
+    this.updateMonth = this.updateMonth.bind(this);
+    this.updateDay = this.updateDay.bind(this);
+    this.updateYear = this.updateYear.bind(this);
     this.renderError = this.renderError.bind(this);
   }
 
@@ -33,6 +37,34 @@ class SignupForm extends React.Component {
   updateGender() {
     return (e) => {
       this.setState({ gender: e.target.value });
+    };
+  }
+
+  updateMonth() {
+    return (e) => {
+      e.stopPropagation()
+      let target = e.target.value;
+      this.setState((state) => (
+        { birthdate: target}
+      ));
+    };
+  }
+  updateDay() {
+    return (e) => {
+      e.stopPropagation();
+      let target = e.target.value;
+      this.setState((state) => (
+        { birthdate: target}
+      ));
+    };
+  }
+  updateYear() {
+    return (e) => {
+      e.stopPropagation()
+      let target = e.target.value;
+      this.setState((state) => (
+        { birthdate: target}
+      ));
     };
   }
 
@@ -63,6 +95,14 @@ class SignupForm extends React.Component {
     let signupFormInput = "signup-form-input";
     let signupFormHelpText = "signup-form-help-text";
 
+    let signupFormDateSelect = "signup-form-date-select";
+    let signupFormMonthSelect = "signup-form-month-select";
+    let monthWrapper = "month-wrapper"
+    let selectContainer = "select-container"
+    let dayWrapper = "day-wrapper";
+    let yearWrapper = "year-wrapper";
+    let selectArrow = "select-arrow";
+
     let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
     let genderBoxRadioLabel = "gender-box-radio-label";
@@ -75,6 +115,8 @@ class SignupForm extends React.Component {
     let signupLoginLinkMessage = "signup-login-link-message";
 
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
+    let arrowDown = <FontAwesomeIcon icon={faChevronDown} size="1x" />;
+
 
     return (
       <div>
@@ -121,14 +163,14 @@ class SignupForm extends React.Component {
                   Confirm your email
                 </label>
               </div>
-                  <input
-                    type="text"
-                    id="confirmEmail"
-                    placeholder="Enter your email again."
-                    onChange={this.update("confirmEmail")}
-                    value={this.state.confirmEmail}
-                    className={signupFormInput}
-                  />
+              <input
+                type="text"
+                id="confirmEmail"
+                placeholder="Enter your email again."
+                onChange={this.update("confirmEmail")}
+                value={this.state.confirmEmail}
+                className={signupFormInput}
+              />
               {this.state.confirmEmail !== this.state.email ? (
                 <span className={errorMessage}>This email does not match</span>
               ) : (
@@ -141,14 +183,14 @@ class SignupForm extends React.Component {
                   Create a password
                 </label>
               </div>
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder="Create a password."
-                    onChange={this.update("password")}
-                    value={this.state.password}
-                    className={signupFormInput}
-                  />
+              <input
+                type="password"
+                id="password"
+                placeholder="Create a password."
+                onChange={this.update("password")}
+                value={this.state.password}
+                className={signupFormInput}
+              />
               <span className={errorMessage}>
                 {this.renderError("Password")}
               </span>
@@ -159,15 +201,17 @@ class SignupForm extends React.Component {
                   What should we call you?
                 </label>
               </div>
-                  <input
-                    type="text"
-                    id="username"
-                    placeholder="Enter a profile name."
-                    onChange={this.update("username")}
-                    value={this.state.username}
-                    className={signupFormInput}
-                  />
-              <div className={signupFormHelpText}>This appears on your profile.</div>
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter a profile name."
+                onChange={this.update("username")}
+                value={this.state.username}
+                className={signupFormInput}
+              />
+              <div className={signupFormHelpText}>
+                This appears on your profile.
+              </div>
               <span className={errorMessage}>
                 {this.renderError("Username")}
               </span>
@@ -178,13 +222,78 @@ class SignupForm extends React.Component {
                   What's your date of birth?
                 </label>
               </div>
+              <div className={signupFormDateSelect}>
+                <div className={monthWrapper}>
+                  <div className={signupFormLabelContainer}>
+                    <label htmlFor="month" className={signupFormLabel}>
+                      Month
+                    </label>
+                  </div>
+                  <div className={selectContainer}>
+                    <select
+                      name="month"
+                      id="month"
+                      onChange={this.updateMonth()}
+                      className={signupFormMonthSelect}
+                    >
+                      <option disabled defaultValue="selected" value="">
+                        Month
+                      </option>
+                      <option value="01">January</option>
+                      <option value="02">February</option>
+                      <option value="03">March</option>
+                      <option value="04">April</option>
+                      <option value="05">May</option>
+                      <option value="06">June</option>
+                      <option value="07">July</option>
+                      <option value="08">August</option>
+                      <option value="09">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                    <div className={selectArrow}>{arrowDown}</div>
+                  </div>
+                </div>
+                <div className={dayWrapper}>
+                  <div className={signupFormLabelContainer}>
+                    <label htmlFor="day" className={signupFormLabel}>
+                      Day
+                    </label>
+                  </div>
                   <input
-                    type="date"
-                    id="birthdate"
-                    onChange={this.update("birthdate")}
-                    value={this.state.birthdate}
+                    type="text"
+                    placeholder="DD"
+                    inputMode="numeric"
+                    maxLength="2"
+                    pattern="((0?[1-9])|([12][0-9])|(3[01]))"
+                    required
                     className={signupFormInput}
-                  />
+                    onChange={this.updateDay()}
+                    // value={this.state.birthdate}
+                    />
+                </div>
+                <div className={yearWrapper}>
+                  <div className={signupFormLabelContainer}>
+                    <label htmlFor="day" className={signupFormLabel}>
+                      Year
+                    </label>
+                  </div>
+                  <div className={selectContainer}>
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      maxLength="4"
+                      pattern="(19[0-9]{2})|(200)[0-7]"
+                      placeholder="YYYY"
+                      required
+                      className={signupFormInput}
+                      onChange={this.updateYear()}
+                      // value={this.state.birthdate}
+                    />
+                  </div>
+                </div>
+              </div>
               <span className={errorMessage}>
                 {this.renderError("Birthdate")}
               </span>
@@ -233,7 +342,8 @@ class SignupForm extends React.Component {
                   Have an account?
                   <Link to="/login" className={signupLoginLink}>
                     Log in
-                  </Link>.
+                  </Link>
+                  .
                 </span>
               </p>
               <div className={signupButtonContainer}>
