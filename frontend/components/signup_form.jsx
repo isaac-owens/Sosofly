@@ -66,8 +66,12 @@ class SignupForm extends React.Component {
 
     let signupFormDateSelect = "signup-form-date-select";
     let signupFormMonthSelect = "signup-form-month-select";
-
-
+    let monthWrapper = "month-wrapper"
+    let selectContainer = "select-container"
+    let dayWrapper = "day-wrapper";
+    let yearWrapper = "year-wrapper";
+    let selectArrow = "select-arrow";
+    
     let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
     let genderBoxRadioLabel = "gender-box-radio-label";
@@ -187,7 +191,7 @@ class SignupForm extends React.Component {
                   What's your date of birth?
                 </label>
               </div>
-              <div classname={signupFormDateSelect}>
+              <div className={signupFormDateSelect}>
                 <div className={monthWrapper}>
                   <div className={signupFormLabelContainer}>
                     <label htmlFor="month" className={signupFormLabel}>
@@ -198,9 +202,11 @@ class SignupForm extends React.Component {
                     <select
                       name="month"
                       id="month"
-                      classname={signupFormMonthSelect}
+                      className={signupFormMonthSelect}
                     >
-                      <option disabled>Month</option>
+                      <option disabled defaultValue="selected" value="">
+                        Month
+                      </option>
                       <option value="01">January</option>
                       <option value="02">February</option>
                       <option value="03">March</option>
@@ -214,7 +220,7 @@ class SignupForm extends React.Component {
                       <option value="11">November</option>
                       <option value="12">December</option>
                     </select>
-                    {arrowDown}
+                    <div className={selectArrow}>{arrowDown}</div>
                   </div>
                 </div>
                 <div className={dayWrapper}>
@@ -236,7 +242,7 @@ class SignupForm extends React.Component {
                 <div className={yearWrapper}>
                   <div className={signupFormLabelContainer}>
                     <label htmlFor="day" className={signupFormLabel}>
-                      Day
+                      Year
                     </label>
                   </div>
                   <div className={selectContainer}>
@@ -250,68 +256,65 @@ class SignupForm extends React.Component {
                       required
                       className={signupFormInput}
                     />
-                    />
                   </div>
                 </div>
                 <span className={errorMessage}>
                   {this.renderError("Birthdate")}
                 </span>
               </div>
-            </div>       
+            </div>
             <div className={signupFormInputField}>
-                <div className={signupFormLabelContainer}>
-                  <label className={signupFormLabel}>What's your gender?</label>
-                </div>
-                <div className={signupFormGenderSelect}>
-                  <label className={genderBoxRadio}>
-                    <input
-                      type="radio"
-                      id="male"
-                      checked={this.state.gender === "male"}
-                      onChange={this.updateGender()}
-                      value="male"
-                    />
-                    <span className={genderBoxRadioLabel}>Male</span>
-                  </label>
-                  <label className={genderBoxRadio}>
-                    <input
-                      type="radio"
-                      id="female"
-                      checked={this.state.gender === "female"}
-                      onChange={this.updateGender()}
-                      value="female"
-                    />
-                    <span className={genderBoxRadioLabel}>Female</span>
-                  </label>
-                  <label className={genderBoxRadio}>
-                    <input
-                      type="radio"
-                      id="non-binary"
-                      checked={this.state.gender === "non-binary"}
-                      onChange={this.updateGender()}
-                      value="non-binary"
-                    />
-                    <span className={genderBoxRadioLabel}>Non-binary</span>
-                  </label>
-                </div>
-                <span className={errorMessage}>
-                  {this.renderError("Gender")}
-                </span>
+              <div className={signupFormLabelContainer}>
+                <label className={signupFormLabel}>What's your gender?</label>
               </div>
+              <div className={signupFormGenderSelect}>
+                <label className={genderBoxRadio}>
+                  <input
+                    type="radio"
+                    id="male"
+                    checked={this.state.gender === "male"}
+                    onChange={this.updateGender()}
+                    value="male"
+                  />
+                  <span className={genderBoxRadioLabel}>Male</span>
+                </label>
+                <label className={genderBoxRadio}>
+                  <input
+                    type="radio"
+                    id="female"
+                    checked={this.state.gender === "female"}
+                    onChange={this.updateGender()}
+                    value="female"
+                  />
+                  <span className={genderBoxRadioLabel}>Female</span>
+                </label>
+                <label className={genderBoxRadio}>
+                  <input
+                    type="radio"
+                    id="non-binary"
+                    checked={this.state.gender === "non-binary"}
+                    onChange={this.updateGender()}
+                    value="non-binary"
+                  />
+                  <span className={genderBoxRadioLabel}>Non-binary</span>
+                </label>
+              </div>
+              <span className={errorMessage}>{this.renderError("Gender")}</span>
+            </div>
             <div className={signupFormFooter}>
-                <p className={signupLoginLinkMessage}>
-                  <span>
-                    Have an account?
-                    <Link to="/login" className={signupLoginLink}>
-                      Log in
-                    </Link>
-                    .
-                  </span>
-                </p>
-                <div className={signupButtonContainer}>
-                  <button className={signupButton}>SIGN UP</button>
-                </div>
+              <p className={signupLoginLinkMessage}>
+                <span>
+                  Have an account?
+                  <Link to="/login" className={signupLoginLink}>
+                    Log in
+                  </Link>
+                  .
+                </span>
+              </p>
+              <div className={signupButtonContainer}>
+                <button className={signupButton}>SIGN UP</button>
               </div>
+            </div>
           </form>
         </div>
       </div>
