@@ -18,7 +18,7 @@ class Webplayer extends React.Component {
   }
 
   render() {
-    let body = "body";
+    let webplayerBody = "webplayer-body";
     let main = "main";
     let Root = "Root";
     let webplayerTopContainer = "webplayer-top-container";
@@ -107,7 +107,7 @@ class Webplayer extends React.Component {
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
 
     return (
-      <div className={body}>
+      <div className={webplayerBody}>
       <div className={main}>
         <div className={Root}>
           <div></div>
