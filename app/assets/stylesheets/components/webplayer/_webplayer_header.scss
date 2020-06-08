@@ -1,0 +1,113 @@
+.webplayer-top-bar {
+  grid-area: main;
+  height: 60px;
+  z-index: 2;
+  pointer-events: none; 
+  // ^ instructs pointer to go 'through' the element to whatever is 'underneath'
+}
+
+.webplayer-top-bar-header {
+  background-color: #040404;
+  padding: 16px 48px 16px 32px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  position: relative;
+  width: 100%;
+  max-width: calc(100vw - 232px);
+}
+
+.webplayer-top-bar-outer-transition {
+  background-color: #121212;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+  transition: background-color .25s;
+  pointer-events: none;
+  opacity: .6;
+}
+
+.webplayer-top-bar-inner-transition {
+  height: 100%;
+  background-color: #0009;
+}
+
+.webplayer-top-bar-header-nav-links {
+  display: flex;
+}
+
+.webplayer-top-bar-header-nav-button {
+  border: none;
+  margin-right: 16px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: #000000b3;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.webplayer-top-bar-user-dropdown {
+  position: relative;
+}
+
+.webplayer-top-bar-user-button {
+  margin-left: 16px;
+  width: 150px;
+  background-color: #000000b3;
+  border-radius: 23px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  padding: 2px;
+  font-size: 14px;
+}
+
+.webplayer-top-bar-icon-box-container {
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
+.webplayer-top-bar-icon-circle-container {
+  border-radius: 50%;
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.webplayer-top-bar-username {
+  margin-left: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 110px;
+  pointer-events: none;
+}
+
+.webplayer-top-bar-icon {
+  margin-right: 6px;
+  margin-left: 8px;
+}
