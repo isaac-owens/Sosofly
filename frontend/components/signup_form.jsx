@@ -53,6 +53,7 @@ class SignupForm extends React.Component {
       this.setState({ gender: e.target.value });
     };
   }
+
   updateMonth() {
     return (e) => {
       e.stopPropagation();
@@ -74,6 +75,7 @@ class SignupForm extends React.Component {
       this.setState((state) => ({ birthdate: target }));
     };
   }
+  
   renderError(field) {
     debugger
     const errors = this.props.errors;
@@ -82,22 +84,12 @@ class SignupForm extends React.Component {
     let error;
     let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
     debugger
-    if (field === "match") {
-      error = "This email does not match"
-    } else if (errors.length > 0) {
+    
+    if (errors.length > 0) {
       error = errors[index];
     } 
 
     return (
-      errors.length > 0 ? (
-        <span className={errorMessage}>
-          {exclamation} {errors[index]}
-        </span>
-      ) :
-      (
-        ""
-      )
-    );
       <span className={errorMessage}>
         {exclamation} {error}
       </span>
@@ -204,6 +196,7 @@ class SignupForm extends React.Component {
                 className={signupFormInput}
                 onBlur={this.toggleClass}
               />
+              
             </div>
             <div className={signupFormInputField}>
               <div className={signupFormLabelContainer}>
