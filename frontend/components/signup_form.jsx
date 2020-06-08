@@ -53,8 +53,6 @@ class SignupForm extends React.Component {
       this.setState({ gender: e.target.value });
     };
   }
-
-<<<<<<< HEAD
   updateMonth() {
     return (e) => {
       e.stopPropagation();
@@ -76,10 +74,6 @@ class SignupForm extends React.Component {
       this.setState((state) => ({ birthdate: target }));
     };
   }
-  
-=======
-
->>>>>>> auth
   renderError(field) {
     debugger
     const errors = this.props.errors;
@@ -95,7 +89,6 @@ class SignupForm extends React.Component {
     } 
 
     return (
-<<<<<<< HEAD
       errors.length > 0 ? (
         <span className={errorMessage}>
           {exclamation} {errors[index]}
@@ -105,7 +98,6 @@ class SignupForm extends React.Component {
         ""
       )
     );
-=======
       <span className={errorMessage}>
         {exclamation} {error}
       </span>
@@ -116,7 +108,6 @@ class SignupForm extends React.Component {
     return (e) => {
       e.currentTarget.className="hidden";
     }
->>>>>>> auth
   }
 
   render() {
