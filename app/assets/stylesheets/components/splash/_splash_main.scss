@@ -5,11 +5,13 @@
 .splash-main-hero {
   padding-top: 224px;
   padding-bottom: 110px;
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: 100vh;
-  justify-content: center;
 }
 
 .splash-image {
@@ -17,80 +19,83 @@
   width: 70%;
   right: 0;
   top: 50%;
+  transform: translate(34%, -50%);
   max-width: 100%;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
   min-width: 170px;
   margin: 0 auto;
-
-  left: 50%;
-  bottom: 10%;
+  height: auto;
+  vertical-align: middle;
 }
 
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // background-color: #2E46B9;
-  // height: 1220px;
-
-
 .splash-main-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 15px;
-    color: #1ED760;
-    height: 360px;
-    width: 100%;
-    margin: 0 110px;
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
   }
   
   .splash-main-section {
     display: flex;
     flex-direction: column;
-    box-sizing: content-box;
-    width: 566px;
+    align-items: flex-start;
+    margin: 0;
+    max-width: 566px;
 }
 
   .splash-main-section-header {
-    font-size: 94px;
-    letter-spacing: .0009em;
+    text-align: left;
+    font-size: 104px;
     font-weight: 900;
+    margin: 16px 0 0;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #1ED760;
   }
 
   .splash-main-section-subheader {
-    font-size: 18px;
+    text-align: left;
     margin-top: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #1ED760;
   }
-
-
 
   .splash-main-signup-button {
-    box-sizing: border-box;
-    display: block;
-    font-size: 16px;
     margin-top: 40px;
-    padding: 16px 48px 18px 48px;
-    width: 260px;
-    background-color: #1ED760;
-    border-radius: 25px;
     color: #2940A8;
+    background-color: #1ED760;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 48px 18px;
+    transition-property: 
+      background-color,
+      border-color,
+      color,
+      box-shadow,
+      filter;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    white-space: normal;
+
+    display: inline-block;
     text-align: center;
-    transition: background-color .4s;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    text-decoration: none;
   }
   
-
   .splash-main-signup-button:hover {
     background-color: white;
   }
 
-  .splash-main-message {
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    flex-flow: row wrap;
-    height: 300px;
-    width: 400px;
-  }

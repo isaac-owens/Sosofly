@@ -21,23 +21,24 @@ class Splash extends React.Component {
     let splashHeader = "splash-header";
     let splashHeaderNav = "splash-header-nav";
     let headerLogoLinkWrapper = "header-logo-link-wrapper";
+    let authLinks = "auth-links";
     let headerLogoLink = "header-logo-link";
     let headerLink = "header-link"
 
-    let splashFooter = "splash-footer";
-    let splashFooterNav = "splash-footer-nav";
-    let footerLink = "footer-link";
-    let footerWebplayerLink = "footer-webplayer-link";
-
+    
     let splashMainHero = "splash-main-hero";  
     let splashMainContent = "splash-main-content";
     let splashMainSection = "splash-main-section";
     let splashMainSectionHeader = "splash-main-section-header";
     let splashMainSectionSubheader = "splash-main-section-subheader"
     let splashMainSignupButton = "splash-main-signup-button";
-    let authLinks = "auth-links";
-
+    
     let splashImage = "splash-image";
+    
+    let splashFooter = "splash-footer";
+    let splashFooterNav = "splash-footer-nav";
+    let footerLink = "footer-link";
+    let footerWebplayerLink = "footer-webplayer-link";
 
     let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
     let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
@@ -63,28 +64,26 @@ class Splash extends React.Component {
           </div>
         </header>
         <main className={splashMainHero}>
-          <div>
+          <picture>
             <img
               className={splashImage}
               src={window.heroURL}
               alt="woman wearing headphones looking to the sky"
             />
-          </div>
+          </picture>
           <div className={splashMainContent}>
             <section className={splashMainSection}>
               <h1 className={splashMainSectionHeader}>
                 Listening is everything
               </h1>
-              <p className={splashMainSectionSubheader}>
+              <h4 className={splashMainSectionSubheader}>
                 Millions of songs. No credit card needed.
-              </p>
-
+              </h4>
               <Link to="/signup" className={splashMainSignupButton}>
                 GET SOSOFLY FREE
               </Link>
             </section>
           </div>
-          {/* </div> */}
         </main>
       </div>
       <footer className={splashFooter}>
