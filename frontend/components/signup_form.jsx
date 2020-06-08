@@ -65,7 +65,6 @@ class SignupForm extends React.Component {
   
   renderError(field) {
     const errors = this.props.errors;
-<<<<<<< HEAD
     let errorMessage = "error-message"
     let index = errors.findIndex((error) => error.includes(field));
     let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
@@ -79,18 +78,6 @@ class SignupForm extends React.Component {
       (
         ""
       )
-=======
-    let errorMessage = "error-message";
-    let index = errors.findIndex((error) => error.includes(field));
-    let exclamation = <FontAwesomeIcon icon={faExclamationCircle} size="1x" />;
-
-    return errors.length > 0 ? (
-      <span className={errorMessage}>
-        {exclamation} {errors[index]}
-      </span>
-    ) : (
-      ""
->>>>>>> auth
     );
   }
 
@@ -127,11 +114,6 @@ class SignupForm extends React.Component {
     let signupFormGenderSelect = "signup-form-gender-select";
     let genderBoxRadio = "gender-box-radio";
     let genderBoxRadioLabel = "gender-box-radio-label";
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> auth
     let signupFormFooter = "signup-form-footer";
     let signupButtonContainer = "signup-button-container";
     let signupButton = "signup-button";
