@@ -33,6 +33,7 @@ class LoginForm extends React.Component {
 
     let loginForm = "login-form";
     let loginFormHeader = "login-form-header";
+    let loginFormContainer = "login-form-container";
     let loginFormContent = "login-form-content";
 
     let loginFormTitleContainer = "login-form-title-container";
@@ -49,7 +50,10 @@ class LoginForm extends React.Component {
     
     let loginErrorMessage = "login-error-message";
     
+    let loginFormInputField = "login-form-input-field";
     let dataInputField = "data-input-field";
+    let inputs = ["data-input-field", "password-input"];
+    inputs = inputs.join(' ');
     let loginButtonContainer = "login-button-container";
     let loginButton = "login-button";
 
@@ -69,8 +73,8 @@ class LoginForm extends React.Component {
             {sosoflyLogo} Sosofly
           </Link>
         </header>
-
-        <div className={loginFormContent}>
+        <div className={loginFormContainer}>
+          <div className={loginFormContent}>
           <div className={loginFormTitleContainer}>
             <span className={loginFormTitle}>
               To continue, log in to Sosofly.
@@ -95,55 +99,23 @@ class LoginForm extends React.Component {
             </div>
           )}
 
-          <form onSubmit={this.handleSubmit} className={loginForm}>
+          <form onSubmit={this.handleSubmit} className={loginFormInputField}>
                 <input
                   type="text"
                   id="username"
                   onChange={this.update("username")}
                   value={this.state.username}
                   placeholder="Username"
-                  style={
-                    this.state.username === ""
-                      ? { borderColor: "red" }
-                      : { borderColor: "#919496" }
-                  }
                   className={dataInputField}
                 />
-
-              {this.state.username === "" ? (
-                <div>
-                  <label className={loginErrorMessage}>
-                    Please enter your Sosofly username
-                  </label>
-                </div>
-              ) : (
-                ""
-              )}
-
               <input
                 type="password"
                 id="password"
                 onChange={this.update("password")}
                 value={this.state.password}
                 placeholder="Password"
-                style={
-                  this.state.password === ""
-                    ? { borderColor: "red" }
-                    : { borderColor: "#919496" }
-                }
-                className={dataInputField}
+                className={inputs}
               />
-
-              {this.state.password === "" ? (
-                <div>
-                  <label className={loginErrorMessage}>
-                    Please enter your password.
-                  </label>
-                </div>
-              ) : (
-                ""
-              )}
-
             <div className={loginButtonContainer}>
               <button className={loginButton}>LOG IN</button>
             </div>
@@ -156,6 +128,7 @@ class LoginForm extends React.Component {
               SIGN UP FOR SOSOFLY
             </Link>
           </div>
+        </div>
         </div>
       </div>
     );

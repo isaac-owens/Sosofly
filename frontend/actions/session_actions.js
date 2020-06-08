@@ -1,7 +1,6 @@
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";  
-export const RECEIVE_ERROR = "RECEIVE_ERROR";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 import * as APIUtil from '../util/session_api_utils';
@@ -27,13 +26,6 @@ export const receiveErrors = (errors) => {
         // errors: errors
         errors: errors.responseJSON,
     }
-}
-
-export const receiveError = (error) => {
-  return {
-    type: RECEIVE_ERROR,
-    error: error
-  }
 }
 
 export const clearErrors = () => {
