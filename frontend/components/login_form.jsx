@@ -8,6 +8,7 @@ class LoginForm extends React.Component {
     super(props);
     this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.signInDemo = this.signInDemo.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,12 @@ class LoginForm extends React.Component {
       this.setState({ [field]: e.target.value });
       this.update = this.update.bind(this);
     };
+  }
+
+  signInDemo() {
+    this.props.processForm({username: "DemoUser", password: "hunter2"}).then(() => {
+      return this.props.history.push("/account/overview");
+    })
   }
 
   render() {
@@ -127,6 +134,9 @@ class LoginForm extends React.Component {
             <Link to="/signup" className={loginSignupButton}>
               SIGN UP FOR SOSOFLY
             </Link>
+            <div className={loginFormGithubButtonContainter}>
+              <button onClick={this.signInDemo} className={loginFormGithubButton}>DEMO USER</button>
+            </div>
           </div>
         </div>
         </div>
