@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import LoginFormContainer from "./login_form_container";
-import SignupFormContainer from "./signup_form_container";
+import LoginFormContainer from "./session_form/login_form_container";
+import SignupFormContainer from "./session_form/signup_form_container";
 import Splash from "./splash";
-import WebplayerContainer from "./webplayer_container";
-import AccountContainer from "./account_container";
+import WebplayerContainer from "./webplayer/webplayer_container";
+import AccountContainer from "./account/account_container";
+
 import { AuthRoute, ProtectedRoute } from "../util/route_util"
+import PlaylistForm from './playlist/playlist_form';
 
 
 const App = () => {

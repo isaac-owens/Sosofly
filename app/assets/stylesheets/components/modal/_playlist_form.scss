@@ -1,0 +1,164 @@
+.top-cancel-button {
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 500px;
+  transition: 
+    all 33ms
+    cubic-bezier(.3, 0, 0, 1);
+  will-change: transform;
+  white-space: nowrap;
+  padding: 8px 34px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.top-cancel-button:hover {
+  transform: scale(1.06);
+}
+
+.top-cancel-button:focus {
+  outline: none;
+}
+
+.top-cancel-icon {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  color: white
+}
+
+.create-playlist-form-header {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -.005em;
+  color: white;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.create-playlist-form-middle-line {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  width: 960px;
+  // margin: 0 auto;
+  padding: 0 20%;
+  background-color: #282828;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #282828;
+  padding: 32px 0;
+}
+
+.content-spacing {
+  padding: 0 32px;
+  margin: 0;
+  max-width: 1955px;
+}
+
+.playlist-form-label {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+  color: white;
+  margin-bottom: 7px;
+}
+
+.playlist-form-input {
+  font-size: 48px;
+  line-height: 56px;
+  color: white;
+  caret-color: #1db954;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.playlist-form-input:focus {
+  outline: none;
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  padding: 28px 0;
+}
+
+.cancel-button-box {
+  padding: 0 10px;
+}
+
+.cancel-button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #535353;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  text-transform: uppercase;
+  border-radius: 500px;
+  transition: 
+    all 33ms
+    cubic-bezier(.3, 0, 0, 1);
+  will-change: transform;
+  white-space: nowrap;
+  padding: 8px 34px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cancel-button:hover {
+  transform: scale(1.06);
+}
+
+.cancel-button:focus {
+  outline: none;
+}
+
+.create-button-box {
+  padding: 0 10px;
+}
+
+.create-button {
+  color: white;
+  background-color: #1db954;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 500px;
+  transition: 
+    all 33ms
+    cubic-bezier(.3, 0, 0, 1);
+  will-change: transform;
+  white-space: nowrap;
+  padding: 8px 34px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.create-button:hover{
+  transform: scale(1.06);
+}
+
+.create-button:focus {
+  outline: none;
+}

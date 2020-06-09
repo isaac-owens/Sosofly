@@ -149,6 +149,10 @@
   color: white;
 }
 
+.create-playlist-button:focus {
+  outline: none;
+}
+
 .create-playlist-icon {
   margin-right: 16px;
 }
