@@ -19,6 +19,8 @@ import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
 import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 
+import PlaylistItem from './playlist_item';
+
 class Webplayer extends React.Component {
   constructor(props){
     super(props);
@@ -120,6 +122,7 @@ class Webplayer extends React.Component {
     playlistClassNames = playlistClassNames.join(' ');
 
     let playlistCollection = "playlist-collection";
+
     let playlistCollectionHeaderGrid = "playlist-collection-header-grid";
     let playlistCollectionHeaderFlex = "playlist-collection-header-flex";
     let playlistCollectionHeaderWidth = "playlist-collection-header-width";
@@ -317,13 +320,17 @@ class Webplayer extends React.Component {
                       <div className={playerControlsContainer}>
                         <div className={playerControlsButtons}>
                           <div className={controlButtonWrapper}>
-                            <button className={controlButton}>{skipBack}</button>
+                            <button className={controlButton}>
+                              {skipBack}
+                            </button>
                           </div>
                           <div className={controlButtonWrapper}>
                             <button className={controlButton}>{pause}</button>
                           </div>
                           <div className={controlButtonWrapper}>
-                            <button className={controlButton}>{skipForward}</button>
+                            <button className={controlButton}>
+                              {skipForward}
+                            </button>
                           </div>
                         </div>
                         <div className={playbackBarContainer}>
@@ -347,7 +354,9 @@ class Webplayer extends React.Component {
                         <div className={extraControls}>
                           <div>
                             <span className={devicePickerButtonContainer}>
-                              <button className={devicePickerButton}>{device}</button>
+                              <button className={devicePickerButton}>
+                                {device}
+                              </button>
                             </span>
                           </div>
                           <div className={volumeBar}>
@@ -403,6 +412,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -432,6 +447,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -461,6 +482,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -490,6 +517,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -519,6 +552,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -548,6 +587,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                             </div>
