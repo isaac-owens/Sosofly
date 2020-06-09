@@ -13,7 +13,7 @@ Track.delete_all
 
 
 
-demo_user = User.create(username: "Test123", email: "test123@test.com", gender: "male", birthdate: "1988-10-05", password: "hunter2")
+demo_user = User.create(username: "UserDemo", email: "test123@test.com", gender: "non-binary", birthdate: "1988-10-05", password: "hunter2")
 
 # PLAYLISTS
 
