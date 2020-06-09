@@ -7,12 +7,15 @@ class PlaylistShow extends React.Component {
 
   render() {
     let playlistShowHeader = "playlist-show-header";
+    let playlistShowHeaderSetup = "playlist-show-header-setup";
 
     return (
       <section>
         <section>
           <div className={playlistShowHeader}>
-            
+            <div className={playlistShowHeaderSetup}>
+
+            </div>
           </div>
         </section>
       </section>
