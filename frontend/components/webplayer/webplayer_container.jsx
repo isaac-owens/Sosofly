@@ -37,6 +37,7 @@ const mDTP = dispatch => {
     ),
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     closeModal: () => dispatch(closeModal()),
+    fetchPlaylist: (playlist) => dispatch(fetchPlaylist(playlist)),
   };
 };
 

@@ -2,16 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 import { faStepForward } from "@fortawesome/free-solid-svg-icons";
@@ -21,6 +18,7 @@ import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 
 import PlaylistItem from '../playlist/playlist_item';
 import Modal from '../modal/modal';
+import RootListItem from './root_list_item';
 
 class Webplayer extends React.Component {
   constructor(props) {
@@ -45,21 +43,6 @@ class Webplayer extends React.Component {
     let main = "main";
     let Root = "Root";
     let webplayerTopContainer = "webplayer-top-container";
-
-    let webplayerTopBar = "webplayer-top-bar";
-    let webplayerTopBarHeader = "webplayer-top-bar-header";
-    let webplayerTopBarOuterTransition = "webplayer-top-bar-outer-transition";
-    let webplayerTopBarInnerTransition = "webplayer-top-bar-inner-transition";
-    let webplayerTopBarHeaderNavLinks = "webplayer-top-bar-header-nav-links";
-    let webplayerTopBarHeaderNavButton = "webplayer-top-bar-header-nav-button";
-    let webplayerTopBarUserDropdown = "webplayer-top-bar-user-dropdown";
-    let webplayerTopBarUserButton = "webplayer-top-bar-user-button";
-    let webplayerTopBarIconBoxContainer =
-      "webplayer-top-bar-icon-box-container";
-    let webplayerTopBarIconCircleContainer =
-      "webplayer-top-bar-icon-circle-container";
-    let webplayerTopBarUsername = "webplayer-top-bar-username";
-    let webplayerTopBarIcon = "webplayer-top-bar-icon";
 
     let webplayerNavBar = "webplayer-nav-bar";
     let webplayerNavBarContentContainer = "webplayer-nav-bar-content-container";
@@ -86,11 +69,6 @@ class Webplayer extends React.Component {
     let createPlaylistIcon = "create-playlist-icon";
     let RootlistDivider = "rootlist-divider";
     let RootlistScrollNode = "rootlist-scroll-node";
-
-    let reactWrapper = "react-wrapper";
-    let RootlistItem = "root=list=item";
-    let textWrapper = "text-wrapper";
-    let playlistTitle = "playlist-title";
 
     let webplayerPlayBar = "webplayer-play-bar";
     let webplayerPlayBarFooter = "webplayer-play-bar-footer";
@@ -149,15 +127,11 @@ class Webplayer extends React.Component {
     let GenreIndexLink = "genre-index-link";
 
     let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
-    let chevronLeft = <FontAwesomeIcon icon={faChevronLeft} size="2x" />;
-    let chevronRight = <FontAwesomeIcon icon={faChevronRight} size="2x" />;
-    let userIcon = <FontAwesomeIcon icon={faUser} size="1x" />;
     let homeIcon = <FontAwesomeIcon icon={faHome} size="1x" />;
     let searchIcon = <FontAwesomeIcon icon={faSearch} size="1x" />;
     let libraryIcon = <FontAwesomeIcon icon={faAlignJustify} size="1x" />;
     let createIcon = <FontAwesomeIcon icon={faPlusSquare} size="3x" />;
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
-    let triangleDown = <FontAwesomeIcon icon={faCaretDown} size="1x" />;
     let heart = <FontAwesomeIcon icon={faHeart} size="2x" />;
     let skipBack = <FontAwesomeIcon icon={faStepBackward} size="2x" />;
     let skipForward = <FontAwesomeIcon icon={faStepForward} size="2x" />;
@@ -176,37 +150,7 @@ class Webplayer extends React.Component {
             <div></div>
             <Modal />
             <div className={webplayerTopContainer}>
-              <div className={webplayerTopBar}>
-                <header className={webplayerTopBarHeader}>
-                  <div className={webplayerTopBarOuterTransition}>
-                    <div className={webplayerTopBarInnerTransition}></div>
-                  </div>
-                  <div className={webplayerTopBarHeaderNavLinks}>
-                    <button className={webplayerTopBarHeaderNavButton}>
-                      {chevronLeft}
-                    </button>
-                    <button className={webplayerTopBarHeaderNavButton}>
-                      {chevronRight}
-                    </button>
-                  </div>
-                  <div className={webplayerTopBarUserDropdown}>
-                    <button className={webplayerTopBarUserButton}>
-                      <figure className={webplayerTopBarIconBoxContainer}>
-                        <div className={webplayerTopBarIconCircleContainer}>
-                          {userIcon}
-                        </div>
-                      </figure>
-                      <span className={webplayerTopBarUsername}>
-                        {this.props.currentUser.username}
-                      </span>
-                      <span className={webplayerTopBarIcon}>
-                        {triangleDown}
-                      </span>
-                    </button>
-                  </div>
-                </header>
-                <div></div>
-              </div>
+              <TopBar />
               <div className={webplayerNavBar}>
                 <nav className={webplayerNavBarContentContainer}>
                   <div className={webplayerNavBarLogolinkContainer}>
@@ -268,13 +212,7 @@ class Webplayer extends React.Component {
                         <ul className={RootlistScrollNode}>
                           {/* React generated playlists list */}
                           {playlists.map((playlist) => (
-                            <div className={reactWrapper} key={playlist.id} >
-                              <li className={RootlistItem}>
-                                <div className={textWrapper}>
-                                {this.props.deletePlaylistForm}
-                                </div>
-                              </li>
-                            </div>
+                            <RootListItem playlist={playlist}/>
                           ))}
                         </ul>
                       </div>
