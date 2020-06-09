@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Switch, Link, Route } from 'react-router-dom';
 
 import PlaylistItem from "../playlist/playlist_item";
+import PlaylistShow from "./main/playlist_show";
+import Landing from "./main/landing"
 
 class Main extends React.Component {
   constructor(props){
@@ -37,42 +39,10 @@ class Main extends React.Component {
           <div className={webplayerScrollNode}>
             <div className={webplayerScrollNodeChildSpacer}>
               <div className={webplayerScrollNodeChild}>
-                {/* Main Component Routes will be stacked here */}
-                <section>
-                  <section>
-                    <div className={webplayerClassNames}>
-                      {/* <PlaylistCollection /> */}
-                      <section className={playlistCollection}>
-                        <div className={playlistClassNames}>
-                          <div className={playlistCollectionHeaderGrid}>
-                            <div className={playlistCollectionHeaderFlex}>
-                              <div className={playlistCollectionHeaderWidth}>
-                                <h2 className={playlistCollectionHeader}>
-                                  <Link to="#" className={GenreHeaderLink}>
-                                    My Playlists
-                                  </Link>
-                                </h2>
-                              </div>
-                              <Link to="#" className={GenreIndexLink}>
-                                <span>See all</span>
-                              </Link>
-                            </div>
-                          </div>
-                          {this.props.playlists.length > 0
-                            ? this.props.playlists.map((playlist) => {
-                                return (
-                                  <PlaylistItem
-                                    playlist={playlist}
-                                    key={playlist.id}
-                                  />
-                                );
-                              })
-                            : ""}
-                        </div>
-                      </section>
-                    </div>
-                  </section>
-                </section>
+                <Switch>
+                  <Route exact path="/webplayer" component={Landing} />
+                  <Route exact path="/webplayer/playlist" component={PlaylistShow} />
+                </Switch>
               </div>
             </div>
           </div>

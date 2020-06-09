@@ -8,7 +8,7 @@ import WebplayerContainer from "./webplayer/webplayer_container";
 import AccountContainer from "./account/account_container";
 
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import PlaylistShow from './playlist/playlist_show';
+
 
 
 const App = () => {
@@ -21,8 +21,6 @@ const App = () => {
       <ProtectedRoute path="/account/overview" component={AccountContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
-      {/* Route below for testing */}
-      <Route exact path="/webplayer/playlist" component={PlaylistShow} />
       <ProtectedRoute path="/webplayer" component={WebplayerContainer} />
 
       </Switch>
