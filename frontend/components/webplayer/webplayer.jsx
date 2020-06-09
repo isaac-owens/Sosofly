@@ -19,11 +19,16 @@ import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
 import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 
-import PlaylistItem from './playlist_item';
+import PlaylistItem from '../playlist/playlist_item';
 
 class Webplayer extends React.Component {
   constructor(props){
     super(props);
+  }
+
+  componentDidMount() {
+    //  debugger
+    this.props.fetchUserPlaylists(this.props.currentUser.id);
   }
 
   render() {
@@ -147,6 +152,10 @@ class Webplayer extends React.Component {
     let pause = <FontAwesomeIcon icon={faPauseCircle} size="2x" />;
     let device = <FontAwesomeIcon icon={faTabletAlt} size="2x" />;
     let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
+    
+    //  debugger
+
+    let { playlists } = this.props;
 
     return (
       <div className={webplayerBody}>
@@ -412,192 +421,17 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                </div>
-                              </section>
-                              <section className={playlistCollection}>
-                                <div className={playlistClassNames}>
-                                  <div className={playlistCollectionHeaderGrid}>
-                                    <div
-                                      className={playlistCollectionHeaderFlex}
-                                    >
-                                      <div
-                                        className={
-                                          playlistCollectionHeaderWidth
-                                        }
-                                      >
-                                        <h2
-                                          className={playlistCollectionHeader}
-                                        >
-                                          <Link
-                                            to="#"
-                                            className={GenreHeaderLink}
-                                          >
-                                            Genre Title
-                                          </Link>
-                                        </h2>
-                                      </div>
-                                      <Link to="#" className={GenreIndexLink}>
-                                        <span>See all</span>
-                                      </Link>
-                                    </div>
-                                  </div>
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                </div>
-                              </section>
-                              <section className={playlistCollection}>
-                                <div className={playlistClassNames}>
-                                  <div className={playlistCollectionHeaderGrid}>
-                                    <div
-                                      className={playlistCollectionHeaderFlex}
-                                    >
-                                      <div
-                                        className={
-                                          playlistCollectionHeaderWidth
-                                        }
-                                      >
-                                        <h2
-                                          className={playlistCollectionHeader}
-                                        >
-                                          <Link
-                                            to="#"
-                                            className={GenreHeaderLink}
-                                          >
-                                            Genre Title
-                                          </Link>
-                                        </h2>
-                                      </div>
-                                      <Link to="#" className={GenreIndexLink}>
-                                        <span>See all</span>
-                                      </Link>
-                                    </div>
-                                  </div>
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                </div>
-                              </section>
-                              <section className={playlistCollection}>
-                                <div className={playlistClassNames}>
-                                  <div className={playlistCollectionHeaderGrid}>
-                                    <div
-                                      className={playlistCollectionHeaderFlex}
-                                    >
-                                      <div
-                                        className={
-                                          playlistCollectionHeaderWidth
-                                        }
-                                      >
-                                        <h2
-                                          className={playlistCollectionHeader}
-                                        >
-                                          <Link
-                                            to="#"
-                                            className={GenreHeaderLink}
-                                          >
-                                            Genre Title
-                                          </Link>
-                                        </h2>
-                                      </div>
-                                      <Link to="#" className={GenreIndexLink}>
-                                        <span>See all</span>
-                                      </Link>
-                                    </div>
-                                  </div>
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                </div>
-                              </section>
-                              <section className={playlistCollection}>
-                                <div className={playlistClassNames}>
-                                  <div className={playlistCollectionHeaderGrid}>
-                                    <div
-                                      className={playlistCollectionHeaderFlex}
-                                    >
-                                      <div
-                                        className={
-                                          playlistCollectionHeaderWidth
-                                        }
-                                      >
-                                        <h2
-                                          className={playlistCollectionHeader}
-                                        >
-                                          <Link
-                                            to="#"
-                                            className={GenreHeaderLink}
-                                          >
-                                            Genre Title
-                                          </Link>
-                                        </h2>
-                                      </div>
-                                      <Link to="#" className={GenreIndexLink}>
-                                        <span>See all</span>
-                                      </Link>
-                                    </div>
-                                  </div>
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                </div>
-                              </section>
-                              <section className={playlistCollection}>
-                                <div className={playlistClassNames}>
-                                  <div className={playlistCollectionHeaderGrid}>
-                                    <div
-                                      className={playlistCollectionHeaderFlex}
-                                    >
-                                      <div
-                                        className={
-                                          playlistCollectionHeaderWidth
-                                        }
-                                      >
-                                        <h2
-                                          className={playlistCollectionHeader}
-                                        >
-                                          <Link
-                                            to="#"
-                                            className={GenreHeaderLink}
-                                          >
-                                            Genre Title
-                                          </Link>
-                                        </h2>
-                                      </div>
-                                      <Link to="#" className={GenreIndexLink}>
-                                        <span>See all</span>
-                                      </Link>
-                                    </div>
-                                  </div>
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
-                                  <PlaylistItem />
+                                  { playlists.length > 0 ? playlists.map(playlist => {
+                                    return <PlaylistItem 
+                                    playlist={playlist}
+                                    key={playlist.id}/>
+                                  }) :
+                                  ""}
                                 </div>
                               </section>
                             </div>
                           </section>
-                        </section>
+                        </section> 
                       </div>
                     </div>
                   </div>

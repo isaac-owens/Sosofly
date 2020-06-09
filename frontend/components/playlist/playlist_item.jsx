@@ -20,7 +20,8 @@ class PlaylistItem extends React.Component {
 
     let playlistClassNames = ["playlist-rows", "playlist-columns"];
     playlistClassNames = playlistClassNames.join(" ");
-
+    let { playlist } = this.props;
+    //  debugger
     return (
       <div className={playlistItemContainer}>
         <div className={playlistItemContentContainer}>
@@ -39,10 +40,10 @@ class PlaylistItem extends React.Component {
         </div>
         <div className={playlistItemTitleContainer}>
           <Link to="" className={playlistItemTitleLink}>
-            <span className={playlistItemTitle}>Playlist Title</span>
+            <span className={playlistItemTitle}>{playlist.title}</span>
           </Link>
           <div className={playlistItemDescription}>
-            <span>Playlist description fits here.</span>
+            <span>{playlist.description}</span>
           </div>
           <div className={playlistItemSizer}></div>
         </div>
