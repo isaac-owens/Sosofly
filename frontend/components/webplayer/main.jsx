@@ -37,6 +37,7 @@ class Main extends React.Component {
           <div className={webplayerScrollNode}>
             <div className={webplayerScrollNodeChildSpacer}>
               <div className={webplayerScrollNodeChild}>
+                {/* Main Component Routes will be stacked here */}
                 <section>
                   <section>
                     <div className={webplayerClassNames}>
