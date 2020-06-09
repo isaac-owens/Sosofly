@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc, faThList } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import webplayer_container from "../webplayer/webplayer_container";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -385,3 +386,4 @@ class SignupForm extends React.Component {
 }
 
 export default SignupForm;
+webplayer_container
