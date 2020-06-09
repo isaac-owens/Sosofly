@@ -13,6 +13,9 @@ import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
+import { faStepForward } from "@fortawesome/free-solid-svg-icons";
+import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -92,7 +95,15 @@ class Webplayer extends React.Component {
     let webplayerPlaybarCenter = "webplayer-play-bar-center";
     let playerControlsContainer = "player-controls-container";
     let playerControlsButtons = "player-controls-buttons";
-
+    let controlButtonWrapper = "control-button-wrapper";
+    let controlButton = "controlButton";
+    let playbackBarContainer = "playback-bar-container";
+    let playbackBarProgressTime = "playback-bar-progress-time";
+    let progressBar = "progress-bar";
+    let middleAlignBackground = "middle-align-background";
+    let progressBarWrapper = "progress-bar-wrapper";
+    let progressBarForeground = "progress-bar-foreground";
+    let progressBarSlider = "progress-bar-slider";
 
     let webplayerClassNames = ["webplayer-main-grid", "content-spacing"];
     webplayerClassNames = webplayerClassNames.join(' ');
@@ -120,7 +131,10 @@ class Webplayer extends React.Component {
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
     let triangleDown = <FontAwesomeIcon icon={faCaretDown} size="1x" />;
     let heart = <FontAwesomeIcon icon={faHeart} size="2x" />;
-    
+    let skipBack = <FontAwesomeIcon icon={faStepBackward} size="2x" />;
+    let skipForward = <FontAwesomeIcon icon={faStepForward} size="2x" />;
+    let pause = <FontAwesomeIcon icon={faPauseCircle} size="2x" />;
+
     return (
       <div className={webplayerBody}>
         <div className={main}>
@@ -291,7 +305,31 @@ class Webplayer extends React.Component {
                     </div>
                     <div className={webplayerPlaybarCenter}>
                       <div className={playerControlsContainer}>
-                        <div className={playerControlsButtons}></div>
+                        <div className={playerControlsButtons}>
+                          <div className={controlButtonWrapper}>
+                            <button className={controlButton}>{skipBack}</button>
+                          </div>
+                          <div className={controlButtonWrapper}>
+                            <button className={controlButton}>{pause}</button>
+                          </div>
+                          <div className={controlButtonWrapper}>
+                            <button className={controlButton}>{skipForward}</button>
+                          </div>
+                        </div>
+                        <div className={playbackBarContainer}>
+                          <div className={playbackBarProgressTime}>
+                            <span>0:00</span>
+                          </div>
+                          <div className={progressBar}>
+                            <div className={middleAlignBackground}>
+                              <div className={progressBarWrapper}>
+                                <div className={progressBarForeground}></div>
+                              </div>
+                              <button className={progressBarSlider}></button>
+                            </div>
+                          </div>
+                          <div className={playbackBarProgressTime}>0:00</div>
+                        </div>
                       </div>
                     </div>
                     <div className={webplayerPlaybarRight}></div>
