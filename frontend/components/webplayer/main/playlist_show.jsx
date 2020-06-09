@@ -9,6 +9,8 @@ class PlaylistShow extends React.Component {
     let playlistShowHeader = "playlist-show-header";
     let playlistShowHeaderSetup = "playlist-show-header-setup";
     let playlistShowHeaderGradient = "playlist-show-header-gradient";
+    let playlistShowHeaderImageBox = "playlist-show-header-image-box";
+    let playlistShowHeaderImage = "playlist-show-header-image";
 
     return (
       <section>
@@ -16,7 +18,12 @@ class PlaylistShow extends React.Component {
           <div className={playlistShowHeader}>
             <div className={playlistShowHeaderSetup}>
               <div className={playlistShowHeaderGradient}>
-                
+                <div></div>
+              <div className={playlistShowHeaderImageBox}>
+                <div className={playlistShowHeaderImage}>
+                  IMAGE HERE
+                </div>
+              </div>
               </div>
             </div>
           </div>
