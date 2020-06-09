@@ -1,4 +1,6 @@
 import React from 'react';
+import PlaylistItem from "../../playlist/playlist_item";
+import { Link } from 'react-router-dom';
 
 class Landing extends React.Component {
   constructor(props){
@@ -6,6 +8,23 @@ class Landing extends React.Component {
   }
 
   render(){
+    let playlistCollection = "playlist-collection";
+
+    let playlistCollectionHeaderGrid = "playlist-collection-header-grid";
+    let playlistCollectionHeaderFlex = "playlist-collection-header-flex";
+    let playlistCollectionHeaderWidth = "playlist-collection-header-width";
+
+    let playlistCollectionHeader = "playlist-collection-header";
+    let GenreHeaderLink = "genre-header-link";
+    let GenreIndexLink = "genre-index-link";
+
+    let webplayerClassNames = ["webplayer-main-grid", "content-spacing"];
+    webplayerClassNames = webplayerClassNames.join(" ");
+
+    let playlistClassNames = ["playlist-rows", "playlist-columns"];
+    playlistClassNames = playlistClassNames.join(" ");
+
+    let { playlists } = this.props;
     return (
       <section>
         <section>
@@ -27,8 +46,8 @@ class Landing extends React.Component {
                     </Link>
                   </div>
                 </div>
-                {this.props.playlists.length > 0
-                  ? this.props.playlists.map((playlist) => {
+                {playlists.length > 0
+                  ? playlists.map((playlist) => {
                       return (
                         <PlaylistItem playlist={playlist} key={playlist.id} />
                       );
