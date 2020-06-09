@@ -15,6 +15,8 @@ class PlaylistShow extends React.Component {
     let playlistShowHeaderSubBanner = "playlist-show-header-sub-banner";
     let playlistShowHeaderTitleBox = "playlist-show-header-title-box";
     let playlistShowHeaderTitle = "playlist-show-header-title";
+    let playlistTopColor = "playlist-top-color";
+
 
     return (
       <section>
@@ -34,6 +36,7 @@ class PlaylistShow extends React.Component {
                   <h1 className={playlistShowHeaderTitle}>Playlist Title Here</h1>
                 </span>
               </div>
+              <div className={playlistTopColor}></div>
           </div>
         </section>
       </section>

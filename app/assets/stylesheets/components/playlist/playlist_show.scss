@@ -82,3 +82,12 @@
   letter-spacing: -.04em;
   text-transform: none;
 }
+
+.playlist-top-color {
+  background-color: rgb(33, 51, 139);
+  height: 232px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background-image: linear-gradient(rgba(0, 0, 0, .6), #121212);
+}
