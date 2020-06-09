@@ -7,8 +7,7 @@ import Splash from "./splash";
 import WebplayerContainer from "./webplayer/webplayer_container";
 import AccountContainer from "./account/account_container";
 
-import { AuthRoute, ProtectedRoute } from "../util/route_util"
-import PlaylistForm from './playlist/playlist_form';
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 
 const App = () => {

@@ -179,6 +179,11 @@
 
 .react-wrapper {
   display: inline;
+  -webkit-user-select: none;
+}
+
+.react-wrapper:focus {
+  outline: none;
 }
 
 .rootlist-item {
@@ -190,9 +195,6 @@
   color: white;
 }
 
-.rootlist-item:focus {
-  outline: none;
-}
 
 
 .text-wrapper {
@@ -204,6 +206,8 @@
 }
 
 .playlist-title {
+  color: #b3b3b3;
   font-size: 14px;
   letter-spacing: .015em;
+  text-decoration: underline;
 }

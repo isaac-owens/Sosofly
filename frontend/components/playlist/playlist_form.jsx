@@ -22,6 +22,9 @@ class PlaylistForm extends React.Component {
 
   create() {
     return () => {
+      if (this.state.title === "") {
+        return;
+      }
       this.props.closeModal();
       this.props.createPlaylist(this.state.creatorId, this.state)
       // .then(() => { return this.props.history.push("/playlists/:playlistId")
