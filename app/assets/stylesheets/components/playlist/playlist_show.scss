@@ -44,3 +44,22 @@
   object-fit: cover;
   object-position: center center;
 }
+
+.playlist-show-header-banner {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  justify-content: flex-end;
+  z-index: 0;
+  align-content: space-between;
+}
+
+.playlist-show-header-sub-banner {
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 16px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
