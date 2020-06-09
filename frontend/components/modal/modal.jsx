@@ -1,18 +1,27 @@
 import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
+import PlaylistForm from "../playlist/playlist_form";
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
 
-  let component = modal;
+  switch (modal) {
+    case "playlistForm":
+      modal = <PlaylistForm closeModal={closeModal} />
+      break;
+  
+    default:
+      break;
+  }
 
+  debugger
   return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={(e) => e.stopPropagation()}>
-        {component}
+    <div className="modal-background">
+      <div className="modal-child">
+        {modal}
       </div>
     </div>
   );

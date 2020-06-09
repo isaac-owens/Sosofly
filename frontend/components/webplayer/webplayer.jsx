@@ -20,6 +20,7 @@ import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 
 import PlaylistItem from '../playlist/playlist_item';
+import Modal from '../modal/modal';
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -156,12 +157,13 @@ class Webplayer extends React.Component {
     //  debugger
 
     let { playlists } = this.props;
-
+    
     return (
       <div className={webplayerBody}>
         <div className={main}>
           <div className={Root}>
             <div></div>
+            <Modal />
             <div className={webplayerTopContainer}>
               <div className={webplayerTopBar}>
                 <header className={webplayerTopBarHeader}>
@@ -234,14 +236,12 @@ class Webplayer extends React.Component {
                       <div className={webplayerNavBarRootlistPlaylists}>
                         <h2 className={RootlistHeader}>Playlists</h2>
                         <div className={createPlaylistButtonContainer}>
-                          <button className={createPlaylistButton}>
+                          <div className={createPlaylistButton}>
                             <div className={createPlaylistIcon}>
                               {createIcon}
                             </div>
-                            <span className={createPlaylistButtonTitle}>
-                              Create Playlist
-                            </span>
-                          </button>
+                            {this.props.createPlaylistForm}
+                          </div>
                         </div>
                         <div className={createPlaylistButtonContainer}>
                           <button className={createPlaylistButton}>

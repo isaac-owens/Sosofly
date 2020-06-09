@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Webplayer from './webplayer';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import PlaylistForm from '../playlist/playlist.form';
+import React from 'react';
 
 const mSTP = state => {
   return {
@@ -11,14 +11,18 @@ const mSTP = state => {
 };
 
 const mDTP = dispatch => {
+  debugger
   return {
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     createPlaylistForm: (
-      <button onClick={() => dispatch(openModal(<PlaylistForm />))}>
+      <span
+        onClick={() => dispatch(openModal("playlistForm"))}
+        className="create-playlist-button-title"
+      >
         Create Playlist
-      </button>
+      </span>
     ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

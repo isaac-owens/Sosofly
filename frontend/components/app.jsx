@@ -6,9 +6,9 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import Splash from "./splash";
 import WebplayerContainer from "./webplayer/webplayer_container";
 import AccountContainer from "./account/account_container";
-import Modal from './modal/modal';
 
 import { AuthRoute, ProtectedRoute } from "../util/route_util"
+import PlaylistForm from './playlist/playlist_form';
 
 
 const App = () => {
@@ -16,7 +16,6 @@ const App = () => {
   
   return (
     <div className={body}>
-      <Modal />
       <Route exact path="/" component={Splash} />
       <ProtectedRoute path="/account/overview" component={AccountContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
