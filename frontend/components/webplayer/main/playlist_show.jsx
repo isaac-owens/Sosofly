@@ -6,6 +6,7 @@ class PlaylistShow extends React.Component {
   }
 
   render() {
+    let playlistShowPageTopContainer = "playlist-show-page-top-container";
     let playlistShowHeader = "playlist-show-header";
     let playlistShowHeaderSetup = "playlist-show-header-setup";
     let playlistShowHeaderGradient = "playlist-show-header-gradient";
@@ -16,11 +17,12 @@ class PlaylistShow extends React.Component {
     let playlistShowHeaderTitleBox = "playlist-show-header-title-box";
     let playlistShowHeaderTitle = "playlist-show-header-title";
     let playlistTopColor = "playlist-top-color";
+    let playlistControlsBox = "playlist-controls-box";
+    let playlistControls = "playlist-controls";
 
 
     return (
-      <section>
-        <section>
+        <section className={playlistShowPageTopContainer}>
           <div className={playlistShowHeader}>
             <div className={playlistShowHeaderSetup}></div>
               <div className={playlistShowHeaderGradient}></div>
@@ -35,11 +37,13 @@ class PlaylistShow extends React.Component {
                 <span className={playlistShowHeaderTitleBox}>
                   <h1 className={playlistShowHeaderTitle}>Playlist Title Here</h1>
                 </span>
-              </div>
-              <div className={playlistTopColor}></div>
-          </div>
+            </div>
+            </div>
+            <div className={playlistTopColor}></div>
+            <div className={playlistControlsBox}>
+              <div className={playlistControls}></div>
+            </div>
         </section>
-      </section>
     )
   }
 }
