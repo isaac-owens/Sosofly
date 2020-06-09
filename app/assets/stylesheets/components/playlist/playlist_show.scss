@@ -63,3 +63,22 @@
   display: flex;
   align-items: center;
 }
+
+.playlist-show-header-title-box {
+  font-size: 96px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-top: 4px;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.playlist-show-header-title {
+  padding: 0.08em 0px;
+  font-size: 72px;
+  visibility: visible;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  text-transform: none;
+}

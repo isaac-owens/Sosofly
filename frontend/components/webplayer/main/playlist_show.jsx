@@ -13,6 +13,8 @@ class PlaylistShow extends React.Component {
     let playlistShowHeaderImage = "playlist-show-header-image";
     let playlistShowHeaderBanner = "playlist-show-header-banner";
     let playlistShowHeaderSubBanner = "playlist-show-header-sub-banner";
+    let playlistShowHeaderTitleBox = "playlist-show-header-title-box";
+    let playlistShowHeaderTitle = "playlist-show-header-title";
 
     return (
       <section>
@@ -28,6 +30,9 @@ class PlaylistShow extends React.Component {
               </div>
               <div className={playlistShowHeaderBanner}>
                 <h2 className={playlistShowHeaderSubBanner}>Playlist</h2>
+                <span className={playlistShowHeaderTitleBox}>
+                  <h1 className={playlistShowHeaderTitle}>Playlist Title Here</h1>
+                </span>
               </div>
           </div>
         </section>
