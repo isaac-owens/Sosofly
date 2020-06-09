@@ -12,6 +12,14 @@ import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
+import { faStepForward } from "@fortawesome/free-solid-svg-icons";
+import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
+import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
+import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
+
+import PlaylistItem from './playlist_item';
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -78,9 +86,34 @@ class Webplayer extends React.Component {
     let webplayerScrollNodeChild = "webplayer-scroll-node-child";
 
     let webplayerPlaybarLeft = "webplayer-play-bar-left"
+
     let nowPlaying = "now-playing";
+    let nowPlayingCover = "now-playing-cover";
+    let nowPlayingInfo = "now-playing-info";
+    let nowPlayingSongTitle = "now-plahying-song-title";
+    let nowPlayingLikeButtonWrapper = "now-playing-like-button-wrapper"
+    let likeButton = "like-button";
+
     let webplayerPlaybarRight = "webplayer-play-bar-right";
+    let innerPlaybarRight = "inner-playbar-right";
+    let extraControls = "extra-controls";
+    let devicePickerButtonContainer = "device-pickker-button-container";
+    let devicePickerButton = "device-picker-button";
+    let volumeBar = "volume-bar";
+    let volumeButton = "volum-button";
+
     let webplayerPlaybarCenter = "webplayer-play-bar-center";
+    let playerControlsContainer = "player-controls-container";
+    let playerControlsButtons = "player-controls-buttons";
+    let controlButtonWrapper = "control-button-wrapper";
+    let controlButton = "controlButton";
+    let playbackBarContainer = "playback-bar-container";
+    let playbackBarProgressTime = "playback-bar-progress-time";
+    let progressBar = "progress-bar";
+    let middleAlignBackground = "middle-align-background";
+    let progressBarWrapper = "progress-bar-wrapper";
+    let progressBarForeground = "progress-bar-foreground";
+    let progressBarSlider = "progress-bar-slider";
 
     let webplayerClassNames = ["webplayer-main-grid", "content-spacing"];
     webplayerClassNames = webplayerClassNames.join(' ');
@@ -89,6 +122,7 @@ class Webplayer extends React.Component {
     playlistClassNames = playlistClassNames.join(' ');
 
     let playlistCollection = "playlist-collection";
+
     let playlistCollectionHeaderGrid = "playlist-collection-header-grid";
     let playlistCollectionHeaderFlex = "playlist-collection-header-flex";
     let playlistCollectionHeaderWidth = "playlist-collection-header-width";
@@ -107,6 +141,13 @@ class Webplayer extends React.Component {
     let createIcon = <FontAwesomeIcon icon={faPlusSquare} size="3x" />;
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
     let triangleDown = <FontAwesomeIcon icon={faCaretDown} size="1x" />;
+    let heart = <FontAwesomeIcon icon={faHeart} size="2x" />;
+    let skipBack = <FontAwesomeIcon icon={faStepBackward} size="2x" />;
+    let skipForward = <FontAwesomeIcon icon={faStepForward} size="2x" />;
+    let pause = <FontAwesomeIcon icon={faPauseCircle} size="2x" />;
+    let device = <FontAwesomeIcon icon={faTabletAlt} size="2x" />;
+    let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
+
     return (
       <div className={webplayerBody}>
         <div className={main}>
@@ -261,10 +302,77 @@ class Webplayer extends React.Component {
                 <footer className={webplayerPlayBarFooter}>
                   <div className={webplayerPlayBarContent}>
                     <div className={webplayerPlaybarLeft}>
-                      <div className={nowPlaying}></div>
+                      <div className={nowPlaying}>
+                        <div className={nowPlayingCover}>
+                          <Link to="#">cover art</Link>
+                        </div>
+                        <div className={nowPlayingInfo}>
+                          <div className={nowPlayingSongTitle}>
+                            <span>Song Title</span>
+                          </div>
+                        </div>
+                        <div className={nowPlayingLikeButtonWrapper}>
+                          <button className={likeButton}>{heart}</button>
+                        </div>
+                      </div>
                     </div>
-                    <div className={webplayerPlaybarCenter}></div>
-                    <div className={webplayerPlaybarRight}></div>
+                    <div className={webplayerPlaybarCenter}>
+                      <div className={playerControlsContainer}>
+                        <div className={playerControlsButtons}>
+                          <div className={controlButtonWrapper}>
+                            <button className={controlButton}>
+                              {skipBack}
+                            </button>
+                          </div>
+                          <div className={controlButtonWrapper}>
+                            <button className={controlButton}>{pause}</button>
+                          </div>
+                          <div className={controlButtonWrapper}>
+                            <button className={controlButton}>
+                              {skipForward}
+                            </button>
+                          </div>
+                        </div>
+                        <div className={playbackBarContainer}>
+                          <div className={playbackBarProgressTime}>
+                            <span>0:00</span>
+                          </div>
+                          <div className={progressBar}>
+                            <div className={middleAlignBackground}>
+                              <div className={progressBarWrapper}>
+                                <div className={progressBarForeground}></div>
+                              </div>
+                              <button className={progressBarSlider}></button>
+                            </div>
+                          </div>
+                          <div className={playbackBarProgressTime}>0:00</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={webplayerPlaybarRight}>
+                      <div className={innerPlaybarRight}>
+                        <div className={extraControls}>
+                          <div>
+                            <span className={devicePickerButtonContainer}>
+                              <button className={devicePickerButton}>
+                                {device}
+                              </button>
+                            </span>
+                          </div>
+                          <div className={volumeBar}>
+                            <button className={volumeButton}>{volume}</button>
+                            <div className={progressBar}>
+                              <div className={middleAlignBackground}>
+                                <div className={progressBarWrapper}>
+                                  <div className={progressBarForeground}></div>
+                                </div>
+                                <button className={progressBarSlider}></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </footer>
               </div>
@@ -304,6 +412,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -333,6 +447,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -362,6 +482,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -391,6 +517,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -420,6 +552,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                               <section className={playlistCollection}>
@@ -449,6 +587,12 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
+                                  <PlaylistItem />
                                 </div>
                               </section>
                             </div>
