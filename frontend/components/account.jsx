@@ -84,7 +84,7 @@ class Account extends React.Component {
               </h1>
               <div className={accountHeaderNavLinks}>
                 <div>
-                  <Link to="#" className={webplayerLink}>Webplayer</Link>
+                  <Link to="/webplayer" className={webplayerLink}>Webplayer</Link>
                 </div>
 
                 <div className={accountUserDropdown} onClick={this.toggleShowHide}>
@@ -210,7 +210,7 @@ class Account extends React.Component {
                 </Link>
               </h2>
               <div>
-                <Link to="#" className={webplayerLink}>Webplayer</Link>
+                <Link to="/webplayer" className={webplayerLink}>Webplayer</Link>
               </div>
             </div>
           </nav>
