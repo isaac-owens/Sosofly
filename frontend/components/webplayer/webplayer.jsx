@@ -28,7 +28,7 @@ class Webplayer extends React.Component {
   }
 
   componentDidMount() {
-    //  debugger
+    //   //debugger
     this.props.fetchUserPlaylists(this.props.currentUser.id);
   }
 
@@ -154,10 +154,10 @@ class Webplayer extends React.Component {
     let device = <FontAwesomeIcon icon={faTabletAlt} size="2x" />;
     let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
     
-    //  debugger
+    //   //debugger
 
     let { playlists } = this.props;
-    
+
     return (
       <div className={webplayerBody}>
         <div className={main}>
@@ -236,12 +236,12 @@ class Webplayer extends React.Component {
                       <div className={webplayerNavBarRootlistPlaylists}>
                         <h2 className={RootlistHeader}>Playlists</h2>
                         <div className={createPlaylistButtonContainer}>
-                          <div className={createPlaylistButton}>
+                          <button className={createPlaylistButton}>
                             <div className={createPlaylistIcon}>
                               {createIcon}
                             </div>
                             {this.props.createPlaylistForm}
-                          </div>
+                          </button>
                         </div>
                         <div className={createPlaylistButtonContainer}>
                           <button className={createPlaylistButton}>
@@ -412,7 +412,7 @@ class Webplayer extends React.Component {
                                             to="#"
                                             className={GenreHeaderLink}
                                           >
-                                            Genre Title
+                                            My Playlists
                                           </Link>
                                         </h2>
                                       </div>

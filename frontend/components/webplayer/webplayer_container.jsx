@@ -11,7 +11,6 @@ const mSTP = state => {
 };
 
 const mDTP = dispatch => {
-  debugger
   return {
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     createPlaylistForm: (
