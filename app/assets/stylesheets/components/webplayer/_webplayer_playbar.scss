@@ -185,3 +185,49 @@
   z-index: 100;
 }
 
+.webplayer-play-bar-right {
+  width: 30%;
+  min-width: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.inner-playbar-right {
+  width: 180px;
+}
+
+.extra-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.device-picker-button-container {
+  position: relative;
+}
+
+.device-picker-button {
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  color: #1db954;
+}
+
+.volume-bar {
+  display: flex;
+  align-items: center;
+  width: 136px;
+}
+
+.volume-button {
+  background-color: transparent;
+  border: none;
+  color: #b3b3b3;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+

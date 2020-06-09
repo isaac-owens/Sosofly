@@ -16,6 +16,8 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 import { faStepForward } from "@fortawesome/free-solid-svg-icons";
 import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
+import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
+import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 
 class Webplayer extends React.Component {
   constructor(props){
@@ -91,6 +93,12 @@ class Webplayer extends React.Component {
     let likeButton = "like-button";
 
     let webplayerPlaybarRight = "webplayer-play-bar-right";
+    let innerPlaybarRight = "inner-playbar-right";
+    let extraControls = "extra-controls";
+    let devicePickerButtonContainer = "device-pickker-button-container";
+    let devicePickerButton = "device-picker-button";
+    let volumeBar = "volume-bar";
+    let volumeButton = "volum-button";
 
     let webplayerPlaybarCenter = "webplayer-play-bar-center";
     let playerControlsContainer = "player-controls-container";
@@ -134,6 +142,8 @@ class Webplayer extends React.Component {
     let skipBack = <FontAwesomeIcon icon={faStepBackward} size="2x" />;
     let skipForward = <FontAwesomeIcon icon={faStepForward} size="2x" />;
     let pause = <FontAwesomeIcon icon={faPauseCircle} size="2x" />;
+    let device = <FontAwesomeIcon icon={faTabletAlt} size="2x" />;
+    let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
 
     return (
       <div className={webplayerBody}>
@@ -332,7 +342,28 @@ class Webplayer extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div className={webplayerPlaybarRight}></div>
+                    <div className={webplayerPlaybarRight}>
+                      <div className={innerPlaybarRight}>
+                        <div className={extraControls}>
+                          <div>
+                            <span className={devicePickerButtonContainer}>
+                              <button className={devicePickerButton}>{device}</button>
+                            </span>
+                          </div>
+                          <div className={volumeBar}>
+                            <button className={volumeButton}>{volume}</button>
+                            <div className={progressBar}>
+                              <div className={middleAlignBackground}>
+                                <div className={progressBarWrapper}>
+                                  <div className={progressBarForeground}></div>
+                                </div>
+                                <button className={progressBarSlider}></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </footer>
               </div>
