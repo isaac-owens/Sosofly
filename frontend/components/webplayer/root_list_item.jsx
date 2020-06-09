@@ -1,20 +1,29 @@
 import React from 'react';
 
-const RootListItem = ({ playlist }) => {
+class RootListItem extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  render() {
 
   let reactWrapper = "react-wrapper";
   let RootlistItem = "root=list=item";
   let textWrapper = "text-wrapper";
 
-  return (
+  let {playlist, deletePlaylistForm} = this.props;
+
+
+    return (
       <div className={reactWrapper} key={playlist.id} >
         <li className={RootlistItem}>
           <div className={textWrapper}>
-          {this.props.deletePlaylistForm}
+          {deletePlaylistForm}
           </div>
         </li>
       </div>
-  )
+    )
+  }
 }
 
 export default RootListItem;
