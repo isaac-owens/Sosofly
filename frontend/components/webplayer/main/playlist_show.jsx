@@ -16,16 +16,14 @@ class PlaylistShow extends React.Component {
       <section>
         <section>
           <div className={playlistShowHeader}>
-            <div className={playlistShowHeaderSetup}>
-              <div className={playlistShowHeaderGradient}>
-                <div></div>
+            <div className={playlistShowHeaderSetup}></div>
+              <div className={playlistShowHeaderGradient}></div>
+              <div></div>
               <div className={playlistShowHeaderImageBox}>
                 <div className={playlistShowHeaderImage}>
                   IMAGE HERE
                 </div>
               </div>
-              </div>
-            </div>
           </div>
         </section>
       </section>
