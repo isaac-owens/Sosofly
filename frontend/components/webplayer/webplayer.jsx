@@ -23,14 +23,22 @@ import PlaylistItem from '../playlist/playlist_item';
 import Modal from '../modal/modal';
 
 class Webplayer extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
+    this.generatePlaylists = this.generatePlaylists.bind(this);
   }
 
   componentDidMount() {
     //   //debugger
     this.props.fetchUserPlaylists(this.props.currentUser.id);
   }
+
+  generatePlaylists() {
+    let playlists = this.props.playlists.slice(6);
+    playlists.map(playlist => {
+      return <PlaylistItem playlist={playlist} key={playlist.id} />
+    });
+  };
 
   render() {
     let webplayerBody = "webplayer-body";
@@ -46,15 +54,17 @@ class Webplayer extends React.Component {
     let webplayerTopBarHeaderNavButton = "webplayer-top-bar-header-nav-button";
     let webplayerTopBarUserDropdown = "webplayer-top-bar-user-dropdown";
     let webplayerTopBarUserButton = "webplayer-top-bar-user-button";
-    let webplayerTopBarIconBoxContainer = "webplayer-top-bar-icon-box-container";
-    let webplayerTopBarIconCircleContainer = "webplayer-top-bar-icon-circle-container";
+    let webplayerTopBarIconBoxContainer =
+      "webplayer-top-bar-icon-box-container";
+    let webplayerTopBarIconCircleContainer =
+      "webplayer-top-bar-icon-circle-container";
     let webplayerTopBarUsername = "webplayer-top-bar-username";
     let webplayerTopBarIcon = "webplayer-top-bar-icon";
 
-
     let webplayerNavBar = "webplayer-nav-bar";
     let webplayerNavBarContentContainer = "webplayer-nav-bar-content-container";
-    let webplayerNavBarLogolinkContainer = "webplayer-nav-bar-logolink-container";
+    let webplayerNavBarLogolinkContainer =
+      "webplayer-nav-bar-logolink-container";
     let webplayerNavBarLogolink = "webplayer-nav-bar-logolink";
 
     let webplayerNavBarNavLinks = "webplayer-nav-bar-nav-links";
@@ -67,7 +77,8 @@ class Webplayer extends React.Component {
     let webplayerNavBarRootlist = "webplayer-nav-bar-rootlist";
     let RootlistHeader = "rootlist-header";
     let webplayerNavBarRootlistContent = "webplayer-nav-bar-rootlist-content";
-    let webplayerNavBarRootlistPlaylists = "webplayer-nav-bar-rootlist-playlists";
+    let webplayerNavBarRootlistPlaylists =
+      "webplayer-nav-bar-rootlist-playlists";
 
     let createPlaylistButtonContainer = "create-playlist-button-container";
     let createPlaylistButton = "create-playlist-button";
@@ -75,13 +86,13 @@ class Webplayer extends React.Component {
     let createPlaylistIcon = "create-playlist-icon";
     let RootlistDivider = "rootlist-divider";
     let RootlistScrollNode = "rootlist-scroll-node";
-    
+
     let reactWrapper = "react-wrapper";
     let RootlistItem = "root=list=item";
     let textWrapper = "text-wrapper";
     let playlistTitle = "playlist-title";
 
-    let webplayerPlayBar = "webplayer-play-bar"
+    let webplayerPlayBar = "webplayer-play-bar";
     let webplayerPlayBarFooter = "webplayer-play-bar-footer";
     let webplayerPlayBarContent = "webplayer-play-bar-content";
 
@@ -91,13 +102,13 @@ class Webplayer extends React.Component {
     let webplayerScrollNodeChildSpacer = "webplayer-scroll-node-child-spacer";
     let webplayerScrollNodeChild = "webplayer-scroll-node-child";
 
-    let webplayerPlaybarLeft = "webplayer-play-bar-left"
+    let webplayerPlaybarLeft = "webplayer-play-bar-left";
 
     let nowPlaying = "now-playing";
     let nowPlayingCover = "now-playing-cover";
     let nowPlayingInfo = "now-playing-info";
     let nowPlayingSongTitle = "now-plahying-song-title";
-    let nowPlayingLikeButtonWrapper = "now-playing-like-button-wrapper"
+    let nowPlayingLikeButtonWrapper = "now-playing-like-button-wrapper";
     let likeButton = "like-button";
 
     let webplayerPlaybarRight = "webplayer-play-bar-right";
@@ -122,10 +133,10 @@ class Webplayer extends React.Component {
     let progressBarSlider = "progress-bar-slider";
 
     let webplayerClassNames = ["webplayer-main-grid", "content-spacing"];
-    webplayerClassNames = webplayerClassNames.join(' ');
+    webplayerClassNames = webplayerClassNames.join(" ");
 
     let playlistClassNames = ["playlist-rows", "playlist-columns"];
-    playlistClassNames = playlistClassNames.join(' ');
+    playlistClassNames = playlistClassNames.join(" ");
 
     let playlistCollection = "playlist-collection";
 
@@ -153,7 +164,7 @@ class Webplayer extends React.Component {
     let pause = <FontAwesomeIcon icon={faPauseCircle} size="2x" />;
     let device = <FontAwesomeIcon icon={faTabletAlt} size="2x" />;
     let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
-    
+
     //   //debugger
 
     let { playlists } = this.props;
@@ -255,52 +266,16 @@ class Webplayer extends React.Component {
                         </div>
                         <hr className={RootlistDivider} />
                         <ul className={RootlistScrollNode}>
-                          {/* React generated playlist lists */}
-                          <div className={reactWrapper}>
-                            <li className={RootlistItem}>
-                              <div className={textWrapper}>
-                                <span className={playlistTitle}>
-                                  Playlist title here
-                                </span>
-                              </div>
-                            </li>
-                          </div>
-                          <div className={reactWrapper}>
-                            <li className={RootlistItem}>
-                              <div className={textWrapper}>
-                                <span className={playlistTitle}>
-                                  Playlist title here
-                                </span>
-                              </div>
-                            </li>
-                          </div>
-                          <div className={reactWrapper}>
-                            <li className={RootlistItem}>
-                              <div className={textWrapper}>
-                                <span className={playlistTitle}>
-                                  Playlist title here
-                                </span>
-                              </div>
-                            </li>
-                          </div>
-                          <div className={reactWrapper}>
-                            <li className={RootlistItem}>
-                              <div className={textWrapper}>
-                                <span className={playlistTitle}>
-                                  Playlist title here
-                                </span>
-                              </div>
-                            </li>
-                          </div>
-                          <div className={reactWrapper}>
-                            <li className={RootlistItem}>
-                              <div className={textWrapper}>
-                                <span className={playlistTitle}>
-                                  Playlist title here
-                                </span>
-                              </div>
-                            </li>
-                          </div>
+                          {/* React generated playlists list */}
+                          {playlists.map((playlist) => (
+                            <div className={reactWrapper} key={playlist.id} >
+                              <li className={RootlistItem}>
+                                <div className={textWrapper}>
+                                {this.props.deletePlaylistForm}
+                                </div>
+                              </li>
+                            </div>
+                          ))}
                         </ul>
                       </div>
                     </div>
@@ -421,17 +396,18 @@ class Webplayer extends React.Component {
                                       </Link>
                                     </div>
                                   </div>
-                                  { playlists.length > 0 ? playlists.map(playlist => {
-                                    return <PlaylistItem 
-                                    playlist={playlist}
-                                    key={playlist.id}/>
-                                  }) :
-                                  ""}
+                                  {
+                                  this.props.playlists.length > 0 ?
+                                  this.props.playlists.map(playlist => {
+                                     return <PlaylistItem playlist={playlist} key={playlist.id} /> 
+                                    }) :
+                                    ""
+                                  }
                                 </div>
                               </section>
                             </div>
                           </section>
-                        </section> 
+                        </section>
                       </div>
                     </div>
                   </div>
@@ -442,7 +418,7 @@ class Webplayer extends React.Component {
         </div>
       </div>
     );
-  };
+  }
 };
 
 export default Webplayer

@@ -1,10 +1,11 @@
 import React from "react";
 import { closeModal } from "../../actions/modal_actions";
-import { createPlaylist } from "../../actions/playlist_actions";
+import { createPlaylist, deletePlaylist } from "../../actions/playlist_actions";
 import { connect } from "react-redux";
 import PlaylistForm from "../playlist/playlist_form";
+import PlaylistDelete from "../playlist/playlist_delete"
 
-function Modal({ modal, closeModal, createPlaylist, userId }) {
+function Modal({ modal, closeModal, createPlaylist, userId, deletePlaylist, receivePlaylist }) {
   if (!modal) {
     return null;
   }
@@ -17,7 +18,12 @@ function Modal({ modal, closeModal, createPlaylist, userId }) {
       userId={userId}
       />
       break;
-  
+    case "deletePlaylist":
+      modal = <PlaylistDelete
+        closeModal={closeModal}
+        receivePlaylist={receivePlaylist}
+        deletePlaylist={deletePlaylist}
+       />
     default:
       break;
   }
@@ -36,13 +42,16 @@ const mapStateToProps = (state) => {
   return {
     userId: state.session.id,
     modal: state.ui.modal,
+    playlist: state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    createPlaylist:(userId, playlist) => dispatch(createPlaylist(userId, playlist))
+    createPlaylist: (userId, playlist) => dispatch(createPlaylist(userId, playlist)),
+    deletePlaylist: (userId, playlistId) => dispatch(deletePlaylist(userId, playlistId)),
+    receivePlaylist: playlist => dispatch(receivePlaylist(playlist))
   };
 };
 
