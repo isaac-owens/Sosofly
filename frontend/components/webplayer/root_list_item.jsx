@@ -15,7 +15,7 @@ class RootListItem extends React.Component {
 
 
     return (
-      <div className={reactWrapper} key={playlist} >
+      <div className={reactWrapper} key={playlist.id} >
         <li className={RootlistItem}>
           <div className={textWrapper}>
           {deletePlaylistForm(playlist)}
