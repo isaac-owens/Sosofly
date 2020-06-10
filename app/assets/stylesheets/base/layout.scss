@@ -13,6 +13,11 @@
 // head {
 //   display: none;
 // }
+a, button:focus {
+  outline: none;
+}
+
+
 
 .body {
   // min-width: 768px;

@@ -1,4 +1,8 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
+
 
 class PlaylistShow extends React.Component {
   constructor(props) {
@@ -19,7 +23,10 @@ class PlaylistShow extends React.Component {
     let playlistTopColor = "playlist-top-color";
     let playlistControlsBox = "playlist-controls-box";
     let playlistControls = "playlist-controls";
-
+    let playlistShowPlayButon = "playlist-show-play-button";
+    let fireButton = "fire-button";
+    let playCircle = <FontAwesomeIcon icon={faPlayCircle} size="5x" />;
+    let fire = <FontAwesomeIcon icon={faFire} size="3x" />;
 
     return (
         <section className={playlistShowPageTopContainer}>
@@ -41,7 +48,10 @@ class PlaylistShow extends React.Component {
             </div>
             <div className={playlistTopColor}></div>
             <div className={playlistControlsBox}>
-              <div className={playlistControls}></div>
+              <div className={playlistControls}>
+                <button className={playlistShowPlayButon}>{playCircle}</button>
+                <button className={fireButton}>{fire}</button>
+              </div>
             </div>
         </section>
     )

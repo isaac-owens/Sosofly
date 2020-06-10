@@ -113,3 +113,34 @@
   flex-direction: row;
   align-items: center;
 }
+
+.playlist-show-play-button {
+  --size: 56px;
+  margin-right: 32px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  border-radius: 500px;
+  color: white;
+  background-color: #1db954;
+  transition: transform 33ms cubic cubic-bezier(.3, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--size);
+  width: var(--size);
+  min-width: var(--size);
+}
+
+.playlist-show-play-button:hover {
+  --size: 56px;
+  margin-right: 32px;
+  transform: scale(1.06);
+}
+
+.fire-button {
+  margin-right: 24px;
+  color: #1db954;
+  background: transparent;
+}
