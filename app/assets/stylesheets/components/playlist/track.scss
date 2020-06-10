@@ -28,11 +28,11 @@
 
 .tracklist-column-outer {
   text-align: right;
-  padding-right: 14px;
+  padding-right: 1em;
   font-feature-settings: "tnum";
   letter-spacing: 0;
-  width: 42px;
-  height: 63.83px;
+  width: 3em;
+  height: 4.56em;
 }
 
 .tracklist-play-pause-top-align {
@@ -49,4 +49,67 @@
 
 .music-disc-container {
   color: white;
+}
+
+.tracklist-name-box {
+  flex: 1 1 0;
+  width: 0;
+  overflow: hidden;
+  padding-right: 1px;
+  margin-right: -1px;
+  display: block;
+  height: 4.56em;
+}
+
+.tracklist-wrapper {
+  margin-top: .7em;
+}
+
+.tracklist-name {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: .015em;
+  color: white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tracklist-name-sub {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tracklist-artist {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tracklist-artist:hover {
+  opacity: 1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dot-separator {
+  color: white;
+  opacity: .6;
+  display: inline-block;
+  transform: translateY(-1px);
+  font-size: .8em;
+  padding: 0 8px;
+}
+
+.tracklist-album {
+  color: white;
+  opacity: .6;
+  transition: opacity .2s linear;
+}
+
+.tracklist-album:hover {
+  opacity: 1;
+  text-decoration: underline;
+  cursor: pointer;
 }
