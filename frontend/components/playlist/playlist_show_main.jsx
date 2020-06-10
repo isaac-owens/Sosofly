@@ -34,7 +34,7 @@ class PlaylistShowMain extends React.Component {
         case "All That":
           console.log(this.refs);
           // console.log(ref.current);
-          track = this.refs.track.track_file
+          track = this.refs.props.track.track_file
           //debugger
           break;
         default:
