@@ -12,12 +12,15 @@ class PlaylistShowMain extends React.Component {
     let tracklistContainer = "tracklist-container";
     let tracklist = "tracklist";
 
+    let { playlist } = this.props;
 
     return (
       <div className={playlistShowContentSpacing}>
         <section className={tracklistContainer}>
           <ol className={tracklist}>
-            <Track />
+            {playlist.tracks.map(track => {
+              return <Track key={track.id} track={track} />
+            })}
           </ol>
         </section>
       </div>

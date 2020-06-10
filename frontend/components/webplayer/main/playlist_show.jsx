@@ -57,7 +57,7 @@ class PlaylistShow extends React.Component {
           <div className={playlistShowHeaderBanner}>
             <h2 className={playlistShowHeaderSubBanner}>Playlist</h2>
             <span className={playlistShowHeaderTitleBox}>
-              <h1 className={playlistShowHeaderTitle}>{playlists[52].title}</h1>
+              <h1 className={playlistShowHeaderTitle}>{playlists[this.props.match.params.id].title}</h1>
             </span>
           </div>
         </div>
@@ -71,7 +71,7 @@ class PlaylistShow extends React.Component {
             </div>
           </div>
         </div>
-        <PlaylistShowMain />
+        <PlaylistShowMain playlist={playlists[this.props.match.params.id]}/>
       </section>
     );
   }

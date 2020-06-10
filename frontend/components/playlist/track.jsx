@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import PlaylistItem from './playlist_item';
 
 class Track extends React.Component {
   constructor(props) {
@@ -26,9 +27,11 @@ class Track extends React.Component {
     let moreEllipsis = "more-ellipsis";
     let tracklistDuration = "tracklist-duration";
 
-
     let miniDisc = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
+
+    let { track } = this.props;
+    track = track || {};
     return (
       <div className={trackWrapper}>
         <div></div>
@@ -41,59 +44,7 @@ class Track extends React.Component {
           </div>
           <div className={tracklistNameBox}>
             <div className={tracklistNameWrapper}>
-              <div className={tracklistName}>Track Name</div>
-              <div className={tracklistNameSub}>
-                <span className={tracklistArtist}>I do not own the rights to these tasty jams.</span>
-                <span className={dotSeparator}>•</span>
-                <span className={tracklistAlbum}>Album Name Here</span>
-              </div>
-            </div>
-          </div>
-          <div className={tracklistMore}>
-            <div className={tracklistTopAlign}>
-              <button className={moreEllipsis}>{moreButton}</button>
-            </div>
-          </div>
-          <div className={tracklistDuration}>
-            <span>4:44</span>
-          </div>
-        </li>
-        <li className={tracklistRow}>
-          <div className={tracklistColumnOuter}>
-            <div className={tracklistPPTopAlign}></div>
-            <div className={tracklistTopAlign}>
-              <span className={musicDiscContainer}>{miniDisc}</span>
-            </div>
-          </div>
-          <div className={tracklistNameBox}>
-            <div className={tracklistNameWrapper}>
-              <div className={tracklistName}>Track Name</div>
-              <div className={tracklistNameSub}>
-                <span className={tracklistArtist}>I do not own the rights to these tasty jams.</span>
-                <span className={dotSeparator}>•</span>
-                <span className={tracklistAlbum}>Album Name Here</span>
-              </div>
-            </div>
-          </div>
-          <div className={tracklistMore}>
-            <div className={tracklistTopAlign}>
-              <button className={moreEllipsis}>{moreButton}</button>
-            </div>
-          </div>
-          <div className={tracklistDuration}>
-            <span>4:44</span>
-          </div>
-        </li>
-        <li className={tracklistRow}>
-          <div className={tracklistColumnOuter}>
-            <div className={tracklistPPTopAlign}></div>
-            <div className={tracklistTopAlign}>
-              <span className={musicDiscContainer}>{miniDisc}</span>
-            </div>
-          </div>
-          <div className={tracklistNameBox}>
-            <div className={tracklistNameWrapper}>
-              <div className={tracklistName}>Track Name</div>
+              <div className={tracklistName}>{track.title}</div>
               <div className={tracklistNameSub}>
                 <span className={tracklistArtist}>I do not own the rights to these tasty jams.</span>
                 <span className={dotSeparator}>•</span>
