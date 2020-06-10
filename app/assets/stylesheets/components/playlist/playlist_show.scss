@@ -139,8 +139,31 @@
   transform: scale(1.06);
 }
 
-.fire-button {
+.fire-button-active {
   margin-right: 24px;
   color: #1db954;
   background: transparent;
+}
+
+.fire-button-inactive {
+  margin-right: 24px;
+  background: transparent;
+  color: white;
+  border: 0;
+}
+
+.context-menu {
+  margin-right: 24px;
+  display: inline;
+}
+
+.context-ellipsis {
+  background: transparent;
+  border: 0;
+  color: hsla(0, 0%, 100%, .6);
+  padding: 0;
+}
+
+.context-ellipsis:hover {
+  color: white;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
 
 class PlaylistShow extends React.Component {
@@ -24,9 +25,14 @@ class PlaylistShow extends React.Component {
     let playlistControlsBox = "playlist-controls-box";
     let playlistControls = "playlist-controls";
     let playlistShowPlayButon = "playlist-show-play-button";
-    let fireButton = "fire-button";
+    let fireButtonActive = "fire-button-active";
+    let fireButtonInactive = "fire-button-inactive";
+    let contextMenu = "context-menu";
+    let contextEllipsis = "context-ellipsis";
+
     let playCircle = <FontAwesomeIcon icon={faPlayCircle} size="5x" />;
     let fire = <FontAwesomeIcon icon={faFire} size="3x" />;
+    let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
     return (
         <section className={playlistShowPageTopContainer}>
@@ -50,7 +56,10 @@ class PlaylistShow extends React.Component {
             <div className={playlistControlsBox}>
               <div className={playlistControls}>
                 <button className={playlistShowPlayButon}>{playCircle}</button>
-                <button className={fireButton}>{fire}</button>
+                <button className={fireButtonInactive}>{fire}</button>
+                <div className={contextMenu}>
+                  <button className={contextEllipsis}>{ellipsis}</button>
+                </div>
               </div>
             </div>
         </section>
