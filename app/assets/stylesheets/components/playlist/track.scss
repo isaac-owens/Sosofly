@@ -1,0 +1,154 @@
+.track-wrapper {
+  display: inline;
+}
+
+.tracklist-row {
+  transition-property: background-color;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+  display: flex;
+  height: 4.56em;
+  list-style-type: none;
+  user-select: none;
+  position: relative;
+}
+
+.tracklist-row:hover {
+  background-color: hsla(0, 0%, 100%, .1);
+}
+
+.tracklist-row:focus {
+  background-color: hsla(0, 0%, 100%, .1);
+  outline: none;
+}
+
+.tracklist-row:focus-within {
+  background-color: hsla(0, 0%, 100%, .1);
+}
+
+.tracklist-column-outer {
+  text-align: right;
+  padding-right: 1em;
+  font-feature-settings: "tnum";
+  letter-spacing: 0;
+  width: 3em;
+  height: 4.56em;
+}
+
+.tracklist-play-pause-top-align {
+
+  margin-top: .7em;
+  display: none;
+}
+
+.tracklist-top-align {
+  margin-top: .75em;
+  color: white;
+  opacity: .6;
+}
+
+.music-disc-container {
+  color: white;
+}
+
+.tracklist-name-box {
+  flex: 1 1 0;
+  width: 0;
+  overflow: hidden;
+  padding-right: 1px;
+  margin-right: -1px;
+  display: block;
+  height: 4.56em;
+}
+
+.tracklist-wrapper {
+  margin-top: .7em;
+}
+
+.tracklist-name {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: .015em;
+  color: white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tracklist-name-sub {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tracklist-artist {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tracklist-artist:hover {
+  opacity: 1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dot-separator {
+  color: white;
+  opacity: .6;
+  display: inline-block;
+  transform: translateY(-1px);
+  font-size: .8em;
+  padding: 0 8px;
+}
+
+.tracklist-album {
+  color: white;
+  opacity: .6;
+  transition: opacity .2s linear;
+}
+
+.tracklist-album:hover {
+  opacity: 1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tracklist-more {
+  text-align: right;
+  padding-right: 1em;
+  min-width: 65px;
+  display: block;
+  height: 4.56em;
+}
+
+.tracklist-top-align {
+  margin-top: .7em;
+}
+
+.more-ellipsis {
+  transition: all 33ms cubic-bezier(.3, 0, 0 1);
+  will-change: transform;
+  padding: 8px 34px;
+  display: inline-block;
+  cursor: pointer;
+  background: transparent;
+}
+
+.more-ellipsis:hover {
+  transform: scale(1.06);
+  background-color: transparent;
+  color: white;
+}
+
+.tracklist-duration {
+  text-align: right;
+  padding-right: 1em;
+  font-feature-settings: "tnum";
+  letter-spacing: 0;
+  width: 3.9em;
+  height: 4.56em;
+  margin-top: .7em;
+  color: white;
+  opacity: .6;
+}

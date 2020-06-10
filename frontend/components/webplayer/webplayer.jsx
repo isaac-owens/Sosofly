@@ -45,7 +45,7 @@ class Webplayer extends React.Component {
               <TopBar currentUser={currentUser}/>
               <NavBar playlists={playlists} createPlaylistForm={deletePlaylistForm}/>
               <PlayBar />
-              <Main playlists={this.props.playlists}/>
+              <Main playlists={playlists}/>
             </div>
           </div>
         </div>
