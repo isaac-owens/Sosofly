@@ -7,8 +7,6 @@ import NavBar from './nav_bar';
 import PlayBar from './play_bar';
 import Main from './main';
 
-const DeletePlaylistContext = React.createContext();
-
 class Webplayer extends React.Component {
   constructor(props) {
     super(props);
@@ -48,6 +46,7 @@ class Webplayer extends React.Component {
               createPlaylistForm={createPlaylistForm}
               />
               <PlayBar />
+              
               <Main playlists={playlists}/>
             </div>
           </div>

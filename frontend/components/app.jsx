@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
@@ -13,19 +13,17 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => {
   let body = "body";
-  
   return (
     <div className={body}>
       <Switch>
       <Route exact path="/" component={Splash} />
-      <ProtectedRoute path="/account/overview" component={AccountContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
-      <AuthRoute path="/login" component={LoginFormContainer} />
+      <ProtectedRoute exact path="/account/overview" component={AccountContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
       <ProtectedRoute path="/webplayer" component={WebplayerContainer} />
-
       </Switch>
     </div>
   );
 };
 
-export default App;
+export default withRouter(App);

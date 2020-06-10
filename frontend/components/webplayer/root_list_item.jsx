@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PlaylistShow from "../webplayer/main/playlist_show";
 
 class RootListItem extends React.Component {
   constructor(props){
@@ -21,10 +22,15 @@ class RootListItem extends React.Component {
         <li className={RootlistItem}>
           <div className={textWrapper}>
           <Link
-            to="#"
+            to={{
+              pathname: `webplayer/playlist/${playlist.id}`,
+              state:{
+                playlist: "playlist",
+                search: "?searchysearchy/",
+                key: 51
+              }
+            }}
             className={playlistTitle}
-            playlist={playlist}
-            key={playlist.id}
           >
             {playlist.title}
           </Link>
