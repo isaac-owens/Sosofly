@@ -20,25 +20,29 @@ const mDTP = dispatch => {
       >
         Create Playlist
       </span>,
-
-    deletePlaylistForm: ((playlist) => {
-      return (
-        <Link
-          to="#"
-          className="playlist-title"
-          playlist={playlist}
-          onContextMenu={(e) => {
-            e.preventDefault();
-            e.type === 'contextmenu' ? 
-            dispatch(openModal("deletePlaylist")) : 
-            ""
-          }}
-        >
-        {playlist.title}
-        </Link>
-      )
-    }
-    ),
+      
+      deletePlaylistForm:
+      <span 
+      onClick={() => dispatch(openModal("deletePlaylist"))}
+      className="delete-link"
+      >
+        delete
+      </span>,
+      // return (
+      //   <Link
+      //     to="#"
+      //     className="playlist-title"
+      //     playlist={playlist}
+      //     onContextMenu={(e) => {
+      //       e.preventDefault();
+      //       e.type === 'contextmenu' ? 
+      //       dispatch(openModal("deletePlaylist")) : 
+      //       ""
+      //     }}
+      //   >
+      //   {playlist.title}
+      //   </Link>
+      // )
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     closeModal: () => dispatch(closeModal()),
     fetchPlaylist: (playlist) => dispatch(fetchPlaylist(playlist)),

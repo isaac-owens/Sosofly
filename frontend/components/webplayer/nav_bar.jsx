@@ -108,7 +108,7 @@ class NavBar extends React.Component {
                 <ul className={RootlistScrollNode}>
                   {/* React generated playlists list */}
                   {playlists.map((playlist) => (
-                    <RootListItem  playlistId={playlist.id} playlist={playlist} deletePlaylistForm={deletePlaylistForm}/>
+                    <RootListItem  key={playlist.id} playlist={playlist} deletePlaylistForm={deletePlaylistForm}/>
                   ))}
                 </ul>
               </div>
