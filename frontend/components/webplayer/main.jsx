@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import PlaylistShow from "./main/playlist_show";
+import PlaylistShowContainer from "../playlist/playlist_show_container";
 import Landing from "./main/landing"
 
 class Main extends React.Component {
@@ -15,6 +15,7 @@ class Main extends React.Component {
     let webplayerScrollNode = "webplayer-scroll-node";
     let webplayerScrollNodeChildSpacer = "webplayer-scroll-node-child-spacer";
     let webplayerScrollNodeChild = "webplayer-scroll-node-child";
+    
 
     return (
       <div className={webplayerMain}>
@@ -23,9 +24,9 @@ class Main extends React.Component {
             <div className={webplayerScrollNodeChildSpacer}>
               <div className={webplayerScrollNodeChild}>
                 <Switch>
+                  <Route exact path="/webplayer/playlist/:id" component={PlaylistShowContainer} />
                   <Route exact path="/webplayer" 
                   render={(props) => <Landing {...props} playlists={this.props.playlists} />} />
-                  <Route exact path="/webplayer/playlist" component={PlaylistShow} />
                 </Switch>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -34,41 +35,38 @@ class TopBar extends React.Component {
     let triangleDown = <FontAwesomeIcon icon={faCaretDown} size="1x" />;
 
 
-    return(
-      
+    return (
       <div className={webplayerTopBar}>
-          <header className={webplayerTopBarHeader}>
-            <div className={webplayerTopBarOuterTransition}>
-              <div className={webplayerTopBarInnerTransition}></div>
-            </div>
-            <div className={webplayerTopBarHeaderNavLinks}>
-              <button className={webplayerTopBarHeaderNavButton}>
-                {chevronLeft}
-              </button>
-              <button className={webplayerTopBarHeaderNavButton}>
-                {chevronRight}
-              </button>
-            </div>
-            <div className={webplayerTopBarUserDropdown}>
-              <button className={webplayerTopBarUserButton}>
-                <figure className={webplayerTopBarIconBoxContainer}>
-                  <div className={webplayerTopBarIconCircleContainer}>
-                    {userIcon}
-                  </div>
-                </figure>
-                <span className={webplayerTopBarUsername}>
-                  {this.props.currentUser.username}
-                </span>
-                <span className={webplayerTopBarIcon}>
-                  {triangleDown}
-                </span>
-              </button>
-            </div>
-          </header>
-          <div></div>
+        <header className={webplayerTopBarHeader}>
+          <div className={webplayerTopBarOuterTransition}>
+            <div className={webplayerTopBarInnerTransition}></div>
+          </div>
+          <div className={webplayerTopBarHeaderNavLinks}>
+            <button className={webplayerTopBarHeaderNavButton} onClick={() => this.props.history.goBack()}>
+              {chevronLeft}
+            </button>
+            <button className={webplayerTopBarHeaderNavButton} onClick={() => this.props.history.goForward()}>
+              {chevronRight}
+            </button>
+          </div>
+          <div className={webplayerTopBarUserDropdown}>
+            <button className={webplayerTopBarUserButton}>
+              <figure className={webplayerTopBarIconBoxContainer}>
+                <div className={webplayerTopBarIconCircleContainer}>
+                  {userIcon}
+                </div>
+              </figure>
+              <span className={webplayerTopBarUsername}>
+                {this.props.currentUser.username}
+              </span>
+              <span className={webplayerTopBarIcon}>{triangleDown}</span>
+            </button>
+          </div>
+        </header>
+        <div></div>
       </div>
-    )
+    );
   }
 }
 
-export default TopBar;
+export default withRouter(TopBar);

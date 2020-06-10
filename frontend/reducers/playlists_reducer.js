@@ -15,7 +15,7 @@ const playlistsReducer = (oldState = {}, action) => {
     case RECEIVE_PLAYLIST:
       return { [action.playlist.id]: action.playlist };
     case RECEIVE_PLAYLISTS:
-      //   //debugger
+      //   ////debugger
       return action.playlists;
     case ADD_PLAYLIST:
       newState[action.playlist.id] = action.playlist;

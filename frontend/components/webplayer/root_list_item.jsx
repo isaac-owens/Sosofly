@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PlaylistShow from "../webplayer/main/playlist_show";
 
 class RootListItem extends React.Component {
   constructor(props){
     super(props);
   }
+
 
   render() {
 
@@ -20,12 +22,9 @@ class RootListItem extends React.Component {
       <div className={reactWrapper} key={playlist.id} >
         <li className={RootlistItem}>
           <div className={textWrapper}>
-          <Link
-            to="#"
+            <Link to={`webplayer/playlist/${playlist.id}`}
             className={playlistTitle}
-            playlist={playlist}
-            key={playlist.id}
-          >
+            >
             {playlist.title}
           </Link>
           {deletePlaylistForm}
@@ -38,3 +37,12 @@ class RootListItem extends React.Component {
 
 export default RootListItem;
 
+
+// to={{
+//   pathname: `webplayer/playlist/${playlist.id}`,
+//   state:{
+//     playlist: "playlist",
+//     search: "?searchysearchy/",
+//     key: 51
+//   }
+// }}
