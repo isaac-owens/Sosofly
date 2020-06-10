@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class RootListItem extends React.Component {
   constructor(props){
@@ -11,7 +12,7 @@ class RootListItem extends React.Component {
   let RootlistItem = "root=list=item";
   let textWrapper = "text-wrapper";
   let playlistTitle = "playlist-title";
-  
+
   let {playlist, deletePlaylistForm} = this.props;
 
 
@@ -23,10 +24,11 @@ class RootListItem extends React.Component {
             to="#"
             className={playlistTitle}
             playlist={playlist}
+            key={playlist.id}
           >
             {playlist.title}
           </Link>
-          {deletePlaylistForm(playlist)}
+          {deletePlaylistForm}
           </div>
         </li>
       </div>
