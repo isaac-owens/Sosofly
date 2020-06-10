@@ -13,18 +13,20 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
-    createPlaylistForm: (
+    createPlaylistForm:
       <span
       onClick={() => dispatch(openModal("playlistForm"))}
       className="create-playlist-button-title"
       >
         Create Playlist
-      </span>
-    ),
-    deletePlaylistForm: ( 
-      <Link
+      </span>,
+
+    deletePlaylistForm: ((playlist) => {
+      return (
+        <Link
           to="#"
           className="playlist-title"
+          playlist={playlist}
           onContextMenu={(e) => {
             e.preventDefault();
             e.type === 'contextmenu' ? 
@@ -32,8 +34,10 @@ const mDTP = dispatch => {
             ""
           }}
         >
-          playlist
+        {playlist.title}
         </Link>
+      )
+    }
     ),
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     closeModal: () => dispatch(closeModal()),

@@ -16,7 +16,6 @@ class Webplayer extends React.Component {
   }
 
   componentDidMount() {
-    //   //debugger
     this.props.fetchUserPlaylists(this.props.currentUser.id);
   }
 
@@ -33,7 +32,7 @@ class Webplayer extends React.Component {
     let Root = "Root";
     let webplayerTopContainer = "webplayer-top-container";
 
-    let { deletePlaylistForm, playlists, currentUser } = this.props;
+    let { deletePlaylistForm, createPlaylistForm, playlists, currentUser } = this.props;
 
     return (
       <div className={webplayerBody}>
@@ -43,7 +42,11 @@ class Webplayer extends React.Component {
             <Modal />
             <div className={webplayerTopContainer}>
               <TopBar currentUser={currentUser}/>
-              <NavBar playlists={playlists} createPlaylistForm={deletePlaylistForm}/>
+              <NavBar 
+              playlists={playlists} 
+              deletePlaylistForm={deletePlaylistForm}
+              createPlaylistForm={createPlaylistForm}
+              />
               <PlayBar />
               <Main playlists={playlists}/>
             </div>
