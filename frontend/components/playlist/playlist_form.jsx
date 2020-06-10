@@ -79,7 +79,7 @@ class PlaylistForm extends React.Component {
             </button>
           </div>
           <div className={createButtonBox}>
-            <button className={createButton} onClick={this.create()}>CREATE</button>
+            <button className={createButton} onClick={this.create}>CREATE</button>
           </div>
         </div>
       </>
