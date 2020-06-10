@@ -1,0 +1,52 @@
+.track-wrapper {
+  display: inline;
+}
+
+.tracklist-row {
+  transition-property: background-color;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+  display: flex;
+  height: 4.56em;
+  list-style-type: none;
+  user-select: none;
+  position: relative;
+}
+
+.tracklist-row:hover {
+  background-color: hsla(0, 0%, 100%, .1);
+}
+
+.tracklist-row:focus {
+  background-color: hsla(0, 0%, 100%, .1);
+  outline: none;
+}
+
+.tracklist-row:focus-within {
+  background-color: hsla(0, 0%, 100%, .1);
+}
+
+.tracklist-column-outer {
+  text-align: right;
+  padding-right: 14px;
+  font-feature-settings: "tnum";
+  letter-spacing: 0;
+  width: 42px;
+  height: 63.83px;
+}
+
+.tracklist-play-pause-top-align {
+
+  margin-top: .7em;
+  display: none;
+}
+
+.tracklist-top-align {
+  margin-top: .75em;
+  color: white;
+  opacity: .6;
+}
+
+.music-disc-container {
+  color: white;
+}

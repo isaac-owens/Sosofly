@@ -4,6 +4,7 @@ import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
+import PlaylistShowMain from "../../playlist/playlist_show_main";
 
 class PlaylistShow extends React.Component {
   constructor(props) {
@@ -52,8 +53,8 @@ class PlaylistShow extends React.Component {
                 </span>
             </div>
             </div>
-            <div className={playlistTopColor}></div>
-            <div className={playlistControlsBox}>
+          <div className={playlistTopColor}></div>
+          <div className={playlistControlsBox}>
               <div className={playlistControls}>
                 <button className={playlistShowPlayButon}>{playCircle}</button>
                 <button className={fireButtonInactive}>{fire}</button>
@@ -62,6 +63,7 @@ class PlaylistShow extends React.Component {
                 </div>
               </div>
             </div>
+          <PlaylistShowMain />
         </section>
     )
   }
