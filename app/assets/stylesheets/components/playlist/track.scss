@@ -113,3 +113,42 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.tracklist-more {
+  text-align: right;
+  padding-right: 1em;
+  min-width: 65px;
+  display: block;
+  height: 4.56em;
+}
+
+.tracklist-top-align {
+  margin-top: .7em;
+}
+
+.more-ellipsis {
+  transition: all 33ms cubic-bezier(.3, 0, 0 1);
+  will-change: transform;
+  padding: 8px 34px;
+  display: inline-block;
+  cursor: pointer;
+  background: transparent;
+}
+
+.more-ellipsis:hover {
+  transform: scale(1.06);
+  background-color: transparent;
+  color: white;
+}
+
+.tracklist-duration {
+  text-align: right;
+  padding-right: 1em;
+  font-feature-settings: "tnum";
+  letter-spacing: 0;
+  width: 3.9em;
+  height: 4.56em;
+  margin-top: .7em;
+  color: white;
+  opacity: .6;
+}
