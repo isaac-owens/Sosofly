@@ -45,6 +45,7 @@ class Track extends React.Component {
           <div className={tracklistNameBox}>
             <div className={tracklistNameWrapper}>
               <div className={tracklistName}>{track.title}</div>
+              <audio />
               <div className={tracklistNameSub}>
                 <span className={tracklistArtist}>I do not own the rights to these tasty jams.</span>
                 <span className={dotSeparator}>•</span>
