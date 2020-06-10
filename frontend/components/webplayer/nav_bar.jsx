@@ -53,7 +53,7 @@ class NavBar extends React.Component {
     let createIcon = <FontAwesomeIcon icon={faPlusSquare} size="3x" />;
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
  
-    let {playlists, deletePlaylistForm} = this.props;
+    let {playlists, createPlaylistForm, deletePlaylistForm} = this.props;
 
     return (
       <div className={webplayerNavBar}>
@@ -93,7 +93,7 @@ class NavBar extends React.Component {
                 <div className={createPlaylistButtonContainer}>
                   <button className={createPlaylistButton}>
                     <div className={createPlaylistIcon}>{createIcon}</div>
-                    {this.props.createPlaylistForm}
+                    {createPlaylistForm}
                   </button>
                 </div>
                 <div className={createPlaylistButtonContainer}>
@@ -108,7 +108,7 @@ class NavBar extends React.Component {
                 <ul className={RootlistScrollNode}>
                   {/* React generated playlists list */}
                   {playlists.map((playlist) => (
-                    <RootListItem  key={playlist.id} playlist={playlist} createPlaylistForm={deletePlaylistForm}/>
+                    <RootListItem  playlistId={playlist.id} playlist={playlist} deletePlaylistForm={deletePlaylistForm}/>
                   ))}
                 </ul>
               </div>
