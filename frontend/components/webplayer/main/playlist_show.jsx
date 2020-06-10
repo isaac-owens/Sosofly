@@ -18,7 +18,8 @@ class PlaylistShow extends React.Component {
   }
 
   render() {
-    //debugger
+    ////debugger
+
     let playlistShowPageTopContainer = "playlist-show-page-top-container";
     let playlistShowHeader = "playlist-show-header";
     let playlistShowHeaderSetup = "playlist-show-header-setup";
@@ -44,6 +45,7 @@ class PlaylistShow extends React.Component {
 
     let { playlists } = this.props;
     playlists = playlists || { 52: {title: "Hello!"}};
+    let id = this.props.match.params.id || 52;
 
     return (
       <section className={playlistShowPageTopContainer}>
@@ -57,7 +59,7 @@ class PlaylistShow extends React.Component {
           <div className={playlistShowHeaderBanner}>
             <h2 className={playlistShowHeaderSubBanner}>Playlist</h2>
             <span className={playlistShowHeaderTitleBox}>
-              <h1 className={playlistShowHeaderTitle}>{playlists[this.props.match.params.id].title}</h1>
+              <h1 className={playlistShowHeaderTitle}>{playlists[id].title}</h1>
             </span>
           </div>
         </div>

@@ -30,16 +30,18 @@ class Track extends React.Component {
     let miniDisc = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
 
-    let { track } = this.props;
+    let { track, onClick } = this.props;
     track = track || {};
     return (
       <div className={trackWrapper}>
         <div></div>
-        <li className={tracklistRow}>
+        <li className={tracklistRow}
+          onClick={() => onClick(track)}>
           <div className={tracklistColumnOuter}>
             <div className={tracklistPPTopAlign}></div>
             <div className={tracklistTopAlign}>
-              <span className={musicDiscContainer}>{miniDisc}</span>
+              <span 
+              className={musicDiscContainer}>{miniDisc}</span>
             </div>
           </div>
           <div className={tracklistNameBox}>
