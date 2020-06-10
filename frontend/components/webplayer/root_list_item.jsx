@@ -7,6 +7,7 @@ class RootListItem extends React.Component {
     super(props);
   }
 
+
   render() {
 
   let reactWrapper = "react-wrapper";
@@ -21,17 +22,9 @@ class RootListItem extends React.Component {
       <div className={reactWrapper} key={playlist.id} >
         <li className={RootlistItem}>
           <div className={textWrapper}>
-          <Link
-            to={{
-              pathname: `webplayer/playlist/${playlist.id}`,
-              state:{
-                playlist: "playlist",
-                search: "?searchysearchy/",
-                key: 51
-              }
-            }}
+            <Link to={`webplayer/playlist/${playlist.id}`}
             className={playlistTitle}
-          >
+            >
             {playlist.title}
           </Link>
           {deletePlaylistForm}
@@ -44,3 +37,12 @@ class RootListItem extends React.Component {
 
 export default RootListItem;
 
+
+// to={{
+//   pathname: `webplayer/playlist/${playlist.id}`,
+//   state:{
+//     playlist: "playlist",
+//     search: "?searchysearchy/",
+//     key: 51
+//   }
+// }}

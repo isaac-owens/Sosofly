@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import PlaylistShow from '../webplayer/main/playlist_show';
 import { fetchUserPlaylists } from '../../actions/playlist_actions';
-import { withRouter } from 'react-router-dom';
 
 const mSTP = state => {
   return {
@@ -16,5 +15,4 @@ const mDTP = dispatch => {
   }
 }
 
-const PlaylistShowContainer =  connect(mSTP, mDTP)(PlaylistShow);
-// export default withRouter(PlaylistShowContainer);
+export default connect(mSTP, mDTP)(PlaylistShow);

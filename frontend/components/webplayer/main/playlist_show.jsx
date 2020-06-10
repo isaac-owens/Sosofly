@@ -14,6 +14,7 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount() {
+    // this.props.history.pop(`webplayer/playlists/${this.props.playlist.id}`);
     this.props.fetchPlaylists;
   }
 
