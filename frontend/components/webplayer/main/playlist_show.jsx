@@ -14,12 +14,11 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.history.pop(`webplayer/playlists/${this.props.playlist.id}`);
     this.props.fetchPlaylists;
   }
 
   render() {
-    debugger
+    //debugger
     let playlistShowPageTopContainer = "playlist-show-page-top-container";
     let playlistShowHeader = "playlist-show-header";
     let playlistShowHeaderSetup = "playlist-show-header-setup";
@@ -43,7 +42,8 @@ class PlaylistShow extends React.Component {
     let fire = <FontAwesomeIcon icon={faFire} size="3x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
-    // console.log(this.props.location.state);
+    let { playlists } = this.props;
+    playlists = playlists || { 52: {title: "Hello!"}};
 
     return (
       <section className={playlistShowPageTopContainer}>
@@ -57,7 +57,7 @@ class PlaylistShow extends React.Component {
           <div className={playlistShowHeaderBanner}>
             <h2 className={playlistShowHeaderSubBanner}>Playlist</h2>
             <span className={playlistShowHeaderTitleBox}>
-              <h1 className={playlistShowHeaderTitle}>Title</h1>
+              <h1 className={playlistShowHeaderTitle}>{playlists[52].title}</h1>
             </span>
           </div>
         </div>

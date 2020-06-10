@@ -53,7 +53,7 @@ class NavBar extends React.Component {
     let createIcon = <FontAwesomeIcon icon={faPlusSquare} size="3x" />;
     let likedSongsIcon = <FontAwesomeIcon icon={faFire} size="3x" />;
  
-    let {playlists, createPlaylistForm, deletePlaylistForm} = this.props;
+    let { playlists, createPlaylistForm, deletePlaylistForm} = this.props;
 
     return (
       <div className={webplayerNavBar}>
