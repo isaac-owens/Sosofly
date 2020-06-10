@@ -10,7 +10,8 @@ class RootListItem extends React.Component {
   let reactWrapper = "react-wrapper";
   let RootlistItem = "root=list=item";
   let textWrapper = "text-wrapper";
-
+  let playlistTitle = "playlist-title";
+  
   let {playlist, deletePlaylistForm} = this.props;
 
 
@@ -18,6 +19,13 @@ class RootListItem extends React.Component {
       <div className={reactWrapper} key={playlist.id} >
         <li className={RootlistItem}>
           <div className={textWrapper}>
+          <Link
+            to="#"
+            className={playlistTitle}
+            playlist={playlist}
+          >
+            {playlist.title}
+          </Link>
           {deletePlaylistForm(playlist)}
           </div>
         </li>
