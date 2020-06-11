@@ -4,14 +4,14 @@ import { fetchUserPlaylists } from '../../actions/playlist_actions';
 
 const mSTP = state => {
   return {
-    playlists: state.entities.playlists,
+    tracks: state.entities.tracks,
     currentUser: state.entities.users[state.session.id],
   }
 }
 
 const mDTP = dispatch => {
   return {
-    fetchPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
+    fetchPlaylistTracks: (entityId) => dispatch(fetchUserPlaylists(entityId)),
   }
 }
 
