@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
@@ -11,14 +10,22 @@ import PlaylistShowMain from "../../playlist/playlist_show_main";
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
-  }
+    this.state = {
+      data: null,
+    }
 
+    this.id = parseInt(this.props.match.params.id);
+  }
+  
   componentDidMount() {
-    this.props.fetchPlaylistTracks(this.props.currentUser.id);
+    this.loadData();
+  }
+  
+  loadData() {
+    this.setState({data: this.props.fetchPlaylist(this.id)});
   }
 
   render() {
-    ////debugger
 
     let playlistShowPageTopContainer = "playlist-show-page-top-container";
     let playlistShowHeader = "playlist-show-header";
@@ -43,9 +50,8 @@ class PlaylistShow extends React.Component {
     let fire = <FontAwesomeIcon icon={faFire} size="3x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
-    let { playlists } = this.props;
-    playlists = playlists || { 52: {title: "Hello!"}};
-    let id = this.props.match.params.id || 52;
+    let { playlist, tracks, fetchPlaylistTracks } = this.props;
+    if (!this.state.data) return (<div />)
 
     return (
       <section className={playlistShowPageTopContainer}>
@@ -57,9 +63,9 @@ class PlaylistShow extends React.Component {
             <div className={playlistShowHeaderImage}>IMAGE HERE</div>
           </div>
           <div className={playlistShowHeaderBanner}>
-            <h2 className={playlistShowHeaderSubBanner}>Playlist</h2>
+            <h2 className={playlistShowHeaderSubBanner}>{playlist.title}</h2>
             <span className={playlistShowHeaderTitleBox}>
-              <h1 className={playlistShowHeaderTitle}>{playlists[id].title}</h1>
+              <h1 className={playlistShowHeaderTitle}>Title</h1>
             </span>
           </div>
         </div>
@@ -73,7 +79,7 @@ class PlaylistShow extends React.Component {
             </div>
           </div>
         </div>
-        <PlaylistShowMain playlist={playlists[this.props.match.params.id]}/>
+        <PlaylistShowMain id={this.id} fetchPlaylistTracks={fetchPlaylistTracks} tracks={tracks}/>
       </section>
     );
   }

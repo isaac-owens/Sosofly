@@ -1,12 +1,12 @@
 export const fetchPlaylistTracks = (entityId) => {
-  $.ajax({
+  return $.ajax({
     method: 'GET',
     url: `/api/playlists/${entityId}/tracks`
   })
 }
 
 export const fetchAlbumTracks = (entityId) => {
-  $.ajax({
+  return $.ajax({
     method: 'GET',
     url: `/api/albums/${entityId}/tracks`
   })

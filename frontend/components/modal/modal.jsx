@@ -26,7 +26,6 @@ function Modal({ modal, closeModal, createPlaylist, userId}) {
       break;
   }
 
-   //////debugger
   return (
     <div className="modal-background">
       <div className="modal-child">
