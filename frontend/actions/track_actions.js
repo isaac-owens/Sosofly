@@ -12,7 +12,8 @@ export const receiveTracks = (tracks) => {
 }
 
 export const fetchPlaylistTracks = (entityId) => {
-  return APIUtils.fetchPlalyistTracks(entityId)
+  debugger
+  return APIUtils.fetchPlaylistTracks(entityId)
   .then(tracks => dispatch(receiveTracks(tracks)));
 }
 
