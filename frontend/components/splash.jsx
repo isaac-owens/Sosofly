@@ -30,6 +30,7 @@ class Splash extends React.Component {
     let authLinks = "auth-links";
     let authLinksList = "auth-links-list";
     let authLinksListItem = "auth-links-list-item";
+    let authLinksListWebplayer = "auth-links-list-webplayer";
     let separator = "separator";
     
     let splashMainHero = "splash-main-hero";  
@@ -76,7 +77,7 @@ class Splash extends React.Component {
               <nav className={authLinks}>
                 <ul className={authLinksList}>
                   <li>
-                    <Link to="/webplayer" className={authLinksListItem}>
+                    <Link to="/webplayer" className={authLinksListWebplayer}>
                       Webplayer
                     </Link>
                   </li>
