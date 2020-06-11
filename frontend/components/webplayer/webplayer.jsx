@@ -32,7 +32,6 @@ class Webplayer extends React.Component {
 
     let { deletePlaylistForm, createPlaylistForm, playlists, currentUser } = this.props;
     playlists = playlists || {};
-    
     return (
       <div className={webplayerBody}>
         <div className={main}>

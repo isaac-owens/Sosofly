@@ -179,7 +179,8 @@
 
 .react-wrapper {
   display: inline;
-  -webkit-user-select: none;
+  // -webkit-user-select: none;
+  background-color: white;
 }
 
 .react-wrapper:focus {
@@ -189,29 +190,32 @@
 .rootlist-item {
   position: relative;
   height: 32px;
-}
-
-.rootlist-item {
   color: white;
 }
 
 .playlist-dropdown {
-  position: fixed;
+  color: #b3b3b3;
+  // background-color: white;
+  position: absolute;
+  // position: fixed;
   opacity: 1;
-  pointer-events: none;
-  top: 375px;
-  left: 110px;
+  // pointer-events: none;
+  top: 100%;
+  // top: 375px;
+  // left: 110px;
   min-width: 160px;
+  height: 600px;
   padding: 5px;
   margin: 2px 0 0;
-  background-color: #282828;
+  // background-color: #282828;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, .15);
   border-radius: .25rem;
-  z-index: 1000;
+  z-index: 3000;
 }
 
 .playlistOption {
+  color: #b3b3b3;
   width: 100%;
   padding: 3px 20px;
   clear: both;

@@ -8,25 +8,29 @@ class RootListItem extends React.Component {
     this.state = {
       open: false,
     };
-    this.handleLinkClick = this.handleLinkClick.bind(this);
+    this.handleLink = this.handleLink.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleDelete = this.handleUpdate.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
-  handleLinkClick() {
+  handleLink() {
     this.setState({ open: !this.state.open });
-    return false;
+    // return false;
   }
 
-  handleDelete() {}
+  handleDelete(playlistId) {
+    this.props.openModal("deletePlaylist", playlistId);
+  }
 
-  handleUpdate() {}
+  handleUpdate() {
+    console.log("Update form coming soon");
+  }
 
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside());
   }
-  
+
   handleClickOutside() {
     return (e) => {
       if (
@@ -46,19 +50,26 @@ class RootListItem extends React.Component {
     let playlistDropdown = "playlist-dropdown";
     let playlistOption = "playlist-option";
 
-    let { playlist, deletePlaylistForm } = this.props;
+    let { currentUser, playlist, deletePlaylistForm } = this.props;
 
     return (
-      <div className={reactWrapper} key={playlist.id}>
+      <div
+        onMouseEnter={this.handleLink}
+        className={reactWrapper}
+        key={playlist.id}
+      >
         <li
-          onContextMenu={this.handleLinkClick}
+          // onContextMenu={() => this.handleLinkClick()}
           className={RootlistItem}
           ref={this.container}
         >
           {this.state.open ? (
             <div className={playlistDropdown}>
               <ul>
-                <li className={playlistOption} onClick={this.handleDelete}>
+                <li
+                  className={playlistOption}
+                  onClick={() => this.handleDelete(playlist.id)}
+                >
                   Delete
                 </li>
                 <li className={playlistOption} onClick={this.handleUpdate}>

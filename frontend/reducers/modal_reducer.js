@@ -6,7 +6,14 @@ const modalReducer = (oldState=null, action) => {
 
   switch (action.type) {
     case OPEN_MODAL:
-      return action.modal;
+      debugger
+      if(action.playlistId) {
+        debugger
+        return {modal: action.modal, playlistId: action.playlistId}
+      } else {
+        debugger
+        return action.modal;
+      }
     case CLOSE_MODAL:
       return null;
     default:

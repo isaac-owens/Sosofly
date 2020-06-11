@@ -51,15 +51,12 @@ class PlaylistShow extends React.Component {
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
     let { playlist, tracks, fetchPlaylistTracks } = this.props;
-    debugger
     if (
       !this.state.data ||
       (Object.keys(playlist).length === 0 && playlist.constructor === Object)
     ) {
-      debugger
       return <div />;
     } else {
-      debugger;
       return (
         <section className={playlistShowPageTopContainer}>
           <div className={playlistShowHeader}>
