@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import PlaylistShowContainer from "../playlist/playlist_show_container";
-import Landing from "./main/landing"
+import Landing from "./landing"
 
 class Main extends React.Component {
   constructor(props){
