@@ -9,6 +9,12 @@ class Track extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    if (typeof this.props.ref === 'undefined'){
+      console.log('Ref is not here')
+    }
+  }
+
   render() {
     let trackWrapper = "track-wrapper";
     let tracklistRow = "tracklist-row";

@@ -14,41 +14,38 @@ class PlaylistShowMain extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // componentDidUpdate(prevProps, prevState){
+  //   if (typeof this.refs.length === 'undefined') {
+  //     console.log('nope');
+  //     return null;
+  //   }
+  //   console.log(`refs is ${this.refs} and it's length is ${this.refs.length}`);
 
-  componentDidMount(){
-    let test = this.firstRef.current;
-    console.log(test);
-  }
+  //   // //debugger
+  //   if(this.state.selectedTrack !== prevState.selectedTrack) {
+  //     let track;
+  //     switch(this.state.selectedTrack){
+  //       case "All That":
+  //         console.log(this.refs);
+  //         // console.log(ref.current);
+  //         track = this.refs.props.track.track_file
+  //         //debugger
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //     if(track) {
+  //       this.player.src = track;
+  //       this.player.play();
+  //     }
+  //   }
+  // }
 
-  componentDidUpdate(prevProps, prevState){
-    if (typeof this.refs.length === 'undefined') {
-      console.log('nope');
-      return null;
-    }
-    console.log(`refs is ${this.refs} and it's length is ${this.refs.length}`);
-
-    // //debugger
-    if(this.state.selectedTrack !== prevState.selectedTrack) {
-      let track;
-      switch(this.state.selectedTrack){
-        case "All That":
-          console.log(this.refs);
-          // console.log(ref.current);
-          track = this.refs.props.track.track_file
-          //debugger
-          break;
-        default:
-          break;
-      }
-      if(track) {
-        this.player.src = track;
-        this.player.play();
-      }
-    }
-  }
-
-  handleClick(track) {
-    this.setState({ selectedTrack: track.title });
+  handleClick() {
+    // console.log(this.firstRef.current);
+    // this.setState({ selectedTrack: track.title });
+    // this.player.src = this.firstRef.current.track.track_url
+    // this.playey.play;
   }
 
 
@@ -73,7 +70,7 @@ class PlaylistShowMain extends React.Component {
                 onClick={this.handleClick}/>
               )}
           </ol>
-          <audio ref={ref => this.player = ref} />
+          <audio />
         </section>
       </div>
     )
