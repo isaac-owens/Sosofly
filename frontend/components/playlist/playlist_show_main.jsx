@@ -1,4 +1,5 @@
 import React from 'react';
+import AudioPlayer from 'react-modular-audio-player';
 
 import Track from "./track";
 

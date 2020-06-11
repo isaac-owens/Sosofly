@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PlaylistShow from "../webplayer/main/playlist_show";
+import { fetchPlaylistTracks } from "../../actions/track_actions";
 
 class RootListItem extends React.Component {
   constructor(props){
     super(props);
   }
-
 
   render() {
 
@@ -36,13 +36,3 @@ class RootListItem extends React.Component {
 }
 
 export default RootListItem;
-
-
-// to={{
-//   pathname: `webplayer/playlist/${playlist.id}`,
-//   state:{
-//     playlist: "playlist",
-//     search: "?searchysearchy/",
-//     key: 51
-//   }
-// }}

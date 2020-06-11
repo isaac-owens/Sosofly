@@ -2,18 +2,14 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import PlaylistItem from './playlist_item';
 
 class Track extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount(){
-    if (typeof this.props.ref === 'undefined'){
-      console.log('Ref is not here')
-    }
-  }
+  // componentDidMount(){
+  // }
 
   render() {
     let trackWrapper = "track-wrapper";
@@ -36,7 +32,7 @@ class Track extends React.Component {
     let miniDisc = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
 
-    let { track, title, description} = this.props;
+    let { track, title} = this.props;
     track = track || {};
     title = title || "Title";
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
@@ -16,13 +15,11 @@ class PlaylistShow extends React.Component {
   
   componentDidMount() {
     const id = parseInt(this.props.match.params.id)
-    this.props.fetchPlaylist(id);
     this.props.fetchPlaylistTracks(id);
   }
 
 
   render() {
-    ////debugger
 
     let playlistShowPageTopContainer = "playlist-show-page-top-container";
     let playlistShowHeader = "playlist-show-header";

@@ -23,7 +23,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const date = `${this.state.year}-${this.state.month}-${this.state.day}`
-    // //debugger
+
     const user = {
       email: this.state.email,
       username: this.state.username,
@@ -31,12 +31,6 @@ class SignupForm extends React.Component {
       birthdate: date,
       gender: this.state.gender
     }
-    // if (this.state.email !== this.state.confirmEmail) {
-    //   // //debugger
-    //   console.log("Does not match!")
-    //   this.renderError("Email");
-    //   return;
-    // }
 
     this.props.processForm(user).then(() => {
       return this.props.history.push("/account/overview");
@@ -78,7 +72,6 @@ class SignupForm extends React.Component {
   }
   
   renderError(field) {
-    // //debugger
     const errors = this.props.errors;
     return errors.some(error => error.includes(field))
   }

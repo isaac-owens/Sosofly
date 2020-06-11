@@ -14,7 +14,6 @@ const mSTP = state => {
 const mDTP = dispatch => {
   return {
     fetchPlaylistTracks: (entityId) => dispatch(fetchPlaylistTracks(entityId)),
-    fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId)),
   }
 }
 
