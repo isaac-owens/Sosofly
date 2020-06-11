@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
-import { faGitbhub } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin } from "@fortawesome/free-solid-svg-icons";
-import { faSpotify } from "@fortawesome/free-solid-svg-icons";
 
 let splashHeader = "splash-header";
 let splashHeaderNav = "splash-header-nav";
@@ -21,11 +18,8 @@ let separator = "separator";
 
 
 let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
-let github = <FontAwesomeIcon icon={faGitbhub} size="1x" />;
-let linkedin = <FontAwesomeIcon icon={faLinkedin} size="1x" />;
-let spotify = <FontAwesomeIcon icon={faSpotify} size="1x" />;
 
-class AuthHeader extends React.Component {
+class SplashHeader extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -68,4 +62,4 @@ class AuthHeader extends React.Component {
   }
 }
 
-export default AuthHeader;
+export default SplashHeader;
