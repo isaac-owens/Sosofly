@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import PlaylistShow from '../webplayer/main/playlist_show';
 import { fetchPlaylist } from '../../actions/playlist_actions';
 import { fetchPlaylistTracks } from '../../actions/track_actions';
+
+import PlaylistShow from '../webplayer/main/playlist_show';
 
 const mSTP = state => {
   return {
     tracks: Object.values(state.entities.tracks),
-    playlist: state.entities.playlists,
+    playlist: state.entities.playlist,
     currentUser: state.entities.users[state.session.id],
   }
 }

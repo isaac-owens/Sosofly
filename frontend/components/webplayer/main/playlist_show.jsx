@@ -51,37 +51,53 @@ class PlaylistShow extends React.Component {
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
     let { playlist, tracks, fetchPlaylistTracks } = this.props;
-    if (!this.state.data) return (<div />)
-
-    return (
-      <section className={playlistShowPageTopContainer}>
-        <div className={playlistShowHeader}>
-          <div className={playlistShowHeaderSetup}></div>
-          <div className={playlistShowHeaderGradient}></div>
-          <div></div>
-          <div className={playlistShowHeaderImageBox}>
-            <div className={playlistShowHeaderImage}>IMAGE HERE</div>
-          </div>
-          <div className={playlistShowHeaderBanner}>
-            <h2 className={playlistShowHeaderSubBanner}>{playlist.title}</h2>
-            <span className={playlistShowHeaderTitleBox}>
-              <h1 className={playlistShowHeaderTitle}>Title</h1>
-            </span>
-          </div>
-        </div>
-        <div className={playlistTopColor}></div>
-        <div className={playlistControlsBox}>
-          <div className={playlistControls}>
-            <button className={playlistShowPlayButon}>{playCircle}</button>
-            <button className={fireButtonInactive}>{fire}</button>
-            <div className={contextMenu}>
-              <button className={contextEllipsis}>{ellipsis}</button>
+    debugger
+    if (
+      !this.state.data ||
+      (Object.keys(playlist).length === 0 && playlist.constructor === Object)
+    ) {
+      debugger
+      return <div />;
+    } else {
+      debugger;
+      return (
+        <section className={playlistShowPageTopContainer}>
+          <div className={playlistShowHeader}>
+            <div className={playlistShowHeaderSetup}></div>
+            <div className={playlistShowHeaderGradient}></div>
+            <div></div>
+            <div className={playlistShowHeaderImageBox}>
+              <div className={playlistShowHeaderImage}>IMAGE HERE</div>
+            </div>
+            <div className={playlistShowHeaderBanner}>
+              <h2 className={playlistShowHeaderSubBanner}>
+                {playlist[this.id].title}
+              </h2>
+              <span className={playlistShowHeaderTitleBox}>
+                <h1 className={playlistShowHeaderTitle}>
+                  {playlist[this.id].title}
+                </h1>
+              </span>
             </div>
           </div>
-        </div>
-        <PlaylistShowMain id={this.id} fetchPlaylistTracks={fetchPlaylistTracks} tracks={tracks}/>
-      </section>
-    );
+          <div className={playlistTopColor}></div>
+          <div className={playlistControlsBox}>
+            <div className={playlistControls}>
+              <button className={playlistShowPlayButon}>{playCircle}</button>
+              <button className={fireButtonInactive}>{fire}</button>
+              <div className={contextMenu}>
+                <button className={contextEllipsis}>{ellipsis}</button>
+              </div>
+            </div>
+          </div>
+          <PlaylistShowMain
+            id={this.id}
+            fetchPlaylistTracks={fetchPlaylistTracks}
+            tracks={tracks}
+          />
+        </section>
+      );
+    }
   }
 }
 
