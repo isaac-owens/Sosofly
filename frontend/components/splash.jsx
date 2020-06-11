@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
-import { faGitbhub } from "@fortawesome/free-regular-svg-icons";
-import { faLinkedin } from "@fortawesome/free-regular-svg-icons";
-import { faSpotify } from "@fortawesome/free-regular-svg-icons";
+import { faGitbhub } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-solid-svg-icons";
+import { faSpotify } from "@fortawesome/free-solid-svg-icons";
 
 class Splash extends React.Component {
   constructor(props) {
@@ -53,14 +53,14 @@ class Splash extends React.Component {
     let socialBox = "social-box";
     let socialIcons = "social-icons";
     let socialIcon = "social-icon";
-    let socialIconOuterBox = "social-icon-box";
+    let socialIconOuterBox = "social-icon-outer-box";
     let socialIconInnerBox = "social-icon-inner-box";
 
     let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
     let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
-    let github = <FontAwesomeIcon icon={faGitbhub} size="5x" />;
-    let linkedin = <FontAwesomeIcon icon={faLinkedin} size="5x" />;
-    let spotify = <FontAwesomeIcon icon={faSpotify} size="5x" />;
+    let github = <FontAwesomeIcon icon={faGitbhub} size= "1x" />;
+    let linkedin = <FontAwesomeIcon icon={faLinkedin} size="1x" />;
+    let spotify = <FontAwesomeIcon icon={faSpotify} size="1x" />;
 
     return (
       <>
@@ -158,21 +158,21 @@ class Splash extends React.Component {
                 <li className={socialIcon}>
                   <div className={socialIconOuterBox}>
                     <div className={socialIconInnerBox}>
-                      {github}
+                      I
                     </div>
                   </div>
                 </li>
                 <li className={socialIcon}>
                   <div className={socialIconOuterBox}>
                     <div className={socialIconInnerBox}>
-                      {linkedin}
+                      J
                     </div>
                   </div>
                 </li>
                 <li className={socialIcon}>
                   <div className={socialIconOuterBox}>
                     <div className={socialIconInnerBox}>
-                      {spotify}
+                      O
                     </div>
                   </div>
                 </li>
