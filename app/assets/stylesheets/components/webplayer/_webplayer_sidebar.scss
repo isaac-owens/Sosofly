@@ -195,6 +195,33 @@
   color: white;
 }
 
+.playlist-dropdown {
+  position: fixed;
+  opacity: 1;
+  pointer-events: none;
+  top: 375px;
+  left: 110px;
+  min-width: 160px;
+  padding: 5px;
+  margin: 2px 0 0;
+  background-color: #282828;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: .25rem;
+  z-index: 1000;
+}
+
+.playlistOption {
+  width: 100%;
+  padding: 3px 20px;
+  clear: both;
+  line-height: 32px;
+  white-space: nowrap;
+  background: 0 0;
+  user-select: none;
+  cursor: default;
+}
+
 
 
 .text-wrapper {
