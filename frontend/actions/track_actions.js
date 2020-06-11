@@ -1,5 +1,6 @@
 export const RECEIVE_TRACKS = "RECEIVE_TRACKS";
-export const RECEIVE_TRACK = "RECEIVE_TRACK";
+export const ADD_TRACK = "ADD_TRACK";
+export const REMOVE_TRACK = "REMOVE_TRACK";
 
 import * as APIUtils from "../util/tracks_api_utils";
 
@@ -10,20 +11,12 @@ export const receiveTracks = (tracks) => {
   }
 }
 
-export const receiveTrack = (track) => {
-  return {
-    type: RECEIVE_TRACK,
-    track
-  }
-}
-
-
-export const fetchPlaylistTracks = (playlistId) => {
-  return APIUtils.fetchPlalyistTracks()
+export const fetchPlaylistTracks = (entityId) => {
+  return APIUtils.fetchPlalyistTracks(entityId)
   .then(tracks => dispatch(receiveTracks(tracks)));
 }
 
-export const fetchTrack = (trackId) => {
-  return APIUtils.fetchTrack(trackId)
-  .then(track => dispatch(receiveTrack(track)));
+export const fetchAlbumTracks = (entityId) => {
+  return APIUtils.fetchAlbumTracks(entityId)
+  .then(tracks => dispatch(receiveTracks(tracks)));
 }

@@ -1,15 +1,12 @@
-import { RECEIVE_TRACKS, RECEIVE_TRACK } from "../actions/track_actions"
+import { RECEIVE_TRACKS } from "../actions/track_actions"
 
 const tracksReducer = (oldState={}, action) => {
   Object.freeze(oldState);
-  let newState = Object.assign({}, oldState)
     
   switch (action.type) {
     case RECEIVE_TRACKS:
       action.tracks
       break;
-    case RECEIVE_TRACK:
-      newState[action.track.id] = action.track;
     default:
       return oldState;
   }
