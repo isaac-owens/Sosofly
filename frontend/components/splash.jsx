@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+import { faGitbhub } from "@fortawesome/free-regular-svg-icons";
+import { faLinkedin } from "@fortawesome/free-regular-svg-icons";
+import { faSpotify } from "@fortawesome/free-regular-svg-icons";
 
 class Splash extends React.Component {
   constructor(props) {
@@ -41,9 +45,22 @@ class Splash extends React.Component {
     let splashFooterNav = "splash-footer-nav";
     let footerLink = "footer-link";
     let footerWebplayerLink = "footer-webplayer-link";
+    let footerLogoBox = "footer-logo-box";
+    let footerLinksBoxes = "footer-links-boxes";
+    let footerLinksBox = "footer-links-box";
+    let boxHeader = "box-header";
+    let boxItem = "box-item";
+    let socialBox = "social-box";
+    let socialIcons = "social-icons";
+    let socialIcon = "social-icon";
+    let socialIconOuterBox = "social-icon-box";
+    let socialIconInnerBox = "social-icon-inner-box";
 
     let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
     let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
+    let github = <FontAwesomeIcon icon={faGitbhub} size="5x" />;
+    let linkedin = <FontAwesomeIcon icon={faLinkedin} size="5x" />;
+    let spotify = <FontAwesomeIcon icon={faSpotify} size="5x" />;
 
     return (
       <>
@@ -52,7 +69,7 @@ class Splash extends React.Component {
             <div className={splashHeaderNav}>
               <div className={headerLogoLinkWrapper}>
                 <Link to="/" className={headerLogoLink}>
-                  {sosoflyHeaderLogo} 
+                  {sosoflyHeaderLogo}
                   <span className={headerLogoLinkTitle}>Sosofly</span>
                 </Link>
               </div>
@@ -105,14 +122,62 @@ class Splash extends React.Component {
         </div>
         <footer className={splashFooter}>
           <nav className={splashFooterNav}>
-            <h2>
+            <div className={footerLogoBox}>
               <Link to="/" className={footerLink}>
                 {sosoflyFooterLogo} Sosofly
               </Link>
-            </h2>
-            <Link to="/webplayer" className={footerWebplayerLink}>
-              Webplayer
-            </Link>
+            </div>
+            <div className={footerLinksBoxes}>
+              <ul className={footerLinksBox}>
+                <li className={boxHeader}>company</li>
+                <li className={boxItem}>About</li>
+                <li className={boxItem}>Jobs</li>
+                <li className={boxItem}>For the Record</li>
+              </ul>
+              <ul className={footerLinksBox}>
+                <li className={boxHeader}>communities</li>
+                <li className={boxItem}>For Artists</li>
+                <li className={boxItem}>Developers</li>
+                <li className={boxItem}>Brands</li>
+                <li className={boxItem}>Investors</li>
+                <li className={boxItem}>Vendors</li>
+              </ul>
+              <ul className={footerLinksBox}>
+                <li className={boxHeader}>useful links</li>
+                <li className={boxItem}>Help</li>
+                <li>
+                  <Link to="/webplayer" className={footerWebplayerLink}>
+                    Webplayer
+                  </Link>
+                </li>
+                <li className={boxItem}>Free Mobile App</li>
+              </ul>
+            </div>
+            <div className={socialBox}>
+              <ul className={socialIcons}>
+                <li className={socialIcon}>
+                  <div className={socialIconOuterBox}>
+                    <div className={socialIconInnerBox}>
+                      {github}
+                    </div>
+                  </div>
+                </li>
+                <li className={socialIcon}>
+                  <div className={socialIconOuterBox}>
+                    <div className={socialIconInnerBox}>
+                      {linkedin}
+                    </div>
+                  </div>
+                </li>
+                <li className={socialIcon}>
+                  <div className={socialIconOuterBox}>
+                    <div className={socialIconInnerBox}>
+                      {spotify}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </nav>
         </footer>
       </>
