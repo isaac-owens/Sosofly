@@ -1,5 +1,4 @@
 import { 
-  RECEIVE_PLAYLIST, 
   RECEIVE_PLAYLISTS,
   ADD_PLAYLIST,
   REMOVE_PLAYLIST,
@@ -12,8 +11,6 @@ const playlistsReducer = (oldState = {}, action) => {
   let newState = Object.assign({}, oldState);
 
   switch (action.type) {
-    case RECEIVE_PLAYLIST:
-      return { [action.playlist.id]: action.playlist };
     case RECEIVE_PLAYLISTS:
       return action.playlists;
     case ADD_PLAYLIST:

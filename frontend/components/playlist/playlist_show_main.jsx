@@ -43,8 +43,12 @@ class PlaylistShowMain extends React.Component {
             <ol>
             {tracks.map(track => {
               return <AudioPlayer
+              key={track.id}
               // className={tracklist}
               audioFiles={[{src: track.track_file, title: track.title}]}
+              fontColor="#fff"
+              fontSize="16px"
+              playerWidth="100%"
             /> })}
             </ol>
               {/* //   <Track */}
