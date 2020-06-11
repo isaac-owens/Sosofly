@@ -11,31 +11,44 @@ import AccountDropdown from './account_dropdown';
 class Account extends React.Component {
   constructor(props) {
     super(props);
+    this.container = React.createRef();
     this.state = {
-      showHide: "dropdownHidden"
-    }
+      open: false,
+    };
     this.handleClick = this.handleClick.bind(this);
-    this.toggleShowHide = this.toggleShowHide.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleClickOutside  = this.handleClickOutside.bind(this);
   }
-  
+
   handleClick() {
     this.props.logout();
   }
-  
-  toggleShowHide() { 
-    this.setState({
-      showHide:
-      this.state.showHide === "dropdown-hidden"
-      ? "account-user-dropdown-menu"
-      : "dropdown-hidden",
-    });
+
+  handleButtonClick() {
+    this.setState({ open: !this.state.open });
   }
-  
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside());
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside());
+  }
+
+  handleClickOutside() {
+    return e => {
+      if (this.container.current && !this.container.current.contains(e.target)) {
+        this.setState({ open: false })
+      }
+    }
+  }
+
   render() {
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
     let userIcon = <FontAwesomeIcon icon={faUserCircle} size="3x" />;
-    let arrowDown = <FontAwesomeIcon icon={faAngleDown} size ="1x" />;
-    
+    let arrowDown = <FontAwesomeIcon icon={faAngleDown} size="1x" />;
+
     let accountHeader = "account-header";
     let accountHeaderNav = "account-header-nav";
     let accountLogoLink = "account-logo-link";
@@ -43,17 +56,18 @@ class Account extends React.Component {
     let webplayerLink = "webplayer-link";
 
     let accountUserDropdown = "account-user-dropdown";
+    let accountUserDropdownMenu = "account-user-dropdown-menu";
     let accountWelcome = "account-welcome";
     let welcomeMessage = "welcome-message";
-    
-    let accountMain = "account-main"
+
+    let accountMain = "account-main";
     let accountMainContent = "account-main-content";
     let profileTable = "profile-table";
     let data = "data";
-    
+
     let accountSidebar = "account-sidebar";
     let sidebarLink = "sidebar-link";
-    
+
     let accountInfo = "account-info";
     let accountInfoSection = "account-info-section";
 
@@ -65,7 +79,7 @@ class Account extends React.Component {
     let paymentInfo = "payment-info";
     let cardInfo = "card-info";
     let editProfileLink = "edit-profile-link";
-    
+
     let accountFooterNav = "account-footer-nav";
     let accountFooterNavLinks = "account-footer-nav-links";
 
@@ -84,21 +98,27 @@ class Account extends React.Component {
               </h1>
               <div className={accountHeaderNavLinks}>
                 <div>
-                  <Link to="/webplayer" className={webplayerLink}>Webplayer</Link>
+                  <Link to="/webplayer" className={webplayerLink}>
+                    Webplayer
+                  </Link>
                 </div>
-
-                <div className={accountUserDropdown} onClick={this.toggleShowHide}>
+                <div
+                  onClick={this.handleButtonClick}
+                  className={accountUserDropdown}
+                  ref={this.container}
+                >
                   <div>{userIcon}</div>
                   <div>Profile</div>
-                  <div>
-                    {arrowDown}
-                  </div>
+                  <div>{arrowDown}</div>
+                  {this.state.open ? (
+                    <div className={accountUserDropdownMenu}>Logout</div>
+                  ) : (
+                    <div></div>
+                  )}
                 </div>
-              
               </div>
             </nav>
           </header>
-          <AccountDropdown handleClick={this.handleClick} className={this.state.showHide} />
         </div>
 
         <div className={accountMain}>
@@ -154,7 +174,9 @@ class Account extends React.Component {
                         <span>Date of birth</span>
                       </td>
                       <td>
-                        <p className={data}>{this.props.currentUser.birthdate}</p>
+                        <p className={data}>
+                          {this.props.currentUser.birthdate}
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -210,14 +232,16 @@ class Account extends React.Component {
                 </Link>
               </h2>
               <div>
-                <Link to="/webplayer" className={webplayerLink}>Webplayer</Link>
+                <Link to="/webplayer" className={webplayerLink}>
+                  Webplayer
+                </Link>
               </div>
             </div>
           </nav>
         </footer>
       </>
-    ); 
-  };
+    );
+  }
 };
 
 export default Account;
