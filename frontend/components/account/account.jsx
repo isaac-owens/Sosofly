@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 import AccountDropdown from './account_dropdown';
 
@@ -15,12 +16,12 @@ class Account extends React.Component {
     this.state = {
       open: false,
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleClickOutside  = this.handleClickOutside.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
-  handleClick() {
+  handleLogout() {
     this.props.logout();
   }
 
@@ -37,17 +38,21 @@ class Account extends React.Component {
   }
 
   handleClickOutside() {
-    return e => {
-      if (this.container.current && !this.container.current.contains(e.target)) {
-        this.setState({ open: false })
+    return (e) => {
+      if (
+        this.container.current &&
+        !this.container.current.contains(e.target)
+      ) {
+        this.setState({ open: false });
       }
-    }
+    };
   }
 
   render() {
     let sosoflyLogo = <FontAwesomeIcon icon={faCompactDisc} size="2x" />;
     let userIcon = <FontAwesomeIcon icon={faUserCircle} size="3x" />;
     let arrowDown = <FontAwesomeIcon icon={faAngleDown} size="1x" />;
+    let arrowUp = <FontAwesomeIcon icon={faAngleUp} size="1x" />;
 
     let accountHeader = "account-header";
     let accountHeaderNav = "account-header-nav";
@@ -56,7 +61,9 @@ class Account extends React.Component {
     let webplayerLink = "webplayer-link";
 
     let accountUserDropdown = "account-user-dropdown";
+    let DropdownMenuContainer = "dropdown-menu-container";
     let accountUserDropdownMenu = "account-user-dropdown-menu";
+    let dropdownOption = "dropdown-option";
     let accountWelcome = "account-welcome";
     let welcomeMessage = "welcome-message";
 
@@ -109,9 +116,25 @@ class Account extends React.Component {
                 >
                   <div>{userIcon}</div>
                   <div>Profile</div>
-                  <div>{arrowDown}</div>
                   {this.state.open ? (
-                    <div className={accountUserDropdownMenu}>Logout</div>
+                    <div>{arrowUp}</div>
+                  ) : (
+                    <div>{arrowDown}</div>
+                  )}
+                  {this.state.open ? (
+                    <div className={DropdownMenuContainer}>
+                      <ul
+                      className={accountUserDropdownMenu}
+                      >
+                        <li className={dropdownOption}>
+                          Account
+                        </li>
+                        <li className={dropdownOption}
+                          onClick={this.handleLogout}>
+                          Logout
+                        </li> 
+                      </ul>
+                    </div>
                   ) : (
                     <div></div>
                   )}
