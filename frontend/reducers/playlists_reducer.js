@@ -15,7 +15,7 @@ const playlistsReducer = (oldState = {}, action) => {
     case RECEIVE_PLAYLIST:
       return { [action.playlist.id]: action.playlist };
     case RECEIVE_PLAYLISTS:
-      //   ////debugger
+      //   //////debugger
       return action.playlists;
     case ADD_PLAYLIST:
       newState[action.playlist.id] = action.playlist;
@@ -24,7 +24,7 @@ const playlistsReducer = (oldState = {}, action) => {
       delete newState[action.playlist.id];
       return newState;
     case ADD_TRACK:
-      newState[action.playlist.id].tracks.push(action.track);
+      newState[action.track.id].tracks.push(action.track);
       return newState;
     case REMOVE_TRACK:
       const playlist = newState[action.playlist.id];
