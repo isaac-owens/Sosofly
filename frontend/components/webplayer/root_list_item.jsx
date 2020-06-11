@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PlaylistShow from "../webplayer/main/playlist_show";
-import { fetchPlaylistTracks } from "../../actions/track_actions";
 
 class RootListItem extends React.Component {
   constructor(props){

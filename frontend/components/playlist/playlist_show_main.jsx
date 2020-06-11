@@ -8,7 +8,7 @@ class PlaylistShowMain extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null
+      data: null,
     }
     
     this.handleClick = this.handleClick.bind(this);
@@ -32,30 +32,32 @@ class PlaylistShowMain extends React.Component {
     let tracklist = "tracklist";
 
     let { tracks } = this.props;
-    if (!this.state.data) return (<div />)
 
-    debugger
-    let track_list = tracks.map(track => {
-      return Object.assign({src: "", title: ""}, track);
-    })
+    if (!this.state.data || tracks.length === 0) {
+      return (<div />);
+    } else {
 
-    return (
-      <div className={playlistShowContentSpacing}>
-        <section className={tracklistContainer}>
-          <AudioPlayer className={tracklist}
-            audioFiles={track_list}
-              // {tracks.map(track => 
-              //   <Track 
-              //   key={track.id} 
-              //   track={track} 
+      return (
+        <div className={playlistShowContentSpacing}>
+          <section className={tracklistContainer}>
+            <ol>
+            {tracks.map(track => {
+              return <AudioPlayer
+              // className={tracklist}
+              audioFiles={[{src: track.track_file, title: track.title}]}
+            /> })}
+            </ol>
+              {/* //   <Track */}
+              {/* //   key={track.id}
+              //   track={track}
               //   title={track.title}
               //   onClick={this.handleClick}/>
-              // )}
-          />
-          <audio />
-        </section>
-      </div>
-    )
+              // )} */}
+            <audio />
+          </section>
+        </div>
+      );
+    }
   }
 }
 

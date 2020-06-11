@@ -10,14 +10,20 @@ import PlaylistShowMain from "../../playlist/playlist_show_main";
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.playlist;
-    this.id = parseInt(this.props.match.params.id)
+    this.state = {
+      data: null,
+    }
+
+    this.id = parseInt(this.props.match.params.id);
   }
   
-  // componentDidMount() {
-  //   this.props.fetchPlaylistTracks(this.id);
-  // }
-
+  componentDidMount() {
+    this.loadData();
+  }
+  
+  loadData() {
+    this.setState({data: this.props.fetchPlaylist(this.id)});
+  }
 
   render() {
 
@@ -45,9 +51,7 @@ class PlaylistShow extends React.Component {
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
     let { playlist, tracks, fetchPlaylistTracks } = this.props;
-    playlist = playlist || { 52: {title: "Hello!"}};
-    let id = this.props.match.params.id || 52;
-    tracks = [{src: "src", title: "title"}]
+    if (!this.state.data) return (<div />)
 
     return (
       <section className={playlistShowPageTopContainer}>
@@ -59,9 +63,9 @@ class PlaylistShow extends React.Component {
             <div className={playlistShowHeaderImage}>IMAGE HERE</div>
           </div>
           <div className={playlistShowHeaderBanner}>
-            <h2 className={playlistShowHeaderSubBanner}>Playlist</h2>
+            <h2 className={playlistShowHeaderSubBanner}>{playlist.title}</h2>
             <span className={playlistShowHeaderTitleBox}>
-              <h1 className={playlistShowHeaderTitle}>{playlist[id].title}</h1>
+              <h1 className={playlistShowHeaderTitle}>Title</h1>
             </span>
           </div>
         </div>
