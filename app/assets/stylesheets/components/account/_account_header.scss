@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: space-evenly;
   position: relative;
-  width: 900px;
+  width: 100%;
 }
 
 .account-user-dropdown:hover {
@@ -56,11 +56,8 @@
   position: absolute;
   padding: 10px 0;
   border-radius: 5px;
-  left: 1116px;
-}
-
-.dropdown-hidden {
-  display: none;
+  top: 100%;
+  
 }
 
 .account-header-nav-links {
