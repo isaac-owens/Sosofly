@@ -3,7 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
-import Splash from "./splash";
+import Splash from "./splash/splash_main";
 import WebplayerContainer from "./webplayer/webplayer_container";
 import AccountContainer from "./account/account_container";
 
