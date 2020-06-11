@@ -1,5 +1,5 @@
 import React from 'react';
-import PlaylistItem from "../../playlist/playlist_item";
+import PlaylistItem from "../playlist/playlist_item";
 import { Link } from 'react-router-dom';
 
 class Landing extends React.Component {

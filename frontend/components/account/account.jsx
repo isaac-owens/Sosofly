@@ -7,7 +7,7 @@ import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-import AccountDropdown from './account_dropdown';
+import SplashFooter from '../splash/splash_footer';
 
 class Account extends React.Component {
   constructor(props) {
@@ -241,25 +241,7 @@ class Account extends React.Component {
             </article>
           </main>
         </div>
-        <footer className={accountFooterNav}>
-          <nav>
-            <div className={accountFooterNavLinks}>
-              <h2>
-                <Link to="/">
-                  <div className={accountLogoLink}>
-                    <span>{sosoflyLogo}</span>
-                    <span>Sosofly</span>
-                  </div>
-                </Link>
-              </h2>
-              <div>
-                <Link to="/webplayer" className={webplayerLink}>
-                  Webplayer
-                </Link>
-              </div>
-            </div>
-          </nav>
-        </footer>
+        <SplashFooter />
       </>
     );
   }

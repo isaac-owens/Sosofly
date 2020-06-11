@@ -5,7 +5,7 @@ import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
-import PlaylistShowMain from "../../playlist/playlist_show_main";
+import PlaylistShowMain from "../playlist/playlist_show_main";
 
 class PlaylistShow extends React.Component {
   constructor(props) {
