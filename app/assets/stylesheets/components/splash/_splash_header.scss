@@ -46,6 +46,21 @@
     list-style: none;
   }
 
+  .auth-links-list-webplayer {
+    display: inline-block;
+    font-size: 16px;
+    line-height: inherit;
+    letter-spacing: 0;
+    color: #1ed760;
+    padding: 28px 17px;;
+  }
+
+  .auth-links-list-webplayer:hover {
+    color: white;
+  }
+
+  
+
   .auth-links-list-item {
     display: inline-block;
     font-size: 16px;
