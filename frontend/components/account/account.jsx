@@ -143,7 +143,6 @@ class Account extends React.Component {
             </nav>
           </header>
         </div>
-
         <div className={accountMain}>
           <div className={accountWelcome}>
             <div className={welcomeMessage}>
@@ -151,7 +150,6 @@ class Account extends React.Component {
               <p>All music. No hassle.</p>
             </div>
           </div>
-
           <main className={accountMainContent}>
             <aside className={accountSidebar}>
               <a href="#" className={sidebarLink}>

@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
-import { faGitbhub } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin } from "@fortawesome/free-solid-svg-icons";
-import { faSpotify } from "@fortawesome/free-solid-svg-icons";
+
+import AuthHeader from "./auth_header";
 
 class Splash extends React.Component {
   constructor(props) {
@@ -22,16 +21,6 @@ class Splash extends React.Component {
   render() {
     let splashMainWrapper = "splash-main-wrapper";
 
-    let splashHeader = "splash-header";
-    let splashHeaderNav = "splash-header-nav";
-    let headerLogoLinkWrapper = "header-logo-link-wrapper";
-    let headerLogoLink = "header-logo-link";
-    let headerLogoLinkTitle = "header-logo-link-title"
-    let authLinks = "auth-links";
-    let authLinksList = "auth-links-list";
-    let authLinksListItem = "auth-links-list-item";
-    let authLinksListWebplayer = "auth-links-list-webplayer";
-    let separator = "separator";
     
     let splashMainHero = "splash-main-hero";  
     let splashMainContent = "splash-main-content";
@@ -57,47 +46,12 @@ class Splash extends React.Component {
     let socialIconOuterBox = "social-icon-outer-box";
     let socialIconInnerBox = "social-icon-inner-box";
 
-    let sosoflyHeaderLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
     let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
-    let github = <FontAwesomeIcon icon={faGitbhub} size= "1x" />;
-    let linkedin = <FontAwesomeIcon icon={faLinkedin} size="1x" />;
-    let spotify = <FontAwesomeIcon icon={faSpotify} size="1x" />;
 
     return (
       <>
         <div className={splashMainWrapper}>
-          <header className={splashHeader}>
-            <div className={splashHeaderNav}>
-              <div className={headerLogoLinkWrapper}>
-                <Link to="/" className={headerLogoLink}>
-                  {sosoflyHeaderLogo}
-                  <span className={headerLogoLinkTitle}>Sosofly</span>
-                </Link>
-              </div>
-              <nav className={authLinks}>
-                <ul className={authLinksList}>
-                  <li>
-                    <Link to="/webplayer" className={authLinksListWebplayer}>
-                      Webplayer
-                    </Link>
-                  </li>
-                  <li className={authLinksListItem}>Help</li>
-                  <li className={authLinksListItem}>Download</li>
-                  <li role="separator" className={separator}></li>
-                  <li>
-                    <Link to="/signup" className={authLinksListItem}>
-                      Signup
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/login" className={authLinksListItem}>
-                      Log In
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </header>
+          <AuthHeader />
           <main className={splashMainHero}>
             <picture>
               <img
