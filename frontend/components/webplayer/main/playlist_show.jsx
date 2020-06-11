@@ -11,12 +11,12 @@ class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.playlist;
+    this.id = parseInt(this.props.match.params.id)
   }
   
-  componentDidMount() {
-    const id = parseInt(this.props.match.params.id)
-    this.props.fetchPlaylistTracks(id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchPlaylistTracks(this.id);
+  // }
 
 
   render() {
@@ -44,9 +44,10 @@ class PlaylistShow extends React.Component {
     let fire = <FontAwesomeIcon icon={faFire} size="3x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
-    let { playlist, tracks } = this.props;
+    let { playlist, tracks, fetchPlaylistTracks } = this.props;
     playlist = playlist || { 52: {title: "Hello!"}};
     let id = this.props.match.params.id || 52;
+    tracks = [{src: "src", title: "title"}]
 
     return (
       <section className={playlistShowPageTopContainer}>
@@ -74,7 +75,7 @@ class PlaylistShow extends React.Component {
             </div>
           </div>
         </div>
-        <PlaylistShowMain tracks={tracks}/>
+        <PlaylistShowMain id={this.id} fetchPlaylistTracks={fetchPlaylistTracks} tracks={tracks}/>
       </section>
     );
   }
