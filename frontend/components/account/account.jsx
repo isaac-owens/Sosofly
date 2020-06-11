@@ -11,11 +11,13 @@ import AccountDropdown from './account_dropdown';
 class Account extends React.Component {
   constructor(props) {
     super(props);
+    this.container = React.createRef();
     this.state = {
       open: false,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleClickOutside  = this.handleClickOutside.bind(this);
   }
 
   handleClick() {
@@ -24,6 +26,22 @@ class Account extends React.Component {
 
   handleButtonClick() {
     this.setState({ open: !this.state.open });
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside());
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside());
+  }
+
+  handleClickOutside() {
+    return e => {
+      if (this.container.current && !this.container.current.contains(e.target)) {
+        this.setState({ open: false })
+      }
+    }
   }
 
   render() {
@@ -87,6 +105,7 @@ class Account extends React.Component {
                 <div
                   onClick={this.handleButtonClick}
                   className={accountUserDropdown}
+                  ref={this.container}
                 >
                   <div>{userIcon}</div>
                   <div>Profile</div>
