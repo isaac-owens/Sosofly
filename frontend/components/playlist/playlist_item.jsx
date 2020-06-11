@@ -33,9 +33,6 @@ class PlaylistItem extends React.Component {
             image here
             image here
             image here
-            image here
-            image here
-            image here
           </div>
         </div>
         <div className={playlistItemTitleContainer}>

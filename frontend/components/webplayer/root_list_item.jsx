@@ -78,7 +78,7 @@ class RootListItem extends React.Component {
               </ul>
             </div>
           ) : (
-            <div></div>
+            ""
           )}
           <div className={textWrapper}>
             <Link

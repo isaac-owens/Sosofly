@@ -9,6 +9,7 @@
 }
 
 .webplayer-nav-bar-content-container {
+  display: flex;
   padding-top: 24px;
   flex-direction: column;
   flex: 1;
@@ -61,10 +62,10 @@
 
 .nav-bar-link:active {
   color: white;
-  background-color: #282828;
 }
 
 .nav-bar-link:hover {
+  background-color: #282828;
   color: white;
 }
 
@@ -179,7 +180,7 @@
 
 .react-wrapper {
   display: inline;
-  // -webkit-user-select: none;
+  -webkit-user-select: none;
   background-color: white;
 }
 
@@ -194,24 +195,20 @@
 }
 
 .playlist-dropdown {
-  color: #b3b3b3;
-  // background-color: white;
-  position: absolute;
-  // position: fixed;
+  position: fixed;
   opacity: 1;
-  // pointer-events: none;
-  top: 100%;
-  // top: 375px;
-  // left: 110px;
+  pointer-events: none;
+  top: 375px;
+  left: 110px;
   min-width: 160px;
   height: 600px;
   padding: 5px;
   margin: 2px 0 0;
-  // background-color: #282828;
+  background-color: #282828;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, .15);
   border-radius: .25rem;
-  z-index: 3000;
+  z-index: 100;
 }
 
 .playlistOption {
