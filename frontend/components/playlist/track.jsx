@@ -2,12 +2,13 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
 class Track extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nowPlaying: null,
+      nowPlaying: false,
     }
     this.playTrack = this.playTrack.bind(this);
     this.stopAllSongs = this.stopAllSongs.bind(this);
@@ -24,27 +25,24 @@ class Track extends React.Component {
   }
   
   playTrack() {
-    const { setState, playerState } = this.props;
+    const { track, setState, playerState, saveNowPlaying } = this.props;
     const trackAudio = document.getElementsByClassName(this.props.track.title);
     if (!playerState.nowPlaying) { // No track is playing
       setState({ nowPlaying: trackAudio[0] });
       trackAudio[0].play().then(this.setState({nowPlaying: true})); // Play this track
+      saveNowPlaying(track)
     } else if (playerState.nowPlaying === trackAudio[0]) { // Current track is playing or paused 
       if (trackAudio[0].paused) {
         trackAudio[0].play()
-        setState({ nowPlaying: true })
+        this.setState({ nowPlaying: true })
       } else {
         trackAudio[0].pause();
-        setState({ nowPlaying: false })
+        this.setState({ nowPlaying: false })
       }
     } else { // Another track is playing so this it should stop and this one should start
-      debugger
       this.stopAllSongs(trackAudio[0]);
-      // playerState.nowPlaying.pause();
-      // debugger
-      // playerState.nowPlaying.currentTime = 0;
-      debugger
       trackAudio[0].play().then(this.setState({nowPlaying: true}));
+      saveNowPlaying(track)
     }
   }
 
@@ -68,6 +66,7 @@ class Track extends React.Component {
 
     let miniDisc = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
+    let play = <FontAwesomeIcon icon={faPlayCircle} size="1x" />;
 
     let { track, title } = this.props;
     // track = track || {};
@@ -80,10 +79,8 @@ class Track extends React.Component {
           <div className={tracklistColumnOuter}>
             <div className={tracklistPPTopAlign}></div>
             <div className={tracklistTopAlign}>
-              <span 
-              className={musicDiscContainer} 
-              onClick={this.playTrack}>
-                {miniDisc}
+              <span className={musicDiscContainer} onClick={this.playTrack}>
+                {!this.state.nowPlaying ? play : miniDisc}
 
                 <audio
                   src={track.track_file}

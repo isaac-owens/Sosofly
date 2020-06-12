@@ -6,12 +6,34 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 import { faStepForward } from "@fortawesome/free-solid-svg-icons";
 import { faPauseCircle } from "@fortawesome/free-regular-svg-icons";
+import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 
 class PlayBar extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      playing: true
+    }
+    this.toggleTrack = this.toggleTrack.bind(this);
+  }
+
+
+  toggleTrack() {
+    const { nowPlaying } = this.props;
+    if (!nowPlaying) {
+      return;
+    } 
+
+    const trackAudio = document.getElementsByClassName(nowPlaying.title);
+    
+    if (trackAudio[0].paused){
+      trackAudio[0].play().then(() => this.setState({ playing: true }));
+    } else {
+      trackAudio[0].pause();
+      this.setState({ playing: false });
+    }
   }
 
   render(){
@@ -21,7 +43,7 @@ class PlayBar extends React.Component {
     
     let webplayerPlaybarLeft = "webplayer-play-bar-left";
 
-    let nowPlaying = "now-playing";
+    let currentlyPlaying = "currently-playing";
     let nowPlayingCover = "now-playing-cover";
     let nowPlayingInfo = "now-playing-info";
     let nowPlayingSongTitle = "now-plahying-song-title";
@@ -34,13 +56,13 @@ class PlayBar extends React.Component {
     let devicePickerButtonContainer = "device-pickker-button-container";
     let devicePickerButton = "device-picker-button";
     let volumeBar = "volume-bar";
-    let volumeButton = "volum-button";
+    let volumeButton = "volume-button";
 
     let webplayerPlaybarCenter = "webplayer-play-bar-center";
     let playerControlsContainer = "player-controls-container";
     let playerControlsButtons = "player-controls-buttons";
     let controlButtonWrapper = "control-button-wrapper";
-    let controlButton = "controlButton";
+    let controlButton = "control-button";
     let playbackBarContainer = "playback-bar-container";
     let playbackBarProgressTime = "playback-bar-progress-time";
     let progressBar = "progress-bar";
@@ -53,23 +75,26 @@ class PlayBar extends React.Component {
     let skipBack = <FontAwesomeIcon icon={faStepBackward} size="2x" />;
     let skipForward = <FontAwesomeIcon icon={faStepForward} size="2x" />;
     let pause = <FontAwesomeIcon icon={faPauseCircle} size="2x" />;
+    let play = <FontAwesomeIcon icon={faPlayCircle} size="2x" />;
     let device = <FontAwesomeIcon icon={faTabletAlt} size="2x" />;
     let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
 
+    let { nowPlaying } = this.props
 
+    nowPlaying = nowPlaying || {title: ""};
 
     return (
       <div className={webplayerPlayBar}>
         <footer className={webplayerPlayBarFooter}>
           <div className={webplayerPlayBarContent}>
             <div className={webplayerPlaybarLeft}>
-              <div className={nowPlaying}>
+              <div className={currentlyPlaying}>
                 <div className={nowPlayingCover}>
                   <Link to="#">cover art</Link>
                 </div>
                 <div className={nowPlayingInfo}>
                   <div className={nowPlayingSongTitle}>
-                    <span>Song Title</span>
+                    <span>{nowPlaying.title}</span>
                   </div>
                 </div>
                 <div className={nowPlayingLikeButtonWrapper}>
@@ -84,7 +109,15 @@ class PlayBar extends React.Component {
                     <button className={controlButton}>{skipBack}</button>
                   </div>
                   <div className={controlButtonWrapper}>
-                    <button className={controlButton}>{pause}</button>
+                    {!this.state.playing ? 
+                    <button 
+                    className={controlButton}
+                    onClick={this.toggleTrack}
+                    >{play}</button> :
+                    <button 
+                    className={controlButton}
+                    onClick={this.toggleTrack}
+                    >{pause}</button> }
                   </div>
                   <div className={controlButtonWrapper}>
                     <button className={controlButton}>{skipForward}</button>

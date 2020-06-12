@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchPlaylist } from '../../actions/playlist_actions';
 import { fetchPlaylistTracks } from '../../actions/track_actions';
+import { receiveNowPlaying } from '../../actions/now_playing_actions';
 
 import PlaylistShow from '../webplayer/playlist_show';
 
@@ -16,6 +17,7 @@ const mDTP = dispatch => {
   return {
     fetchPlaylistTracks: (entityId) => dispatch(fetchPlaylistTracks(entityId)),
     fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId)),
+    saveNowPlaying: (track) => dispatch(receiveNowPlaying(track)),
   }
 }
 

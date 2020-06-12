@@ -29,7 +29,7 @@
   min-width: 180px;
 }
 
-.now-playing {
+.currently-playing {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -80,6 +80,10 @@
   height: 32px;
 }
 
+.like-button:active path {
+  fill: #1db954;
+}
+
 .webplayer-play-bar-center {
   width: 40%;
   max-width: 722px;
@@ -111,6 +115,10 @@
   width: 32px;
   height: 32px;
   position: relative;
+}
+
+.control-button:hover {
+  color: #1db954;
 }
 
 .playback-bar-container {

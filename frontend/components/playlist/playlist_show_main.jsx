@@ -29,7 +29,7 @@ class PlaylistShowMain extends React.Component {
     let tracklistContainer = "tracklist-container";
     // let tracklist = "tracklist";
 
-    let { tracks } = this.props;
+    let { tracks, saveNowPlaying } = this.props;
 
     if (!this.state.data || tracks.length === 0) {
       return (<div />);
@@ -46,6 +46,7 @@ class PlaylistShowMain extends React.Component {
               title={track.title}
               setState={(state, callback) => this.setState(state, callback)}
               playerState={this.state}
+              saveNowPlaying={saveNowPlaying}
               />
           })}
             </ol>
