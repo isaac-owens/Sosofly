@@ -25,13 +25,16 @@ class RootListItem extends React.Component {
   }
 
   handleDelete(e) {
-    console.log("Delete modal coming soon");
-    // this.props.openModal("deletePlaylist", playlistId);
+    // First <li>
+    // e.preventDefault(); I have tried combinations
+    // e.stopPropagation(); of one or both in each callback
+    this.props.deletePlaylistForm();
   }
 
   handleUpdate(e) {
+    // Second <li>
     e.stopPropagation();
-    console.log("Update form coming soon");
+    console.log("Edit form coming soon");
   }
 
   componentDidMount() {
@@ -99,18 +102,18 @@ class RootListItem extends React.Component {
           ref={this.container}
         >
           {this.state.open ? (
-            <div
-              // className={playlistDropdown}
-              >
-              <ul
-              style={myStyle}>
+            <div>
+              <ul style={myStyle}>
                 <li
                   className={playlistOption}
                   onClick={this.handleDelete}
                 >
                   Delete
                 </li>
-                <li className={playlistOption} onClick={this.handleUpdate}>
+                <li 
+                  className={playlistOption} 
+                  onClick={this.handleUpdate}
+                >
                   Rename
                 </li>
               </ul>
@@ -126,7 +129,7 @@ class RootListItem extends React.Component {
             >
               {playlist.title}
             </Link>
-            {deletePlaylistForm}
+            {/* {deletePlaylistForm} */}
           </div>
         </li>
       </div>
