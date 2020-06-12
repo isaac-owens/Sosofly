@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-regular-svg-icons";
 import { faLinkedin } from "@fortawesome/free-regular-svg-icons";
 import { faSpotify } from "@fortawesome/free-regular-svg-icons";
+import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
+import { faHeadSideMask } from "@fortawesome/free-solid-svg-icons";
+import { faGlobeAfrica } from "@fortawesome/free-solid-svg-icons";
 
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,11 +26,15 @@ let socialIcons = "social-icons";
 let socialIcon = "social-icon";
 let socialIconOuterBox = "social-icon-outer-box";
 let socialIconInnerBox = "social-icon-inner-box";
+let disclaimer = "disclaimer";
 
 let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
 // let github = <FontAwesomeIcon icon={faGithub} size="1x" />;
 // let linkedin = <FontAwesomeIcon icon={faLinkedin} size="1x" />;
 // let spotify = <FontAwesomeIcon icon={faSpotify} size="1x" />;
+let fist = <FontAwesomeIcon icon={faFistRaised} size="2x" />;
+let mask = <FontAwesomeIcon icon={faHeadSideMask} size="2x" />;
+let globe = <FontAwesomeIcon icon={faGlobeAfrica} size="2x" />;
 
 class SplashFooter extends React.Component {
   constructor(props){
@@ -73,22 +80,23 @@ class SplashFooter extends React.Component {
             <ul className={socialIcons}>
               <li className={socialIcon}>
                 <div className={socialIconOuterBox}>
-                  <div className={socialIconInnerBox}>I</div>
+                  <span className={socialIconInnerBox}>{fist}</span>
                 </div>
               </li>
               <li className={socialIcon}>
                 <div className={socialIconOuterBox}>
-                  <div className={socialIconInnerBox}>J</div>
+                  <span className={socialIconInnerBox}>{mask}</span>
                 </div>
               </li>
               <li className={socialIcon}>
                 <div className={socialIconOuterBox}>
-                  <div className={socialIconInnerBox}>O</div>
+                  <span className={socialIconInnerBox}>{globe}</span>
                 </div>
               </li>
             </ul>
           </div>
         </nav>
+        <p className={disclaimer}>Created by: Isaac Owens 2020, I do not own the rights to this music, this site is not for commerical use.  Enjoy!</p>
       </footer>
     )
   }
