@@ -6,10 +6,36 @@ import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 class Track extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      nowPlaying: null,
+    }
+    this.playTrack = this.playTrack.bind(this);
   }
 
-  // componentDidMount(){
-  // }
+  
+  playTrack() {
+    const { setState, playerState } = this.props;
+    const trackAudio = document.getElementsByClassName(this.props.track.title);
+    // A track is currently playing
+    // debugger
+    if (!playerState.nowPlaying) { // No track is playing
+      setState({ nowPlaying: trackAudio[0] });
+      trackAudio[0].play().then(this.setState({nowPlaying: true}));
+      // debugger
+      return;
+    } else if (playerState.nowPlaying === trackAudio[0]) { // Current track is already playing
+      // debugger
+      trackAudio[0].pause();
+      // debugger
+    } else { // Another track is playing so this one should stop
+      playerState.nowPlaying.pause();
+      playerState.nowPlaying.currentTime = 0;
+      trackAudio[0].play().then(this.setState({nowPlaying: true}));
+    }
+    
+    debugger
+    this.setState({nowPlaying: true})
+  }
 
   render() {
     let trackWrapper = "track-wrapper";
@@ -17,7 +43,7 @@ class Track extends React.Component {
     let tracklistColumnOuter = "tracklist-column-outer";
     let tracklistPPTopAlign = "tracklist-play-pause-top-align";
     let tracklistTopAlign = "tracklist-top-align";
-    let musicDiscContainer = "music-disc-container"
+    let musicDiscContainer = "music-disc-container";
     let tracklistNameBox = "tracklist-name-box";
     let tracklistNameWrapper = "tracklist-name-wrapper";
     let tracklistName = "tracklist-name";
@@ -32,20 +58,27 @@ class Track extends React.Component {
     let miniDisc = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
 
-    let { track, title} = this.props;
-    track = track || {};
-    title = title || "Title";
+    let { track, title } = this.props;
+    // track = track || {};
+    // title = title || "Title";
 
     return (
       <div className={trackWrapper}>
         <div></div>
-        <li className={tracklistRow}
-          onClick={() => onClick(track)}>
+        <li className={tracklistRow}>
           <div className={tracklistColumnOuter}>
             <div className={tracklistPPTopAlign}></div>
             <div className={tracklistTopAlign}>
               <span 
-              className={musicDiscContainer}>{miniDisc}</span>
+              className={musicDiscContainer} 
+              onClick={this.playTrack}>
+                {miniDisc}
+
+                <audio
+                  src={track.track_file}
+                  className={this.props.track.title}
+                ></audio>
+              </span>
             </div>
           </div>
           <div className={tracklistNameBox}>
@@ -53,7 +86,9 @@ class Track extends React.Component {
               <div className={tracklistName}>{title}</div>
               <audio />
               <div className={tracklistNameSub}>
-                <span className={tracklistArtist}>I do not own the rights to these tasty jams.</span>
+                <span className={tracklistArtist}>
+                  I do not own the rights to these tasty jams.
+                </span>
                 <span className={dotSeparator}>•</span>
                 <span className={tracklistAlbum}>Album Name Here</span>
               </div>
