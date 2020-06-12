@@ -8,6 +8,7 @@ const mSTP = state => {
   return {
     currentUser: state.entities.users[state.session.id],
     playlists: Object.values(state.entities.playlists),
+    nowPlaying: state.ui.nowPlaying,
   };
 };
 
