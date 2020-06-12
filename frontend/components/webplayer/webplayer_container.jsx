@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import Webplayer from './webplayer';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { logout } from '../../actions/session_actions';
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 const mSTP = state => {
   return {
@@ -28,24 +28,10 @@ const mDTP = dispatch => {
       >
         delete
       </span>,
-      // return (
-      //   <Link
-      //     to="#"
-      //     className="playlist-title"
-      //     playlist={playlist}
-      //     onContextMenu={(e) => {
-      //       e.preventDefault();
-      //       e.type === 'contextmenu' ? 
-      //       dispatch(openModal("deletePlaylist")) : 
-      //       ""
-      //     }}
-      //   >
-      //   {playlist.title}
-      //   </Link>
-      // )
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     closeModal: () => dispatch(closeModal()),
     fetchPlaylist: (playlist) => dispatch(fetchPlaylist(playlist)),
+    logout: () => dispatch(logout()) 
   };
 };
 

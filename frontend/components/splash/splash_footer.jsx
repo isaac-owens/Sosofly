@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faGitbhub } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin } from "@fortawesome/free-solid-svg-icons";
-import { faSpotify } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-regular-svg-icons";
+import { faLinkedin } from "@fortawesome/free-regular-svg-icons";
+import { faSpotify } from "@fortawesome/free-regular-svg-icons";
 
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,9 +25,9 @@ let socialIconOuterBox = "social-icon-outer-box";
 let socialIconInnerBox = "social-icon-inner-box";
 
 let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
-let github = <FontAwesomeIcon icon={faGitbhub} size="1x" />;
-let linkedin = <FontAwesomeIcon icon={faLinkedin} size="1x" />;
-let spotify = <FontAwesomeIcon icon={faSpotify} size="1x" />;
+// let github = <FontAwesomeIcon icon={faGithub} size="1x" />;
+// let linkedin = <FontAwesomeIcon icon={faLinkedin} size="1x" />;
+// let spotify = <FontAwesomeIcon icon={faSpotify} size="1x" />;
 
 class SplashFooter extends React.Component {
   constructor(props){

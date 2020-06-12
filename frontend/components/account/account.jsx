@@ -87,8 +87,6 @@ class Account extends React.Component {
     let cardInfo = "card-info";
     let editProfileLink = "edit-profile-link";
 
-    let accountFooterNav = "account-footer-nav";
-    let accountFooterNavLinks = "account-footer-nav-links";
 
     return (
       <>

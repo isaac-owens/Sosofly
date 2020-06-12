@@ -5,22 +5,31 @@ import { connect } from "react-redux";
 import PlaylistForm from "../playlist/playlist_form";
 import PlaylistDelete from "../playlist/playlist_delete"
 
-function Modal({ modal, closeModal, createPlaylist, userId}) {
+function Modal({ 
+  closeModal, 
+  deletePlaylist,
+  createPlaylist, 
+  modal, 
+  userId,
+  playlistId}) {
   if (!modal) {
     return null;
   }
 
   switch (modal) {
     case "playlistForm":
-      modal = <PlaylistForm 
+      modal =  <PlaylistForm 
       closeModal={closeModal}
       createPlaylist={createPlaylist}
       userId={userId}
       />
       break;
     case "deletePlaylist":
-      modal = <PlaylistDelete
+      modal =  <PlaylistDelete
+        deletePlaylist={deletePlaylist}
         closeModal={closeModal}
+        playlistId={playlistId}
+        userId={userId}
        />
     default:
       break;
@@ -36,10 +45,19 @@ function Modal({ modal, closeModal, createPlaylist, userId}) {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    userId: state.session.id,
-    modal: state.ui.modal,
-  };
+  
+  if (!state.ui.modal) {
+    return {
+      userId: state.session.id,
+      modal: state.ui.modal,
+    } 
+  } else {
+      return {
+        userId: state.session.id,
+        modal: state.ui.modal,
+        playlistId: state.ui.modal.playlistId
+    }
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
