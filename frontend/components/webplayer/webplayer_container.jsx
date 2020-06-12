@@ -21,13 +21,7 @@ const mDTP = dispatch => {
         Create Playlist
       </span>,
       
-      deletePlaylistForm:
-      <span 
-      onClick={() => dispatch(openModal("deletePlaylist"))}
-      className="delete-link"
-      >
-        delete
-      </span>,
+    deletePlaylistForm: () => dispatch(openModal("deletePlaylist")),
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     closeModal: () => dispatch(closeModal()),
     fetchPlaylist: (playlist) => dispatch(fetchPlaylist(playlist)),
