@@ -9,8 +9,6 @@ import AccountContainer from "./account/account_container";
 
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
-
-
 const App = () => {
   let body = "body";
   return (

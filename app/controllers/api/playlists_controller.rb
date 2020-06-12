@@ -1,6 +1,5 @@
 class Api::PlaylistsController < ApplicationController 
 
-  skip_before_action :verify_authenticity_token
   before_action :ensure_logged_in, only: [:index, :new, :create, :edit, :update]
 
   def index
