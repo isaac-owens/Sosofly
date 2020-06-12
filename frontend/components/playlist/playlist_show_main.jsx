@@ -2,6 +2,7 @@ import React from 'react';
 import AudioPlayer from 'react-modular-audio-player';
 
 import Track from "./track";
+import { faBoxTissue } from '@fortawesome/free-solid-svg-icons';
 
 
 class PlaylistShowMain extends React.Component {
@@ -9,14 +10,11 @@ class PlaylistShowMain extends React.Component {
     super(props);
     this.state = {
       data: null,
+      nowPlaying: false
     }
-    
-    this.handleClick = this.handleClick.bind(this);
     this.loadData = this.loadData.bind(this);
   }
 
-  handleClick() {
-  }
 
   componentDidMount() {
     this.loadData();
@@ -29,7 +27,7 @@ class PlaylistShowMain extends React.Component {
   render() {
     let playlistShowContentSpacing = "playlist-show-content-spacing";
     let tracklistContainer = "tracklist-container";
-    let tracklist = "tracklist";
+    // let tracklist = "tracklist";
 
     let { tracks } = this.props;
 
@@ -41,23 +39,24 @@ class PlaylistShowMain extends React.Component {
         <div className={playlistShowContentSpacing}>
           <section className={tracklistContainer}>
             <ol>
-            {tracks.map(track => {
-              return <AudioPlayer
+              {/* return <AudioPlayer
               key={track.id}
               // className={tracklist}
               audioFiles={[{src: track.track_file, title: track.title}]}
               fontColor="#fff"
               fontSize="16px"
               playerWidth="100%"
-            /> })}
+              <audio /> */}
+          {tracks.map(track => {
+             return <Track
+              key={track.id}
+              track={track}
+              title={track.title}
+              setState={(state, callback) => this.setState(state, callback)}
+              playerState={this.state}
+              />
+          })}
             </ol>
-              {/* //   <Track */}
-              {/* //   key={track.id}
-              //   track={track}
-              //   title={track.title}
-              //   onClick={this.handleClick}/>
-              // )} */}
-            <audio />
           </section>
         </div>
       );

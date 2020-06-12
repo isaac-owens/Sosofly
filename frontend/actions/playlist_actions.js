@@ -69,7 +69,6 @@ export const fetchPlaylist = (playlistId) => dispatch => {
 }
 
 export const createPlaylist = (userId, playlist) => dispatch => {
-  debugger
   return APIUtils.createPlaylist(userId, playlist)
   .then(playlist => dispatch(addPlaylist(playlist)),
   errors => dispatch(receiveErrors(errors)));
