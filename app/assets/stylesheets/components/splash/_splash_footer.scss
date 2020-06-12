@@ -55,6 +55,7 @@
   letter-spacing: .08em;
   text-transform: uppercase;
   color: #919496;
+  list-style: none;
 }
 
 .box-item {
@@ -86,8 +87,8 @@
 }
 
 .social-icon {
+  position: relative;
   margin-right: 15px;
-  display: inline-block;
   color: white;
   cursor: pointer;
   height: 54px;
@@ -95,6 +96,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.social-icon svg {
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  right: 10px;
+  top: 10px;
+}
+
+.social-icon path:hover {
+  fill: #1BC95A;
 }
 
 .social-icon-outer-box {
@@ -110,13 +123,17 @@
 }
 
 .social-icon-inner-box {
-  text-align: center;
-  margin-right: 15px;
+  background: no-repeat;
+  text-align: center; 
+  display: block;
   width: 24px;
   height: 24px;
   color: white;
   background-color: transparent;
+  cursor: pointer;
 }
+
+
 
 
 
@@ -142,4 +159,13 @@
 
  .footer-webplayer-link:hover {
    color: white;
+ }
+
+ .disclaimer {
+   color: #919496;
+   font-style: italic;
+   text-decoration: wavy;
+   font-size: 12px;
+   letter-spacing: .17em;
+   margin-left: 20px;
  }

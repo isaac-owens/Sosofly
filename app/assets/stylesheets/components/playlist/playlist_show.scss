@@ -139,10 +139,8 @@
   transform: scale(1.06);
 }
 
-.fire-button-active {
-  margin-right: 24px;
-  color: #1db954;
-  background: transparent;
+.fire-button-inactive path:active {
+  fill: #1db954;
 }
 
 .fire-button-inactive {
