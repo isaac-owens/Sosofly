@@ -107,6 +107,27 @@ class TopBar extends React.Component {
               onClick={this.handleButtonClick}
               ref={this.container}
             >
+              {this.state.open ? (
+                <div className={webplayerDropdownMenuContainer}>
+                  <ul className={webplayerUserDropdownMenu}>
+                    <li
+                      className={webplayerDropdownOption}
+                      onClick={this.handleRedirect}
+                    >
+                      Account
+                    </li>
+                    <li className={webplayerDropdownOption}>Profile</li>
+                    <li
+                      className={webplayerDropdownOption}
+                      onClick={this.handleLogout}
+                    >
+                      Logout
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+                ""
+              )}
               <figure className={webplayerTopBarIconBoxContainer}>
                 <div className={webplayerTopBarIconCircleContainer}>
                   {userIcon}
@@ -121,27 +142,6 @@ class TopBar extends React.Component {
                 <span className={webplayerTopBarIcon}>{triangleDown}</span>
               )}
             </button>
-            {this.state.open ? (
-              <div className={webplayerDropdownMenuContainer}>
-                <ul className={webplayerUserDropdownMenu}>
-                  <li
-                    className={webplayerDropdownOption}
-                    onClick={this.handleRedirect}
-                  >
-                    Account
-                  </li>
-                  <li className={webplayerDropdownOption}>Profile</li>
-                  <li
-                    className={webplayerDropdownOption}
-                    onClick={this.handleLogout}
-                  >
-                    Logout
-                  </li>
-                </ul>
-              </div>
-            ) : (
-              ""
-            )}
           </div>
         </header>
         <div></div>

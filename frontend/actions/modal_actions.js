@@ -5,7 +5,6 @@ export const openModal = (modal, playlistId) => {
   return {
     type: OPEN_MODAL,
     modal,
-    playlistId
   };
 };
 

@@ -194,36 +194,43 @@
   color: white;
 }
 
-.playlist-dropdown {
-  position: fixed;
-  opacity: 1;
-  pointer-events: none;
-  top: 375px;
-  left: 110px;
-  min-width: 160px;
-  height: 600px;
-  padding: 5px;
-  margin: 2px 0 0;
-  background-color: #282828;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, .15);
-  border-radius: .25rem;
-  z-index: 100;
-}
+// .playlist-dropdown {
+//   position: fixed;
+//   opacity: 1;
+//   pointer-events: auto;
+//   // Need to find a way to place dynamically
+//   // left: 110px;
+//   // top: 375px;
+//   top: 100%;
+//   min-width: 160px;
+//   padding: 5px 0;
+//   margin: 2px 0 0;
+//   background-color: #282828;
+//   background-clip: padding-box;
+//   border: 1px solid rgba(0, 0, 0, .15);
+//   border-radius: .25rem;
+//   z-index: 1010;
+//   height: 600px;
+// }
 
-.playlistOption {
-  color: #b3b3b3;
+.playlist-option {
   width: 100%;
   padding: 3px 20px;
   clear: both;
   line-height: 32px;
   white-space: nowrap;
-  background: 0 0;
-  user-select: none;
-  cursor: default;
+  background: 0;
+  // user-select: none;
+  // cursor: default;
+  // color: #b3b3b3;
 }
 
-
+.playlist-option:hover {
+  color: white;
+  background-color: #333;
+  border-color: #333;
+  text-decoration: none;
+}
 
 .text-wrapper {
   overflow: hidden;

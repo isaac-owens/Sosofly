@@ -11,6 +11,7 @@ class PlaylistDelete extends React.Component {
 
   delete(){
     this.props.deletePlaylist(this.props.userId, this.props.playlistId)
+    this.props.closeModal();
   }
 
   
@@ -37,7 +38,7 @@ class PlaylistDelete extends React.Component {
           Do you really want to delete this playlist?
         </h1>
         <div className={buttonBox}>
-          <div className={cancelButtonBox} onClick={closeModal}>
+          <div className={cancelButtonBox}>
             <button className={cancelButton} onClick={closeModal}>
               CANCEL
             </button>

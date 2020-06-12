@@ -11,7 +11,7 @@ class PlaylistForm extends React.Component {
       creator_id: this.props.userId,
     }
     this.update = this.update.bind(this);
-    this.create = this.create.bind(this);
+    this.handleCreate = this.handleCreate.bind(this);
   }
 
   update() {
@@ -20,16 +20,13 @@ class PlaylistForm extends React.Component {
     };
   };
 
-  create() {
-    return () => {
+  handleCreate() {
       if (this.state.title === "") {
         return;
+      } else {
+        this.props.closeModal();
+        this.props.createPlaylist(this.props.userId, this.state);
       }
-      this.props.closeModal();
-      this.props.createPlaylist(this.state.creatorId, this.state)
-      // .then(() => { return this.props.history.push("/playlists/:playlistId")
-      // });
-    }
   }
 
   render(){
@@ -49,7 +46,7 @@ class PlaylistForm extends React.Component {
 
     
     let ex = <FontAwesomeIcon icon={faTimes} size="3x" />;
-    let {closeModal} = this.props;
+    let {closeModal, createPlaylist} = this.props;
 
 
     return (
@@ -79,7 +76,7 @@ class PlaylistForm extends React.Component {
             </button>
           </div>
           <div className={createButtonBox}>
-            <button className={createButton} onClick={this.create}>CREATE</button>
+            <button className={createButton} onClick={this.handleCreate}>CREATE</button>
           </div>
         </div>
       </>

@@ -3,7 +3,6 @@ import Webplayer from './webplayer';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 const mSTP = state => {
   return {

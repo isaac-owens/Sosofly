@@ -22,7 +22,7 @@ class PlaylistShow extends React.Component {
   }
   
   loadData() {
-    this.setState({data: this.props.fetchPlaylist(this.id).then(this.props.history.replace(`/webplayer/${id}`))});
+    this.setState({data: this.props.fetchPlaylist(this.id)});
   }
 
   render() {
