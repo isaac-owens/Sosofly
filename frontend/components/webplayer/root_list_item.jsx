@@ -12,7 +12,7 @@ class RootListItem extends React.Component {
     };
     this.handleLink = this.handleLink.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleDelete = this.handleUpdate.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
