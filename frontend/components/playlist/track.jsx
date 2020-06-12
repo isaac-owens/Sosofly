@@ -10,31 +10,42 @@ class Track extends React.Component {
       nowPlaying: null,
     }
     this.playTrack = this.playTrack.bind(this);
+    this.stopAllSongs = this.stopAllSongs.bind(this);
   }
 
+  stopAllSongs(track) {
+    for(const audio of document.querySelectorAll('audio')) {
+      if(audio !== track) {
+        audio.pause();
+        audio.currentTime = 0;
+        this.props.setState({ nowPlaying: null })
+      }
+    }
+  }
   
   playTrack() {
     const { setState, playerState } = this.props;
     const trackAudio = document.getElementsByClassName(this.props.track.title);
-    // A track is currently playing
-    // debugger
     if (!playerState.nowPlaying) { // No track is playing
       setState({ nowPlaying: trackAudio[0] });
-      trackAudio[0].play().then(this.setState({nowPlaying: true}));
+      trackAudio[0].play().then(this.setState({nowPlaying: true})); // Play this track
+    } else if (playerState.nowPlaying === trackAudio[0]) { // Current track is playing or paused 
+      if (trackAudio[0].paused) {
+        trackAudio[0].play()
+        setState({ nowPlaying: true })
+      } else {
+        trackAudio[0].pause();
+        setState({ nowPlaying: false })
+      }
+    } else { // Another track is playing so this it should stop and this one should start
+      debugger
+      this.stopAllSongs(trackAudio[0]);
+      // playerState.nowPlaying.pause();
       // debugger
-      return;
-    } else if (playerState.nowPlaying === trackAudio[0]) { // Current track is already playing
-      // debugger
-      trackAudio[0].pause();
-      // debugger
-    } else { // Another track is playing so this one should stop
-      playerState.nowPlaying.pause();
-      playerState.nowPlaying.currentTime = 0;
+      // playerState.nowPlaying.currentTime = 0;
+      debugger
       trackAudio[0].play().then(this.setState({nowPlaying: true}));
     }
-    
-    debugger
-    this.setState({nowPlaying: true})
   }
 
   render() {

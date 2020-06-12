@@ -39,14 +39,6 @@ class PlaylistShowMain extends React.Component {
         <div className={playlistShowContentSpacing}>
           <section className={tracklistContainer}>
             <ol>
-              {/* return <AudioPlayer
-              key={track.id}
-              // className={tracklist}
-              audioFiles={[{src: track.track_file, title: track.title}]}
-              fontColor="#fff"
-              fontSize="16px"
-              playerWidth="100%"
-              <audio /> */}
           {tracks.map(track => {
              return <Track
               key={track.id}
