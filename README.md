@@ -7,6 +7,8 @@ Sosofly is a web hosted music streaming app that allows you to listen to music, 
 
 ![Sosofly logo](app/assets/sosofly_media/sosofly_splash_logo.png)
 
+[Sosolfy.com](https://sosofly.herokuapp.com/#/)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
