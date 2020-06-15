@@ -36,10 +36,12 @@ class TopBar extends React.Component {
     this.setState({ open: !this.state.open });
   }
 
+  // Clicks outside of the dropdown
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside());
   }
 
+  // Turns off click listener
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside());
   }
