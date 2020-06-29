@@ -1,4 +1,4 @@
-![Sosofly logo](./app/assets/sosofly_media/sosofly_splash_logo.png)
+![Sosofly logo](app/assets/sosofly_media/sosofly_splash_logo.png)
 # Sosofly v.0.0.1 
 #### Listening is Everything
 
