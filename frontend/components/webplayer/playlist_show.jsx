@@ -64,7 +64,13 @@ class PlaylistShow extends React.Component {
             <div className={playlistShowHeaderGradient}></div>
             <div></div>
             <div className={playlistShowHeaderImageBox}>
-              <div className={playlistShowHeaderImage}>IMAGE HERE</div>
+              <div className={playlistShowHeaderImage}>
+                <img
+                  src={playlist[this.id].image}
+                  alt="90s Boombox"
+                  className={playlistShowHeaderImage}
+                />
+              </div>
             </div>
             <div className={playlistShowHeaderBanner}>
               <h2 className={playlistShowHeaderSubBanner}>

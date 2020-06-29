@@ -18,6 +18,8 @@ demo_user = User.create(username: "DemoUser", email: "test123@test.com", gender:
 # PLAYLISTS
 
 hip_hop = Playlist.create(title: "90's Hip-Hop", description: "The hippest of the hop and hoppest of the hip", creator_id: demo_user.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/90s_hip_hop.jpg')
+hip_hop.image.attach(io: file, filename: '90s_hip_hop.jpg');
 
 jazz = Playlist.create(title: "Smooth Jazz", description: "Hello Mellow Yellow Fellow", creator_id: demo_user.id)
 
