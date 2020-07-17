@@ -79,25 +79,46 @@ class SplashFooter extends React.Component {
             <ul className={socialIcons}>
               <li className={socialIcon}>
                 <div className={socialIconOuterBox}>
-                  <span className={socialIconInnerBox}>{github}</span>
+                  <span className={socialIconInnerBox}>
+                    <a
+                      href="https://www.github.com/isaac-owens"
+                      target="_blank"
+                    >
+                      {github}
+                    </a>
+                  </span>
                 </div>
               </li>
               <li className={socialIcon}>
                 <div className={socialIconOuterBox}>
-                  <span className={socialIconInnerBox}>{linkedin}</span>
+                  <span className={socialIconInnerBox}>
+                    <a
+                      href="https://www.linkedin.com/in/isaac-owens-3a279532/"
+                      target="_blank"
+                    >
+                      {linkedin}
+                    </a>
+                  </span>
                 </div>
               </li>
               <li className={socialIcon}>
                 <div className={socialIconOuterBox}>
-                  <span className={socialIconInnerBox}>{globe}</span>
+                  <span className={socialIconInnerBox}>
+                    <a href="https://www.isaac-owens.com" target="_blank">
+                      {globe}
+                    </a>
+                  </span>
                 </div>
               </li>
             </ul>
           </div>
         </nav>
-        <p className={disclaimer}>Created by: Isaac Owens 2020, I do not own the rights to this music, this site is not for commerical use.  Enjoy!</p>
+        <p className={disclaimer}>
+          Created by: Isaac Owens 2020, I do not own the rights to this music,
+          this site is not for commerical use. Enjoy!
+        </p>
       </footer>
-    )
+    );
   }
 }
 
