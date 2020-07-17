@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faGithub } from "@fortawesome/free-regular-svg-icons";
-import { faLinkedin } from "@fortawesome/free-regular-svg-icons";
 import { faSpotify } from "@fortawesome/free-regular-svg-icons";
-import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
-import { faHeadSideMask } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGlobeAfrica } from "@fortawesome/free-solid-svg-icons";
+
 
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,8 +31,8 @@ let sosoflyFooterLogo = <FontAwesomeIcon icon={faCompactDisc} size="3x" />;
 // let github = <FontAwesomeIcon icon={faGithub} size="1x" />;
 // let linkedin = <FontAwesomeIcon icon={faLinkedin} size="1x" />;
 // let spotify = <FontAwesomeIcon icon={faSpotify} size="1x" />;
-let fist = <FontAwesomeIcon icon={faFistRaised} size="2x" />;
-let mask = <FontAwesomeIcon icon={faHeadSideMask} size="2x" />;
+let github = <FontAwesomeIcon icon={faGithub} size="2x" />;
+let linkedin = <FontAwesomeIcon icon={faLinkedin} size="2x" />;
 let globe = <FontAwesomeIcon icon={faGlobeAfrica} size="2x" />;
 
 class SplashFooter extends React.Component {
@@ -80,12 +79,12 @@ class SplashFooter extends React.Component {
             <ul className={socialIcons}>
               <li className={socialIcon}>
                 <div className={socialIconOuterBox}>
-                  <span className={socialIconInnerBox}>{fist}</span>
+                  <span className={socialIconInnerBox}>{github}</span>
                 </div>
               </li>
               <li className={socialIcon}>
                 <div className={socialIconOuterBox}>
-                  <span className={socialIconInnerBox}>{mask}</span>
+                  <span className={socialIconInnerBox}>{linkedin}</span>
                 </div>
               </li>
               <li className={socialIcon}>

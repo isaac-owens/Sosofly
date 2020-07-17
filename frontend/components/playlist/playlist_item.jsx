@@ -26,23 +26,20 @@ class PlaylistItem extends React.Component {
       <div className={playlistItemContainer}>
         <div className={playlistItemContentContainer}>
           <div className={playlistItemImageContainer}>
-            image here
-            image here
-            image here
-            image here
-            image here
-            image here
-            image here
+            <img className={playlistItemImage} src={playlist.image} />
           </div>
-        </div>
-        <div className={playlistItemTitleContainer}>
-          <Link to="" className={playlistItemTitleLink}>
-            <span className={playlistItemTitle}>{playlist.title}</span>
-          </Link>
-          <div className={playlistItemDescription}>
-            <span>{playlist.description}</span>
+          <div className={playlistItemTitleContainer}>
+            <Link
+              to={`/webplayer/playlist/${playlist.id}`}
+              className={playlistItemTitleLink}
+            >
+              <span className={playlistItemTitle}>{playlist.title}</span>
+            </Link>
+            <div className={playlistItemDescription}>
+              <span>{playlist.description}</span>
+            </div>
+            <div className={playlistItemSizer}></div>
           </div>
-          <div className={playlistItemSizer}></div>
         </div>
       </div>
     );

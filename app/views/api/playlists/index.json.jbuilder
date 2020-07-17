@@ -4,5 +4,6 @@
     json.title playlist.title
     json.description playlist.description
     json.tracks playlist.tracks
+    json.image url_for(playlist.image)
   end
 end

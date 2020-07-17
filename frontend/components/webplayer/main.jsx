@@ -24,7 +24,7 @@ class Main extends React.Component {
             <div className={webplayerScrollNodeChildSpacer}>
               <div className={webplayerScrollNodeChild}>
                 <Switch>
-                  <Route exact path="/webplayer/playlist/:id" component={PlaylistShowContainer} />
+                  <Route path="/webplayer/playlist/:id" component={PlaylistShowContainer} />
                   <Route exact path="/webplayer" 
                   render={(props) => <Landing {...props} playlists={this.props.playlists} />} />
                 </Switch>
