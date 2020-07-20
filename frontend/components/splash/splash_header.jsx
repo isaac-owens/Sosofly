@@ -41,8 +41,8 @@ class SplashHeader extends React.Component {
                   Webplayer
                 </Link>
               </li>
-              <li className={authLinksListItem}>Help</li>
-              <li className={authLinksListItem}>Download</li>
+              <a className={authLinksListItem} href="https://www.github.com/isaac-owens" target="_blank">Github</a>
+              <a className={authLinksListItem} href="https://www.linkedin.com/in/isaac-owens-3a279532/" target="_blank">LinkedIn</a>
               <li role="separator" className={separator}></li>
               <li>
                 <Link to="/signup" className={authLinksListItem}>
