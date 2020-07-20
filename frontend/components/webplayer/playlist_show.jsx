@@ -14,11 +14,15 @@ class PlaylistShow extends React.Component {
       data: null,
     }
 
-    // this.id = parseInt(this.props.match.params.id);
+    this.id = parseInt(this.props.match.params.id);
   }
   
   componentDidMount() {
     this.loadData();
+  }
+
+  componentDidUpdate() {
+    debugger
   }
   
   loadData() {
@@ -26,7 +30,7 @@ class PlaylistShow extends React.Component {
   }
 
   render() {
-
+    debugger
     let playlistShowPageTopContainer = "playlist-show-page-top-container";
     let playlistShowHeader = "playlist-show-header";
     let playlistShowHeaderSetup = "playlist-show-header-setup";
@@ -51,9 +55,14 @@ class PlaylistShow extends React.Component {
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
     let { playlist, tracks, fetchPlaylistTracks, saveNowPlaying } = this.props;
+    debugger
     if (
-      !this.state.data ||
-      (Object.keys(playlist).length === 0 && playlist.constructor === Object)
+      !playlist
+      // !this.state.data 
+      // ||
+      // (Object.keys(playlist).length === 0 
+      // && playlist.constructor === Object
+      // )
     ) {
       return <div></div>;
     } else {
@@ -94,7 +103,7 @@ class PlaylistShow extends React.Component {
             </div>
           </div>
           <PlaylistShowMain
-            id={playlist.id}
+            id={this.id}
             fetchPlaylistTracks={fetchPlaylistTracks}
             tracks={tracks}
             saveNowPlaying={saveNowPlaying}

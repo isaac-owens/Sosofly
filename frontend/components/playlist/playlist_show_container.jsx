@@ -9,7 +9,7 @@ import PlaylistShow from '../webplayer/playlist_show';
 const mSTP = state => {
   return {
     tracks: Object.values(state.entities.tracks),
-    playlist: state.entities.playlist,
+    playlist: Object.values(state.entities.playlist)[0],
     currentUser: state.entities.users[state.session.id],
   }
 }
