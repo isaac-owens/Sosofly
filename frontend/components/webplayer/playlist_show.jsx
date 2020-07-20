@@ -20,17 +20,12 @@ class PlaylistShow extends React.Component {
   componentDidMount() {
     this.loadData();
   }
-
-  componentDidUpdate() {
-    debugger
-  }
   
   loadData() {
     this.setState({data: this.props.fetchPlaylist(this.id)});
   }
 
   render() {
-    debugger
     let playlistShowPageTopContainer = "playlist-show-page-top-container";
     let playlistShowHeader = "playlist-show-header";
     let playlistShowHeaderSetup = "playlist-show-header-setup";
@@ -55,7 +50,6 @@ class PlaylistShow extends React.Component {
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
     let { playlist, tracks, fetchPlaylistTracks, saveNowPlaying } = this.props;
-    debugger
     if (
       !playlist
       // !this.state.data 

@@ -3,4 +3,4 @@
   json.description @playlist.description
   json.creator_id @playlist.creator_id
   json.tracks @playlist.tracks
-  json.image url_for(@playlist.image)
+  # json.image url_for(@playlist.image)
