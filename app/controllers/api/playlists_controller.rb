@@ -9,9 +9,13 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def create 
-    @playlist = Playlist.new(playlist_params)
-
+    @playlist = Playlist.create(playlist_params)
+    
+    file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/music_note.png')
+    @playlist.image.attach(io: file, filename: 'music_note.png')
     if @playlist.save
+      debugger
+      debugger
       render :show
     else
       render json: @playlist.errors.full_messages, status: 422
@@ -46,7 +50,8 @@ class Api::PlaylistsController < ApplicationController
 
   def destroy
     @playlist = Playlist.find_by(id: params[:id])
-
+    Playlist.delete(id: @playlist.id)
+    
     render :show
   end
 
