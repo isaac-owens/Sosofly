@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { receivePlaylistId } from '../../actions/ui_actions';
 
 class RootListItem extends React.Component {
   constructor(props) {
@@ -21,14 +23,13 @@ class RootListItem extends React.Component {
     const clickX = e.clientX;
     const clickY = e.clientY;
     this.setState({ open: !this.state.open, x: clickX, y: clickY });
-    // return false;
   }
 
-  handleDelete(e) {
-    // First <li>
-    // e.preventDefault(); I have tried combinations
-    // e.stopPropagation(); of one or both in each callback
-    this.props.deletePlaylistForm();
+  handleDelete(playlistId) {
+   return  e => {
+     this.props.receivePlaylistId(playlistId); 
+     this.props.deletePlaylistForm();
+    };
   }
 
   handleUpdate(e) {
@@ -92,21 +93,23 @@ class RootListItem extends React.Component {
   }
     return (
       <div
+        // right click event listenter
         onContextMenu={this.handleLink}
         className={reactWrapper}
         key={playlist.id}
       >
         <li
-          // onContextMenu={() => this.handleLinkClick()}
           className={RootlistItem}
           ref={this.container}
         >
           {this.state.open ? (
+            // dropdown menu
             <div>
               <ul style={myStyle}>
+                {/* button that opens delete modal */}
                 <li
                   className={playlistOption}
-                  onClick={this.handleDelete}
+                  onClick={this.handleDelete(playlist.id)}
                 >
                   Delete
                 </li>
@@ -114,6 +117,7 @@ class RootListItem extends React.Component {
                   className={playlistOption} 
                   onClick={this.handleUpdate}
                 >
+                  {/* button that opens edit modal */}
                   Rename
                 </li>
               </ul>
@@ -121,11 +125,17 @@ class RootListItem extends React.Component {
           ) : (
             ""
           )}
-          <div className={textWrapper}>
+          <div 
+          className={textWrapper}
+          onClick={
+            () => {
+              this.props.fetchPlaylist(playlist.id);
+              this.props.fetchPlaylistTracks(playlist.id)
+            }}>
             <Link
               to={`/webplayer/playlist/${playlist.id}`}
               className={playlistTitle}
-              replace
+              // replace
             >
               {playlist.title}
             </Link>
@@ -137,4 +147,10 @@ class RootListItem extends React.Component {
   }
 }
 
-export default RootListItem;
+const mDTP = dispatch => {
+  return {
+    receivePlaylistId: (playlistId) => dispatch(receivePlaylistId(playlistId)),
+  };
+}
+export default connect(null, mDTP)(RootListItem);
+

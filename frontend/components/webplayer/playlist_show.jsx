@@ -26,7 +26,6 @@ class PlaylistShow extends React.Component {
   }
 
   render() {
-
     let playlistShowPageTopContainer = "playlist-show-page-top-container";
     let playlistShowHeader = "playlist-show-header";
     let playlistShowHeaderSetup = "playlist-show-header-setup";
@@ -52,10 +51,14 @@ class PlaylistShow extends React.Component {
 
     let { playlist, tracks, fetchPlaylistTracks, saveNowPlaying } = this.props;
     if (
-      !this.state.data ||
-      (Object.keys(playlist).length === 0 && playlist.constructor === Object)
+      !playlist
+      // !this.state.data 
+      // ||
+      // (Object.keys(playlist).length === 0 
+      // && playlist.constructor === Object
+      // )
     ) {
-      return <div />;
+      return <div></div>;
     } else {
       return (
         <section className={playlistShowPageTopContainer}>
@@ -65,20 +68,20 @@ class PlaylistShow extends React.Component {
             <div></div>
             <div className={playlistShowHeaderImageBox}>
               <div className={playlistShowHeaderImage}>
-                <img
+                {/* <img
                   src={playlist[this.id].image}
                   alt="90s Boombox"
                   className={playlistShowHeaderImage}
-                />
+                /> */}
               </div>
             </div>
             <div className={playlistShowHeaderBanner}>
               <h2 className={playlistShowHeaderSubBanner}>
-                {playlist[this.id].title}
+                {playlist.title}
               </h2>
               <span className={playlistShowHeaderTitleBox}>
                 <h1 className={playlistShowHeaderTitle}>
-                  {playlist[this.id].title}
+                  {playlist.title}
                 </h1>
               </span>
             </div>

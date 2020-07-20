@@ -9,7 +9,7 @@ class PlaylistDelete extends React.Component {
     this.delete = this.delete.bind(this);
   }
 
-  delete(){
+  delete() {
     this.props.deletePlaylist(this.props.userId, this.props.playlistId)
     this.props.closeModal();
   }
@@ -45,7 +45,7 @@ class PlaylistDelete extends React.Component {
           </div>
           <div className={createButtonBox}>
             {/* this button somehow needs to get the currentUser/playlist id */}
-            <button className={createButton} onClick={() => this.delete}>
+            <button className={createButton} onClick={this.delete}>
               DELETE
             </button>
           </div>

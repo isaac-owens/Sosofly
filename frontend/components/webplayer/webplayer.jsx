@@ -30,7 +30,7 @@ class Webplayer extends React.Component {
     let Root = "Root";
     let webplayerTopContainer = "webplayer-top-container";
 
-    let { deletePlaylistForm, createPlaylistForm, playlists, currentUser, logout } = this.props;
+    let { receivePlaylistId, deletePlaylistForm, createPlaylistForm, playlists, currentUser, logout } = this.props;
     playlists = playlists || {};
     return (
       <div className={webplayerBody}>

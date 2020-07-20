@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchPlaylist } from '../../actions/playlist_actions';
 import { fetchPlaylistTracks } from '../../actions/track_actions';
 import { receiveNowPlaying } from '../../actions/now_playing_actions';
@@ -8,7 +9,7 @@ import PlaylistShow from '../webplayer/playlist_show';
 const mSTP = state => {
   return {
     tracks: Object.values(state.entities.tracks),
-    playlist: state.entities.playlist,
+    playlist: Object.values(state.entities.playlist)[0],
     currentUser: state.entities.users[state.session.id],
   }
 }
@@ -21,4 +22,4 @@ const mDTP = dispatch => {
   }
 }
 
-export default connect(mSTP, mDTP)(PlaylistShow);
+export default withRouter(connect(mSTP, mDTP)(PlaylistShow));

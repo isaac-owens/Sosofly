@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
       return {
         userId: state.session.id,
         modal: state.ui.modal,
-        playlistId: state.ui.modal.playlistId
+        playlistId: state.ui.playlistId
     }
   }
 };
@@ -64,6 +64,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
     createPlaylist: (userId, playlist) => dispatch(createPlaylist(userId, playlist)),
+    deletePlaylist: (userId, playlistId) => dispatch(deletePlaylist(userId, playlistId)),
   };
 };
 
