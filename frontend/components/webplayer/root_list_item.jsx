@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { receivePlaylistId } from '../../actions/ui_actions';
 
 class RootListItem extends React.Component {
   constructor(props) {
@@ -21,12 +23,11 @@ class RootListItem extends React.Component {
     const clickX = e.clientX;
     const clickY = e.clientY;
     this.setState({ open: !this.state.open, x: clickX, y: clickY });
-    // return false;
   }
 
   handleDelete(playlistId) {
    return  e => {
-     //send an action with playlist to update the slice of state. 
+     this.props.receivePlaylistId(playlistId); 
      this.props.deletePlaylistForm();
     };
   }
@@ -146,4 +147,10 @@ class RootListItem extends React.Component {
   }
 }
 
-export default RootListItem;
+const mDTP = dispatch => {
+  return {
+    receivePlaylistId: (playlistId) => dispatch(receivePlaylistId(playlistId)),
+  };
+}
+export default connect(null, mDTP)(RootListItem);
+

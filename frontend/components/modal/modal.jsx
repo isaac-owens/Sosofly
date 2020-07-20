@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
       return {
         userId: state.session.id,
         modal: state.ui.modal,
-        playlistId: state.ui.modal.playlistId
+        playlistId: state.ui.playlistId
     }
   }
 };

@@ -22,7 +22,7 @@ const mDTP = dispatch => {
         Create Playlist
       </span>,
       
-    deletePlaylistForm: (playlistId) => dispatch(openModal("deletePlaylist")),
+    deletePlaylistForm: () => dispatch(openModal("deletePlaylist")),
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     closeModal: () => dispatch(closeModal()),
     fetchPlaylist: (playlist) => dispatch(fetchPlaylist(playlist)),
