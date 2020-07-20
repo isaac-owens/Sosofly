@@ -24,11 +24,11 @@ class RootListItem extends React.Component {
     // return false;
   }
 
-  handleDelete(e) {
-    // First <li>
-    // e.preventDefault(); I have tried combinations
-    // e.stopPropagation(); of one or both in each callback
-    this.props.deletePlaylistForm();
+  handleDelete(playlistId) {
+   return  e => {
+     //send an action with playlist to update the slice of state. 
+     this.props.deletePlaylistForm();
+    };
   }
 
   handleUpdate(e) {
@@ -92,21 +92,23 @@ class RootListItem extends React.Component {
   }
     return (
       <div
+        // right click event listenter
         onContextMenu={this.handleLink}
         className={reactWrapper}
         key={playlist.id}
       >
         <li
-          // onContextMenu={() => this.handleLinkClick()}
           className={RootlistItem}
           ref={this.container}
         >
           {this.state.open ? (
+            // dropdown menu
             <div>
               <ul style={myStyle}>
+                {/* button that opens delete modal */}
                 <li
                   className={playlistOption}
-                  onClick={this.handleDelete}
+                  onClick={this.handleDelete(playlist.id)}
                 >
                   Delete
                 </li>
@@ -114,6 +116,7 @@ class RootListItem extends React.Component {
                   className={playlistOption} 
                   onClick={this.handleUpdate}
                 >
+                  {/* button that opens edit modal */}
                   Rename
                 </li>
               </ul>

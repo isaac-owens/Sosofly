@@ -64,6 +64,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
     createPlaylist: (userId, playlist) => dispatch(createPlaylist(userId, playlist)),
+    deletePlaylist: (userId, playlistId) => dispatch(deletePlaylist(userId, playlistId)),
   };
 };
 
