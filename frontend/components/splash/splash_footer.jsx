@@ -51,28 +51,28 @@ class SplashFooter extends React.Component {
           </div>
           <div className={footerLinksBoxes}>
             <ul className={footerLinksBox}>
-              <li className={boxHeader}>company</li>
+              {/* <li className={boxHeader}>company</li>
               <li className={boxItem}>About</li>
               <li className={boxItem}>Jobs</li>
-              <li className={boxItem}>For the Record</li>
+              <li className={boxItem}>For the Record</li> */}
             </ul>
             <ul className={footerLinksBox}>
-              <li className={boxHeader}>communities</li>
+              {/* <li className={boxHeader}>communities</li>
               <li className={boxItem}>For Artists</li>
               <li className={boxItem}>Developers</li>
               <li className={boxItem}>Brands</li>
               <li className={boxItem}>Investors</li>
-              <li className={boxItem}>Vendors</li>
+              <li className={boxItem}>Vendors</li> */}
             </ul>
             <ul className={footerLinksBox}>
-              <li className={boxHeader}>useful links</li>
-              <li className={boxItem}>Help</li>
+              {/* <li className={boxHeader}>useful links</li>
+              <li className={boxItem}>Help</li> */}
               <li>
                 <Link to="/webplayer" className={footerWebplayerLink}>
                   Webplayer
                 </Link>
               </li>
-              <li className={boxItem}>Free Mobile App</li>
+              {/* <li className={boxItem}>Free Mobile App</li> */}
             </ul>
           </div>
           <div className={socialBox}>
