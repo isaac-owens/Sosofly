@@ -14,7 +14,7 @@ class PlaylistShow extends React.Component {
       data: null,
     }
 
-    this.id = parseInt(this.props.match.params.id);
+    // this.id = parseInt(this.props.match.params.id);
   }
   
   componentDidMount() {
@@ -55,7 +55,7 @@ class PlaylistShow extends React.Component {
       !this.state.data ||
       (Object.keys(playlist).length === 0 && playlist.constructor === Object)
     ) {
-      return <div />;
+      return <div></div>;
     } else {
       return (
         <section className={playlistShowPageTopContainer}>
@@ -65,20 +65,20 @@ class PlaylistShow extends React.Component {
             <div></div>
             <div className={playlistShowHeaderImageBox}>
               <div className={playlistShowHeaderImage}>
-                <img
+                {/* <img
                   src={playlist[this.id].image}
                   alt="90s Boombox"
                   className={playlistShowHeaderImage}
-                />
+                /> */}
               </div>
             </div>
             <div className={playlistShowHeaderBanner}>
               <h2 className={playlistShowHeaderSubBanner}>
-                {playlist[this.id].title}
+                {playlist.title}
               </h2>
               <span className={playlistShowHeaderTitleBox}>
                 <h1 className={playlistShowHeaderTitle}>
-                  {playlist[this.id].title}
+                  {playlist.title}
                 </h1>
               </span>
             </div>
@@ -94,7 +94,7 @@ class PlaylistShow extends React.Component {
             </div>
           </div>
           <PlaylistShowMain
-            id={this.id}
+            id={playlist.id}
             fetchPlaylistTracks={fetchPlaylistTracks}
             tracks={tracks}
             saveNowPlaying={saveNowPlaying}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchPlaylist } from '../../actions/playlist_actions';
 
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
@@ -108,7 +110,11 @@ class NavBar extends React.Component {
                 <ul className={RootlistScrollNode}>
                   {/* React generated playlists list */}
                   {playlists.map((playlist) => (
-                    <RootListItem  key={playlist.id} playlist={playlist} deletePlaylistForm={deletePlaylistForm}/>
+                    <RootListItem
+                    fetchPlaylist={this.props.fetchPlaylist}  
+                    key={playlist.id} 
+                    playlist={playlist} 
+                    deletePlaylistForm={deletePlaylistForm}/>
                   ))}
                 </ul>
               </div>
@@ -120,4 +126,10 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+const mDTP = dispatch => {
+  return {
+    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+  }
+}
+
+export default connect(null, mDTP)(NavBar);

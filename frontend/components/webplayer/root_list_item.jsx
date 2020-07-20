@@ -121,11 +121,13 @@ class RootListItem extends React.Component {
           ) : (
             ""
           )}
-          <div className={textWrapper}>
+          <div 
+          className={textWrapper}
+          onClick={() => this.props.fetchPlaylist(playlist.id)}>
             <Link
               to={`/webplayer/playlist/${playlist.id}`}
               className={playlistTitle}
-              replace
+              // replace
             >
               {playlist.title}
             </Link>
