@@ -50,5 +50,8 @@
   "bugs": {
     "url": "https://github.com/isaac-owens/Sosofly/issues"
   },
-  "homepage": "https://github.com/isaac-owens/Sosofly#readme"
+  "homepage": "https://github.com/isaac-owens/Sosofly#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
