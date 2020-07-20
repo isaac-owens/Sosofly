@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchPlaylist } from '../../actions/playlist_actions';
+import { fetchPlaylistTracks } from '../../actions/track_actions';
 
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
@@ -111,7 +112,8 @@ class NavBar extends React.Component {
                   {/* React generated playlists list */}
                   {playlists.map((playlist) => (
                     <RootListItem
-                    fetchPlaylist={this.props.fetchPlaylist}  
+                    fetchPlaylist={this.props.fetchPlaylist}
+                    fetchPlaylistTracks={this.props.fetchPlaylistTracks}
                     key={playlist.id} 
                     playlist={playlist} 
                     deletePlaylistForm={deletePlaylistForm}/>
@@ -129,6 +131,7 @@ class NavBar extends React.Component {
 const mDTP = dispatch => {
   return {
     fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+    fetchPlaylistTracks: entityId => dispatch(fetchPlaylistTracks(entityId)),
   }
 }
 
