@@ -9,13 +9,9 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def create 
-    @playlist = Playlist.create(playlist_params)
+    @playlist = Playlist.new(playlist_params)
     
-    file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/music_note.png')
-    @playlist.image.attach(io: file, filename: 'music_note.png')
-    if @playlist.save
-      debugger
-      debugger
+    if @playlist.save 
       render :show
     else
       render json: @playlist.errors.full_messages, status: 422
