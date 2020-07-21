@@ -10,8 +10,8 @@ class Api::PlaylistsController < ApplicationController
 
   def create 
     @playlist = Playlist.new(playlist_params)
-
-    if @playlist.save
+    
+    if @playlist.save 
       render :show
     else
       render json: @playlist.errors.full_messages, status: 422
@@ -46,7 +46,8 @@ class Api::PlaylistsController < ApplicationController
 
   def destroy
     @playlist = Playlist.find_by(id: params[:id])
-
+    Playlist.delete(@playlist.id)
+    
     render :show
   end
 
