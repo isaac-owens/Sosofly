@@ -286,6 +286,7 @@ class SignupForm extends React.Component {
                     className={signupFormInput}
                     onChange={this.update("day")}
                     value={this.state.day}
+                    required=""
                   />
                 </div>
                 <div className={yearWrapper}>
@@ -305,6 +306,7 @@ class SignupForm extends React.Component {
                       className={signupFormInput}
                       onChange={this.update("year")}
                       value={this.state.year}
+                      required=""
                     />
                   </div>
                 </div>
@@ -346,7 +348,7 @@ class SignupForm extends React.Component {
                     id="non-binary"
                     checked={this.state.gender === "non-binary"}
                     onChange={this.updateGender()}
-                    value="non-binary"
+                    value="non-binary"  
                   />
                   <span className={genderBoxRadioLabel}>Non-binary</span>
                 </label>

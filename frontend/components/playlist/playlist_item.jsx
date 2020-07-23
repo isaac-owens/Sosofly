@@ -21,7 +21,6 @@ class PlaylistItem extends React.Component {
     let playlistClassNames = ["playlist-rows", "playlist-columns"];
     playlistClassNames = playlistClassNames.join(" ");
     let { playlist } = this.props;
-
     return (
       <div className={playlistItemContainer}>
         <div className={playlistItemContentContainer}>

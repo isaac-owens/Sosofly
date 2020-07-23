@@ -7,6 +7,7 @@ import {
 const _nullErrors = [];
 
 const sessionErrorsReducer = (oldState = _nullErrors, action) => {
+  debugger
   Object.freeze(oldState);
 
   switch (action.type) {
