@@ -10,6 +10,7 @@
 User.delete_all
 Playlist.delete_all
 Track.delete_all
+Artist.delete_all
 
 
 
@@ -102,9 +103,9 @@ AddedTrack.create!(playlist_id: jazz.id, track_id: summer.id)
 
 # ARTISTS
 
-kendrick_lamar = Artist.new(name: "Kendrick Lamar", biography: "")
-beyonce_knowles = Artist.new(name: "Beyonce Knowles", biography: "")
-solange_knowles = Artist.new(name: "Solange Knowles", biography: "")
-matmos = Artist.new(name: "Matmos", biography: "")
-alice_coltrane= Artist.new(name: "Alice Coltrane", biography: "")
-flying_lotus = Artist.new(name: "Flying Lotus", biography: "")
+kendrick_lamar = Artist.create(name: "Kendrick Lamar", biography: "")
+beyonce_knowles = Artist.create(name: "Beyonce Knowles", biography: "")
+solange_knowles = Artist.create(name: "Solange Knowles", biography: "")
+matmos = Artist.create(name: "Matmos", biography: "")
+alice_coltrane= Artist.create(name: "Alice Coltrane", biography: "")
+flying_lotus = Artist.create(name: "Flying Lotus", biography: "")
