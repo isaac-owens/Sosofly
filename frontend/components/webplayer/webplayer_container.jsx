@@ -30,4 +30,4 @@ const mDTP = dispatch => {
   };
 };
 
-export default connect (mSTP, mDTP)(Webplayer)
+export default connect(mSTP, mDTP)(Webplayer)

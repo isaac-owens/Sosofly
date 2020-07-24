@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import { fetchArtist } from '../../actions/artist_actions';
 
 class Track extends React.Component {
   constructor(props) {
@@ -92,7 +94,9 @@ class Track extends React.Component {
               <div className={tracklistName}>{title}</div>
               <audio />
               <div className={tracklistNameSub}>
-                <span className={tracklistArtist}>
+                <span 
+                className={tracklistArtist}
+                onClick={() => this.props.getArtist(track.artist_id)}>
                   {track.artist}
                 </span>
                 <span className={dotSeparator}>•</span>
@@ -114,4 +118,10 @@ class Track extends React.Component {
   }
 }
 
-export default Track;
+const mDTP = dispatch => {
+  return {
+    getArtist: artistId => dispatch(fetchArtist(artistId)),
+  }
+}
+
+export default connect(null, mDTP)(Track)

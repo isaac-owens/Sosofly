@@ -1,6 +1,6 @@
 class Api::ArtistsController < ApplicationController
   def show
-  @artist = Artist.find_by(id: params[:artist_id])
+  @artist = Artist.find_by(id: params[:id])
 
   render :show
   end
