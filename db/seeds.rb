@@ -100,3 +100,11 @@ file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-summer.mp
 summer.track_file.attach(io: file, filename: 'bendound-summer.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: summer.id)
 
+# ARTISTS
+
+kendrick_lamar = Artist.new(name: "Kendrick Lamar", biography: "")
+beyonce_knowles = Artist.new(name: "Beyonce Knowles", biography: "")
+solange_knowles = Artist.new(name: "Solange Knowles", biography: "")
+matmos = Artist.new(name: "Matmos", biography: "")
+alice_coltrane= Artist.new(name: "Alice Coltrane", biography: "")
+flying_lotus = Artist.new(name: "Flying Lotus", biography: "")

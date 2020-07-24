@@ -1,6 +1,6 @@
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
 
-import * as APIUtils from '../util/actions_api_utils';
+import * as APIUtils from '../util/artists_api_utils';
 
 // regular actions
 
