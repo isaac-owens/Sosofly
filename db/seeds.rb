@@ -9,9 +9,17 @@
 
 User.delete_all
 Playlist.delete_all
+Artist.delete_all
 Track.delete_all
 
+# ARTISTS
 
+kendrick_lamar = Artist.create(name: "Kendrick Lamar", biography: "")
+beyonce_knowles = Artist.create(name: "Beyonce Knowles", biography: "")
+solange_knowles = Artist.create(name: "Solange Knowles", biography: "")
+matmos = Artist.create(name: "Matmos", biography: "")
+alice_coltrane= Artist.create(name: "Alice Coltrane", biography: "")
+flying_lotus = Artist.create(name: "Flying Lotus", biography: "")
 
 demo_user = User.create(username: "DemoUser", email: "test123@test.com", gender: "non-binary", birthdate: "1988-10-05", password: "hunter2")
 
@@ -27,47 +35,47 @@ jazz.image.attach(io: file, filename: 'smooth_jazz.jpeg')
 
 # HIP HOP TRACKS
 
-all_that = Track.create(title: "All That")
+all_that = Track.create(title: "All That", artist_id: kendrick_lamar.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-allthat.mp3')
 all_that.track_file.attach(io: file, filename: 'bendound-allthat.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: all_that.id)
 
-bad_ass = Track.create(title: "Bad Ass")
+bad_ass = Track.create(title: "Bad Ass", artist_id: flying_lotus.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-badass.mp3')
 bad_ass.track_file.attach(io: file, filename: 'bendound-badass.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: bad_ass.id)
 
-downtown = Track.create(title: "Downtown")
+downtown = Track.create(title: "Downtown", artist_id: kendrick_lamar.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-downtown.mp3')
 downtown.track_file.attach(io: file, filename: 'bendound-downtown.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: downtown.id)
 
-dreams = Track.create(title: "Dreams")
+dreams = Track.create(title: "Dreams", artist_id: flying_lotus.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-dreams.mp3')
 dreams.track_file.attach(io: file, filename: 'bendound-dreams.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: dreams.id)
 
-dubstep = Track.create(title: "Dub Step")
+dubstep = Track.create(title: "Dub Step", artist_id: kendrick_lamar.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-dubstep.mp3')
 dubstep.track_file.attach(io: file, filename: 'bendound-dubstep.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: dubstep.id)
 
-endless_motion = Track.create(title: "Endless Motion")
+endless_motion = Track.create(title: "Endless Motion", artist_id: flying_lotus.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-endlessmotion.mp3')
 endless_motion.track_file.attach(io: file, filename: 'bendound-endlessmotion.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: endless_motion.id)
 
-erf = Track.create(title: "E.R.F.")
+erf = Track.create(title: "E.R.F.", artist_id: kendrick_lamar.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-erf.mp3')
 erf.track_file.attach(io: file, filename: 'bendound-erf.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: erf.id)
 
-funky_suspense = Track.create(title: "Funky Suspense")
+funky_suspense = Track.create(title: "Funky Suspense", artist_id: flying_lotus.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-funkysuspense.mp3')
 funky_suspense.track_file.attach(io: file, filename: 'bendound-funkysuspense.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: funky_suspense.id)
 
-groovy_hiphop = Track.create(title: "Groovy Hip-Hop")
+groovy_hiphop = Track.create(title: "Groovy Hip-Hop", artist_id: kendrick_lamar.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-groovyhiphop.mp3')
 groovy_hiphop.track_file.attach(io: file, filename: 'bendound-groovyhiphop.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: groovy_hiphop.id)
@@ -75,27 +83,27 @@ AddedTrack.create!(playlist_id: hip_hop.id, track_id: groovy_hiphop.id)
 
 # JAZZ TRACKS
 
-hip_jazz = Track.create(title: "Hip Jazz")
+hip_jazz = Track.create(title: "Hip Jazz", artist_id: alice_coltrane.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-hipjazz.mp3')
 hip_jazz.track_file.attach(io: file, filename: 'bendound-hipjazz.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: hip_jazz.id)
 
-moose = Track.create(title: "Moose")
+moose = Track.create(title: "Moose", artist_id: alice_coltrane.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-moose.mp3')
 moose.track_file.attach(io: file, filename: 'bendound-moose.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: moose.id)
 
-retrosoul = Track.create(title: "Retro Soul")
+retrosoul = Track.create(title: "Retro Soul", artist_id: alice_coltrane.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-retrosoul.mp3')
 retrosoul.track_file.attach(io: file, filename: 'bendound-retrosoul.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: retrosoul.id)
 
-sexy = Track.create(title: "Sexy")
+sexy = Track.create(title: "Sexy", artist_id: alice_coltrane.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-sexy.mp3')
 sexy.track_file.attach(io: file, filename: 'bendound-sexy.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: sexy.id)
 
-summer = Track.create(title: "Summer")
+summer = Track.create(title: "Summer", artist_id: alice_coltrane.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/bensound-summer.mp3')
 summer.track_file.attach(io: file, filename: 'bendound-summer.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: summer.id)
