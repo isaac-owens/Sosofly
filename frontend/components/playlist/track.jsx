@@ -69,8 +69,6 @@ class Track extends React.Component {
     let play = <FontAwesomeIcon icon={faPlayCircle} size="1x" />;
 
     let { track, title } = this.props;
-    // track = track || {};
-    // title = title || "Title";
 
     return (
       <div className={trackWrapper}>
@@ -84,7 +82,7 @@ class Track extends React.Component {
 
                 <audio
                   src={track.track_file}
-                  className={this.props.track.title}
+                  className={track.title}
                 ></audio>
               </span>
             </div>
@@ -95,7 +93,7 @@ class Track extends React.Component {
               <audio />
               <div className={tracklistNameSub}>
                 <span className={tracklistArtist}>
-                  I do not own the rights to these tasty jams.
+                  {track.artist}
                 </span>
                 <span className={dotSeparator}>•</span>
                 <span className={tracklistAlbum}>Album Name Here</span>

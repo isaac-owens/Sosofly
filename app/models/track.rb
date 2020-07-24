@@ -6,15 +6,17 @@
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  artist_id  :integer
 #
 class Track < ApplicationRecord
-  validates :title, presence: true
+  validates :title, :artist_id, presence: true
 
   has_one_attached :track_file
 
   has_many :added_tracks
 
-
   has_many :playlists, 
     through: :added_tracks
+
+  belongs_to :artist
 end
