@@ -135,11 +135,9 @@ class RootListItem extends React.Component {
             <Link
               to={`/webplayer/playlist/${playlist.id}`}
               className={playlistTitle}
-              // replace
             >
               {playlist.title}
             </Link>
-            {/* {deletePlaylistForm} */}
           </div>
         </li>
       </div>

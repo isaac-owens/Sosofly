@@ -49,7 +49,10 @@ class Landing extends React.Component {
                 {playlists.length > 0
                   ? playlists.map((playlist) => {
                       return (
-                        <PlaylistItem playlist={playlist} key={playlist.id} />
+                        <PlaylistItem 
+                        onClick={}
+                        playlist={playlist} 
+                        key={playlist.id} />
                       );
                     })
                   : ""}
@@ -62,4 +65,11 @@ class Landing extends React.Component {
   }
 }
 
-export default Landing;
+const mDTP = dispatch => {
+  return {
+    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+    fetchPlaylistTracks: entityId => dispatch(fetchPlaylistTracks(entityId)),
+  }
+}
+
+export default connect(null, mDTP)(Landing);
