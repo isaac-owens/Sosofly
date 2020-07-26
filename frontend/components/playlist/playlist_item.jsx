@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { withRouter } from 'react-router-dom';
 
 class PlaylistItem extends React.Component {
   constructor(props){
@@ -53,4 +53,4 @@ class PlaylistItem extends React.Component {
   }
 }
 
-export default PlaylistItem;
+export default withRouter(PlaylistItem);

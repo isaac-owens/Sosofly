@@ -51,13 +51,11 @@ class Landing extends React.Component {
                 {playlists.length > 0
                   ? playlists.map((playlist) => {
                       return (
-                        <div>
                         <PlaylistItem 
                         fetchPlaylist={this.props.fetchPlaylist}
                         fetchPlaylistTracks={this.props.fetchPlaylistTracks}
                         playlist={playlist} 
                         key={playlist.id} />
-                        </div>
                       );
                     })
                   : ""}
