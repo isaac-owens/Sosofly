@@ -27,7 +27,14 @@ class PlaylistItem extends React.Component {
           <div className={playlistItemImageContainer}>
             <img className={playlistItemImage} src={playlist.image} />
           </div>
-          <div className={playlistItemTitleContainer}>
+          <div 
+          className={playlistItemTitleContainer}
+            onClick={
+              () => {
+                this.props.fetchPlaylist(playlist.id);
+                this.props.fetchPlaylistTracks(playlist.id);
+              }}
+          >
             <Link
               to={`/webplayer/playlist/${playlist.id}`}
               className={playlistItemTitleLink}

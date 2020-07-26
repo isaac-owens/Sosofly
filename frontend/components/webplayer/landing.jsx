@@ -1,6 +1,7 @@
 import React from 'react';
 import PlaylistItem from "../playlist/playlist_item";
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Landing extends React.Component {
   constructor(props){
@@ -49,10 +50,13 @@ class Landing extends React.Component {
                 {playlists.length > 0
                   ? playlists.map((playlist) => {
                       return (
+                        <div>
                         <PlaylistItem 
-                        onClick={}
+                        fetchPlaylist={this.props.fetchPlaylist}
+                        fetchPlaylistTracks={this.props.fetchPlaylistTracks}
                         playlist={playlist} 
                         key={playlist.id} />
+                        </div>
                       );
                     })
                   : ""}
