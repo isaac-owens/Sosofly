@@ -61,7 +61,35 @@ class ArtistShowMain extends React.Component {
         </section>
         <section className="artist-appears-on artist-albums">
           <div className="artist-main-section">
-
+            <h1 className="artist-section-header">Singles and EPs</h1>
+            <div className="artist-albums-container-fluid">
+              <div className="album-row">
+                <div className="album">
+                  <div className="album-object">
+                    <div className="album-object-hoverable">
+                      <div className="album-info">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="album">
+                  <div className="album-object">
+                    <div className="album-object-hoverable">
+                      <div className="album-info">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="album">
+                  <div className="album-object">
+                    <div className="album-object-hoverable">
+                      <div className="album-info">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
