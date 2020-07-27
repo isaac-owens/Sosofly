@@ -11,7 +11,7 @@ class ArtistShow extends React.Component {
 
   render() {
     let { artist } = this.props;
-
+    let playCircle = <FontAwesomeIcon icon={faPlayCircle} size="5x" />;
     return (
       <section className="artist-showpage-top-container">
         <div className="artist-showpage-banner">
@@ -29,7 +29,11 @@ class ArtistShow extends React.Component {
           </div>
         </div>
         <div className="artist-playbar-gradient"></div>
-        <div className="artist-playbar"></div>
+        <div className="artist-playbar">
+          <div className="artist-playbar-buttons">
+            <button className="artist-playbar-play">{playCircle}</button>
+          </div>
+        </div>
         <div className="artist-nav-links"></div>
         <div>
           <section className="artist-music"></section>

@@ -119,3 +119,26 @@
   padding: 24px 32px;
   position: relative;
 }
+
+.artist-playbar-buttons {
+  width: 100%;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.artist-playbar-play {
+  margin-right: 32px;
+  color: white;
+  background-color: #1db954;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 500px;
+}
