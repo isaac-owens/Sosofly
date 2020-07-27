@@ -17,6 +17,14 @@ class ArtistShow extends React.Component {
             <h1>This is the artist page!</h1>
           </div>
         </div>
+        <div className="artist-playbar"></div>
+        <div className="artist-nav-links"></div>
+        <div>
+          <section className="artist-music"></section>
+          <section className="artist-albums"></section>
+          <section className="artist-singles artist-albums"></section>
+          <section className="artist-appears-on artist-albums"></section>
+        </div>
       </section>
     )
   }
