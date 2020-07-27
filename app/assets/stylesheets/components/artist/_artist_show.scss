@@ -57,11 +57,13 @@
   align-items: center;
   text-transform: uppercase;
   z-index: 1;
+  color: #2E77D0;
 }
 
 .verified-text {
   margin-left: 8px;
   letter-spacing: .1em;
+  color: white;
 }
 
 @media (min-width: 1280px) {
@@ -177,7 +179,7 @@
   padding: 0 32px;
   margin: 0;
   max-width: 1955px;
-  
+
 }
 
 .artist-nav-links-container {

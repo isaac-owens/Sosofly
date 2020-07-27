@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-
+import { faCertificate } from "@fortawesome/free-solid-svg-icons";
 import ArtistShowMain from '../../components/artist/artist_show_main';
 
 class ArtistShow extends React.Component {
@@ -15,6 +15,8 @@ class ArtistShow extends React.Component {
     let { artist } = this.props;
     let playCircle = <FontAwesomeIcon icon={faPlayCircle} size="5x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
+    let verified = <FontAwesomeIcon icon={faCertificate} size="2x" />;
+
     return (
       <section className="artist-showpage-top-container">
         <div className="artist-showpage-banner">
@@ -22,7 +24,7 @@ class ArtistShow extends React.Component {
           <div className="artist-img-gradient"></div>
           <div className="artist-banner-content">
             <span className="verified-badge">
-              icon
+              {verified}
               <span className="verified-text">Verified Artist</span>
             </span>
             <span className="artist-name-header-container">
