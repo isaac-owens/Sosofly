@@ -10,6 +10,8 @@ class ArtistShow extends React.Component {
   }
 
   render() {
+    let { artist } = this.props;
+
     return (
       <section className="artist-showpage-top-container">
         <div className="artist-showpage-banner">
@@ -20,12 +22,13 @@ class ArtistShow extends React.Component {
               icon
               <span className="verified-text">Verified Artist</span>
             </span>
-            <span className="artist-name-header">
-              <h1>Artist Name</h1>
+            <span className="artist-name-header-container">
+              <h1 className="artist-name-header">Artist Name</h1>
             </span>
-            <span>### monthly listeners</span>
+            <span className="artist-monthly-listeners">### monthly listeners</span>
           </div>
         </div>
+        <div className="artist-playbar-gradient"></div>
         <div className="artist-playbar"></div>
         <div className="artist-nav-links"></div>
         <div>

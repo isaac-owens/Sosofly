@@ -49,3 +49,73 @@
   z-index: 0;
 }
 
+.verified-badge {
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.verified-text {
+  margin-left: 8px;
+  letter-spacing: .1em;
+}
+
+@media (min-width: 1280px) {
+  .artist-name-header {
+    font-size: 96px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .artist-name-header {
+    font-size: 72px;
+  }
+}
+
+.artist-name-header-container {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-top: 4px;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.artist-name-header {
+  padding: 0.08em 0px;
+  font-size: 96px;
+  line-height: 96px;
+  visibility: visible;
+  font-weight: 900;
+  letter-spacing: -.04em;
+}
+
+.artist-monthly-listeners {
+  font-size: 16px;
+  line-height: 2;
+  margin-top: 4px;
+}
+
+.artist-playbar-gradient {
+  background-color: rgb(35, 90, 122);
+  height: 232px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background-image: linear-gradient(rgba(0,0,0,.6), #121212);
+}
+
+.artist-playbar {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  padding: 24px 32px;
+  position: relative;
+}
