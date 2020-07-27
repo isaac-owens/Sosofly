@@ -158,3 +158,17 @@
   box-sizing: border-box;
   border-radius: 4px;
 }
+
+.artist-contextmenu-wrapper {
+  display: inline;
+}
+
+.artist-contextmenu-button {
+  background: transparent;
+  border: 0;
+  color: hsla(0,0%,100%,.6);
+  padding: 0;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+}

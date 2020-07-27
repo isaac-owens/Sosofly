@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
-
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
 class ArtistShow extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class ArtistShow extends React.Component {
   render() {
     let { artist } = this.props;
     let playCircle = <FontAwesomeIcon icon={faPlayCircle} size="5x" />;
+    let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
     return (
       <section className="artist-showpage-top-container">
         <div className="artist-showpage-banner">
@@ -33,6 +34,11 @@ class ArtistShow extends React.Component {
           <div className="artist-playbar-buttons">
             <button className="artist-playbar-play">{playCircle}</button>
             <button className="artist-follow-button">Follow</button>
+            <div classname="artist-contextmenu-wrapper">
+              <button className="artist-contextmenu-button">
+                <div className="artist-ellipsis">{ellipsis}</div>
+              </button>
+            </div>
           </div>
         </div>
         <div className="artist-nav-links"></div>
