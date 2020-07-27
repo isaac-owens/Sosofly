@@ -1,0 +1,69 @@
+.artist-main-section {
+  padding: 0 32px;
+  margin: 0;
+  max-width: 1955px;
+}
+
+.artist-section-header {
+  font-size: 28px;
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: -.36px;
+  color: white;
+  margin: 16px 0;
+}
+
+.artist-music {
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.artist-toptracks {
+  margin: 0 auto;
+  float: none;
+}
+
+.artist-tracklist-container {
+  position: relative;
+}
+
+.artist-tracklist {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.artist-albums {
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.artist-albums-container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.album-row {
+  margin-left: -16px;
+  margin-right: -16px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.album {
+  border: 1px solid white;
+  height: 217px;
+  width: 217px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 10px;
+}
+
+.album-object {
+  position: relative;
+  padding-bottom: 2.5em;
+}
