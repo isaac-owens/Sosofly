@@ -32,6 +32,7 @@ class ArtistShow extends React.Component {
         <div className="artist-playbar">
           <div className="artist-playbar-buttons">
             <button className="artist-playbar-play">{playCircle}</button>
+            <button className="artist-follow-button">Follow</button>
           </div>
         </div>
         <div className="artist-nav-links"></div>

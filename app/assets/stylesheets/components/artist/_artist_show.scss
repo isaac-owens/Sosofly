@@ -142,3 +142,19 @@
   border: 0;
   border-radius: 500px;
 }
+
+.artist-follow-button {
+  margin-right: 24px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+  padding: 7px 15px;
+  border: 1px solid hsla(0,0%,100%,.3);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
