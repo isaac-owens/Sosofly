@@ -52,3 +52,17 @@
   justify-content: flex-start;
 }
 
+.album {
+  border: 1px solid white;
+  height: 217px;
+  width: 217px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.album-object {
+  position: relative;
+  padding-bottom: 2.5em;
+}
