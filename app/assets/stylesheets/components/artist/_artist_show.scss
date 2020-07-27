@@ -1,5 +1,5 @@
 .artist-showpage-banner {
-  background-color: red;
+  // background-color: red;
   height: 40vh;
   max-height: none;
   min-height: 340px;
@@ -8,4 +8,19 @@
   padding: 0 32px 24px;
   display: flex; 
   overflow: hidden;
+}
+
+.artist-showpage-banner-img {
+  background-image: url(https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg);
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
