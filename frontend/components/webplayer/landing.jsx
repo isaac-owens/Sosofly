@@ -1,7 +1,9 @@
 import React from 'react';
 import PlaylistItem from "../playlist/playlist_item";
 import { Link } from 'react-router-dom';
-
+import { connect } from 'react-redux';
+import { fetchPlaylist } from "../../actions/playlist_actions"
+import { fetchPlaylistTracks } from "../../actions/track_actions"
 class Landing extends React.Component {
   constructor(props){
     super(props);
@@ -49,7 +51,11 @@ class Landing extends React.Component {
                 {playlists.length > 0
                   ? playlists.map((playlist) => {
                       return (
-                        <PlaylistItem playlist={playlist} key={playlist.id} />
+                        <PlaylistItem 
+                        fetchPlaylist={this.props.fetchPlaylist}
+                        fetchPlaylistTracks={this.props.fetchPlaylistTracks}
+                        playlist={playlist} 
+                        key={playlist.id} />
                       );
                     })
                   : ""}
@@ -62,4 +68,11 @@ class Landing extends React.Component {
   }
 }
 
-export default Landing;
+const mDTP = dispatch => {
+  return {
+    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+    fetchPlaylistTracks: entityId => dispatch(fetchPlaylistTracks(entityId)),
+  }
+}
+
+export default connect(null, mDTP)(Landing);

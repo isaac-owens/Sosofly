@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { withRouter } from 'react-router-dom';
 
 class PlaylistItem extends React.Component {
   constructor(props){
@@ -27,7 +27,15 @@ class PlaylistItem extends React.Component {
           <div className={playlistItemImageContainer}>
             <img className={playlistItemImage} src={playlist.image} />
           </div>
-          <div className={playlistItemTitleContainer}>
+          <div 
+          className={playlistItemTitleContainer}
+            onClick={
+              () => {
+                // debugger
+                this.props.fetchPlaylist(playlist.id);
+                this.props.fetchPlaylistTracks(playlist.id);
+              }}
+          >
             <Link
               to={`/webplayer/playlist/${playlist.id}`}
               className={playlistItemTitleLink}
@@ -45,4 +53,4 @@ class PlaylistItem extends React.Component {
   }
 }
 
-export default PlaylistItem;
+export default withRouter(PlaylistItem);

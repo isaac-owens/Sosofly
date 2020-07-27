@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
@@ -97,7 +98,7 @@ class Track extends React.Component {
                 <span 
                 className={tracklistArtist}
                 onClick={() => this.props.getArtist(track.artist_id)}>
-                  {track.artist}
+                  <Link to={`/webplayer/artist/${track.artist_id}`}>{track.artist}</Link>
                 </span>
                 <span className={dotSeparator}>•</span>
                 <span className={tracklistAlbum}>Album Name Here</span>
