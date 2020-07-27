@@ -14,7 +14,7 @@ class ArtistShow extends React.Component {
       <section className="artist-showpage-top-container">
         <div className="artist-showpage-banner">
           <div className="artist-showpage-banner-img">
-
+            <h1>This is the artist page!</h1>
           </div>
         </div>
       </section>
