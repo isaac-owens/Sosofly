@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
+import ArtistShowMain from '../../components/artist/artist_show_main';
+
 class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
@@ -62,6 +64,7 @@ class ArtistShow extends React.Component {
           <section className="artist-singles artist-albums"></section>
           <section className="artist-appears-on artist-albums"></section>
         </div>
+        <ArtistShowMain /> 
       </section>
     )
   }
