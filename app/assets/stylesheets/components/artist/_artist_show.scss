@@ -173,8 +173,32 @@
   letter-spacing: .015em;
 }
 
-.artist-nav-links {
+.artist-nav-container {
   padding: 0 32px;
   margin: 0;
   max-width: 1955px;
+}
+
+.artist-nav-links-container {
+  width: 100%;
+  display: block;
+}   
+
+.artist-nav-links {
+  text-align: left;
+  list-style: none;
+}
+
+.artist-nav-link-item {
+  display: inline-block;
+}
+
+.artist-nav-link {
+  margin: 0 8px 0 0;
+  color: white;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
 }

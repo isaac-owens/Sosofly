@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
@@ -30,6 +30,21 @@ class ArtistShow extends React.Component {
           </div>
         </div>
         <div className="artist-playbar-gradient"></div>
+        <div className="artist-nav-container">
+          <nav className="artist-nav-links-container">
+            <ul className="artist-nav-links">
+              <li className="artist-nav-link-item">
+                <Link to={'#'} className="artist-nav-link">Overview</Link>
+              </li>
+              <li className="artist-nav-link">
+                <Link to={'#'} className="artist-nav-link">Related Artists</Link>
+              </li>
+              <li className="artist-nav-link">
+                <Link to={'#'} className="artist-nav-link">About</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <div className="artist-playbar">
           <div className="artist-playbar-buttons">
             <button className="artist-playbar-play">{playCircle}</button>
@@ -41,7 +56,6 @@ class ArtistShow extends React.Component {
             </div>
           </div>
         </div>
-        <div className="artist-nav-links"></div>
         <div>
           <section className="artist-music"></section>
           <section className="artist-albums"></section>
