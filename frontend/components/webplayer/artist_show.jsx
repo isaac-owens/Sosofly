@@ -13,9 +13,8 @@ class ArtistShow extends React.Component {
     return (
       <section className="artist-showpage-top-container">
         <div className="artist-showpage-banner">
-          <div className="artist-showpage-banner-img">
-            
-          </div>
+          <div className="artist-showpage-banner-img"></div>
+          <div className="artist-img-gradient"></div>
         </div>
         <div className="artist-playbar"></div>
         <div className="artist-nav-links"></div>
