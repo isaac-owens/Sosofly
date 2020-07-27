@@ -40,3 +40,12 @@
     align-content: space-between;
   }
 }
+
+.artist-banner-content {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  justify-content: flex-end;
+  z-index: 0;
+}
+
