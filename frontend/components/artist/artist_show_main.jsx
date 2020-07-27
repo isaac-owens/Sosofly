@@ -27,12 +27,13 @@ class ArtistShowMain extends React.Component {
           </div>
         </section>
         <section className="artist-singles artist-albums">
-          <div classNam="artist-main-section">
-
+          <div className="artist-main-section">
+            <h1 className="artist-section-header">Albums</h1>
+            <div className="artist-albums-container-fluid"></div>
           </div>
         </section>
         <section className="artist-appears-on artist-albums">
-          <div classNam="artist-main-section">
+          <div className="artist-main-section">
 
           </div>
         </section>
