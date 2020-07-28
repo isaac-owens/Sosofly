@@ -31,7 +31,6 @@ class PlaylistItem extends React.Component {
           className={playlistItemTitleContainer}
             onClick={
               () => {
-                // debugger
                 this.props.fetchPlaylist(playlist.id);
                 this.props.fetchPlaylistTracks(playlist.id);
               }}

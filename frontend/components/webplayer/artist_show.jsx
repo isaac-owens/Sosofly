@@ -9,13 +9,30 @@ import ArtistShowMain from '../../components/artist/artist_show_main';
 class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      data: null,
+    }
+
+    this.id = parseInt(this.props.match.params.id);
   }
+
+    componentDidMount() {
+      this.loadData();
+    }
+
+    loadData() {
+      this.setState({ data: this.props.fetchArtist(this.id) });
+    }
 
   render() {
     let { artist } = this.props;
     let playCircle = <FontAwesomeIcon icon={faPlayCircle} size="5x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
     let verified = <FontAwesomeIcon icon={faCertificate} size="2x" />;
+    if(!artist) {
+      return <div></div>
+    } else {
 
     return (
       <section className="artist-showpage-top-container">
@@ -28,7 +45,7 @@ class ArtistShow extends React.Component {
               <span className="verified-text">Verified Artist</span>
             </span>
             <span className="artist-name-header-container">
-              <h1 className="artist-name-header">Artist Name</h1>
+              <h1 className="artist-name-header">{artist.name}</h1>
             </span>
             <span className="artist-monthly-listeners">### monthly listeners</span>
           </div>
@@ -53,7 +70,7 @@ class ArtistShow extends React.Component {
           <div className="artist-playbar-buttons">
             <button className="artist-playbar-play">{playCircle}</button>
             <button className="artist-follow-button">Follow</button>
-            <div classname="artist-contextmenu-wrapper">
+            <div className="artist-contextmenu-wrapper">
               <button className="artist-contextmenu-button">
                 <div className="artist-ellipsis">{ellipsis}</div>
               </button>
@@ -63,6 +80,7 @@ class ArtistShow extends React.Component {
         <ArtistShowMain /> 
       </section>
     )
+    }
   }
 }
 
