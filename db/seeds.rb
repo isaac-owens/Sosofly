@@ -28,7 +28,7 @@ demo_user = User.create(username: "DemoUser", email: "test123@test.com", gender:
 damn = Album.create(title: "DAMN", artist_id: kendrick_lamar.id, year: "2017")
 cosmogramma = Album.create(title: "Cosmogramma", artist_id: flying_lotus.id, year: "2010")
 a_seat_at_the_table = Album.create(title: "A Seat At The Table", artist_id: solange_knowles.id, year: "2016")
-journey_into_satchinananda = Album.create(title: "Journey Into Satchinananda", artists_id: alice_coltrane.id, year: "1971")
+journey_into_satchinananda = Album.create(title: "Journey Into Satchinananda", artist_id: alice_coltrane.id, year: "1971")
 
 # PLAYLISTS
 
