@@ -13,21 +13,26 @@ class ArtistShow extends React.Component {
     this.state = {
       data: null,
     }
+
+    this.id = parseInt(this.props.match.params.id);
   }
 
-  componentDidMount() {
-    this.loadData();
-  }
+    componentDidMount() {
+      this.loadData();
+    }
 
-  loadData() {
-    this.setState({ data: this.props.fetchArtist(this.props.artist.id) });
-  }
+    loadData() {
+      this.setState({ data: this.props.fetchArtist(this.id) });
+    }
 
   render() {
     let { artist } = this.props;
     let playCircle = <FontAwesomeIcon icon={faPlayCircle} size="5x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
     let verified = <FontAwesomeIcon icon={faCertificate} size="2x" />;
+    if(!artist) {
+      return <div></div>
+    } else {
 
     return (
       <section className="artist-showpage-top-container">
@@ -75,6 +80,7 @@ class ArtistShow extends React.Component {
         <ArtistShowMain /> 
       </section>
     )
+    }
   }
 }
 

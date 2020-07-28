@@ -120,7 +120,6 @@ class Track extends React.Component {
 }
 
 const mDTP = dispatch => {
-  debugger
   return {
     getArtist: artistId => dispatch(fetchArtist(artistId)),
   }
