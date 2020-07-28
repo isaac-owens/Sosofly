@@ -23,7 +23,7 @@ class ArtistShowMain extends React.Component {
           </div>
         </section>
         <section className="artist-albums">
-          <div classNam="artist-main-section">
+          <div className="artist-main-section">
           </div>
         </section>
         <section className="artist-singles artist-albums">

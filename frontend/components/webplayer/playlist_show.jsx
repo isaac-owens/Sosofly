@@ -52,11 +52,6 @@ class PlaylistShow extends React.Component {
     let { playlist, tracks, fetchPlaylistTracks, saveNowPlaying } = this.props;
     if (
       !playlist
-      // !this.state.data 
-      // ||
-      // (Object.keys(playlist).length === 0 
-      // && playlist.constructor === Object
-      // )
     ) {
       return <div></div>;
     } else {

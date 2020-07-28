@@ -9,7 +9,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
-
+    fetchArtist: artistId => dispatch(fetchArtist(artistId)),
   }
 }
 

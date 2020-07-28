@@ -9,6 +9,18 @@ import ArtistShowMain from '../../components/artist/artist_show_main';
 class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      data: null,
+    }
+  }
+
+  componentDidMount() {
+    this.loadData();
+  }
+
+  loadData() {
+    this.setState({ data: this.props.fetchArtist(this.props.artist.id) });
   }
 
   render() {
@@ -28,7 +40,7 @@ class ArtistShow extends React.Component {
               <span className="verified-text">Verified Artist</span>
             </span>
             <span className="artist-name-header-container">
-              <h1 className="artist-name-header">Artist Name</h1>
+              <h1 className="artist-name-header">{artist.name}</h1>
             </span>
             <span className="artist-monthly-listeners">### monthly listeners</span>
           </div>
@@ -53,7 +65,7 @@ class ArtistShow extends React.Component {
           <div className="artist-playbar-buttons">
             <button className="artist-playbar-play">{playCircle}</button>
             <button className="artist-follow-button">Follow</button>
-            <div classname="artist-contextmenu-wrapper">
+            <div className="artist-contextmenu-wrapper">
               <button className="artist-contextmenu-button">
                 <div className="artist-ellipsis">{ellipsis}</div>
               </button>
