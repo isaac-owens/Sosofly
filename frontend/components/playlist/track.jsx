@@ -6,6 +6,7 @@ import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { fetchArtist } from '../../actions/artist_actions';
+import { fetchAlbum } from '../../actions/album_actions';
 
 class Track extends React.Component {
   constructor(props) {
@@ -101,7 +102,11 @@ class Track extends React.Component {
                   <Link to={`/webplayer/artist/${track.artist_id}`}>{track.artist}</Link>
                 </span>
                 <span className={dotSeparator}>•</span>
-                <span className={tracklistAlbum}>{track.album}</span>
+                <span 
+                className={tracklistAlbum}
+                onClick={() => this.props.getAlbum(track.album_id)}>
+                  <Link to={`/webplayer/album/${track.album_id}`}>{track.album}</Link>
+                </span>
               </div>
             </div>
           </div>
@@ -122,6 +127,7 @@ class Track extends React.Component {
 const mDTP = dispatch => {
   return {
     getArtist: artistId => dispatch(fetchArtist(artistId)),
+    getAlbum: albumId => dispatch(fetchAlbum(albumId)),
   }
 }
 
