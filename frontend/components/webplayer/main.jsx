@@ -29,6 +29,7 @@ class Main extends React.Component {
                   render={(props) => <Landing {...props} playlists={this.props.playlists} />} />
                   <Route exact path="/webplayer/playlist/:id" component={PlaylistShowContainer} />
                   <Route exact path="/webplayer/artist/:id" component={ArtistShowContainer} />
+                  <Route exact path="/webplayer/album/:id" component={AlbumShowContainer} />
                 </Switch>
               </div>
             </div>
