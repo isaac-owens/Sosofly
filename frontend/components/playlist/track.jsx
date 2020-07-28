@@ -101,7 +101,7 @@ class Track extends React.Component {
                   <Link to={`/webplayer/artist/${track.artist_id}`}>{track.artist}</Link>
                 </span>
                 <span className={dotSeparator}>•</span>
-                <span className={tracklistAlbum}>Album Name Here</span>
+                <span className={tracklistAlbum}>{track.album}</span>
               </div>
             </div>
           </div>
