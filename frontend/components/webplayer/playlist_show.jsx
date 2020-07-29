@@ -79,6 +79,7 @@ class PlaylistShow extends React.Component {
                   {playlist.title}
                 </h1>
               </span>
+              <h2 className="playlist-show-header-description">{playlist.description}</h2>
             </div>
           </div>
           <div className={playlistTopColor}></div>
