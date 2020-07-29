@@ -5,6 +5,7 @@ import { fetchAlbumTracks } from '../../actions/track_actions';
 
 const mSTP = state => {
   return {
+    tracks: Object.values(state.entities.tracks),
     album: Object.values(state.entities.album)[0],
   }
 }
