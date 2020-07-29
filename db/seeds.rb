@@ -62,7 +62,9 @@ journey_into_satchinananda = Album.create(title: "Journey Into Satchinananda", a
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/journey_into_satchinananda.jpg')
 journey_into_satchinananda.image.attach(io: file, filename: 'journey_into_satchinananda.jpg')
 
-
+the_civil_war = Album.create(title: "The Civil War", artist_id: matmos.id, year: "2003")
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/the_civil_war.jpeg')
+the_civil_war.image.attach(io: file, filename: 'the_civil_war.jpeg')
 
 # PLAYLISTS
 
