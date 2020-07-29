@@ -197,4 +197,10 @@ file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-sci
 scifi.track_file.attach(io: file, filename: 'bensound-scifi.mp3')
 AddedTrack.create!(playlist_id: electronic.id, track_id: scifi.id)
 
+slow_motion = Track.create(title: "Slow Motion", artist_id: matmos.id, album_id: the_civil_war.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-slowmotion.mp3')
+slowmotion.track_file.attach(io: file, filename: 'bensound-slowmotion.mp3')
+AddedTrack.create!(playlist_id: electronic.id, track_id: slow_motion.id)
+
+
 
