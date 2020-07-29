@@ -3,6 +3,12 @@ import React from 'react';
 class AlbumShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.id = parseInt(this.props.match.params.id);
+  }
+
+  componentDidMount() {
+    this.props.fetchAlbum(this.id);
   }
 
   render() {
