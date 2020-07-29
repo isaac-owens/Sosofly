@@ -153,6 +153,11 @@ file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-tom
 tomorrow.track_file.attach(io: file, filename: 'bensound-tomorrow.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: tomorrow.id)
 
+sunny = Track.create(title: "Sunny", artist_id: solange_knowles.id, album_id: lemonade.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-sunny.mp3')
+sunny.track_file.attach(io: file, filename: 'bensound-sunny.mp3')
+AddedTrack.create!(playlist_id: pop.id, track_id: sunny.id)
+
 # JAZZ TRACKS
 
 hip_jazz = Track.create(title: "Hip Jazz", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id)
