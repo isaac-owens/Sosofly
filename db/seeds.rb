@@ -16,27 +16,27 @@ Track.delete_all
 
 kendrick_lamar = Artist.create(name: "Kendrick Lamar", biography: "")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/kendrick_lamar.jpg')
-.image.attach(io: file, filename: 'kendrick_lamar.jpg')
+kendrick_lamar.image.attach(io: file, filename: 'kendrick_lamar.jpg')
 
 beyonce_knowles = Artist.create(name: "Beyonce Knowles", biography: "")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/beyonce.jpg')
-.image.attach(io: file, filename: 'beyonce.jpg')
+beyonce_knowles.image.attach(io: file, filename: 'beyonce.jpg')
 
 solange_knowles = Artist.create(name: "Solange Knowles", biography: "")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/solange.jpg')
-.image.attach(io: file, filename: 'solange.jpg')
+solange_knowles.image.attach(io: file, filename: 'solange.jpg')
 
 matmos = Artist.create(name: "Matmos", biography: "")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/matmos.jpg')
-.image.attach(io: file, filename: 'matmos.jpg')
+matmos.image.attach(io: file, filename: 'matmos.jpg')
 
 alice_coltrane= Artist.create(name: "Alice Coltrane", biography: "")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/alice_coltrane.jpg')
-.image.attach(io: file, filename: 'alice_coltrane.jpg')
+alice_coltrane.image.attach(io: file, filename: 'alice_coltrane.jpg')
 
 flying_lotus = Artist.create(name: "Flying Lotus", biography: "")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/flying_lotus.jpg')
-.image.attach(io: file, filename: 'flying_lotus.jpg')
+flying_lotus.image.attach(io: file, filename: 'flying_lotus.jpg')
 
 demo_user = User.create(username: "DemoUser", email: "test123@test.com", gender: "non-binary", birthdate: "1988-10-05", password: "hunter2")
 
@@ -44,19 +44,23 @@ demo_user = User.create(username: "DemoUser", email: "test123@test.com", gender:
 
 damn = Album.create(title: "DAMN", artist_id: kendrick_lamar.id, year: "2017")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/damn.jpeg')
-.image.attach(io: file, filename: 'damn.jpeg')
+damn.image.attach(io: file, filename: 'damn.jpeg')
 
 cosmogramma = Album.create(title: "Cosmogramma", artist_id: flying_lotus.id, year: "2010")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/cosmogramma.jpeg')
-.image.attach(io: file, filename: 'cosmogramma.jpeg')
+cosmogramma.image.attach(io: file, filename: 'cosmogramma.jpeg')
+
+lemonade = Album.create(title: "Lemonade", artist_id: beyonce_knowles.id, year: "2016")
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/cosmogramma.jpeg')
+lemonade.image.attach(io: file, filename: 'cosmogramma.jpeg')
 
 a_seat_at_the_table = Album.create(title: "A Seat At The Table", artist_id: solange_knowles.id, year: "2016")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/a_seat_at_the_table.jpeg')
-.image.attach(io: file, filename: 'a_seat_at_the_table.jpeg')
+a_seat_at_the_table.image.attach(io: file, filename: 'a_seat_at_the_table.jpeg')
 
 journey_into_satchinananda = Album.create(title: "Journey Into Satchinananda", artist_id: alice_coltrane.id, year: "1971")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/journey_into_satchinananda.jpg')
-.image.attach(io: file, filename: 'journey_into_satchinananda.jpg')
+journey_into_satchinananda.image.attach(io: file, filename: 'journey_into_satchinananda.jpg')
 
 # PLAYLISTS
 
@@ -67,6 +71,11 @@ hip_hop.image.attach(io: file, filename: '90s_hip_hop.jpg')
 jazz = Playlist.create(title: "Smooth Jazz", description: "Hello Mellow Yellow Fellow", creator_id: demo_user.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/smooth_jazz.jpeg')
 jazz.image.attach(io: file, filename: 'smooth_jazz.jpeg')
+
+pop = Playlist.create(title: "Pop Hits", description: "The greatest pop hits on the charts", creator_id: demo_user.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/pop_music.jpeg')
+pop.image.attach(io: file, filename: 'pop_music.jpeg')
+
 
 # HIP HOP TRACKS
 
@@ -115,6 +124,32 @@ file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-gro
 groovy_hiphop.track_file.attach(io: file, filename: 'bendound-groovyhiphop.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: groovy_hiphop.id)
 
+# POP TRACKS
+
+better_days = Track.create(title: "Better Days", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-betterdays.mp3')
+groovy_hiphop.track_file.attach(io: file, filename: 'bendound-betterdays.mp3')
+AddedTrack.create!(playlist_id: pop.id, track_id: better_days.id)
+
+energy = Track.create(title: "Energy", artist_id: beyonce_knowles.id, album_id: lemonade.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-energy.mp3')
+energy.track_file.attach(io: file, filename: 'bendound-energy.mp3')
+AddedTrack.create!(playlist_id: pop.id, track_id: energy.id)
+
+epic = Track.create(title: "Epic", artist_id: beyonce_knowles.id, album_id: lemonade.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-epic.mp3')
+epic.track_file.attach(io: file, filename: 'bendound-epic.mp3')
+AddedTrack.create!(playlist_id: pop.id, track_id: epic.id)
+
+tenderness = Track.create(title: "Tenderness", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-tenderness.mp3')
+tenderness.track_file.attach(io: file, filename: 'bendound-tenderness.mp3')
+AddedTrack.create!(playlist_id: pop.id, track_id: tenderness.id)
+
+tomorrow = Track.create(title: "Tomorrow", artist_id: beyonce_knowles.id, album_id: lemonade.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-tomorrow.mp3')
+tomorrow.track_file.attach(io: file, filename: 'bendound-tomorrow.mp3')
+AddedTrack.create!(playlist_id: pop.id, track_id: tomorrow.id)
 
 # JAZZ TRACKS
 
