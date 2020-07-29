@@ -97,15 +97,15 @@ class Track extends React.Component {
               <audio />
               <div className={tracklistNameSub}>
                 <span 
-                className={tracklistArtist}
                 onClick={() => this.props.getArtist(track.artist_id)}>
-                  <Link to={`/webplayer/artist/${track.artist_id}`}>{track.artist}</Link>
+                  <Link to={`/webplayer/artist/${track.artist_id}`}
+                    className={tracklistArtist}>{track.artist}</Link>
                 </span>
                 <span className={dotSeparator}>•</span>
                 <span 
-                className={tracklistAlbum}
                 onClick={() => this.props.getAlbum(track.album_id)}>
-                  <Link to={`/webplayer/album/${track.album_id}`}>{track.album}</Link>
+                  <Link to={`/webplayer/album/${track.album_id}`}
+                    className={tracklistAlbum}>{track.album}</Link>
                 </span>
               </div>
             </div>
