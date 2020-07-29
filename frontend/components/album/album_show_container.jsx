@@ -10,7 +10,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
-    fetchAlbum: albumId => dipsatch(fetchAlbum(albumId)),
+    fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
   }
 }
 
