@@ -85,12 +85,12 @@ class AlbumShow extends React.Component {
               </div>
             </div>
           </div>
-          {/* <AlbumShowMain
+          <AlbumShowMain
             id={this.id}
             // fetchPlaylistTracks={fetchPlaylistTracks}
             // tracks={tracks}
             // saveNowPlaying={saveNowPlaying}
-          /> */}
+          />
         </section>
       );
     }
