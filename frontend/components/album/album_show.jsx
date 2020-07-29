@@ -57,11 +57,11 @@ class AlbumShow extends React.Component {
             <div></div>
             <div className={playlistShowHeaderImageBox}>
               <div className={playlistShowHeaderImage}>
-                {/* <img
-                  src={playlist.image}
-                  alt="playlist image"
+                <img
+                  src={album.image}
+                  alt="album image"
                   className={playlistShowHeaderImage}
-                /> */}
+                />
               </div>
             </div>
             <div className={playlistShowHeaderBanner}>

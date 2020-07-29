@@ -51,8 +51,8 @@ file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/cosmogramma
 cosmogramma.image.attach(io: file, filename: 'cosmogramma.jpeg')
 
 lemonade = Album.create(title: "Lemonade", artist_id: beyonce_knowles.id, year: "2016")
-file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/cosmogramma.jpeg')
-lemonade.image.attach(io: file, filename: 'cosmogramma.jpeg')
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/lemonade.jpeg')
+lemonade.image.attach(io: file, filename: 'lemonade.jpeg')
 
 a_seat_at_the_table = Album.create(title: "A Seat At The Table", artist_id: solange_knowles.id, year: "2016")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/a_seat_at_the_table.jpeg')
@@ -153,7 +153,7 @@ file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-tom
 tomorrow.track_file.attach(io: file, filename: 'bensound-tomorrow.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: tomorrow.id)
 
-sunny = Track.create(title: "Sunny", artist_id: solange_knowles.id, album_id: lemonade.id)
+sunny = Track.create(title: "Sunny", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-sunny.mp3')
 sunny.track_file.attach(io: file, filename: 'bensound-sunny.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: sunny.id)
