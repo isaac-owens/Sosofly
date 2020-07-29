@@ -42,7 +42,7 @@ class AlbumShow extends React.Component {
     let fire = <FontAwesomeIcon icon={faFire} size="3x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
-    let { album } = this.props;
+    let { album, fetchAlbumTracks } = this.props;
 
     if (
       !album
@@ -87,7 +87,7 @@ class AlbumShow extends React.Component {
           </div>
           <AlbumShowMain
             id={this.id}
-            // fetchPlaylistTracks={fetchPlaylistTracks}
+            fetchAlbumTracks={fetchAlbumTracks}
             // tracks={tracks}
             // saveNowPlaying={saveNowPlaying}
           />
