@@ -62,6 +62,8 @@ journey_into_satchinananda = Album.create(title: "Journey Into Satchinananda", a
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/journey_into_satchinananda.jpg')
 journey_into_satchinananda.image.attach(io: file, filename: 'journey_into_satchinananda.jpg')
 
+
+
 # PLAYLISTS
 
 hip_hop = Playlist.create(title: "90's Hip-Hop", description: "The hippest of the hop and hoppest of the hip", creator_id: demo_user.id)
@@ -76,6 +78,9 @@ pop = Playlist.create(title: "Pop Hits", description: "The greatest pop hits on 
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/pop_music.jpeg')
 pop.image.attach(io: file, filename: 'pop_music.jpeg')
 
+electronic = Playlist.create(title: "It's Electric!!", description: "Electrify your like with these certified electronic bangerz!", creator_id: demo_user.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/electronic.jpeg')
+electronic.image.attach(io: file, filename: 'electronic.jpeg')
 
 # HIP HOP TRACKS
 
@@ -98,11 +103,6 @@ dreams = Track.create(title: "Dreams", artist_id: flying_lotus.id, album_id: cos
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-dreams.mp3')
 dreams.track_file.attach(io: file, filename: 'bendound-dreams.mp3')
 AddedTrack.create!(playlist_id: hip_hop.id, track_id: dreams.id)
-
-dubstep = Track.create(title: "Dub Step", artist_id: kendrick_lamar.id, album_id: damn.id)
-file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-dubstep.mp3')
-dubstep.track_file.attach(io: file, filename: 'bendound-dubstep.mp3')
-AddedTrack.create!(playlist_id: hip_hop.id, track_id: dubstep.id)
 
 endless_motion = Track.create(title: "Endless Motion", artist_id: flying_lotus.id, album_id: cosmogramma.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-endlessmotion.mp3')
@@ -177,4 +177,11 @@ summer = Track.create(title: "Summer", artist_id: alice_coltrane.id, album_id: j
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-summer.mp3')
 summer.track_file.attach(io: file, filename: 'bendound-summer.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: summer.id)
+
+# ELECTRONIC TRACKS
+
+dubstep = Track.create(title: "Dub Step", artist_id: kendrick_lamar.id, album_id: damn.id)
+file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-dubstep.mp3')
+dubstep.track_file.attach(io: file, filename: 'bendound-dubstep.mp3')
+AddedTrack.create!(playlist_id: hip_hop.id, track_id: dubstep.id)
 
