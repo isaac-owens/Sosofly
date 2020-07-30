@@ -35,20 +35,20 @@ class Track extends React.Component {
     const { id, track, setState, playerState, saveNowPlaying } = this.props;
     const trackAudio = document.getElementById(id);
     if (!playerState.nowPlaying) { // No track is playing
-      setState({ nowPlaying: trackAudio[0] });
+      setState({ nowPlaying: trackAudio });
       trackAudio.play().then(this.setState({nowPlaying: true})); // Play this track
       saveNowPlaying(track)
-    } else if (playerState.nowPlaying === trackAudio[0]) { // Current track is playing or paused 
-      if (trackAudio[0].paused) {
-        trackAudio[0].play()
+    } else if (playerState.nowPlaying === trackAudio) { // Current track is playing or paused 
+      if (trackAudio.paused) {
+        trackAudio.play()
         this.setState({ nowPlaying: true })
       } else {
-        trackAudio[0].pause();
+        trackAudio.pause();
         this.setState({ nowPlaying: false })
       }
     } else { // Another track is playing so this it should stop and this one should start
-      this.stopAllSongs(trackAudio[0]);
-      trackAudio[0].play().then(this.setState({nowPlaying: true}));
+      this.stopAllSongs(trackAudio);
+      trackAudio.play().then(this.setState({nowPlaying: true}));
       saveNowPlaying(track)
     }
   }
