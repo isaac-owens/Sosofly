@@ -46,6 +46,36 @@
   isolation: isolate;
 }
 
+.now-playing-cover-slot {
+  flex-shrink: 0;
+  position: relative;
+  isolation: isolate;
+}
+
+.cover-art-shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  margin: 0;
+  display: block;
+  border: 0;
+  position: relative;
+  z-index: 0;
+  background-color: #282828;
+}
+
+.now-playing-cover-image {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: 50%;
+  background-color: #000;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .now-playing-info {
   display: flex;
   flex-direction: column;

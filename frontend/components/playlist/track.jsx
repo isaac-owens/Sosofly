@@ -15,8 +15,6 @@ class Track extends React.Component {
       nowPlaying: false,
     }
 
-    this.trackAudio = document.getElementsByClassName(this.props.track.title);
-    this.duration = null;
     this.playTrack = this.playTrack.bind(this);
     this.stopAllSongs = this.stopAllSongs.bind(this);
   }
@@ -52,16 +50,6 @@ class Track extends React.Component {
       saveNowPlaying(track)
     }
   }
-
-  componentDidMount() {
-    this.trackAudio[0].addEventListener('onloadedmetadata', (e) => {
-      const duration = e.target.duration;
-      this.duration = duration;
-      console.log(this.duration);
-    })
-  }
-
-
 
   render() {
     let trackWrapper = "track-wrapper";
