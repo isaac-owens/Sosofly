@@ -49,7 +49,6 @@
 .now-playing-cover-slot {
   flex-shrink: 0;
   position: relative;
-  isolation: isolate;
 }
 
 .cover-art-shadow {
@@ -63,7 +62,7 @@
 }
 
 .now-playing-cover-image {
-  // position: absolute;
+  position: absolute;
   // top: 0;
   // left: 0;
   width: 100%;
