@@ -41,7 +41,8 @@ class PlaylistShowMain extends React.Component {
             <ol>
           {tracks.map(track => {
              return <Track
-              
+              id={track.title}
+              className={track.title}
               key={track.id}
               track={track}
               title={track.title}

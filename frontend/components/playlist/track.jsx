@@ -14,6 +14,8 @@ class Track extends React.Component {
     this.state = {
       nowPlaying: false,
     }
+
+    this.trackAudio = document.getElementsByClassName(this.props.track.title);
     this.playTrack = this.playTrack.bind(this);
     this.stopAllSongs = this.stopAllSongs.bind(this);
   }
@@ -50,6 +52,14 @@ class Track extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.trackAudio[0].addEventListener('loadedmetadata', (e) => {
+      console.log(e.target.duration);
+    })
+  }
+
+
+
   render() {
     let trackWrapper = "track-wrapper";
     let tracklistRow = "tracklist-row";
@@ -72,10 +82,10 @@ class Track extends React.Component {
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
     let play = <FontAwesomeIcon icon={faPlayCircle} size="1x" />;
 
-    let { track, title } = this.props;
+    let { track, title, id } = this.props;
 
     return (
-      <div className={trackWrapper}>
+      <div className={trackWrapper} id={id}>
         <div></div>
         <li className={tracklistRow}>
           <div className={tracklistColumnOuter}>
@@ -116,7 +126,7 @@ class Track extends React.Component {
             </div>
           </div>
           <div className={tracklistDuration}>
-            <span>4:44</span>
+            <span>duration</span>
           </div>
         </li>
       </div>
