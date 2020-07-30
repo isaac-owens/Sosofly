@@ -16,6 +16,7 @@ class Track extends React.Component {
     }
 
     this.trackAudio = document.getElementsByClassName(this.props.track.title);
+    this.duration = null;
     this.playTrack = this.playTrack.bind(this);
     this.stopAllSongs = this.stopAllSongs.bind(this);
   }
@@ -31,11 +32,11 @@ class Track extends React.Component {
   }
   
   playTrack() {
-    const { track, setState, playerState, saveNowPlaying } = this.props;
-    const trackAudio = document.getElementsByClassName(this.props.track.title);
+    const { id, track, setState, playerState, saveNowPlaying } = this.props;
+    const trackAudio = document.getElementById(id);
     if (!playerState.nowPlaying) { // No track is playing
       setState({ nowPlaying: trackAudio[0] });
-      trackAudio[0].play().then(this.setState({nowPlaying: true})); // Play this track
+      trackAudio.play().then(this.setState({nowPlaying: true})); // Play this track
       saveNowPlaying(track)
     } else if (playerState.nowPlaying === trackAudio[0]) { // Current track is playing or paused 
       if (trackAudio[0].paused) {
@@ -53,8 +54,10 @@ class Track extends React.Component {
   }
 
   componentDidMount() {
-    this.trackAudio[0].addEventListener('loadedmetadata', (e) => {
-      console.log(e.target.duration);
+    this.trackAudio[0].addEventListener('onloadedmetadata', (e) => {
+      const duration = e.target.duration;
+      this.duration = duration;
+      console.log(this.duration);
     })
   }
 
@@ -85,7 +88,7 @@ class Track extends React.Component {
     let { track, title, id } = this.props;
 
     return (
-      <div className={trackWrapper} id={id}>
+      <div className={trackWrapper}>
         <div></div>
         <li className={tracklistRow}>
           <div className={tracklistColumnOuter}>
@@ -97,6 +100,7 @@ class Track extends React.Component {
                 <audio
                   src={track.track_file}
                   className={track.title}
+                  id={track.title}
                 ></audio>
               </span>
             </div>
@@ -126,7 +130,7 @@ class Track extends React.Component {
             </div>
           </div>
           <div className={tracklistDuration}>
-            <span>duration</span>
+            <span>{this.duration}</span>
           </div>
         </li>
       </div>
