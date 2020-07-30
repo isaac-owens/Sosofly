@@ -14,6 +14,7 @@ class Track extends React.Component {
     this.state = {
       nowPlaying: false,
     }
+
     this.playTrack = this.playTrack.bind(this);
     this.stopAllSongs = this.stopAllSongs.bind(this);
   }
@@ -29,23 +30,23 @@ class Track extends React.Component {
   }
   
   playTrack() {
-    const { track, setState, playerState, saveNowPlaying } = this.props;
-    const trackAudio = document.getElementsByClassName(this.props.track.title);
+    const { id, track, setState, playerState, saveNowPlaying } = this.props;
+    const trackAudio = document.getElementById(id);
     if (!playerState.nowPlaying) { // No track is playing
-      setState({ nowPlaying: trackAudio[0] });
-      trackAudio[0].play().then(this.setState({nowPlaying: true})); // Play this track
+      setState({ nowPlaying: trackAudio });
+      trackAudio.play().then(this.setState({nowPlaying: true})); // Play this track
       saveNowPlaying(track)
-    } else if (playerState.nowPlaying === trackAudio[0]) { // Current track is playing or paused 
-      if (trackAudio[0].paused) {
-        trackAudio[0].play()
+    } else if (playerState.nowPlaying === trackAudio) { // Current track is playing or paused 
+      if (trackAudio.paused) {
+        trackAudio.play()
         this.setState({ nowPlaying: true })
       } else {
-        trackAudio[0].pause();
+        trackAudio.pause();
         this.setState({ nowPlaying: false })
       }
     } else { // Another track is playing so this it should stop and this one should start
-      this.stopAllSongs(trackAudio[0]);
-      trackAudio[0].play().then(this.setState({nowPlaying: true}));
+      this.stopAllSongs(trackAudio);
+      trackAudio.play().then(this.setState({nowPlaying: true}));
       saveNowPlaying(track)
     }
   }
@@ -72,7 +73,7 @@ class Track extends React.Component {
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
     let play = <FontAwesomeIcon icon={faPlayCircle} size="1x" />;
 
-    let { track, title } = this.props;
+    let { track, title, id } = this.props;
 
     return (
       <div className={trackWrapper}>
@@ -87,6 +88,7 @@ class Track extends React.Component {
                 <audio
                   src={track.track_file}
                   className={track.title}
+                  id={track.title}
                 ></audio>
               </span>
             </div>
@@ -116,7 +118,7 @@ class Track extends React.Component {
             </div>
           </div>
           <div className={tracklistDuration}>
-            <span>4:44</span>
+            <span>{this.duration}</span>
           </div>
         </li>
       </div>

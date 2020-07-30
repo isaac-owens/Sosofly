@@ -90,11 +90,23 @@ class PlayBar extends React.Component {
             <div className={webplayerPlaybarLeft}>
               <div className={currentlyPlaying}>
                 <div className={nowPlayingCover}>
-                  <Link to="#">cover art</Link>
+                  <div className="now-playing-cover-slot">
+                    <div className="cover-art-shadow">
+                      <div>
+                        {nowPlaying === {} ? 
+                        image :
+                        <img className="now-playing-cover-image" src={nowPlaying.album_art} alt="album art"/>
+                        }
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className={nowPlayingInfo}>
                   <div className={nowPlayingSongTitle}>
-                    <span>{nowPlaying.title}</span>
+                    {nowPlaying === {} ? 
+                    <span>Now Playing</span> :
+                    <span>{nowPlaying.title}</span> 
+                    }
                   </div>
                 </div>
                 <div className={nowPlayingLikeButtonWrapper}>

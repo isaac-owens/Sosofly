@@ -72,7 +72,7 @@ class PlaylistShow extends React.Component {
             </div>
             <div className={playlistShowHeaderBanner}>
               <h2 className={playlistShowHeaderSubBanner}>
-                {playlist.title}
+                Playlist
               </h2>
               <span className={playlistShowHeaderTitleBox}>
                 <h1 className={playlistShowHeaderTitle}>
