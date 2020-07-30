@@ -88,6 +88,16 @@
   text-transform: none;
 }
 
+.playlist-show-header-description {
+  color: hsla(0, 0%, 100%, .7);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+
 .playlist-top-color {
   background-color: rgb(33, 51, 139);
   height: 232px;

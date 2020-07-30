@@ -37,7 +37,15 @@ class ArtistShow extends React.Component {
     return (
       <section className="artist-showpage-top-container">
         <div className="artist-showpage-banner">
-          <div className="artist-showpage-banner-img"></div>
+          <div 
+              // style={{ backgroundImage: `${artist.image}` }}
+              // className="artist-showpage-banner-img"
+          >
+            <img
+            src={artist.image}
+            alt="artist image"
+            className="artist-showpage-banner-img"/>
+          </div>
           <div className="artist-img-gradient"></div>
           <div className="artist-banner-content">
             <span className="verified-badge">

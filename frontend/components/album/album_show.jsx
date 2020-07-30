@@ -5,24 +5,17 @@ import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
-import PlaylistShowMain from "../playlist/playlist_show_main";
+import AlbumShowMain from "../../components/album/album_show_main"
 
-class PlaylistShow extends React.Component {
+class AlbumShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: null,
-    }
 
     this.id = parseInt(this.props.match.params.id);
   }
-  
+
   componentDidMount() {
-    this.loadData();
-  }
-  
-  loadData() {
-    this.setState({data: this.props.fetchPlaylist(this.id)});
+    this.props.fetchAlbum(this.id);
   }
 
   render() {
@@ -49,9 +42,10 @@ class PlaylistShow extends React.Component {
     let fire = <FontAwesomeIcon icon={faFire} size="3x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
-    let { playlist, tracks, fetchPlaylistTracks, saveNowPlaying } = this.props;
+    let { album, tracks, fetchAlbumTracks } = this.props;
+
     if (
-      !playlist
+      !album
     ) {
       return <div></div>;
     } else {
@@ -64,22 +58,21 @@ class PlaylistShow extends React.Component {
             <div className={playlistShowHeaderImageBox}>
               <div className={playlistShowHeaderImage}>
                 <img
-                  src={playlist.image}
-                  alt="playlist image"
+                  src={album.image}
+                  alt="album image"
                   className={playlistShowHeaderImage}
                 />
               </div>
             </div>
             <div className={playlistShowHeaderBanner}>
               <h2 className={playlistShowHeaderSubBanner}>
-                {playlist.title}
+                Album
               </h2>
               <span className={playlistShowHeaderTitleBox}>
                 <h1 className={playlistShowHeaderTitle}>
-                  {playlist.title}
+                  {album.title}
                 </h1>
               </span>
-              <h2 className="playlist-show-header-description">{playlist.description}</h2>
             </div>
           </div>
           <div className={playlistTopColor}></div>
@@ -92,11 +85,11 @@ class PlaylistShow extends React.Component {
               </div>
             </div>
           </div>
-          <PlaylistShowMain
+          <AlbumShowMain
             id={this.id}
-            fetchPlaylistTracks={fetchPlaylistTracks}
+            fetchAlbumTracks={fetchAlbumTracks}
             tracks={tracks}
-            saveNowPlaying={saveNowPlaying}
+            // saveNowPlaying={saveNowPlaying}
           />
         </section>
       );
@@ -104,4 +97,4 @@ class PlaylistShow extends React.Component {
   }
 }
 
-export default PlaylistShow;
+export default AlbumShow;

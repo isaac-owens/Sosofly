@@ -7,6 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  artist_id  :integer
+#  album_id   :integer          not null
 #
 class Track < ApplicationRecord
   validates :title, :artist_id, presence: true
@@ -18,5 +19,6 @@ class Track < ApplicationRecord
   has_many :playlists, 
     through: :added_tracks
 
+  belongs_to :album
   belongs_to :artist
 end

@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import PlaylistShowContainer from "../playlist/playlist_show_container";
 import ArtistShowContainer from "../webplayer/artist_show_container";
+import AlbumShowContainer from "../../components/album/album_show_container";
 import Landing from "./landing"
 
 class Main extends React.Component {
@@ -29,6 +30,7 @@ class Main extends React.Component {
                   render={(props) => <Landing {...props} playlists={this.props.playlists} />} />
                   <Route exact path="/webplayer/playlist/:id" component={PlaylistShowContainer} />
                   <Route exact path="/webplayer/artist/:id" component={ArtistShowContainer} />
+                  <Route exact path="/webplayer/album/:id" component={AlbumShowContainer} />
                 </Switch>
               </div>
             </div>
