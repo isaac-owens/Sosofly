@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
 
   signInDemo() {
     this.props.processForm({username: "DemoUser", password: "hunter2"}).then(() => {
-      return this.props.history.push("/account/overview");
+      return this.props.history.push("/webplayer");
     })
   }
 
