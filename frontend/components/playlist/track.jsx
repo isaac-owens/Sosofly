@@ -118,7 +118,7 @@ class Track extends React.Component {
             </div>
           </div>
           <div className={tracklistDuration}>
-            <span>{this.duration}</span>
+            <span>{track.duration}</span>
           </div>
         </li>
       </div>
