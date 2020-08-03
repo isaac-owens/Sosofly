@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE >
 <html>
   <head>
     <title>Sosofly</title>
@@ -9,6 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Sosofly" />
+    <meta property="og:url" content="https://sosofly.herokuapp.com/" />
+    <meta property="og:image" content="./app/asssets/images/hero.png" />
+    <meta property="og:image:width" content="308" />
+    <meta property="og:image:height" content="217" />
+    <meta property="og:image:alt" content="A woman, eyes closed with headphones on, face tilted up toward the sun" />
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <% if logged_in? %>
       <script type="text/javascript">
