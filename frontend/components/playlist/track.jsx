@@ -13,10 +13,12 @@ class Track extends React.Component {
     super(props);
     this.state = {
       nowPlaying: false,
+      modalOpen: false,
     }
 
     this.playTrack = this.playTrack.bind(this);
     this.stopAllSongs = this.stopAllSongs.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   stopAllSongs(track) {
@@ -49,6 +51,10 @@ class Track extends React.Component {
       trackAudio.play().then(this.setState({nowPlaying: true}));
       saveNowPlaying(track)
     }
+  }
+
+  toggleMenu() {
+    this.setState({ modalOpen: !this.state.modalOpen });
   }
 
   render() {
@@ -114,7 +120,10 @@ class Track extends React.Component {
           </div>
           <div className={tracklistMore}>
             <div className={tracklistTopAlign}>
-              <button className={moreEllipsis}>{moreButton}</button>
+              <button 
+              className={moreEllipsis}
+              onClick={this.toggleMenu}
+              >{moreButton}</button>
             </div>
           </div>
           <div className={tracklistDuration}>
