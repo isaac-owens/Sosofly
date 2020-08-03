@@ -147,6 +147,21 @@
   color: white;
 }
 
+.track-dropdown-menu {
+  position: fixed;
+  opacity: 1;
+  pointer-events: auto;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  background-color: #282828;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  z-index: 1003;
+}
+
+
 .tracklist-duration {
   text-align: right;
   padding-right: 1em;

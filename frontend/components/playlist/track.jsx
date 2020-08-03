@@ -123,7 +123,12 @@ class Track extends React.Component {
               <button 
               className={moreEllipsis}
               onClick={this.toggleMenu}
-              >{moreButton}</button>
+              >{moreButton}
+              </button>
+              <nav className="track-dropdown-menu">
+                <div className="track-dropdown-menu-item">Add to Playlist</div>
+                <div className="track-dropdown-menu-item">Remove from this Playlist</div>
+              </nav>
             </div>
           </div>
           <div className={tracklistDuration}>
