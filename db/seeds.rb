@@ -128,32 +128,32 @@ AddedTrack.create!(playlist_id: hip_hop.id, track_id: groovy_hiphop.id)
 
 # POP TRACKS
 
-better_days = Track.create(title: "Better Days", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id, duration: "", duration: "")
+better_days = Track.create(title: "Better Days", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id, duration: "2:33")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-betterdays.mp3')
 groovy_hiphop.track_file.attach(io: file, filename: 'bensound-betterdays.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: better_days.id)
 
-energy = Track.create(title: "Energy", artist_id: beyonce_knowles.id, album_id: lemonade.id, duration: "")
+energy = Track.create(title: "Energy", artist_id: beyonce_knowles.id, album_id: lemonade.id, duration: "2:59")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-energy.mp3')
 energy.track_file.attach(io: file, filename: 'bensound-energy.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: energy.id)
 
-epic = Track.create(title: "Epic", artist_id: beyonce_knowles.id, album_id: lemonade.id, duration: "")
+epic = Track.create(title: "Epic", artist_id: beyonce_knowles.id, album_id: lemonade.id, duration: "2:58")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-epic.mp3')
 epic.track_file.attach(io: file, filename: 'bensound-epic.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: epic.id)
 
-tenderness = Track.create(title: "Tenderness", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id, duration: "")
+tenderness = Track.create(title: "Tenderness", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id, duration: "2:03")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-tenderness.mp3')
 tenderness.track_file.attach(io: file, filename: 'bensound-tenderness.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: tenderness.id)
 
-tomorrow = Track.create(title: "Tomorrow", artist_id: beyonce_knowles.id, album_id: lemonade.id, duration: "")
+tomorrow = Track.create(title: "Tomorrow", artist_id: beyonce_knowles.id, album_id: lemonade.id, duration: "4:54")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-tomorrow.mp3')
 tomorrow.track_file.attach(io: file, filename: 'bensound-tomorrow.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: tomorrow.id)
 
-sunny = Track.create(title: "Sunny", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id, duration: "")
+sunny = Track.create(title: "Sunny", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id, duration: "2:20")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-sunny.mp3')
 sunny.track_file.attach(io: file, filename: 'bensound-sunny.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: sunny.id)
