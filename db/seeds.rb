@@ -160,27 +160,27 @@ AddedTrack.create!(playlist_id: pop.id, track_id: sunny.id)
 
 # JAZZ TRACKS
 
-hip_jazz = Track.create(title: "Hip Jazz", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id)
+hip_jazz = Track.create(title: "Hip Jazz", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id, duration: "2:43")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-hipjazz.mp3')
 hip_jazz.track_file.attach(io: file, filename: 'bensound-hipjazz.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: hip_jazz.id)
 
-moose = Track.create(title: "Moose", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id)
+moose = Track.create(title: "Moose", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id, duration: "2:40")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-moose.mp3')
 moose.track_file.attach(io: file, filename: 'bensound-moose.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: moose.id)
 
-retrosoul = Track.create(title: "Retro Soul", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id)
+retrosoul = Track.create(title: "Retro Soul", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id, duration: "3:36")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-retrosoul.mp3')
 retrosoul.track_file.attach(io: file, filename: 'bensound-retrosoul.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: retrosoul.id)
 
-sexy = Track.create(title: "Sexy", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id)
+sexy = Track.create(title: "Sexy", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id, duration: "2:53")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-sexy.mp3')
 sexy.track_file.attach(io: file, filename: 'bensound-sexy.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: sexy.id)
 
-summer = Track.create(title: "Summer", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id)
+summer = Track.create(title: "Summer", artist_id: alice_coltrane.id, album_id: journey_into_satchinananda.id, duration: "3:37")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-summer.mp3')
 summer.track_file.attach(io: file, filename: 'bensound-summer.mp3')
 AddedTrack.create!(playlist_id: jazz.id, track_id: summer.id)
