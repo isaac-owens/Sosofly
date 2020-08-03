@@ -125,10 +125,13 @@ class Track extends React.Component {
               onClick={this.toggleMenu}
               >{moreButton}
               </button>
+              {this.state.modalOpen ? 
               <nav className="track-dropdown-menu">
                 <div className="track-dropdown-menu-item">Add to Playlist</div>
                 <div className="track-dropdown-menu-item">Remove from this Playlist</div>
-              </nav>
+              </nav> :
+              <div></div>
+            }
             </div>
           </div>
           <div className={tracklistDuration}>

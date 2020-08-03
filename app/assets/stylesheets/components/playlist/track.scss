@@ -161,6 +161,20 @@
   z-index: 1003;
 }
 
+.track-dropdown-menu-item {
+  width: 100%;
+  padding: 3px 20px;
+  clear: both;
+  line-height: 32px;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+  cursor: default;
+  font-size: 14px;
+  letter-spacing: .015em;
+  color: #b3b3b3;
+  text-transform: none;
+}
 
 .tracklist-duration {
   text-align: right;
