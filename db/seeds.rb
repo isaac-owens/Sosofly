@@ -187,17 +187,17 @@ AddedTrack.create!(playlist_id: jazz.id, track_id: summer.id)
 
 # ELECTRONIC TRACKS
 
-dubstep = Track.create(title: "Dub Step", artist_id: matmos.id, album_id: the_civil_war.id, duration: "")
+dubstep = Track.create(title: "Dub Step", artist_id: matmos.id, album_id: the_civil_war.id, duration: "2:04")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-dubstep.mp3')
 dubstep.track_file.attach(io: file, filename: 'bensound-dubstep.mp3')
 AddedTrack.create!(playlist_id: electronic.id, track_id: dubstep.id)
 
-scifi = Track.create(title: "Sci-Fi", artist_id: matmos.id, album_id: the_civil_war.id, duration: "")
+scifi = Track.create(title: "Sci-Fi", artist_id: matmos.id, album_id: the_civil_war.id, duration: "4:44")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-scifi.mp3')
 scifi.track_file.attach(io: file, filename: 'bensound-scifi.mp3')
 AddedTrack.create!(playlist_id: electronic.id, track_id: scifi.id)
 
-slow_motion = Track.create(title: "Slow Motion", artist_id: matmos.id, album_id: the_civil_war.id, duration: "")
+slow_motion = Track.create(title: "Slow Motion", artist_id: matmos.id, album_id: the_civil_war.id, duration: "3:26")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-slowmotion.mp3')
 slow_motion.track_file.attach(io: file, filename: 'bensound-slowmotion.mp3')
 AddedTrack.create!(playlist_id: electronic.id, track_id: slow_motion.id)
