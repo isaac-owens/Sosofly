@@ -133,6 +133,7 @@
 }
 
 .more-ellipsis {
+  position: relative;
   transition: all 33ms cubic-bezier(.3, 0, 0 1);
   will-change: transform;
   padding: 8px 34px;
@@ -148,20 +149,24 @@
 }
 
 .track-dropdown-menu {
-  position: fixed;
+  position: absolute;
+  top: 35;
+  right: 0;
   opacity: 1;
   pointer-events: auto;
-  min-width: 160px;
+  min-width: 180px;
   padding: 5px 0;
   margin: 2px 0 0;
   background-color: #282828;
   background-clip: padding-box;
   border: 1px solid rgba(0,0,0,.15);
   border-radius: .25rem;
-  z-index: 2003;
+  z-index: 10;
 }
 
 .track-dropdown-menu-item {
+  display: flex;
+  justify-content: center;
   width: 100%;
   padding: 3px 20px;
   clear: both;

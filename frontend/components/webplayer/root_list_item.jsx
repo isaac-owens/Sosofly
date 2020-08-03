@@ -63,34 +63,27 @@ class RootListItem extends React.Component {
     let playlistDropdown = "playlist-dropdown";
     let playlistOption = "playlist-option";
     
-    let { playlist, deletePlaylistForm } = this.props;
-    
-  //   const myStyle = {
-  //     'top': `${this.state.y}px`,
-  //     'left': `${this.state.x+5}px`,
-  // }
+    let { playlist } = this.props;
 
-  const myStyle = {
-    top:`${this.state.y - 400}px`,
-    left:`${this.state.x - 100}px`,
-    tabIndex: "-1",
-    position: "fixed",
-    opacity: "1",
-    pointerEvents: "auto",
-    // Need to find a way to place dynamically
-    // left: 110px;
-    // top: 375px;
-    minWidth: "208px",
-    padding: "5px 0",
-    margin: "2px 0 0",
-    backgroundColor: "#282828",
-    backgroundClip: "padding-box",
-    border: "1px solid rgba(0, 0, 0, .15)",
-    borderRadius: ".25rem",
-    zIndex: "3000",
-    height: "86px",
-    listStyle: "none",
-  }
+    const myStyle = {
+      top:`${this.state.y - 400}px`,
+      left:`${this.state.x - 100}px`,
+      tabIndex: "-1",
+      position: "fixed",
+      opacity: "1",
+      pointerEvents: "auto",
+      minWidth: "208px",
+      padding: "5px 0",
+      margin: "2px 0 0",
+      backgroundColor: "#282828",
+      backgroundClip: "padding-box",
+      border: "1px solid rgba(0, 0, 0, .15)",
+      borderRadius: ".25rem",
+      zIndex: "3000",
+      height: "86px",
+      listStyle: "none",
+    }
+
     return (
       <div
         // right click event listenter

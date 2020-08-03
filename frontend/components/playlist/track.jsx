@@ -14,6 +14,8 @@ class Track extends React.Component {
     this.state = {
       nowPlaying: false,
       modalOpen: false,
+      x: 0,
+      y: 0,
     }
 
     this.playTrack = this.playTrack.bind(this);
@@ -53,8 +55,11 @@ class Track extends React.Component {
     }
   }
 
-  toggleMenu() {
-    this.setState({ modalOpen: !this.state.modalOpen });
+  toggleMenu(e) {
+    e.preventDefault();
+    const clickX = e.clientX;
+    const clickY = e.clientY;
+    this.setState({ modalOpen: !this.state.modalOpen, x: clickX, y: clickY });
   }
 
   render() {
