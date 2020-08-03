@@ -11,6 +11,7 @@ import { fetchAlbum } from '../../actions/album_actions';
 class Track extends React.Component {
   constructor(props) {
     super(props);
+    this.container = React.createRef();
     this.state = {
       nowPlaying: false,
       modalOpen: false,
@@ -20,6 +21,7 @@ class Track extends React.Component {
 
     this.playTrack = this.playTrack.bind(this);
     this.stopAllSongs = this.stopAllSongs.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
@@ -60,6 +62,21 @@ class Track extends React.Component {
     const clickX = e.clientX;
     const clickY = e.clientY;
     this.setState({ modalOpen: !this.state.modalOpen, x: clickX, y: clickY });
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside());
+  }
+
+  handleClickOutside() {
+    return (e) => {
+      if (
+        this.container.current &&
+        !this.container.current.contains(e.target)
+      ) {
+        this.setState({ modalOpen: false, x: 0, y: 0 });
+      }
+    };
   }
 
   render() {
@@ -127,6 +144,7 @@ class Track extends React.Component {
             <div className={tracklistTopAlign}>
               <button 
               className={moreEllipsis}
+              ref={this.container}
               onClick={this.toggleMenu}
               >{moreButton}
               </button>
