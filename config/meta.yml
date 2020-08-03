@@ -1,0 +1,4 @@
+meta_product_name: "Sosofly"
+meta_title: "Sosofly"
+meta_description: "A React/Redux, Ruby on Rails, Javascript pixel perfect clone of Spotify"
+meta_image: "hero.png" # should exist in `app/assets/images/`
