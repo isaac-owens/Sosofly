@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
     current_user.try(:reset_session_token!)
     session[:session_token] = nil
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
