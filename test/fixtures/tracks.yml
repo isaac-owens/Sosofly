@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  artist_id  :integer
 #  album_id   :integer          not null
+#  duration   :string
 #
 
 # This model initially had no columns defined. If you add columns to the

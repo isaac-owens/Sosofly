@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  artist_id  :integer
 #  album_id   :integer          not null
+#  duration   :string
 #
 class Track < ApplicationRecord
   validates :title, :artist_id, presence: true

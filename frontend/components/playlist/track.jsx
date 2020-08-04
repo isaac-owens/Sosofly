@@ -11,12 +11,18 @@ import { fetchAlbum } from '../../actions/album_actions';
 class Track extends React.Component {
   constructor(props) {
     super(props);
+    this.container = React.createRef();
     this.state = {
       nowPlaying: false,
+      modalOpen: false,
+      x: 0,
+      y: 0,
     }
 
     this.playTrack = this.playTrack.bind(this);
     this.stopAllSongs = this.stopAllSongs.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   stopAllSongs(track) {
@@ -49,6 +55,28 @@ class Track extends React.Component {
       trackAudio.play().then(this.setState({nowPlaying: true}));
       saveNowPlaying(track)
     }
+  }
+
+  toggleMenu(e) {
+    e.preventDefault();
+    const clickX = e.clientX;
+    const clickY = e.clientY;
+    this.setState({ modalOpen: !this.state.modalOpen, x: clickX, y: clickY });
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside());
+  }
+
+  handleClickOutside() {
+    return (e) => {
+      if (
+        this.container.current &&
+        !this.container.current.contains(e.target)
+      ) {
+        this.setState({ modalOpen: false, x: 0, y: 0 });
+      }
+    };
   }
 
   render() {
@@ -114,11 +142,23 @@ class Track extends React.Component {
           </div>
           <div className={tracklistMore}>
             <div className={tracklistTopAlign}>
-              <button className={moreEllipsis}>{moreButton}</button>
+              <button 
+              className={moreEllipsis}
+              ref={this.container}
+              onClick={this.toggleMenu}
+              >{moreButton}
+              </button>
+              {this.state.modalOpen ? 
+              <nav className="track-dropdown-menu">
+                <div className="track-dropdown-menu-item">Add to Playlist</div>
+                <div className="track-dropdown-menu-item">Remove from this Playlist</div>
+              </nav> :
+              <div></div>
+            }
             </div>
           </div>
           <div className={tracklistDuration}>
-            <span>{this.duration}</span>
+            <span>{track.duration}</span>
           </div>
         </li>
       </div>

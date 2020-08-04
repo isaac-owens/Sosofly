@@ -133,6 +133,7 @@
 }
 
 .more-ellipsis {
+  position: relative;
   transition: all 33ms cubic-bezier(.3, 0, 0 1);
   will-change: transform;
   padding: 8px 34px;
@@ -145,6 +146,46 @@
   transform: scale(1.06);
   background-color: transparent;
   color: white;
+}
+
+.track-dropdown-menu {
+  position: absolute;
+  top: 35;
+  right: 0;
+  opacity: 1;
+  pointer-events: auto;
+  min-width: 180px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  background-color: #282828;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  z-index: 200;
+}
+
+.track-dropdown-menu-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 3px 20px;
+  clear: both;
+  line-height: 32px;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+  cursor: default;
+  font-size: 14px;
+  letter-spacing: .015em;
+  color: #b3b3b3;
+  text-transform: none;
+}
+
+.track-dropdown-menu-item:hover {
+  color: white;
+  background-color: #333;
+  border-color: #333;
+  text-decoration: none;
 }
 
 .tracklist-duration {
