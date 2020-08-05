@@ -85,7 +85,7 @@ class ArtistShow extends React.Component {
             </div>
           </div>
         </div>
-        <ArtistShowMain /> 
+        <ArtistShowMain artist={artist} /> 
       </section>
     )
     }

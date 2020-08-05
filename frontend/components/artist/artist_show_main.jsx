@@ -18,6 +18,8 @@ class ArtistShowMain extends React.Component {
                   <li>Track One</li>
                   <li>Track Two</li>
                   <li>Track Three</li>
+                  <li>Track Four</li>
+                  <li>Track Five</li>
                 </ol>
               </section>
             </section>
