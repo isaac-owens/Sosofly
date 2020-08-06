@@ -35,7 +35,9 @@ alice_coltrane= Artist.create(name: "Alice Coltrane", biography: "Alice Coltrane
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/alice_coltrane.jpg')
 alice_coltrane.image.attach(io: file, filename: 'alice_coltrane.jpg')
 
-flying_lotus = Artist.create(name: "Flying Lotus", biography: "")
+flying_lotus = Artist.create(name: "Flying Lotus", biography: "Steven Ellison (born October 7, 1983), known by his stage name Flying Lotus or sometimes FlyLo, is an American record producer, musician, DJ, filmmaker, and rapper from Los Angeles, California. He is also the founder of the record label Brainfeeder.
+
+Flying Lotus has released six studio albums‍—‌1983 (2006), Los Angeles (2008), Cosmogramma (2010), Until the Quiet Comes (2012), You're Dead! (2014), and Flamagra (2019)‍—‌to critical acclaim.[5][6] He has produced much of the bumper music on Cartoon Network's Adult Swim programming block. He also contributed remixes for fellow Plug Research artists including Mia Doi Todd.")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/flying_lotus.jpg')
 flying_lotus.image.attach(io: file, filename: 'flying_lotus.jpg')
 
