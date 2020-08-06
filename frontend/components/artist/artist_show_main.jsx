@@ -7,7 +7,7 @@ class ArtistShowMain extends React.Component {
 
 
   render() {
-    const { albums } = this.props;
+    const { artist, albums } = this.props;
     return (
       <div>
         <section className="artist-music">
@@ -35,19 +35,21 @@ class ArtistShowMain extends React.Component {
             <h1 className="artist-section-header">Albums</h1>
             <div className="artist-albums-container-fluid">
               <div className="album-row">
-                {/* {albums.map(album => {
+                {artist.albumIds.map(albumId => {
                   return (
                     <div className="album">
                       <div className="album-object">
                         <div className="album-object-hoverable">
                           <div className="album-info">
-                            {album.title}
+                            {albumId}
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> 
                   )
-                })} */}
+                })}
+
+
                 {/* <div className="album">
                   <div className="album-object">
                     <div className="album-object-hoverable">

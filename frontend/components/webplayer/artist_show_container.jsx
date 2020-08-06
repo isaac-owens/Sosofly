@@ -4,12 +4,9 @@ import { fetchArtist } from '../../actions/artist_actions';
 import { fetchAlbums } from '../../actions/album_actions';
 
 const mSTP = state => {
-  const artist = Object.values(state.entities.artist)[0]
   return {
-    artist: artist,
-    // albums: artist[albumIds].map(albumId => {
-    //   return state.entities.album[albumId]
-    // }),
+    artist: Object.values(state.entities.artist)[0],
+    albums: state.entities.album,
   }
 }
 
