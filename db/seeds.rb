@@ -15,7 +15,7 @@ Track.delete_all
 
 # ARTISTS
 
-kendrick_lamar = Artist.create(name: "Kendrick Lamar", biography: "")
+kendrick_lamar = Artist.create(name: "Kendrick Lamar", biography: "Kendrick Lamar Duckworth (born June 17, 1987) is an American rapper, songwriter, and record producer. Since his debut into the mainstream with Good Kid, M.A.A.D City (2012), Lamar has been regarded as one of the most influential artists of his generation, and one of the greatest rappers of all time. Aside from his solo career, he is also known as a member of the hip hop supergroup Black Hippy alongside his Top Dawg Entertainment (TDE) label-mates Ab-Soul, Jay Rock, and Schoolboy Q.")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/kendrick_lamar.jpg')
 kendrick_lamar.image.attach(io: file, filename: 'kendrick_lamar.jpg')
 
