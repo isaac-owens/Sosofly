@@ -3,8 +3,8 @@
     json.id album.id
     json.title album.title
     json.year album.year
-    if album.image.attached?
-      album.image url_for(album.image)
-    end
+    # if album.image.attached?
+    #   album.image url_for(album.image)
+    # end
   end
 end

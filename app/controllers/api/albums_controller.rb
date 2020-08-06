@@ -1,6 +1,6 @@
 class Api::AlbumsController < ApplicationController
   def index
-    @albums = Album.AlbumsController
+    @albums = Album.all
 
     render :index
   end

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ArtistShow from '../../components/webplayer/artist_show';
 import { fetchArtist } from '../../actions/artist_actions';
+import { fetchAlbums } from '../../actions/album_actions';
 
 const mSTP = state => {
   return {
@@ -11,6 +12,7 @@ const mSTP = state => {
 const mDTP = dispatch => {
   return {
     fetchArtist: artistId => dispatch(fetchArtist(artistId)),
+    fetchAlbums: () => dispatch(fetchAlbums()),
   }
 }
 

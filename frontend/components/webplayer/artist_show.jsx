@@ -19,6 +19,7 @@ class ArtistShow extends React.Component {
 
     componentDidMount() {
       this.loadData();
+      this.props.fetchAlbums();
     }
 
     loadData() {
