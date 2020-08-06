@@ -20,6 +20,11 @@ export const receiveAlbum = (album) => {
 
 // thunk actions
 
+export const fetchAlbums = () => dispatch => {
+  return APIUtils.fetchAlbums()
+    .then(albums => dispatch(receiveAlbums(albums)));
+}
+
 export const fetchAlbum = (albumId) => dispatch => {
   return APIUtils.fetchAlbum(albumId)
     .then(album => dispatch(receiveAlbum(album)));
