@@ -19,7 +19,7 @@ kendrick_lamar = Artist.create(name: "Kendrick Lamar", biography: "Kendrick Lama
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/kendrick_lamar.jpg')
 kendrick_lamar.image.attach(io: file, filename: 'kendrick_lamar.jpg')
 
-beyonce_knowles = Artist.create(name: "Beyonce Knowles", biography: "Beyoncé Giselle Knowles-Carter (/biːˈjɒnseɪ/ bee-YON-say; née Knowles; born September 4, 1981)[5] is an American singer, songwriter, record producer, dancer, actress and filmmaker. Born and raised in Houston, Texas, Beyoncé performed in various singing and dancing competitions as a child. She rose to fame in the late 1990s as the lead singer of Destiny's Child, one of the best-selling girl groups of all time.")
+beyonce_knowles = Artist.create(name: "Beyonce Knowles", biography: "Beyoncé Giselle Knowles-Carter (/biːˈjɒnseɪ/ bee-YON-say; née Knowles; born September 4, 1981) is an American singer, songwriter, record producer, dancer, actress and filmmaker. Born and raised in Houston, Texas, Beyoncé performed in various singing and dancing competitions as a child. She rose to fame in the late 1990s as the lead singer of Destiny's Child, one of the best-selling girl groups of all time.")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/beyonce.jpg')
 beyonce_knowles.image.attach(io: file, filename: 'beyonce.jpg')
 
@@ -27,11 +27,11 @@ solange_knowles = Artist.create(name: "Solange Knowles", biography: "")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/solange.jpg')
 solange_knowles.image.attach(io: file, filename: 'solange.jpg')
 
-matmos = Artist.create(name: "Matmos", biography: "Solange Piaget Knowles (/soʊˈlɑːnʒ/; born June 24, 1986),[2][3] is an American singer, songwriter, record producer, performance artist,[4] and actress. Expressing an interest in music from an early age, Knowles had several temporary stints as a backup dancer for Destiny's Child, which featured her elder sister, Beyoncé Knowles, among its members, before signing with her father Mathew Knowles's Music World Entertainment label. At age 16, Knowles released her first studio album Solo Star (2002). Between 2005 and 2007, Knowles had several minor acting roles, including the direct-to-video Bring It On: All or Nothing (2006) and continued writing music for Beyoncé and for former Destiny's Child group members Kelly Rowland and Michelle Williams.")
+matmos = Artist.create(name: "Matmos", biography: "Solange Piaget Knowles (/soʊˈlɑːnʒ/; born June 24, 1986) is an American singer, songwriter, record producer, performance artist, and actress. Expressing an interest in music from an early age, Knowles had several temporary stints as a backup dancer for Destiny's Child, which featured her elder sister, Beyoncé Knowles, among its members, before signing with her father Mathew Knowles's Music World Entertainment label. At age 16, Knowles released her first studio album Solo Star (2002). Between 2005 and 2007, Knowles had several minor acting roles, including the direct-to-video Bring It On: All or Nothing (2006) and continued writing music for Beyoncé and for former Destiny's Child group members Kelly Rowland and Michelle Williams.")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/matmos.jpg')
 matmos.image.attach(io: file, filename: 'matmos.jpg')
 
-alice_coltrane= Artist.create(name: "Alice Coltrane", biography: "")
+alice_coltrane= Artist.create(name: "Alice Coltrane", biography: "Alice Coltrane (née McLeod, August 27, 1937 – January 12, 2007), also known by her adopted Sanskrit name Turiyasangitananda or Turiya Alice Coltrane, was an American jazz musician and composer, and in her later years a swamini. One of the few harpists in the history of jazz, she recorded many albums as a bandleader, beginning in the late 1960s and early 1970s for Impulse! and other major record labels. She was married to jazz saxophonist and composer John Coltrane, with whom she performed in 1966-67.")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/alice_coltrane.jpg')
 alice_coltrane.image.attach(io: file, filename: 'alice_coltrane.jpg')
 
