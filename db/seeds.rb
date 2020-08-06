@@ -10,6 +10,7 @@
 User.delete_all
 Playlist.delete_all
 Artist.delete_all
+Album.delete_all
 Track.delete_all
 
 # ARTISTS
