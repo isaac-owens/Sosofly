@@ -19,7 +19,7 @@ kendrick_lamar = Artist.create(name: "Kendrick Lamar", biography: "Kendrick Lama
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/kendrick_lamar.jpg')
 kendrick_lamar.image.attach(io: file, filename: 'kendrick_lamar.jpg')
 
-beyonce_knowles = Artist.create(name: "Beyonce Knowles", biography: "")
+beyonce_knowles = Artist.create(name: "Beyonce Knowles", biography: "Beyoncé Giselle Knowles-Carter (/biːˈjɒnseɪ/ bee-YON-say; née Knowles; born September 4, 1981)[5] is an American singer, songwriter, record producer, dancer, actress and filmmaker. Born and raised in Houston, Texas, Beyoncé performed in various singing and dancing competitions as a child. She rose to fame in the late 1990s as the lead singer of Destiny's Child, one of the best-selling girl groups of all time.")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/beyonce.jpg')
 beyonce_knowles.image.attach(io: file, filename: 'beyonce.jpg')
 
