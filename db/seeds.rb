@@ -27,7 +27,7 @@ solange_knowles = Artist.create(name: "Solange Knowles", biography: "")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/solange.jpg')
 solange_knowles.image.attach(io: file, filename: 'solange.jpg')
 
-matmos = Artist.create(name: "Matmos", biography: "")
+matmos = Artist.create(name: "Matmos", biography: "Solange Piaget Knowles (/soʊˈlɑːnʒ/; born June 24, 1986),[2][3] is an American singer, songwriter, record producer, performance artist,[4] and actress. Expressing an interest in music from an early age, Knowles had several temporary stints as a backup dancer for Destiny's Child, which featured her elder sister, Beyoncé Knowles, among its members, before signing with her father Mathew Knowles's Music World Entertainment label. At age 16, Knowles released her first studio album Solo Star (2002). Between 2005 and 2007, Knowles had several minor acting roles, including the direct-to-video Bring It On: All or Nothing (2006) and continued writing music for Beyoncé and for former Destiny's Child group members Kelly Rowland and Michelle Williams.")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/matmos.jpg')
 matmos.image.attach(io: file, filename: 'matmos.jpg')
 
