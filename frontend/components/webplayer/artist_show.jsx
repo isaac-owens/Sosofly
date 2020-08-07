@@ -27,7 +27,7 @@ class ArtistShow extends React.Component {
     }
 
   render() {
-    let { artist } = this.props;
+    let { artist, albums } = this.props;
     let playCircle = <FontAwesomeIcon icon={faPlayCircle} size="5x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
     let verified = <FontAwesomeIcon icon={faCertificate} size="2x" />;
@@ -86,7 +86,7 @@ class ArtistShow extends React.Component {
             </div>
           </div>
         </div>
-        <ArtistShowMain artist={artist} /> 
+        <ArtistShowMain artist={artist} albums={albums} /> 
       </section>
     )
     }

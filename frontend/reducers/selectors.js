@@ -4,11 +4,10 @@ export const getArtist = state => {
 }
 
 export const getArtistAlbums = state => {
-  const { albumIds } = getArtist(state)
+  const artist = getArtist(state);
+  if (typeof artist === "undefined") return [];
 
-  debugger
-  return albumIds.map(albumId => {
-    debugger
+  return artist.albumIds.map(albumId => {
     return state.entities.album[albumId]
   })
 }
