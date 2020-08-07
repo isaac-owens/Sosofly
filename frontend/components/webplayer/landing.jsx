@@ -1,6 +1,6 @@
 import React from 'react';
 import PlaylistItem from "../playlist/playlist_item";
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchPlaylist } from "../../actions/playlist_actions"
 import { fetchPlaylistTracks } from "../../actions/track_actions"
@@ -75,4 +75,4 @@ const mDTP = dispatch => {
   }
 }
 
-export default connect(null, mDTP)(Landing);
+export default withRouter(connect(null, mDTP)(Landing));
