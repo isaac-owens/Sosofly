@@ -43,7 +43,9 @@ class ArtistShowMain extends React.Component {
                       <div className="album-object-hoverable">
                         <div className="album-info">
                           {albums.map(album => {
-                            typeof album === 'undefined' ? "" : album.title
+                            return typeof album === 'undefined' ? 
+                            "nothing to see here" : 
+                            <img src={album.image}></img>
                           })}
                         </div>
                       </div>
