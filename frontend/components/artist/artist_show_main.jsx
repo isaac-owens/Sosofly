@@ -7,7 +7,9 @@ class ArtistShowMain extends React.Component {
 
 
   render() {
+
     const { artist, albums } = this.props;
+
     console.log(albums);
     return (
       <div>
@@ -40,7 +42,9 @@ class ArtistShowMain extends React.Component {
                     <div className="album-object">
                       <div className="album-object-hoverable">
                         <div className="album-info">
-                          {/* {albums && Boolean(albums.length) ? albums[0].title : ""} */}
+                          {albums.map(album => {
+                            typeof album === 'undefined' ? "" : album.title
+                          })}
                         </div>
                       </div>
                     </div>
