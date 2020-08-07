@@ -8,6 +8,7 @@ class ArtistShowMain extends React.Component {
 
   render() {
     const { artist, albums } = this.props;
+    console.log(albums);
     return (
       <div>
         <section className="artist-music">
@@ -35,45 +36,15 @@ class ArtistShowMain extends React.Component {
             <h1 className="artist-section-header">Albums</h1>
             <div className="artist-albums-container-fluid">
               <div className="album-row">
-                {artist.albumIds.map(albumId => {
-                  return (
-                    <div className="album">
-                      <div className="album-object">
-                        <div className="album-object-hoverable">
-                          <div className="album-info">
-                            {albumId}
-                          </div>
+                  <div className="album">
+                    <div className="album-object">
+                      <div className="album-object-hoverable">
+                        <div className="album-info">
+                          {/* {albums[0].title} */}
                         </div>
                       </div>
-                    </div> 
-                  )
-                })}
-
-
-                {/* <div className="album">
-                  <div className="album-object">
-                    <div className="album-object-hoverable">
-                      <div className="album-info">
-                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className="album">
-                  <div className="album-object">
-                    <div className="album-object-hoverable">
-                      <div className="album-info">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="album">
-                  <div className="album-object">
-                    <div className="album-object-hoverable">
-                      <div className="album-info">
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
+                  </div> 
               </div>
             </div>
           </div>
