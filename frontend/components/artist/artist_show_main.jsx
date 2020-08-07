@@ -13,7 +13,7 @@ class ArtistShowMain extends React.Component {
     console.log(albums);
     return (
       <div>
-        <section className="artist-music">
+        {/* <section className="artist-music">
           <div className="artist-main-section">
             <section className="artist-toptracks">
               <h1 className="artist-section-header">Popular</h1>
@@ -28,7 +28,7 @@ class ArtistShowMain extends React.Component {
               </section>
             </section>
           </div>
-        </section>
+        </section> */}
         <section className="artist-albums">
           <div className="artist-main-section">
           </div>
@@ -45,7 +45,7 @@ class ArtistShowMain extends React.Component {
                           {albums.map(album => {
                             return typeof album === 'undefined' ? 
                             "nothing to see here" : 
-                            <img src={album.image}></img>
+                            <img src={album.image} key={album.id}></img>
                           })}
                         </div>
                       </div>
@@ -55,7 +55,7 @@ class ArtistShowMain extends React.Component {
             </div>
           </div>
         </section>
-        <section className="artist-appears-on artist-albums">
+        {/* <section className="artist-appears-on artist-albums">
           <div className="artist-main-section">
             <h1 className="artist-section-header">Singles and EPs</h1>
             <div className="artist-albums-container-fluid">
@@ -68,26 +68,10 @@ class ArtistShowMain extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="album">
-                  <div className="album-object">
-                    <div className="album-object-hoverable">
-                      <div className="album-info">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="album">
-                  <div className="album-object">
-                    <div className="album-object-hoverable">
-                      <div className="album-info">
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     )
   }
