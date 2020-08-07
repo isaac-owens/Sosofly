@@ -2,13 +2,12 @@ import { connect } from 'react-redux';
 import ArtistShow from '../../components/webplayer/artist_show';
 import { fetchArtist } from '../../actions/artist_actions';
 import { fetchAlbums } from '../../actions/album_actions';
+import { getArtist, getArtistAlbums } from  '../../reducers/selectors';
 
 const mSTP = state => {
   return {
-    artist: Object.values(state.entities.artist)[0],
-    // albums: Object.values(state.entities.artist)[0].albumIds.map(albumId => {
-    //   return state.entities.album[albumId]
-    // })
+    artist: getArtist(state),
+    albums: getArtistAlbums(state),
   }
 }
 
