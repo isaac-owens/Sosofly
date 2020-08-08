@@ -8,12 +8,13 @@ import {
 import { connect } from "react-redux";
 import PlaylistForm from "../playlist/playlist_form";
 import PlaylistDelete from "../playlist/playlist_delete";
-import PlaylistAdd from "../playlist/playlist_add";
+import PlaylistAddTrack from "../playlist/playlist_add_track";
 
 function Modal({ 
   closeModal, 
   deletePlaylist,
-  createPlaylist, 
+  createPlaylist,
+  addTrackToPlaylist, 
   modal, 
   userId,
   playlistId}) {
@@ -38,10 +39,11 @@ function Modal({
        />
     default:
       break;
-    case "addPlaylist":
-      modal = <PlaylistAdd 
+    case "addPlaylistTrack":
+      modal = <PlaylistAddTrack 
         closeModal={closeModal}
         userId={userId}
+        addTrackToPlaylist={addTrackToPlaylist}
       />
   }
 

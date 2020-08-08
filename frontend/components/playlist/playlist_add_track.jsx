@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PlaylistAdd extends React.Component {
+class PlaylistAddTrack extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -12,4 +12,4 @@ class PlaylistAdd extends React.Component {
   }
 }
 
-export default PlaylistAdd;
+export default PlaylistAddTrack;
