@@ -3,7 +3,8 @@ import { closeModal } from "../../actions/modal_actions";
 import { createPlaylist, deletePlaylist } from "../../actions/playlist_actions";
 import { connect } from "react-redux";
 import PlaylistForm from "../playlist/playlist_form";
-import PlaylistDelete from "../playlist/playlist_delete"
+import PlaylistDelete from "../playlist/playlist_delete";
+import PlaylistAdd from "../playlist/playlist_add";
 
 function Modal({ 
   closeModal, 
@@ -34,7 +35,7 @@ function Modal({
     default:
       break;
     case "addPlaylist":
-      modal = <AddPlaylist 
+      modal = <PlaylistAdd 
         closeModal={closeModal}
         userId={userId}
       />
