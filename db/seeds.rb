@@ -83,7 +83,7 @@ pop = Playlist.create(title: "Pop Hits", description: "The greatest pop hits on 
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/pop_music.jpeg')
 pop.image.attach(io: file, filename: 'pop_music.jpeg')
 
-electronic = Playlist.create(title: "It's Electric!!", description: "Electrify your like with these certified electronic bangerz!", creator_id: demo_user.id)
+electronic = Playlist.create(title: "It's Electric!!", description: "Electrify your life with these certified electronic bangerz!", creator_id: demo_user.id)
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/images/electronic.jpeg')
 electronic.image.attach(io: file, filename: 'electronic.jpeg')
 
