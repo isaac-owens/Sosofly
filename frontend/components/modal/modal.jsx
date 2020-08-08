@@ -33,6 +33,11 @@ function Modal({
        />
     default:
       break;
+    case "addPlaylist":
+      modal = <AddPlaylist 
+        closeModal={closeModal}
+        userId={userId}
+      />
   }
 
   return (
