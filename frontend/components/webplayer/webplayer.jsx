@@ -6,6 +6,7 @@ import TopBar from './top_bar';
 import NavBar from './nav_bar';
 import PlayBar from './play_bar';
 import Main from './main';
+import { addTrackToPlaylist } from '../../actions/playlist_actions';
 
 class Webplayer extends React.Component {
   constructor(props) {
@@ -30,7 +31,14 @@ class Webplayer extends React.Component {
     let Root = "Root";
     let webplayerTopContainer = "webplayer-top-container";
 
-    let { deletePlaylistForm, createPlaylistForm, playlists, currentUser, logout } = this.props;
+    let { 
+      deletePlaylistForm, 
+      createPlaylistForm,
+      addTrackModal, 
+      playlists, 
+      currentUser, 
+      logout 
+    } = this.props;
     playlists = playlists || {};
     return (
       <div className={webplayerBody}>
@@ -46,7 +54,10 @@ class Webplayer extends React.Component {
               createPlaylistForm={createPlaylistForm}
               />
               <PlayBar nowPlaying={this.props.nowPlaying} />
-              <Main playlists={playlists}/>
+              <Main 
+                playlists={playlists}
+                addTrackModal={addTrackModal}
+              />
             </div>
           </div>
         </div>
