@@ -24,7 +24,48 @@ class PlaylistAddTrack extends React.Component {
           <h1 className="add-track-modal-header-message">Add to playlist</h1>
         </div>
         <button className="new-playlist-button">NEW PLAYLIST</button>
-        <div></div>
+        <div className="playlist-grid">
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art"></div>
+            </div>
+          </div>
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art"></div>
+            </div>
+          </div>
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art"></div>
+            </div>
+          </div>
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art"></div>
+            </div>
+          </div>
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art"></div>
+            </div>
+          </div>
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art"></div>
+            </div>
+          </div>
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art"></div>
+            </div>
+          </div>
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art"></div>
+            </div>
+          </div>
+        </div>
       </>
     )
   }
