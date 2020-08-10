@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { openModal, closeModal } from '../../actions/modal_actions';
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
@@ -170,6 +173,8 @@ const mDTP = dispatch => {
   return {
     getArtist: artistId => dispatch(fetchArtist(artistId)),
     getAlbum: albumId => dispatch(fetchAlbum(albumId)),
+    addTrackModal: () => dispatch(openModal("addPlaylistTrack")),
+    closeModal: () => dispatch(closeModal()),
   }
 }
 
