@@ -5,3 +5,13 @@ add-track-modal-header-container {
   align-items: center;
 }
 
+.add-track-modal-header {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px 0;
+}
