@@ -23,6 +23,7 @@ class PlaylistAddTrack extends React.Component {
         <div className="add-track-modal-header">
           <h1 className="add-track-modal-header-message">Add to playlist</h1>
         </div>
+        <button className="new-playlist-button">NEW PLAYLIST</button>
         <div></div>
       </>
     )
