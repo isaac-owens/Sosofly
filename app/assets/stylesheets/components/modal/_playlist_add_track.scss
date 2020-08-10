@@ -1,0 +1,80 @@
+.add-track-modal-top {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  align-items: center; 
+}
+
+.add-track-modal-header {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.add-track-modal-header-message {
+  text-align: center;
+  margin: 0;
+  font-size: 72px;
+  line-height: 82px;
+  letter-spacing: -.005em;
+  color: white;
+  text-transform: none;
+}
+
+.new-playlist-button {
+  margin-top: 16px;
+  background-color: #1db954;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 500px;
+  color: white;
+  transition: all 33ms cubic-bezier(.3,0,0,1);
+  will-change: transform;
+  white-space: nowrap;
+  padding: 8px 34px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.new-playlist-button:hover {
+  background-color: #1ed760;
+  transform: scale(1.06);
+}
+
+.playlist-grid {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
+}
+
+.playlist-grid-item {
+  position: relative;
+  padding-bottom: 2.5em;
+}
+
+.playlist-grid-item-hover {
+  position: relative;
+}
+
+.playlist-grid-item-cover-art {
+  width: auto;
+  height: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  padding-bottom: 100%;
+  margin: 0;
+  display: block;
+  border: 0;
+  position: relative;
+  z-index: 0;
+  background-color: #282828;
+}

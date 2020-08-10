@@ -24,7 +24,6 @@ const mDTP = dispatch => {
       
     deletePlaylistForm: () => dispatch(openModal("deletePlaylist")),
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
-    closeModal: () => dispatch(closeModal()),
     fetchPlaylist: (playlist) => dispatch(fetchPlaylist(playlist)),
     logout: () => dispatch(logout()) 
   };

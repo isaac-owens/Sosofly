@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+
 import { fetchPlaylist } from '../../actions/playlist_actions';
 import { fetchPlaylistTracks } from '../../actions/track_actions';
 import { receiveNowPlaying } from '../../actions/now_playing_actions';
