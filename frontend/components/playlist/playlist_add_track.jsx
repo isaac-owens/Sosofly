@@ -12,14 +12,15 @@ class PlaylistAddTrack extends React.Component {
   }
 
   render() {
+    let { closeModal } = this.props;
     let ex = <FontAwesomeIcon icon={faTimes} size="3x" />;
 
     return (
       <div>
         
         <div className="add-track-modal-header-container">
-          <button className={topCancelButton} onClick={closeModal}>
-            <div className={topCancelIcon}>{ex}</div>
+          <button className="top-cancel-button" onClick={closeModal}>
+            <div className="top-cancel-icon">{ex}</div>
           </button>
           <div className="add-track-modal-header">
             <h1 className="add-track-modal-header-message">Add to playlist</h1>
