@@ -17,54 +17,96 @@ class PlaylistAddTrack extends React.Component {
 
     return (
       <>
+      <div className="add-track-modal-top">
         <button className="top-cancel-button" onClick={closeModal}>
           <div className="top-cancel-icon">{ex}</div>
         </button>
         <div className="add-track-modal-header">
           <h1 className="add-track-modal-header-message">Add to playlist</h1>
+          <button className="new-playlist-button">NEW PLAYLIST</button>
         </div>
-        <button className="new-playlist-button">NEW PLAYLIST</button>
+      </div>
         <div className="playlist-grid">
-          <div className="playlist-grid-item">
+          {/* <div className="playlist-grid-item">
             <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art"></div>
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="playlist-grid-item">
             <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art"></div>
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="playlist-grid-item">
             <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art"></div>
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="playlist-grid-item">
             <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art"></div>
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="playlist-grid-item">
             <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art"></div>
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="playlist-grid-item">
             <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art"></div>
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="playlist-grid-item">
             <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art"></div>
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="playlist-grid-item">
-            <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art"></div>
+          <div className="playlist-grid-item"> */}
+            {/* <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     )
