@@ -45,3 +45,8 @@ add-track-modal-header-container {
   cursor: pointer;
   text-align: center;
 }
+
+.new-playlist-button:hover {
+  background-color: #1ed760;
+  transform: scale(1.06);
+}
