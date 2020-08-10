@@ -104,7 +104,7 @@ class Track extends React.Component {
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
     let play = <FontAwesomeIcon icon={faPlayCircle} size="1x" />;
 
-    let { track, title, id } = this.props;
+    let { track, title, addTrackModal, closeModal, id } = this.props;
 
     return (
       <div className={trackWrapper}>
@@ -144,16 +144,21 @@ class Track extends React.Component {
             </div>
           </div>
           <div className={tracklistMore}>
-            <div className={tracklistTopAlign}>
+            <div 
+            className={tracklistTopAlign}
+            ref={this.container}
+            >
               <button 
               className={moreEllipsis}
-              ref={this.container}
               onClick={this.toggleMenu}
               >{moreButton}
               </button>
               {this.state.modalOpen ? 
               <nav className="track-dropdown-menu">
-                <div className="track-dropdown-menu-item">Add to Playlist</div>
+                <div 
+                className="track-dropdown-menu-item"
+                onClick={addTrackModal}
+                >Add to Playlist</div>
                 <div className="track-dropdown-menu-item">Remove from this Playlist</div>
               </nav> :
               <div></div>
