@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { openModal, closeModal } from '../../actions/modal_actions';
+
 import { fetchPlaylist } from '../../actions/playlist_actions';
 import { fetchPlaylistTracks } from '../../actions/track_actions';
 import { receiveNowPlaying } from '../../actions/now_playing_actions';
@@ -19,6 +21,8 @@ const mDTP = dispatch => {
     fetchPlaylistTracks: (entityId) => dispatch(fetchPlaylistTracks(entityId)),
     fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId)),
     saveNowPlaying: (track) => dispatch(receiveNowPlaying(track)),
+    addTrackModal: () => dispatch(openModal("addPlaylistTrack")),
+    closeModal: () => dispatch(closeModal()),
   }
 }
 
