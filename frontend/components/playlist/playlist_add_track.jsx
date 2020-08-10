@@ -11,7 +11,13 @@ class PlaylistAddTrack extends React.Component {
   render() {
     return (
       <div>
-        Add playlist modal!
+        <div className="add-track-modal-header-container">
+          <button>x-icon</button>
+          <div className="add-track-modal-header">
+            <h1 className="add-track-modal-header-message">Add to playlist</h1>
+          </div>
+        </div>
+        <div></div>
       </div>
     )
   }
