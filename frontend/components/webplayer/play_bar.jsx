@@ -2,7 +2,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   
 
-import JPlayer, { Gui, SeekBar, Audio, Title, Mute, Play, VolumeBar, Duration, CurrentTime, BrowserUnsupported } from 'react-jplayer';
+import JPlayer, { Gui, SeekBar, Audio, Title, Mute, Play, PlayBar, VolumeBar, Duration, CurrentTime, BrowserUnsupported } from 'react-jplayer';
 import JPlaylist, { initializeOptions, Playlist, Next, Previous, MediaLink, Title as PlaylistTitle } from 'react-jplaylist';
 
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
@@ -13,7 +13,7 @@ import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 
-class PlayBar extends React.Component {
+class PlayerBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -84,7 +84,7 @@ class PlayBar extends React.Component {
     let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
 
     const jPlayerOptions = {
-      id: 'PlayBar',
+      id: 'PlayerBar',
       showRemainingDuration: true,
       smoothPlayBar: true,
       keyEnabled: false
@@ -102,6 +102,8 @@ class PlayBar extends React.Component {
     nowPlaying = nowPlaying || {title: ""};
 
     return (
+        <div className={webplayerPlayBar}>
+        <footer className={webplayerPlayBarFooter}>
         <JPlaylist id={jPlayerOptions.id}>
           <JPlayer classname={webplayerPlayBar}>
             <Audio />
@@ -143,7 +145,7 @@ class PlayBar extends React.Component {
                       <div className={controlButtonWrapper}>
                         <Play>
                           <button
-                          className={controlButton}>
+                            className={controlButton}>
                             {play}
                           </button>
                         </Play>
@@ -156,10 +158,10 @@ class PlayBar extends React.Component {
                       <div className={playbackBarProgressTime}>
                         <Duration />
                       </div>
-                      <div className={progressBar}>
-                        {/* <PlayBar /> */}
-                      </div>
-                      <div className={playbackBarProgressTime}>0:00</div>
+                      {/* <div className={progressBar}> */}
+                        <PlayBar />
+                      {/* </div> */}
+                      <div className={playbackBarProgressTime}>{nowPlaying.duration}</div>
                     </div>
                   </div>
                 </div>
@@ -190,6 +192,8 @@ class PlayBar extends React.Component {
             </Gui>
           </JPlayer>
         </JPlaylist>
+        </footer>
+        </div>
 
 // ###############################################################################
 
@@ -290,4 +294,4 @@ class PlayBar extends React.Component {
   }
 }
 
-export default PlayBar;
+export default PlayerBar;
