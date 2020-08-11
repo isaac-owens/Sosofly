@@ -66,4 +66,4 @@ class Webplayer extends React.Component {
   }
 };
 
-export default Webplayer
+export default Webplayer;
