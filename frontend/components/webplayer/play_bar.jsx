@@ -2,6 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
 
+import JPlaylist, {initializeOptions, Playlist, Next, Previous, MediaLink, Title as PlaylistTitle} from 'react-jplaylist';
+
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 import { faStepForward } from "@fortawesome/free-solid-svg-icons";
@@ -36,6 +38,7 @@ class PlayBar extends React.Component {
     }
   }
 
+  
   render(){
     let webplayerPlayBar = "webplayer-play-bar";
     let webplayerPlayBarFooter = "webplayer-play-bar-footer";
@@ -78,6 +81,13 @@ class PlayBar extends React.Component {
     let play = <FontAwesomeIcon icon={faPlayCircle} size="2x" />;
     let device = <FontAwesomeIcon icon={faTabletAlt} size="2x" />;
     let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
+
+    const jPlaylistOptions = {
+      hidePlaylist: true,
+      playlist: [],
+    }
+
+    // initializeOptions(null, jPlaylistOptions);
 
     let { nowPlaying } = this.props
 
