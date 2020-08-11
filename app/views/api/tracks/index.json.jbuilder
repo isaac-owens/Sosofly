@@ -5,11 +5,14 @@
     json.artist track.artist.name
     json.album track.album.title
     json.album_id track.album_id
-    json.album_art url_for(track.album.image)
+    json.poster url_for(track.album.image)
     json.artist_id track.artist_id
+    json.free false
     json.duration track.duration
     if track.track_file.attached?
-      json.track_file url_for(track.track_file)
+      json.sources do
+        json.mp3 url_for(track.track_file)
+      end
     end
   end
 end

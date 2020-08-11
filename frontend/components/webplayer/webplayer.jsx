@@ -33,9 +33,10 @@ class Webplayer extends React.Component {
     let { 
       deletePlaylistForm, 
       createPlaylistForm,
-      playlists, 
+      playlists,
+      tracks,
       currentUser, 
-      logout 
+      logout
     } = this.props;
     playlists = playlists || {};
     return (
@@ -51,7 +52,9 @@ class Webplayer extends React.Component {
               deletePlaylistForm={deletePlaylistForm}
               createPlaylistForm={createPlaylistForm}
               />
-              <PlayBar nowPlaying={this.props.nowPlaying} />
+              <PlayBar 
+              tracks={tracks}
+              nowPlaying={this.props.nowPlaying} />
               <Main 
                 playlists={playlists}
               />

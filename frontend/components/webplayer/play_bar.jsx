@@ -2,7 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
 
-import JPlaylist, {initializeOptions, Playlist, Next, Previous, MediaLink, Title as PlaylistTitle} from 'react-jplaylist';
+import JPlayer, { SeekBar, Audio, Title, Mute, Play, VolumeBar, Duration, CurrentTime, BrowserUnsupported } from 'react-jplayer';
+import JPlaylist, { initializeOptions, Playlist, Next, Previous, MediaLink, Title as PlaylistTitle } from 'react-jplaylist';
 
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
@@ -88,10 +89,10 @@ class PlayBar extends React.Component {
       smoothPlayBar: true,
       keyEnabled: false
     }
-    
+
     const jPlaylistOptions = {
       hidePlaylist: true,
-      playlist: [],
+      playlist: this.props.tracks,
     }
 
     initializeOptions(jPlayerOptions, jPlaylistOptions);
