@@ -82,12 +82,19 @@ class PlayBar extends React.Component {
     let device = <FontAwesomeIcon icon={faTabletAlt} size="2x" />;
     let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
 
+    const jPlayerOptions = {
+      id: 'PlayBar',
+      showRemainingDuration: true,
+      smoothPlayBar: true,
+      keyEnabled: false
+    }
+    
     const jPlaylistOptions = {
       hidePlaylist: true,
       playlist: [],
     }
 
-    // initializeOptions(null, jPlaylistOptions);
+    initializeOptions(jPlayerOptions, jPlaylistOptions);
 
     let { nowPlaying } = this.props
 
