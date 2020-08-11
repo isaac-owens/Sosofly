@@ -5,6 +5,7 @@ import playlistReducer from "./playlist_reducer";
 import tracksReducer from "./tracks_reducer";
 import artistReducer from "./artist_reducer";
 import albumReducer from "./album_reducer";
+import jPlaylistReducer from "./jplaylist_reducer";
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
@@ -13,6 +14,7 @@ const entitiesReducer = combineReducers({
   tracks: tracksReducer,
   artist: artistReducer,
   album: albumReducer,
+  jPlayliststs: jPlaylistReducer,
 });
 
 export default entitiesReducer;
