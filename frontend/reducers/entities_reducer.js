@@ -14,7 +14,7 @@ const entitiesReducer = combineReducers({
   tracks: tracksReducer,
   artist: artistReducer,
   album: albumReducer,
-  jPlayliststs: jPlaylistReducer,
+  jPlaylists: jPlaylistReducer,
 });
 
 export default entitiesReducer;
