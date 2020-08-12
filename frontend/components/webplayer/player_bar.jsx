@@ -93,7 +93,8 @@ class PlayerBar extends React.Component {
       id: 'PlayerBar',
       showRemainingDuration: true,
       smoothPlayBar: true,
-      keyEnabled: false
+      keyEnabled: false,
+      paused: !this.state.playing,
     }
 
     const jPlaylistOptions = {
@@ -154,15 +155,19 @@ class PlayerBar extends React.Component {
                             onClick={this.togglePlay}
                             className={controlButton}>
                             {
-                            this.state.playing ? 
-                                  <div>{pause}</div> : 
-                                  <div>{play}</div>
+                            jPlayerOptions.paused ? 
+                                  <div>{play}</div> : 
+                                  <div>{pause}</div>
                             }
                           </button>
                         </Play>
                       </div>
                       <div className={controlButtonWrapper}>
-                        <Next className={controlButton}><button className={controlButton}>{skipForward}</button></Next>
+                        <Next className={controlButton}>
+                          <button className={controlButton}>
+                            {skipForward}
+                          </button>
+                        </Next>
                       </div>
                     </div>
                     <div className={playbackBarContainer}>

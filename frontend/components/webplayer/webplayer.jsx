@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Modal from '../modal/modal';
 import TopBar from './top_bar';
 import NavBar from './nav_bar';
-import PlayerBar from './play_bar';
+import PlayerBar from './player_bar';
 import Main from './main';
 
 class Webplayer extends React.Component {
@@ -33,6 +33,7 @@ class Webplayer extends React.Component {
     let { 
       deletePlaylistForm, 
       createPlaylistForm,
+      setOption,
       playlists,
       tracks,
       currentUser, 
@@ -54,7 +55,8 @@ class Webplayer extends React.Component {
               />
               <PlayerBar 
               tracks={tracks}
-              nowPlaying={this.props.nowPlaying} />
+              nowPlaying={this.props.nowPlaying}
+              />
               <Main 
                 playlists={playlists}
               />
