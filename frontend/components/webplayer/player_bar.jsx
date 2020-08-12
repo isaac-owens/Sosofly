@@ -21,11 +21,18 @@ class PlayerBar extends React.Component {
     }
 
     this.togglePlay = this.togglePlay.bind(this);
+    this.nextTogglePlay = this.nextTogglePlay.bind(this);
     this.toggleTrack = this.toggleTrack.bind(this);
   }
 
   togglePlay() {
     this.setState({playing: !this.state.playing});
+  }
+
+  nextTogglePlay() {
+    if (this.state.playing === false) {
+      this.setState({playing: true});
+    }
   }
 
 
@@ -164,7 +171,10 @@ class PlayerBar extends React.Component {
                       </div>
                       <div className={controlButtonWrapper}>
                         <Next className={controlButton}>
-                          <button className={controlButton}>
+                          <button 
+                          className={controlButton}
+                          onClick={this.nextTogglePlay}
+                          >
                             {skipForward}
                           </button>
                         </Next>
