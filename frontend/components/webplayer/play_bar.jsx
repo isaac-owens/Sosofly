@@ -17,9 +17,15 @@ class PlayerBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      playing: true
+      playing: false
     }
+
+    this.togglePlay = this.togglePlay.bind(this);
     this.toggleTrack = this.toggleTrack.bind(this);
+  }
+
+  togglePlay() {
+    this.setState({playing: !this.state.playing});
   }
 
 
@@ -145,8 +151,13 @@ class PlayerBar extends React.Component {
                       <div className={controlButtonWrapper}>
                         <Play>
                           <button
+                            onClick={this.togglePlay}
                             className={controlButton}>
-                            {play}
+                            {
+                            this.state.playing ? 
+                                  <div>{pause}</div> : 
+                                  <div>{play}</div>
+                            }
                           </button>
                         </Play>
                       </div>
@@ -173,14 +184,13 @@ class PlayerBar extends React.Component {
                           <button className={devicePickerButton}>{device}</button>
                         </span>
                       </div>
-                      <div className={volumeBar}>
-                        <button className={volumeButton}>{volume}</button>
-                        <div className={progressBar}>
-                          <div className={middleAlignBackground}>
-                            <div className={progressBarWrapper}>
-                              <div className={progressBarForeground}></div>
-                            </div>
-                            <button className={progressBarSlider}></button>
+                      <div className="jp-volume-container">
+                        <Mute>
+                          <i className="fa">{/* Icon set in css */}</i>
+                        </Mute>
+                        <div className="jp-volume-slider">
+                          <div className="jp-volume-bar-container">
+                            <VolumeBar />
                           </div>
                         </div>
                       </div>
