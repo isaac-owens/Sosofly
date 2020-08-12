@@ -15,7 +15,6 @@ class PlaylistShowMain extends React.Component {
     this.loadData = this.loadData.bind(this);
   }
 
-
   componentDidMount() {
     this.loadData();
   }
@@ -27,19 +26,17 @@ class PlaylistShowMain extends React.Component {
   render() {
     let playlistShowContentSpacing = "playlist-show-content-spacing";
     let tracklistContainer = "tracklist-container";
-    // let tracklist = "tracklist";
 
     let { tracks, saveNowPlaying } = this.props;
 
     if (!this.state.data || tracks.length === 0) {
-      return (<div />);
-    } else {
-
+      return null;
+  } else {
       return (
         <div className={playlistShowContentSpacing}>
           <section className={tracklistContainer}>
             <ol>
-          {tracks.map(track => {
+            {tracks.map(track => {
              return <Track
               id={track.title}
               className={track.title}

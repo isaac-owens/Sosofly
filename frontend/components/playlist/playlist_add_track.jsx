@@ -26,17 +26,7 @@ class PlaylistAddTrack extends React.Component {
           <button className="new-playlist-button">NEW PLAYLIST</button>
         </div>
       </div>
-        <div className="playlist-grid">
-          {/* <div className="playlist-grid-item">
-            <div className="playlist-grid-item-hover">
-              <div className="playlist-grid-item-cover-art">
-                <div>
-                  <div></div>
-                  <div>image here</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* <div className="playlist-grid">
           <div className="playlist-grid-item">
             <div className="playlist-grid-item-hover">
               <div className="playlist-grid-item-cover-art">
@@ -97,8 +87,8 @@ class PlaylistAddTrack extends React.Component {
               </div>
             </div>
           </div>
-          <div className="playlist-grid-item"> */}
-            {/* <div className="playlist-grid-item-hover">
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
               <div className="playlist-grid-item-cover-art">
                 <div>
                   <div></div>
@@ -106,8 +96,18 @@ class PlaylistAddTrack extends React.Component {
                 </div>
               </div>
             </div>
-          </div> */}
-        </div>
+          </div>
+          <div className="playlist-grid-item">
+            <div className="playlist-grid-item-hover">
+              <div className="playlist-grid-item-cover-art">
+                <div>
+                  <div></div>
+                  <div>image here</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </>
     )
   }
