@@ -111,10 +111,9 @@ class PlayerBar extends React.Component {
 
     initializeOptions(jPlayerOptions, jPlaylistOptions);
 
-    let { nowPlaying } = this.props
+    let { nowPlaying, track } = this.props
 
     nowPlaying = nowPlaying || {title: ""};
-
     return (
         <div className={webplayerPlayBar}>
         <footer className={webplayerPlayBarFooter}>
@@ -129,9 +128,9 @@ class PlayerBar extends React.Component {
                       <div className="now-playing-cover-slot">
                         <div className="cover-art-shadow">
                           <div>
-                            {nowPlaying === {} ?
+                            {track === {} ?
                               image :
-                              <img className="now-playing-cover-image" src={nowPlaying.album_art} alt="album art" />
+                              <img className="now-playing-cover-image" src="" alt="album art" />
                             }
                           </div>
                         </div>
@@ -139,9 +138,9 @@ class PlayerBar extends React.Component {
                     </div>
                     <div className={nowPlayingInfo}>
                       <div className={nowPlayingSongTitle}>
-                        {nowPlaying === {} ?
+                        {track === {} ?
                           <span>Now Playing</span> :
-                          <span>{nowPlaying.title}</span>
+                            <span>title</span>
                         }
                       </div>
                     </div>
@@ -187,7 +186,7 @@ class PlayerBar extends React.Component {
                       {/* <div className={progressBar}> */}
                         <PlayBar />
                       {/* </div> */}
-                      <div className={playbackBarProgressTime}>{nowPlaying.duration}</div>
+                        <div className={playbackBarProgressTime}>duration</div>
                     </div>
                   </div>
                 </div>

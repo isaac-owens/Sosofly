@@ -12,7 +12,8 @@ const mSTP = state => {
     playlists: Object.values(state.entities.playlists),
     nowPlaying: state.ui.nowPlaying,
     tracks: Object.values(state.entities.tracks),
-  };
+    track: state.jPlayers,
+  }; 
 };
 
 const mDTP = dispatch => {
@@ -29,8 +30,6 @@ const mDTP = dispatch => {
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     fetchPlaylist: (playlist) => dispatch(fetchPlaylist(playlist)),
     logout: () => dispatch(logout()),
-    next: id => dispatch(playlistActions.next(id)),
-    previous: id => dispatch(playlistActions.previous(id)),
   };
 };
 
