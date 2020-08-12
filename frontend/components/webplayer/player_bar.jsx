@@ -2,7 +2,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   
 
-import JPlayer, { Gui, SeekBar, Audio, Title, Mute, Play, PlayBar, VolumeBar, Duration, CurrentTime, BrowserUnsupported } from 'react-jplayer';
+import JPlayer, { Gui, SeekBar, Audio, Title, Mute, Play, Poster, PlayBar, VolumeBar, Duration, CurrentTime, BrowserUnsupported } from 'react-jplayer';
 import JPlaylist, { initializeOptions, Playlist, Next, Previous, MediaLink, Title as PlaylistTitle } from 'react-jplaylist';
 
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
@@ -17,11 +17,30 @@ class PlayerBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      playing: true
+      playing: false,
+      track: null
     }
+
+    this.togglePlay = this.togglePlay.bind(this);
+    this.nextTogglePlay = this.nextTogglePlay.bind(this);
     this.toggleTrack = this.toggleTrack.bind(this);
   }
 
+  togglePlay() {
+    this.setState({playing: !this.state.playing});
+  }
+
+  nextTogglePlay() {
+    if (this.state.playing === false) {
+      this.setState({playing: true});
+    }
+  }
+
+  componentDidMount() {
+    if (typeof this.props.track !== 'undefined') {
+      this.setState({track: this.props.track.media})
+    }
+  }
 
   toggleTrack() {
     const { nowPlaying } = this.props;
@@ -87,7 +106,8 @@ class PlayerBar extends React.Component {
       id: 'PlayerBar',
       showRemainingDuration: true,
       smoothPlayBar: true,
-      keyEnabled: false
+      keyEnabled: false,
+      paused: !this.state.playing,
     }
 
     const jPlaylistOptions = {
@@ -97,10 +117,10 @@ class PlayerBar extends React.Component {
 
     initializeOptions(jPlayerOptions, jPlaylistOptions);
 
-    let { nowPlaying } = this.props
+    let { nowPlaying, track } = this.props
 
     nowPlaying = nowPlaying || {title: ""};
-
+  
     return (
         <div className={webplayerPlayBar}>
         <footer className={webplayerPlayBarFooter}>
@@ -114,20 +134,17 @@ class PlayerBar extends React.Component {
                     <div className={nowPlayingCover}>
                       <div className="now-playing-cover-slot">
                         <div className="cover-art-shadow">
-                          <div>
-                            {nowPlaying === {} ?
-                              image :
-                              <img className="now-playing-cover-image" src={nowPlaying.album_art} alt="album art" />
-                            }
+                          <div className="now-playing-cover-image">
+                            <Poster />
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className={nowPlayingInfo}>
                       <div className={nowPlayingSongTitle}>
-                        {nowPlaying === {} ?
+                        {track === {} ?
                           <span>Now Playing</span> :
-                          <span>{nowPlaying.title}</span>
+                            <span><Title /></span>
                         }
                       </div>
                     </div>
@@ -140,18 +157,30 @@ class PlayerBar extends React.Component {
                   <div className={playerControlsContainer}>
                     <div className={playerControlsButtons}>
                       <div className={controlButtonWrapper}>
-                        <Previous><button className={controlButton}>{skipBack}</button></Previous>
+                        <Previous><div className={controlButton}>{skipBack}</div></Previous>
                       </div>
                       <div className={controlButtonWrapper}>
                         <Play>
-                          <button
+                          <div
+                            onClick={this.togglePlay}
                             className={controlButton}>
-                            {play}
-                          </button>
+                            {
+                            jPlayerOptions.paused ? 
+                              <div>{play}</div> : 
+                              <div>{pause}</div>
+                            }
+                          </div>
                         </Play>
                       </div>
                       <div className={controlButtonWrapper}>
-                        <Next className={controlButton}><button className={controlButton}>{skipForward}</button></Next>
+                        <Next className={controlButton}>
+                          <div 
+                          className={controlButton}
+                          onClick={this.nextTogglePlay}
+                          >
+                            {skipForward}
+                          </div>
+                        </Next>
                       </div>
                     </div>
                     <div className={playbackBarContainer}>
@@ -161,7 +190,7 @@ class PlayerBar extends React.Component {
                       {/* <div className={progressBar}> */}
                         <PlayBar />
                       {/* </div> */}
-                      <div className={playbackBarProgressTime}>{nowPlaying.duration}</div>
+                        <div className={playbackBarProgressTime}>duration</div>
                     </div>
                   </div>
                 </div>
@@ -173,14 +202,13 @@ class PlayerBar extends React.Component {
                           <button className={devicePickerButton}>{device}</button>
                         </span>
                       </div>
-                      <div className={volumeBar}>
-                        <button className={volumeButton}>{volume}</button>
-                        <div className={progressBar}>
-                          <div className={middleAlignBackground}>
-                            <div className={progressBarWrapper}>
-                              <div className={progressBarForeground}></div>
-                            </div>
-                            <button className={progressBarSlider}></button>
+                      <div className="jp-volume-container">
+                        <Mute>
+                          <i className="fa">{/* Icon set in css */}</i>
+                        </Mute>
+                        <div className="jp-volume-slider">
+                          <div className="jp-volume-bar-container">
+                            <VolumeBar />
                           </div>
                         </div>
                       </div>

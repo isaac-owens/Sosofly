@@ -277,3 +277,58 @@
   position: relative;
 }
 
+.jp-volume-container {
+  min-width: 42px;
+  position: relative;
+}
+
+.jp-volume-container:hover .jp-volume-slider .jp-volume-bar-container {
+  height: 100px;
+  outline: solid 1px #cfcfcf;
+}
+
+.jp-volume-container:hover .jp-volume-slider .jp-volume-bar-container .jp-volume-bar {
+  display: block;
+  bottom: 10%;
+}
+
+.jp-volume-container .jp-mute {
+  height: inherit;
+}
+
+.jp-volume-container {
+  // display: none;
+}
+
+.jp-volume-container .jp-volume-slider {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.jp-volume-container .jp-volume-slider .jp-volume-bar-container {
+  background-color: #e5e5e5;
+  // position: absolute;
+  height: 0;
+  width: 24px;
+  left: 8px;
+  // bottom: 100%;
+}
+
+.jp-volume-container .jp-volume-slider .jp-volume-bar-container .jp-volume-bar {
+  background-color: #a1c1f4;
+  cursor: pointer;
+  border-radius: 1px;
+  display: none;
+  width: 8px;
+  height: 80px;
+  // position: absolute;
+  // bottom: 100%;
+  // left: 50%;
+}
+
+.jp-volume-container .jp-volume-slider .jp-volume-bar-container .jp-volume-bar .jp-volume-bar-value {
+  background-color: #71a6fc;
+  border-radius: inherit;
+}
+

@@ -133,7 +133,7 @@ AddedTrack.create!(playlist_id: hip_hop.id, track_id: groovy_hiphop.id)
 
 better_days = Track.create(title: "Better Days", artist_id: solange_knowles.id, album_id: a_seat_at_the_table.id, duration: "2:33")
 file = open('https://sosofly-seeds.s3.us-east-2.amazonaws.com/audio/bensound-betterdays.mp3')
-groovy_hiphop.track_file.attach(io: file, filename: 'bensound-betterdays.mp3')
+better_days.track_file.attach(io: file, filename: 'bensound-betterdays.mp3')
 AddedTrack.create!(playlist_id: pop.id, track_id: better_days.id)
 
 energy = Track.create(title: "Energy", artist_id: beyonce_knowles.id, album_id: lemonade.id, duration: "2:59")
