@@ -12,7 +12,7 @@ const mSTP = state => {
     playlists: Object.values(state.entities.playlists),
     nowPlaying: state.ui.nowPlaying,
     tracks: Object.values(state.entities.tracks),
-    track: state.jPlayers,
+    track: state.jPlayers.PlayerBar
   }; 
 };
 

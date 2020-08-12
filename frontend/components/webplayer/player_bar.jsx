@@ -2,7 +2,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   
 
-import JPlayer, { Gui, SeekBar, Audio, Title, Mute, Play, PlayBar, VolumeBar, Duration, CurrentTime, BrowserUnsupported } from 'react-jplayer';
+import JPlayer, { Gui, SeekBar, Audio, Title, Mute, Play, Poster, PlayBar, VolumeBar, Duration, CurrentTime, BrowserUnsupported } from 'react-jplayer';
 import JPlaylist, { initializeOptions, Playlist, Next, Previous, MediaLink, Title as PlaylistTitle } from 'react-jplaylist';
 
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
@@ -17,7 +17,8 @@ class PlayerBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      playing: false
+      playing: false,
+      track: null
     }
 
     this.togglePlay = this.togglePlay.bind(this);
@@ -35,6 +36,11 @@ class PlayerBar extends React.Component {
     }
   }
 
+  componentDidMount() {
+    if (typeof this.props.track !== 'undefined') {
+      this.setState({track: this.props.track.media})
+    }
+  }
 
   toggleTrack() {
     const { nowPlaying } = this.props;
@@ -114,6 +120,7 @@ class PlayerBar extends React.Component {
     let { nowPlaying, track } = this.props
 
     nowPlaying = nowPlaying || {title: ""};
+  
     return (
         <div className={webplayerPlayBar}>
         <footer className={webplayerPlayBarFooter}>
@@ -127,11 +134,8 @@ class PlayerBar extends React.Component {
                     <div className={nowPlayingCover}>
                       <div className="now-playing-cover-slot">
                         <div className="cover-art-shadow">
-                          <div>
-                            {track === {} ?
-                              image :
-                              <img className="now-playing-cover-image" src="" alt="album art" />
-                            }
+                          <div className="now-playing-cover-image">
+                            <Poster />
                           </div>
                         </div>
                       </div>
@@ -140,7 +144,7 @@ class PlayerBar extends React.Component {
                       <div className={nowPlayingSongTitle}>
                         {track === {} ?
                           <span>Now Playing</span> :
-                            <span>title</span>
+                            <span><Title /></span>
                         }
                       </div>
                     </div>
@@ -153,29 +157,29 @@ class PlayerBar extends React.Component {
                   <div className={playerControlsContainer}>
                     <div className={playerControlsButtons}>
                       <div className={controlButtonWrapper}>
-                        <Previous><button className={controlButton}>{skipBack}</button></Previous>
+                        <Previous><div className={controlButton}>{skipBack}</div></Previous>
                       </div>
                       <div className={controlButtonWrapper}>
                         <Play>
-                          <button
+                          <div
                             onClick={this.togglePlay}
                             className={controlButton}>
                             {
                             jPlayerOptions.paused ? 
-                                  <div>{play}</div> : 
-                                  <div>{pause}</div>
+                              <div>{play}</div> : 
+                              <div>{pause}</div>
                             }
-                          </button>
+                          </div>
                         </Play>
                       </div>
                       <div className={controlButtonWrapper}>
                         <Next className={controlButton}>
-                          <button 
+                          <div 
                           className={controlButton}
                           onClick={this.nextTogglePlay}
                           >
                             {skipForward}
-                          </button>
+                          </div>
                         </Next>
                       </div>
                     </div>
