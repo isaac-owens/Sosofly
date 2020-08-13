@@ -134,7 +134,7 @@ class PlayerBar extends React.Component {
                     <div className={nowPlayingCover}>
                       <div className="now-playing-cover-slot">
                         <div className="cover-art-shadow">
-                          <div className="now-playing-cover-image">
+                          <div>
                             <Poster />
                           </div>
                         </div>
