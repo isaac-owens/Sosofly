@@ -103,7 +103,7 @@ class PlayerBar extends React.Component {
     let volume = <FontAwesomeIcon icon={faVolumeMute} size="2x" />;
 
     const jPlayerOptions = {
-      id: 'PlayerBar',
+      id: 'PlayerPlaylist',
       showRemainingDuration: true,
       smoothPlayBar: true,
       keyEnabled: false,
@@ -111,8 +111,7 @@ class PlayerBar extends React.Component {
     }
 
     const jPlaylistOptions = {
-      id: 'PlayerPlaylist',
-      hidePlaylist: true,
+      hidePlaylist: false,
       playlist: this.props.tracks,
     }
 
@@ -125,7 +124,7 @@ class PlayerBar extends React.Component {
     return (
         <div className={webplayerPlayBar}>
         <footer className={webplayerPlayBarFooter}>
-        <JPlaylist id={jPlayerOptions.id}>
+        <JPlaylist id='PlayerPlaylist'>
           <JPlayer classname={webplayerPlayBar}>
             <Audio />
             <Gui>
