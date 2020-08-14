@@ -27,7 +27,7 @@ class PlaylistShowMain extends React.Component {
     let playlistShowContentSpacing = "playlist-show-content-spacing";
     let tracklistContainer = "tracklist-container";
 
-    let { tracks, saveNowPlaying } = this.props;
+    let { tracks, saveNowPlaying, play } = this.props;
 
     if (!this.state.data || tracks.length === 0) {
       return null;
@@ -36,7 +36,7 @@ class PlaylistShowMain extends React.Component {
         <div className={playlistShowContentSpacing}>
           <section className={tracklistContainer}>
             <ol>
-            {tracks.map(track => {
+            {tracks.map((track, idx) => {
              return <Track
               id={track.title}
               className={track.title}
@@ -45,6 +45,8 @@ class PlaylistShowMain extends React.Component {
               title={track.title}
               setState={(state, callback) => this.setState(state, callback)}
               playerState={this.state}
+              play={play}
+              index={idx}
               saveNowPlaying={saveNowPlaying}
               />
           })}

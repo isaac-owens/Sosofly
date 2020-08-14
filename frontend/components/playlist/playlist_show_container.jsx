@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { actions } from 'react-jplayer';
 
 import { fetchPlaylist } from '../../actions/playlist_actions';
 import { fetchPlaylistTracks } from '../../actions/track_actions';
@@ -20,6 +21,7 @@ const mDTP = dispatch => {
     fetchPlaylistTracks: (entityId) => dispatch(fetchPlaylistTracks(entityId)),
     fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId)),
     saveNowPlaying: (track) => dispatch(receiveNowPlaying(track)),
+    play: (id, index) => dispatch(actions.play(id, index)),
   }
 }
 
