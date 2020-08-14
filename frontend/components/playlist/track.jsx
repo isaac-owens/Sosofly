@@ -113,7 +113,7 @@ class Track extends React.Component {
           <div className={tracklistColumnOuter}>
             <div className={tracklistPPTopAlign}></div>
             <div className={tracklistTopAlign}>
-              <span className={musicDiscContainer} onClick={() => play('PlayerBar', index)}>
+              <span className={musicDiscContainer} onClick={() => play('PlayerPlaylist', index)}>
                 {!this.state.nowPlaying ? playButton : miniDisc}
 
                 <audio

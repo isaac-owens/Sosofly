@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { actions } from 'react-jplayer';
+import { actions } from 'react-jplaylist';
 
 import { fetchPlaylist } from '../../actions/playlist_actions';
 import { fetchPlaylistTracks } from '../../actions/track_actions';

@@ -111,6 +111,7 @@ class PlayerBar extends React.Component {
     }
 
     const jPlaylistOptions = {
+      id: 'PlayerPlaylist',
       hidePlaylist: true,
       playlist: this.props.tracks,
     }
