@@ -49,7 +49,7 @@ class PlaylistShow extends React.Component {
     let fire = <FontAwesomeIcon icon={faFire} size="3x" />;
     let ellipsis = <FontAwesomeIcon icon={faEllipsisH} size="3x" />;
 
-    let { playlist, tracks, fetchPlaylistTracks, saveNowPlaying } = this.props;
+    let { playlist, tracks, fetchPlaylistTracks, saveNowPlaying, play } = this.props;
     if (
       !playlist
     ) {
@@ -97,6 +97,7 @@ class PlaylistShow extends React.Component {
             fetchPlaylistTracks={fetchPlaylistTracks}
             tracks={tracks}
             saveNowPlaying={saveNowPlaying}
+            play={play}
           />
         </section>
       );

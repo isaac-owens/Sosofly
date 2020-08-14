@@ -102,9 +102,9 @@ class Track extends React.Component {
 
     let miniDisc = <FontAwesomeIcon icon={faCompactDisc} size="1x" />;
     let moreButton = <FontAwesomeIcon icon={faEllipsisH} size="1x" />;
-    let play = <FontAwesomeIcon icon={faPlayCircle} size="1x" />;
+    let playButton = <FontAwesomeIcon icon={faPlayCircle} size="1x" />;
 
-    let { track, title, addTrackModal, closeModal, id } = this.props;
+    let { track, title, addTrackModal, closeModal, id, play, index } = this.props;
 
     return (
       <div className={trackWrapper}>
@@ -113,8 +113,8 @@ class Track extends React.Component {
           <div className={tracklistColumnOuter}>
             <div className={tracklistPPTopAlign}></div>
             <div className={tracklistTopAlign}>
-              <span className={musicDiscContainer} onClick={this.playTrack}>
-                {!this.state.nowPlaying ? play : miniDisc}
+              <span className={musicDiscContainer} onClick={() => play('PlayerPlaylist', index)}>
+                {!this.state.nowPlaying ? playButton : miniDisc}
 
                 <audio
                   src={track.track_file}

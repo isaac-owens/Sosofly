@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { actions as playlistActions } from 'react-jplaylist';
+import { actions as playerActions} from 'react-jplayer';
 
 import { fetchPlaylist } from '../../actions/playlist_actions';
 import { fetchPlaylistTracks } from '../../actions/track_actions';
@@ -17,9 +19,11 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
-    fetchPlaylistTracks: (entityId) => dispatch(fetchPlaylistTracks(entityId)),
-    fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId)),
-    saveNowPlaying: (track) => dispatch(receiveNowPlaying(track)),
+    fetchPlaylistTracks: entityId => dispatch(fetchPlaylistTracks(entityId)),
+    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+    saveNowPlaying: track => dispatch(receiveNowPlaying(track)),
+    play: (id, index) => dispatch(playlistActions.play(id, index)),
+    pause: id => dispatch(playerActions.pause(id)),
   }
 }
 
