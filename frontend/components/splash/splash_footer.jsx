@@ -93,7 +93,7 @@ class SplashFooter extends React.Component {
                 <div className={socialIconOuterBox}>
                   <span className={socialIconInnerBox}>
                     <a
-                      href="https://www.linkedin.com/in/isaac-owens-3a279532/"
+                      href="https://www.linkedin.com/in/isaac-owens/"
                       target="_blank"
                     >
                       {linkedin}
